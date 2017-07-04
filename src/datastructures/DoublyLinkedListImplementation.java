@@ -43,17 +43,17 @@ public class DoublyLinkedListImplementation {
 	private DLLNode head;
 	private DLLNode tail;
 	private int length;
-	private int MIN_VALUE =-1;
+	
 
 	// Create a new empty list.
 	public DoublyLinkedListImplementation() {
-		head = new DLLNode(MIN_VALUE,null,null);
-		tail = new DLLNode(MIN_VALUE, head, null);
+		head = new DLLNode(-1,null,null);
+		tail = new DLLNode(-1, head, null);
 		head.setNext(tail);
 		length = 0;
 	} 
 	public int get(int position) {
-		return MIN_VALUE;
+		return -1;
 	}
 
 	public int getPosition(int data) {
@@ -69,7 +69,7 @@ public class DoublyLinkedListImplementation {
 			temp = temp.getNext();
 		}
 		
-		return MIN_VALUE;
+		return -1;
 	} 
 
 	public int length() {
@@ -183,7 +183,7 @@ public class DoublyLinkedListImplementation {
 	
 	public int removeHead() {
 		if (length == 0)
-		    return MIN_VALUE;
+		    return -1;
 		DLLNode save = head.getNext();
 		head.setNext(save.getNext());
 		save.getNext().setPrev(head);
@@ -194,7 +194,7 @@ public class DoublyLinkedListImplementation {
 	
 	public int removeTail() {
 		if (length == 0)
-			return MIN_VALUE;
+			return -1;
 		DLLNode save = tail.getPrev();
 		tail.setPrev(save.getPrev());
 		save.getPrev().setNext(tail);

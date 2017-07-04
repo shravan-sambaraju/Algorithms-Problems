@@ -1,8 +1,8 @@
 package datastructures;
 
 class ListNode {
-	private int data;
-	private ListNode next;
+	 int data;
+	 ListNode next;
 
 	public ListNode() {
 
