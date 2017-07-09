@@ -1,4 +1,4 @@
-package problems;
+package problems.recursion;
 
 // check if array is sorted in ascending order using recursion 
 

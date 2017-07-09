@@ -1,6 +1,6 @@
 package datastructures;
 
-class ListNode {
+ class ListNode {
 	 int data;
 	 ListNode next;
 

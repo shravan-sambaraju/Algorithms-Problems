@@ -1,4 +1,4 @@
-package problems;
+package problems.recursion;
 
 // tower of hanoi using recursion 
 
