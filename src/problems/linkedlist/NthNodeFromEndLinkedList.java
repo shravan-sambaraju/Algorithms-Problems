@@ -8,6 +8,11 @@ package problems.linkedlist;
 	public ListNode() {
 
 	}
+	
+	public ListNode(int data){
+		next =null;
+		this.data= data;
+	}
 
 	public int getData() {
 		return data;
