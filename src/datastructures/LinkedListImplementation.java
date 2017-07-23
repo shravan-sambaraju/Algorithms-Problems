@@ -4,9 +4,14 @@ package datastructures;
 	 int data;
 	 ListNode next;
 
-	public ListNode() {
+	 public ListNode() {
 
-	}
+		}
+		
+		public ListNode(int data){
+			next =null;
+			this.data= data;
+		}
 
 	public int getData() {
 		return data;
