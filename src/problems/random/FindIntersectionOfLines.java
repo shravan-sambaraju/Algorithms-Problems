@@ -30,7 +30,7 @@ package problems.random;
 	}
 }
 
-public class FindIntersectionOfLine {
+public class FindIntersectionOfLines {
 	public static Point createPoint(int[] coordinates) {
 		return new Point(coordinates[0],  coordinates[1]);
 	}	
