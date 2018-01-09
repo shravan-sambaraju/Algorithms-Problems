@@ -1,5 +1,7 @@
 package datastructures;
 
+// Implement linkedlist
+
  class ListNode {
 	 int data;
 	 ListNode next;

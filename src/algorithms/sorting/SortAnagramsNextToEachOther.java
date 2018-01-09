@@ -1,9 +1,11 @@
 package algorithms.sorting;
 
+// Sort string anagrams next to each other
+
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class AnagramsNextToEachOther {
+public class SortAnagramsNextToEachOther {
 	public static void main(String[] args) {
 		String[] array = {"apple", "banana", "carrot", "ele", "duck", "papel", "tarroc", "cudk", "eel", "lee"};
 		System.out.println(stringArrayToString(array));

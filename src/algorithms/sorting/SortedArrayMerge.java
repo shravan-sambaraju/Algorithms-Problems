@@ -1,5 +1,7 @@
 package algorithms.sorting;
 
+// Merge two sorted arrays into a single array
+
 public class SortedArrayMerge {
 
 

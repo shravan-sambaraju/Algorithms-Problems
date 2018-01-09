@@ -1,5 +1,7 @@
 package datastructures;
 
+// Implement linkedstack
+
 import java.util.EmptyStackException;
 
 public class LinkedStack{

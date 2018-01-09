@@ -1,5 +1,7 @@
 package datastructures;
 
+// Implement dynamicstack using array
+
 public class DynamicArrayStack{
 	// Length of the array used to implement the stack.
 	protected int capacity;

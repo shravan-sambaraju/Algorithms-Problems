@@ -1,7 +1,5 @@
 package problems.graphs;
 
-//A Java program to print topological sorting of a DAG
-import java.io.*;
 import java.util.*;
 
 //This class represents a directed graph using adjacency
@@ -25,7 +23,7 @@ public class TopologicalSortGraph
 
  // A recursive function used by topologicalSort
  void topologicalSortUtil(int v, boolean visited[],
-                          Stack stack)
+                          Stack<Integer> stack)
  {
      // Mark the current node as visited.
      visited[v] = true;
@@ -49,7 +47,7 @@ public class TopologicalSortGraph
  // recursive topologicalSortUtil()
  void topologicalSort()
  {
-     Stack stack = new Stack();
+     Stack<Integer> stack = new Stack<Integer>();
 
      // Mark all the vertices as not visited
      boolean visited[] = new boolean[V];

@@ -1,5 +1,7 @@
 package datastructures;
 
+// Implement fixedsizearray using stack
+
 public class FixedSizeArrayStack{
 	// Length of the array used to implement the stack.
 	protected int capacity;
