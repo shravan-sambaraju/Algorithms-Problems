@@ -1,6 +1,6 @@
 package problems.recursion;
 
-// generate all the string of n bits . where an array of k size using recursion 
+/* Generate all the string of n bits . where an array of k size using recursion */
 
 import java.util.Arrays;
 

@@ -1,5 +1,7 @@
 package problems.strings;
 
+/* Check if the other is rotation of given string */
+
 public class StringRotationOfOther {
 	public static boolean isSubstring(String big, String small) {
 		if (big.indexOf(small) >= 0) {
@@ -8,20 +10,20 @@ public class StringRotationOfOther {
 			return false;
 		}
 	}
-	
+
 	public static boolean isRotation(String s1, String s2) {
-	    int len = s1.length();
-	    /* check that s1 and s2 are equal length and not empty */
-	    if (len == s2.length() && len > 0) { 
-	    	/* concatenate s1 and s1 within new buffer */
-	    	String s1s1 = s1 + s1;
-	    	return isSubstring(s1s1, s2);
-	    }
-	    return false;
+		int len = s1.length();
+		/* check that s1 and s2 are equal length and not empty */
+		if (len == s2.length() && len > 0) {
+			/* concatenate s1 and s1 within new buffer */
+			String s1s1 = s1 + s1;
+			return isSubstring(s1s1, s2);
+		}
+		return false;
 	}
-	
+
 	public static void main(String[] args) {
-		String[][] pairs = {{"apple", "pleap"}, {"waterbottle", "erbottlewat"}, {"camera", "macera"}};
+		String[][] pairs = { { "apple", "pleap" }, { "waterbottle", "erbottlewat" }, { "camera", "macera" } };
 		for (String[] pair : pairs) {
 			String word1 = pair[0];
 			String word2 = pair[1];

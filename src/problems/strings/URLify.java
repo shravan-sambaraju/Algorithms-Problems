@@ -1,5 +1,7 @@
 package problems.strings;
 
+/* URLify the given string */
+
 public class URLify {
 	// Assume string has sufficient free space at the end
 	public static void replaceSpaces(char[] str, int trueLength) {
@@ -10,7 +12,8 @@ public class URLify {
 			}
 		}
 		index = trueLength + spaceCount * 2;
-		if (trueLength < str.length) str[trueLength] = '\0';
+		if (trueLength < str.length)
+			str[trueLength] = '\0';
 		for (i = trueLength - 1; i >= 0; i--) {
 			if (str[i] == ' ') {
 				str[index - 1] = '0';
@@ -23,7 +26,7 @@ public class URLify {
 			}
 		}
 	}
-	
+
 	public static int findLastCharacter(char[] str) {
 		for (int i = str.length - 1; i >= 0; i--) {
 			if (str[i] != ' ') {
@@ -32,15 +35,15 @@ public class URLify {
 		}
 		return -1;
 	}
-	
+
 	public static void main(String[] args) {
 		String str = "Mr John Smith    ";
 		char[] arr = str.toCharArray();
 		int trueLength = findLastCharacter(arr) + 1;
-		replaceSpaces(arr, trueLength);	
+		replaceSpaces(arr, trueLength);
 		System.out.println("\"" + charArrayToString(arr) + "\"");
 	}
-	
+
 	public static String charArrayToString(char[] array) {
 		StringBuilder buffer = new StringBuilder(array.length);
 		for (char c : array) {

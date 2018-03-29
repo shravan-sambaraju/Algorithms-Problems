@@ -1,5 +1,7 @@
 package problems.stacks;
 
+/* Calculate maximum area of histogram */
+
 import java.util.Stack;
 
 public class MaxRectangleAreaOfHistogram {
@@ -35,11 +37,11 @@ public class MaxRectangleAreaOfHistogram {
 		}
 		return maxArea;
 	}
-	
-	public static void main(String args[]){
-		
+
+	public static void main(String args[]) {
+
 		MaxRectangleAreaOfHistogram maxArea = new MaxRectangleAreaOfHistogram();
-		int[] a = {1,2,3,4,5,6};
+		int[] a = { 1, 2, 3, 4, 5, 6 };
 		int area = maxArea.MaxRectangleArea(a);
 		System.out.println(area);
 	}

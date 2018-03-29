@@ -1,18 +1,19 @@
 package problems.random;
 
+/* Find pairs in array whose sum is k */
+
 import java.util.ArrayList;
 import java.util.Arrays;
-
 
 class Pair {
 	public int first;
 	public int second;
-	
+
 	public Pair(int first, int second) {
 		this.first = first;
 		this.second = second;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "(" + first + ", " + second + ")";
@@ -41,9 +42,9 @@ public class PairInArrayWhoseSumIsK {
 		}
 		return result;
 	}
-	
+
 	public static void main(String[] args) {
-		int[] test = {9, 3, 6, 5, 7, 7, -1, 13, 14, -2, 12, 0};
+		int[] test = { 9, 3, 6, 5, 7, 7, -1, 13, 14, -2, 12, 0 };
 		ArrayList<Pair> pairs = printPairSums(test, 12);
 		for (Pair p : pairs) {
 			System.out.println(p.toString());

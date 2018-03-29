@@ -1,5 +1,7 @@
 package problems.random;
 
+/* Calculate continuous largest sum */
+
 public class ContiguousLargestSum {
 	public static int getMaxSum(int[] a) {
 		int maxSum = 0;
@@ -14,9 +16,9 @@ public class ContiguousLargestSum {
 		}
 		return maxSum;
 	}
-	
+
 	public static void main(String[] args) {
-		int[] a = {2, -8, 3, -2, 4, -10};
+		int[] a = { 2, -8, 3, -2, 4, -10 };
 		System.out.println(getMaxSum(a));
 	}
 }

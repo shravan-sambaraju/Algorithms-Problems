@@ -1,5 +1,7 @@
 package problems.strings;
 
+/* Compress given string */
+
 public class StringCompression {	
 	public static String compress(String str) {
 		int finalLength = countCompression(str);

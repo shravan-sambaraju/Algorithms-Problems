@@ -1,5 +1,7 @@
 package problems.random;
 
+/* Get majority elements in array */
+
 public class getMajorityElementInArray {
 
 	public static int getCandidate(int[] array) {
@@ -17,15 +19,15 @@ public class getMajorityElementInArray {
 		}
 		return majority;
 	}
-	
+
 	public static boolean validate(int[] array, int majority) {
 		int count = 0;
 		for (int n : array) {
 			if (n == majority) {
 				count++;
-			} 
+			}
 		}
-		
+
 		return count > array.length / 2;
 	}
 
@@ -33,9 +35,9 @@ public class getMajorityElementInArray {
 		int candidate = getCandidate(array);
 		return validate(array, candidate) ? candidate : -1;
 	}
-	
+
 	public static void main(String[] args) {
-		int[] array = {0, 0, 1, 2, 2, 0, 1, 0, 1, 1, 1, 1, 1};
+		int[] array = { 0, 0, 1, 2, 2, 0, 1, 0, 1, 1, 1, 1, 1 };
 		System.out.println(array.length);
 		System.out.println(findMajorityElement(array));
 	}

@@ -1,10 +1,16 @@
 package problems.random;
 
+/* Implement dynamic size array queue */
+
 import java.util.HashMap;
 
+/* Calculate number of similar letters  */
+
 public class EqualLettersNumbersSubArray {
-	/* Compute the difference between the number of letters and 
-	 * numbers between the beginning of the array and each index. */
+	/*
+	 * Compute the difference between the number of letters and numbers between
+	 * the beginning of the array and each index.
+	 */
 	public static int[] computeDeltaArray(char[] array) {
 		int[] deltas = new int[array.length];
 		int delta = 0;
@@ -18,16 +24,18 @@ public class EqualLettersNumbersSubArray {
 		}
 		return deltas;
 	}
-	
-	/* Find the matching pair of values in the deltas array with the 
-	 * largest difference in indices. */ 	
+
+	/*
+	 * Find the matching pair of values in the deltas array with the largest
+	 * difference in indices.
+	 */
 	public static int[] findLongestMatch(int[] deltas) {
 		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-		map.put(0,  -1);
+		map.put(0, -1);
 		int[] max = new int[2];
 		for (int i = 0; i < deltas.length; i++) {
 			if (!map.containsKey(deltas[i])) {
-				map.put(deltas[i],  i);
+				map.put(deltas[i], i);
 			} else {
 				int match = map.get(deltas[i]);
 				int distance = i - match;
@@ -40,9 +48,10 @@ public class EqualLettersNumbersSubArray {
 		}
 		return max;
 	}
-	
+
 	public static char[] extract(char[] array, int start, int end) {
-		if (start > end) return null;
+		if (start > end)
+			return null;
 		char[] subarray = new char[end - start + 1];
 		for (int i = start; i <= end; i++) {
 			subarray[i - start] = array[i];
@@ -57,11 +66,13 @@ public class EqualLettersNumbersSubArray {
 		/* Find pair in deltas with matching values and largest span. */
 		int[] match = findLongestMatch(deltas);
 
-		/* Return the subarray. Note that it starts one *after* the 
-		 * initial occurence of this delta. */
+		/*
+		 * Return the subarray. Note that it starts one *after* the initial
+		 * occurence of this delta.
+		 */
 		return extract(array, match[0] + 1, match[1]);
 	}
-	
+
 	public static boolean isEqual(char[] array, int start, int end) {
 		int counter = 0;
 		for (int i = start; i < end; i++) {
@@ -73,11 +84,11 @@ public class EqualLettersNumbersSubArray {
 		}
 		return counter == 0;
 	}
-	
+
 	public static void main(String[] args) {
 		char b = '1';
 		char a = 'a';
-		char[] array = {a, b, a, b, a, b, b, b, b, b, a, a, a, a, a, b, a, b, a, b, b, a, a, a, a, a, a, a};
+		char[] array = { a, b, a, b, a, b, b, b, b, b, a, a, a, a, a, b, a, b, a, b, b, a, a, a, a, a, a, a };
 		for (int i = 0; i < array.length; i++) {
 			System.out.print(array[i] + " ");
 		}
@@ -90,7 +101,7 @@ public class EqualLettersNumbersSubArray {
 			for (int i = 0; i < max.length; i++) {
 				System.out.print(max[i] + " ");
 			}
-	
+
 			System.out.println("\nIs Valid? " + isEqual(max, 0, max.length));
 		}
 	}

@@ -1,5 +1,7 @@
 package problems.stacks;
 
+/* Implement array with two stacks */
+
 import java.util.EmptyStackException;
 
 public class ArrayWithTwoStacks {
@@ -62,7 +64,7 @@ public class ArrayWithTwoStacks {
 		} else if (stackID == 2) {
 			if (topTwo == this.size) {
 				throw new EmptyStackException();
-				}
+			}
 			return dataArray[topTwo];
 
 		}
@@ -70,9 +72,9 @@ public class ArrayWithTwoStacks {
 		return (Integer) null;
 
 	}
-	
-	public static void main(String args[]){
-		
+
+	public static void main(String args[]) {
+
 		ArrayWithTwoStacks array = new ArrayWithTwoStacks(8);
 		array.push(1, 1);
 		array.push(1, 2);
@@ -82,9 +84,9 @@ public class ArrayWithTwoStacks {
 		array.push(2, 8);
 		array.pop(1);
 		array.pop(2);
-		for(int i : array.dataArray){
+		for (int i : array.dataArray) {
 			System.out.println(i);
-			
+
 		}
 	}
 

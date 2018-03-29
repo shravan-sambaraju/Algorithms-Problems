@@ -1,21 +1,23 @@
 package problems.random;
 
+/* Find maximum sum in a given matrix */
+
 public class MaxSumInMatrix {
 	public static SubMatrix getMaxMatrix(int[][] matrix) {
 		int rowCount = matrix.length;
 		int colCount = matrix[0].length;
-	
+
 		SubMatrix best = null;
-	
+
 		for (int rowStart = 0; rowStart < rowCount; rowStart++) {
 			int[] partialSum = new int[colCount];
-		
+
 			for (int rowEnd = rowStart; rowEnd < rowCount; rowEnd++) {
 				/* Add values at row rowEnd. */
 				for (int i = 0; i < colCount; i++) {
 					partialSum[i] += matrix[rowEnd][i];
 				}
-		
+
 				Range1 bestRange1 = maxSubArray(partialSum, colCount);
 				if (best == null || best.getSum() < bestRange1.sum) {
 					best = new SubMatrix(rowStart, bestRange1.start, rowEnd, bestRange1.end, bestRange1.sum);
@@ -35,9 +37,11 @@ public class MaxSumInMatrix {
 			if (best == null || sum > best.sum) {
 				best = new Range1(start, i, sum);
 			}
-			
-			/* If running_sum is < 0 no point in trying to continue the 
-			 * series. Reset. */
+
+			/*
+			 * If running_sum is < 0 no point in trying to continue the series.
+			 * Reset.
+			 */
 			if (sum < 0) {
 				start = i + 1;
 				sum = 0;
@@ -45,13 +49,13 @@ public class MaxSumInMatrix {
 		}
 		return best;
 	}
-	
+
 	public static void main(String[] args) {
 		int[][] matrix = randomMatrix(10, 10, -5, 5);
 		printMatrix(matrix);
 		System.out.println(getMaxMatrix(matrix));
 	}
-	
+
 	public static int[][] randomMatrix(int M, int N, int min, int max) {
 		int[][] matrix = new int[M][N];
 		for (int i = 0; i < M; i++) {
@@ -61,7 +65,7 @@ public class MaxSumInMatrix {
 		}
 		return matrix;
 	}
-	
+
 	public static int randomInt(int n) {
 		return (int) (Math.random() * n);
 	}
@@ -69,7 +73,7 @@ public class MaxSumInMatrix {
 	public static int randomIntInRange1(int min, int max) {
 		return randomInt(max + 1 - min) + min;
 	}
-	
+
 	public static void printMatrix(int[][] matrix) {
 		for (int i = 0; i < matrix.length; i++) {
 			for (int j = 0; j < matrix[i].length; j++) {
@@ -90,10 +94,9 @@ public class MaxSumInMatrix {
 
 }
 
-
-
 class Range1 {
 	public int start, end, sum;
+
 	public Range1(int start, int end, int sum) {
 		this.start = start;
 		this.end = end;
@@ -103,6 +106,7 @@ class Range1 {
 
 class SubMatrix {
 	private int row1, row2, col1, col2, sum;
+
 	public SubMatrix(int r1, int c1, int r2, int c2, int sm) {
 		row1 = r1;
 		col1 = c1;
@@ -110,11 +114,11 @@ class SubMatrix {
 		col2 = c2;
 		sum = sm;
 	}
-	
+
 	public int getSum() {
 		return sum;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "[(" + row1 + "," + col1 + ") -> (" + row2 + "," + col2 + ") = " + sum + "]";
