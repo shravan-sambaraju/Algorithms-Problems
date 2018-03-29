@@ -1,6 +1,39 @@
 package problems.linkedlist;
 
+/* Detect loop in a linkedlist */
+
 public class LoopInSinglyLinkedList {
+
+	class ListNode {
+		int data;
+		ListNode next;
+
+		public ListNode() {
+
+		}
+
+		public ListNode(int data) {
+			next = null;
+			this.data = data;
+		}
+
+		public int getData() {
+			return data;
+		}
+
+		public void setData(int data) {
+			this.data = data;
+		}
+
+		public ListNode getNext() {
+			return next;
+		}
+
+		public void setNext(ListNode next) {
+			this.next = next;
+		}
+
+	}
 
 	public static ListNode findBeginOfLoop(ListNode node) {
 		boolean loopExists = false;
@@ -24,7 +57,7 @@ public class LoopInSinglyLinkedList {
 					fastPointer = fastPointer.getNext();
 
 				}
-				System.out.println("loopcause "+loopCause.getData());
+				System.out.println("loopcause " + loopCause.getData());
 				loopCause.setNext(null);
 
 				return fastPointer;
@@ -69,38 +102,38 @@ public class LoopInSinglyLinkedList {
 
 	}
 
-
 	public static void main(String args[]) {
 
-		ListNode node = new ListNode();
+		LoopInSinglyLinkedList loopInSinglyLinkedList = new LoopInSinglyLinkedList();
+
+		ListNode node = loopInSinglyLinkedList.new ListNode();
 		node.setData(1);
-		ListNode node1 = new ListNode();
+		ListNode node1 = loopInSinglyLinkedList.new ListNode();
 		node1.setData(2);
 		node.setNext(node1);
-		ListNode node2 = new ListNode();
+		ListNode node2 = loopInSinglyLinkedList.new ListNode();
 		node2.setData(3);
 		node1.setNext(node2);
-		ListNode node3 = new ListNode();
+		ListNode node3 = loopInSinglyLinkedList.new ListNode();
 		node3.setData(4);
 		node2.setNext(node3);
-		ListNode node4 = new ListNode();
+		ListNode node4 = loopInSinglyLinkedList.new ListNode();
 		node4.setData(5);
 		node3.setNext(node4);
-		ListNode node5 = new ListNode();
+		ListNode node5 = loopInSinglyLinkedList.new ListNode();
 		node5.setData(6);
 		node4.setNext(node5);
-		ListNode node6 = new ListNode();
+		ListNode node6 = loopInSinglyLinkedList.new ListNode();
 		node6.setData(7);
 		node5.setNext(node6);
-		ListNode node7 = new ListNode();
+		ListNode node7 = loopInSinglyLinkedList.new ListNode();
 		node7.setData(8);
 		node6.setNext(node7);
-		ListNode node8 = new ListNode();
+		ListNode node8 = loopInSinglyLinkedList.new ListNode();
 		node8.setData(9);
 		node7.setNext(node8);
 		node8.setNext(node3);
 
-		
 		System.out.println(checkForLoopUsingFloyds(node));
 		System.out.println("begin of the loop " + findBeginOfLoop(node).getData());
 		System.out.println(checkForLoopUsingFloyds(node));

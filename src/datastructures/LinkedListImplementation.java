@@ -1,19 +1,19 @@
 package datastructures;
 
-// Implement linkedlist
+/* Java implementation of linkedlist */
 
- class ListNode {
-	 int data;
-	 ListNode next;
+class ListNode {
+	int data;
+	ListNode next;
 
-	 public ListNode() {
+	public ListNode() {
 
-		}
-		
-		public ListNode(int data){
-			next =null;
-			this.data= data;
-		}
+	}
+
+	public ListNode(int data) {
+		next = null;
+		this.data = data;
+	}
 
 	public int getData() {
 		return data;
@@ -114,72 +114,71 @@ public class LinkedListImplementation {
 		return node;
 
 	}
-	
-	public synchronized ListNode removeFromEnd(){
-		if(head==null){
+
+	public synchronized ListNode removeFromEnd() {
+		if (head == null) {
 			return null;
-			
+
 		}
-		
-		ListNode p = head, q=null, next= head.getNext();
-		if(next==null){
+
+		ListNode p = head, q = null, next = head.getNext();
+		if (next == null) {
 			head = null;
 			return p;
 		}
-		while((next=p.getNext())!=null){
-			q= p;
-			p= next;
-			
+		while ((next = p.getNext()) != null) {
+			q = p;
+			p = next;
+
 		}
 		q.setNext(null);
-		
+
 		return p;
 	}
-	
+
 	public synchronized void removeMatched(ListNode node) {
-		if (head == null) 
+		if (head == null)
 			return;
-		if (node.equals(head)) { 
-			head = head.getNext(); 
-			length-=1;			
+		if (node.equals(head)) {
+			head = head.getNext();
+			length -= 1;
 			return;
 		}
 		ListNode p = head, q = null;
-		while((q = p.getNext()) != null) {
+		while ((q = p.getNext()) != null) {
 			if (node.equals(q)) {
 				p.setNext(q.getNext());
-				length-=1;				
+				length -= 1;
 				return;
 			}
 			p = q;
 		}
 	}
-	
+
 	public void remove(int position) {
 		if (position < 0) {
 			position = 0;
 		}
-		
+
 		if (position >= length) {
-			position = length-1;
+			position = length - 1;
 		}
-		
+
 		if (head == null)
 			return;
-		
+
 		if (position == 0) {
 			head = head.getNext();
-		}
-		else {
+		} else {
 			ListNode temp = head;
-			for (int i=1; i<position; i+=1) {
+			for (int i = 1; i < position; i += 1) {
 				temp = temp.getNext();
 			}
 			temp.setNext(temp.getNext().getNext());
 		}
 		length -= 1;
 	}
-	
+
 	public int getPosition(int data) {
 
 		ListNode temp = head;
@@ -215,7 +214,7 @@ public class LinkedListImplementation {
 		System.out.println(lli.length);
 		lli.removeMatched(node1);
 		System.out.println(lli.length);
-		
+
 		// insertion at the end
 		LinkedListImplementation lli1 = new LinkedListImplementation();
 		ListNode node2 = new ListNode();
@@ -250,19 +249,19 @@ public class LinkedListImplementation {
 		System.out.println(lli2.getHead().getNext().getData());
 		System.out.println(lli2.getHead().getNext().getNext().getData());
 		lli2.insert(8, 1);
-		System.out.println(lli2.getHead().getData()+"*");
+		System.out.println(lli2.getHead().getData() + "*");
 		System.out.println(lli2.getHead().getNext().getData());
 		System.out.println(lli2.getHead().getNext().getNext().getData());
 		System.out.println(lli2.getHead().getNext().getNext().getNext().getData());
 		lli2.remove(0);
-		System.out.println(lli2.getHead().getData()+"*");
+		System.out.println(lli2.getHead().getData() + "*");
 		lli2.insert(6, 0);
-		System.out.println(lli2.getHead().getData()+"*");
+		System.out.println(lli2.getHead().getData() + "*");
 		System.out.println(lli2.getPosition(100));
 		System.out.println(lli2.getPosition(6));
-		
-		//remove from begin and end 
-		
+
+		// remove from begin and end
+
 		System.out.println("**** remove from begin and end ****");
 		System.out.println(lli2.getHead().getData());
 		lli2.removeFromBegin();
@@ -273,8 +272,8 @@ public class LinkedListImplementation {
 		lli2.removeFromEnd();
 		System.out.println(lli2.getHead().getData());
 		System.out.println(lli2.getHead().getNext().getData());
-		System.out.println(lli2.getHead().getNext().getNext());		
-	
+		System.out.println(lli2.getHead().getNext().getNext());
+
 	}
 
 }

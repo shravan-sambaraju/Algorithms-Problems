@@ -1,10 +1,43 @@
 package problems.linkedlist;
 
-public class SplitCircularLinkedList {
-	
-	static ListNode head1,head2;
+/* Split given circular linkedlist */
 
-	public  void splitList(ListNode head) {
+public class SplitCircularLinkedList {
+
+	class ListNode {
+		int data;
+		ListNode next;
+
+		public ListNode() {
+
+		}
+
+		public ListNode(int data) {
+			next = null;
+			this.data = data;
+		}
+
+		public int getData() {
+			return data;
+		}
+
+		public void setData(int data) {
+			this.data = data;
+		}
+
+		public ListNode getNext() {
+			return next;
+		}
+
+		public void setNext(ListNode next) {
+			this.next = next;
+		}
+
+	}
+
+	static ListNode head1, head2;
+
+	public void splitList(ListNode head) {
 		ListNode slowPointer = head;
 		ListNode fastPointer = head;
 
@@ -36,53 +69,52 @@ public class SplitCircularLinkedList {
 	}
 
 	public static void main(String args[]) {
-		
-		ListNode node = new ListNode();
+		SplitCircularLinkedList splitCircularLinkedList = new SplitCircularLinkedList();
+
+		ListNode node = splitCircularLinkedList.new ListNode();
 		node.setData(1);
-		ListNode node1 = new ListNode();
+		ListNode node1 = splitCircularLinkedList.new ListNode();
 		node1.setData(2);
 		node.setNext(node1);
-		ListNode node2 = new ListNode();
+		ListNode node2 = splitCircularLinkedList.new ListNode();
 		node2.setData(3);
 		node1.setNext(node2);
-		ListNode node3 = new ListNode();
+		ListNode node3 = splitCircularLinkedList.new ListNode();
 		node3.setData(4);
 		node2.setNext(node3);
-		ListNode node4 = new ListNode();
+		ListNode node4 = splitCircularLinkedList.new ListNode();
 		node4.setData(5);
 		node3.setNext(node4);
-		ListNode node5 = new ListNode();
+		ListNode node5 = splitCircularLinkedList.new ListNode();
 		node5.setData(6);
 		node4.setNext(node5);
-		ListNode node6 = new ListNode();
+		ListNode node6 = splitCircularLinkedList.new ListNode();
 		node6.setData(7);
 		node5.setNext(node6);
-		ListNode node7 = new ListNode();
+		ListNode node7 = splitCircularLinkedList.new ListNode();
 		node7.setData(8);
 		node6.setNext(node7);
-		ListNode node8 = new ListNode();
+		ListNode node8 = splitCircularLinkedList.new ListNode();
 		node8.setData(9);
 		node7.setNext(node8);
 		node8.setNext(node);
-		
-		SplitCircularLinkedList spl = new SplitCircularLinkedList();
-		
-		spl.splitList(node);
-		
+
+		splitCircularLinkedList.splitList(node);
+
 		ListNode originalFirstHead1 = head1;
-		ListNode originalSecondHead2 =  head2;
-		
-		do{
+		ListNode originalSecondHead2 = head2;
+
+		do {
 			System.out.println(head1.getData());
 			head1 = head1.getNext();
-		}while(head1!=originalFirstHead1);
-		
+		} while (head1 != originalFirstHead1);
+
 		System.out.println("*********************");
-		
-		do{
+
+		do {
 			System.out.println(head2.getData());
 			head2 = head2.getNext();
-		}while(head2!=originalSecondHead2);
+		} while (head2 != originalSecondHead2);
 
 	}
 

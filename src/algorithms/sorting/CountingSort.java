@@ -1,55 +1,50 @@
 package algorithms.sorting;
 
-//Java implementation of Counting Sort
-public class CountingSort
-{
- void sort(char arr[])
- {
-     int n = arr.length;
+/* Java implementation of Counting Sort */
 
-     // The output character array that will have sorted arr
-     char output[] = new char[n];
+public class CountingSort {
+	void sort(char arr[]) {
+		int n = arr.length;
 
-     // Create a count array to store count of inidividul
-     // characters and initialize count array as 0
-     int count[] = new int[256];
-     for (int i=0; i<256; ++i)
-         count[i] = 0;
+		// The output character array that will have sorted array
+		char output[] = new char[n];
 
-     // store count of each character
-     for (int i=0; i<n; ++i)
-         ++count[arr[i]];
+		// Create a count array to store count of individual
+		// characters and initialize count array as 0
+		int count[] = new int[256];
+		for (int i = 0; i < 256; ++i)
+			count[i] = 0;
 
-     // Change count[i] so that count[i] now contains actual
-     // position of this character in output array
-     for (int i=1; i<=255; ++i)
-         count[i] += count[i-1];
+		// store count of each character
+		for (int i = 0; i < n; ++i)
+			++count[arr[i]];
 
-     // Build the output character array
-     for (int i = 0; i<n; ++i)
-     {
-         output[count[arr[i]]-1] = arr[i];
-         --count[arr[i]];
-     }
+		// Change count[i] so that count[i] now contains actual
+		// position of this character in output array
+		for (int i = 1; i <= 255; ++i)
+			count[i] += count[i - 1];
 
-     // Copy the output array to arr, so that arr now
-     // contains sorted characters
-     for (int i = 0; i<n; ++i)
-         arr[i] = output[i];
- }
+		// Build the output character array
+		for (int i = 0; i < n; ++i) {
+			output[count[arr[i]] - 1] = arr[i];
+			--count[arr[i]];
+		}
 
- // Driver method
- public static void main(String args[])
- {
-     CountingSort ob = new CountingSort();
-     char arr[] = {'g', 'e', 'e', 'k', 's', 'f', 'o',
-                   'r', 'g', 'e', 'e', 'k', 's'
-                  };
+		// Copy the output array to array, so that array now
+		// contains sorted characters
+		for (int i = 0; i < n; ++i)
+			arr[i] = output[i];
+	}
 
-     ob.sort(arr);
+	// Driver method
+	public static void main(String args[]) {
+		CountingSort ob = new CountingSort();
+		char arr[] = { 'g', 'e', 'e', 'k', 's', 'f', 'o', 'r', 'g', 'e', 'e', 'k', 's' };
 
-     System.out.print("Sorted character array is ");
-     for (int i=0; i<arr.length; ++i)
-         System.out.print(arr[i]);
- }
+		ob.sort(arr);
+
+		System.out.print("Sorted character array is ");
+		for (int i = 0; i < arr.length; ++i)
+			System.out.print(arr[i]);
+	}
 }
