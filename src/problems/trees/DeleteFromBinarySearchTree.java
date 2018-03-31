@@ -1,5 +1,7 @@
 package problems.trees;
 
+/* Delete a node from binary tree */
+
 public class DeleteFromBinarySearchTree {
 
 	class BinaryTreeNode {

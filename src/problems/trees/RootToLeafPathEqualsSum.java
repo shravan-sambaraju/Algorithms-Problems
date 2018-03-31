@@ -1,5 +1,7 @@
 package problems.trees;
 
+/* Print if root to leaf path equals sum */
+
 import java.util.ArrayList;
 import java.util.List;
 

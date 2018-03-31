@@ -1,5 +1,7 @@
 package problems.trees;
 
+/* Find all root to leaf paths */
+
 public class AllRootToLeafPaths {
 
 	class BinaryTreeNode {

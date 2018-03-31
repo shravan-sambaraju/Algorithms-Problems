@@ -1,5 +1,7 @@
 package problems.trees;
 
+/* Find all full nodes in binary tree */
+
 import java.util.LinkedList;
 import java.util.Queue;
 

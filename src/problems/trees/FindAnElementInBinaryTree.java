@@ -1,5 +1,7 @@
 package problems.trees;
 
+/* Find element in binary node */
+
 import java.util.LinkedList;
 import java.util.Queue;
 

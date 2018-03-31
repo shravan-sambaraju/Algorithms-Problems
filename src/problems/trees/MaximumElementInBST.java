@@ -1,5 +1,7 @@
 package problems.trees;
 
+/* Find maximum element in binary search tree */
+
 public class MaximumElementInBST {
 
 	class BinaryTreeNode {

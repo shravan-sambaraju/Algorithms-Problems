@@ -1,5 +1,7 @@
 package problems.trees;
 
+/* Find minimum element in binary tree */
+
 import java.util.LinkedList;
 import java.util.Queue;
 

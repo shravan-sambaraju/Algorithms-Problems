@@ -1,5 +1,7 @@
 package problems.trees;
 
+/* Create mirror of binary search tree */
+
 public class MirrorOFbinaryTree {
 
 	class BinaryTreeNode {

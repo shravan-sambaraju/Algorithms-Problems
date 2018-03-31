@@ -1,5 +1,7 @@
 package problems.trees;
 
+/* Find element in binary search tree */
+
 public class FindElementBinarySearchTree {
 
 	class BinaryTreeNode {

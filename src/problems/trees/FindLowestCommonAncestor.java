@@ -1,5 +1,7 @@
 package problems.trees;
 
+/* Find lowest common ancestor of given node */
+
 public class FindLowestCommonAncestor {
 
 	class BinaryTreeNode {

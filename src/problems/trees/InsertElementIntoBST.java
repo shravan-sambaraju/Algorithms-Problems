@@ -1,5 +1,7 @@
 package problems.trees;
 
+/* Insert element into binary search tree */
+
 public class InsertElementIntoBST {
 
 	class BinaryTreeNode {

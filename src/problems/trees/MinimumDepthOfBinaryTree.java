@@ -1,5 +1,7 @@
 package problems.trees;
 
+/* Find minimum depth of binary tree */
+
 import java.util.LinkedList;
 import java.util.Queue;
 

@@ -1,5 +1,7 @@
 package problems.trees;
 
+/* Lowest common ancestor of two pointers in binary search tree */
+
 public class LCAOfTwoPointersInBST {
 
 	class BinaryTreeNode {

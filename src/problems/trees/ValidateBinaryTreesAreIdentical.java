@@ -1,5 +1,7 @@
 package problems.trees;
 
+/* Validate if given binary trees are identical */
+
 import java.util.LinkedList;
 import java.util.Queue;
 

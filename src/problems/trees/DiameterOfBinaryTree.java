@@ -1,5 +1,7 @@
 package problems.trees;
 
+/* Find diameter of binary tree */
+
 public class DiameterOfBinaryTree {
 
 	class BinaryTreeNode {

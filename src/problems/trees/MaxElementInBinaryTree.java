@@ -1,5 +1,7 @@
 package problems.trees;
 
+/* Find maximum element in binary tree */
+
 import java.util.LinkedList;
 import java.util.Queue;
 

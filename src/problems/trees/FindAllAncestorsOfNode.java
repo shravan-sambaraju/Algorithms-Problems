@@ -1,5 +1,7 @@
 package problems.trees;
 
+/* Find all ancestors of given node */
+
 public class FindAllAncestorsOfNode {
 
 	class BinaryTreeNode {

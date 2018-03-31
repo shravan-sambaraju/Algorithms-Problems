@@ -1,5 +1,7 @@
 package problems.trees;
 
+/* Find minimum element in binary search tree */
+
 public class MinimumElementInBST {
 
 	class BinaryTreeNode {

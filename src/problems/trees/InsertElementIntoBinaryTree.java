@@ -1,5 +1,7 @@
 package problems.trees;
 
+/* Insert given element into binary tree */
+
 import java.util.LinkedList;
 import java.util.Queue;
 

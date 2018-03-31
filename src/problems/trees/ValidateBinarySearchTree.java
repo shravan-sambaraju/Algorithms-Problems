@@ -1,5 +1,7 @@
 package problems.trees;
 
+/* Validate if given tree is binary search tree */
+
 public class ValidateBinarySearchTree {
 
 	class BinaryTreeNode {

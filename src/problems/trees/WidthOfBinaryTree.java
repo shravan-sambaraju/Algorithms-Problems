@@ -1,5 +1,7 @@
 package problems.trees;
 
+/* Find width of binary tree */
+
 public class WidthOfBinaryTree {
 
 	class BinaryTreeNode {
