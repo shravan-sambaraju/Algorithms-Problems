@@ -4,6 +4,44 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class MaximumLevelSum {
+
+	class BinaryTreeNode {
+		int data;
+		BinaryTreeNode left;
+		BinaryTreeNode right;
+
+		BinaryTreeNode(int x) {
+			data = x;
+			left = null;
+			right = null;
+
+		}
+
+		public int getData() {
+			return data;
+		}
+
+		public void setData(int data) {
+			this.data = data;
+		}
+
+		public BinaryTreeNode getLeft() {
+			return left;
+		}
+
+		public void setLeft(BinaryTreeNode left) {
+			this.left = left;
+		}
+
+		public BinaryTreeNode getRight() {
+			return right;
+		}
+
+		public void setRight(BinaryTreeNode right) {
+			this.right = right;
+		}
+	}
+
 	public static void maxSumLevel(BinaryTreeNode root) {
 		if (root == null) {
 			System.out.println("Tree is empty");
@@ -47,17 +85,17 @@ public class MaximumLevelSum {
 		}
 		System.out.println("Max Sum = " + maxSum + " is at Level = " + level);
 	}
-	
-	
-	 public static void main(String args[]) {
-			BinaryTreeNode node = new BinaryTreeNode(1);
-			node.left = new BinaryTreeNode(2);
-			node.right = new BinaryTreeNode(3);
-			node.left.left = new BinaryTreeNode(4);
-			node.left.right = new BinaryTreeNode(5);
-			node.right.left = new BinaryTreeNode(6);
-			node.right.right = new BinaryTreeNode(7);
 
-			maxSumLevel(node);
-		}
+	public static void main(String args[]) {
+		MaximumLevelSum maximumLevelSum = new MaximumLevelSum();
+		BinaryTreeNode node = maximumLevelSum.new BinaryTreeNode(1);
+		node.left = maximumLevelSum.new BinaryTreeNode(2);
+		node.right = maximumLevelSum.new BinaryTreeNode(3);
+		node.left.left = maximumLevelSum.new BinaryTreeNode(4);
+		node.left.right = maximumLevelSum.new BinaryTreeNode(5);
+		node.right.left = maximumLevelSum.new BinaryTreeNode(6);
+		node.right.right = maximumLevelSum.new BinaryTreeNode(7);
+
+		maxSumLevel(node);
+	}
 }

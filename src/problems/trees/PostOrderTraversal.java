@@ -5,6 +5,43 @@ import java.util.Stack;
 
 public class PostOrderTraversal {
 
+	class BinaryTreeNode {
+		int data;
+		BinaryTreeNode left;
+		BinaryTreeNode right;
+
+		BinaryTreeNode(int x) {
+			data = x;
+			left = null;
+			right = null;
+
+		}
+
+		public int getData() {
+			return data;
+		}
+
+		public void setData(int data) {
+			this.data = data;
+		}
+
+		public BinaryTreeNode getLeft() {
+			return left;
+		}
+
+		public void setLeft(BinaryTreeNode left) {
+			this.left = left;
+		}
+
+		public BinaryTreeNode getRight() {
+			return right;
+		}
+
+		public void setRight(BinaryTreeNode right) {
+			this.right = right;
+		}
+	}
+
 	public static void recursivePostOrder(BinaryTreeNode head) {
 		if (head != null) {
 
@@ -63,23 +100,24 @@ public class PostOrderTraversal {
 
 			stack2.push(head);
 		}
-		
-		while(!stack2.isEmpty()){
+
+		while (!stack2.isEmpty()) {
 			System.out.println(stack2.pop().data);
-			
+
 		}
 
 	}
 
 	public static void main(String args[]) {
-		BinaryTreeNode node = new BinaryTreeNode(1);
-		node.left = new BinaryTreeNode(2);
-		node.right = new BinaryTreeNode(3);
-		node.left.left = new BinaryTreeNode(4);
-		node.left.right = new BinaryTreeNode(5);
-		node.right.left = new BinaryTreeNode(6);
-		node.right.right = new BinaryTreeNode(7);
-		
+		PostOrderTraversal postOrderTraversal = new PostOrderTraversal();
+		BinaryTreeNode node = postOrderTraversal.new BinaryTreeNode(1);
+		node.left = postOrderTraversal.new BinaryTreeNode(2);
+		node.right = postOrderTraversal.new BinaryTreeNode(3);
+		node.left.left = postOrderTraversal.new BinaryTreeNode(4);
+		node.left.right = postOrderTraversal.new BinaryTreeNode(5);
+		node.right.left = postOrderTraversal.new BinaryTreeNode(6);
+		node.right.right = postOrderTraversal.new BinaryTreeNode(7);
+
 		BinaryTreeNode node1 = node;
 		BinaryTreeNode node2 = node;
 

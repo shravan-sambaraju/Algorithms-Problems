@@ -2,6 +2,43 @@ package problems.trees;
 
 public class AllRootToLeafPaths {
 
+	class BinaryTreeNode {
+		int data;
+		BinaryTreeNode left;
+		BinaryTreeNode right;
+
+		BinaryTreeNode(int x) {
+			data = x;
+			left = null;
+			right = null;
+
+		}
+
+		public int getData() {
+			return data;
+		}
+
+		public void setData(int data) {
+			this.data = data;
+		}
+
+		public BinaryTreeNode getLeft() {
+			return left;
+		}
+
+		public void setLeft(BinaryTreeNode left) {
+			this.left = left;
+		}
+
+		public BinaryTreeNode getRight() {
+			return right;
+		}
+
+		public void setRight(BinaryTreeNode right) {
+			this.right = right;
+		}
+	}
+
 	public void printPaths(BinaryTreeNode root) {
 		int[] path = new int[256];
 		printPaths(root, path, 0);
@@ -30,13 +67,14 @@ public class AllRootToLeafPaths {
 	}
 
 	public static void main(String args[]) {
-		BinaryTreeNode node = new BinaryTreeNode(1);
-		node.left = new BinaryTreeNode(2);
-		node.right = new BinaryTreeNode(3);
-		node.left.left = new BinaryTreeNode(4);
-		node.left.right = new BinaryTreeNode(5);
-		node.right.left = new BinaryTreeNode(6);
-		node.right.right = new BinaryTreeNode(7);
+		AllRootToLeafPaths allRootToLeafPaths = new AllRootToLeafPaths();
+		BinaryTreeNode node = allRootToLeafPaths.new BinaryTreeNode(1);
+		node.left = allRootToLeafPaths.new BinaryTreeNode(2);
+		node.right = allRootToLeafPaths.new BinaryTreeNode(3);
+		node.left.left = allRootToLeafPaths.new BinaryTreeNode(4);
+		node.left.right = allRootToLeafPaths.new BinaryTreeNode(5);
+		node.right.left = allRootToLeafPaths.new BinaryTreeNode(6);
+		node.right.right = allRootToLeafPaths.new BinaryTreeNode(7);
 
 		AllRootToLeafPaths paths = new AllRootToLeafPaths();
 

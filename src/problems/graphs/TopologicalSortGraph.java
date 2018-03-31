@@ -1,8 +1,9 @@
 package problems.graphs;
 
 /* Sort given graph topologically */
-
-import java.util.*;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Stack;
 
 //This class represents a directed graph using adjacency
 //list representation

@@ -33,7 +33,6 @@ public class ArrayWithTwoStacks {
 
 	}
 
-	@SuppressWarnings("null")
 	public int pop(int stackID) {
 		if (stackID == 1) {
 			if (topOne == -1) {
@@ -55,6 +54,7 @@ public class ArrayWithTwoStacks {
 
 	}
 
+	@SuppressWarnings("null")
 	public int top(int stackID) {
 		if (stackID == 1) {
 			if (topOne == -1) {

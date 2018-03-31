@@ -3,7 +3,6 @@ package algorithms.sorting;
 /* Java implementation of insertion sort */
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class InsertionSort {

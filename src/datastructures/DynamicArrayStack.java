@@ -58,7 +58,6 @@ public class DynamicArrayStack {
 	}
 
 	// dynamic array operation: shrinks to 1/2 if more than than 3/4 empty
-	@SuppressWarnings("unused")
 	private void shrink() {
 		int length = top + 1;
 		if (length <= MINCAPACITY || top << 2 >= length)
