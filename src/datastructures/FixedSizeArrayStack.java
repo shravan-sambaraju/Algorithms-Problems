@@ -1,11 +1,13 @@
 package datastructures;
 
-public class FixedSizeArrayStack{
+/* Java implementation of  fixed size array using stack */
+
+public class FixedSizeArrayStack {
 	// Length of the array used to implement the stack.
 	protected int capacity;
 
 	// Default array capacity.
-	public static final int CAPACITY = 16;	// power of 2
+	public static final int CAPACITY = 16; // power of 2
 
 	// Array used to implement the stack.
 	protected int[] stackRep;
@@ -22,10 +24,11 @@ public class FixedSizeArrayStack{
 	public FixedSizeArrayStack(int cap) {
 		capacity = cap;
 		stackRep = new int[capacity]; // compiler may give warning, but this
-									  // is ok
+										// is ok
 	}
 
-	// Returns the number of elements in the stack. This method runs in O(1) time.
+	// Returns the number of elements in the stack. This method runs in O(1)
+	// time.
 	public int size() {
 		return (top + 1);
 	}
@@ -35,14 +38,16 @@ public class FixedSizeArrayStack{
 		return (top < 0);
 	}
 
-	// Inserts an element at the top of the stack. This method runs in O(1) time.
+	// Inserts an element at the top of the stack. This method runs in O(1)
+	// time.
 	public void push(int data) throws Exception {
 		if (size() == capacity)
 			throw new Exception("Stack is full.");
 		stackRep[++top] = data;
 	}
 
-	// Inspects the element at the top of the stack. This method runs in O(1) time.
+	// Inspects the element at the top of the stack. This method runs in O(1)
+	// time.
 	public int top() throws Exception {
 		if (isEmpty())
 			throw new Exception("Stack is empty.");
@@ -55,7 +60,8 @@ public class FixedSizeArrayStack{
 		if (isEmpty())
 			throw new Exception("Stack is empty.");
 		data = stackRep[top];
-		stackRep[top--] = Integer.MIN_VALUE; // dereference S[top] for garbage collection.
+		stackRep[top--] = Integer.MIN_VALUE; // dereference S[top] for garbage
+												// collection.
 		return data;
 	}
 

@@ -1,10 +1,13 @@
 package problems.random;
 
+/* Find number of people living in given year */
+
 import java.util.Random;
 
 class Person {
 	public int birth;
 	public int death;
+
 	public Person(int birthYear, int deathYear) {
 		birth = birthYear;
 		death = deathYear;
@@ -18,20 +21,20 @@ public class LivingPeopleInYear {
 		int maxAliveYear = getMaxAliveYear(populationDeltas);
 		return maxAliveYear + min;
 	}
-	
+
 	/* Add birth and death years to deltas array. */
 	public static int[] getPopulationDeltas(Person[] people, int min, int max) {
 		int[] populationDeltas = new int[max - min + 2];
 		for (Person person : people) {
 			int birth = person.birth - min;
 			populationDeltas[birth]++;
-			
+
 			int death = person.death - min;
-			populationDeltas[death + 1]--;	
+			populationDeltas[death + 1]--;
 		}
 		return populationDeltas;
 	}
-	
+
 	/* Compute running sums and return index with max. */
 	public static int getMaxAliveYear(int[] deltas) {
 		int maxAliveYear = 0;
@@ -43,11 +46,11 @@ public class LivingPeopleInYear {
 				maxAliveYear = year;
 				maxAlive = currentlyAlive;
 			}
-		}	
-		
+		}
+
 		return maxAliveYear;
 	}
-	
+
 	public static void main(String[] args) {
 		int n = 3;
 		int first = 1900;

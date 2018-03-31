@@ -1,5 +1,7 @@
 package problems.stacks;
 
+/* Balance brackets */
+
 import java.util.Stack;
 
 public class BalancingOfSymbols {
@@ -37,7 +39,7 @@ public class BalancingOfSymbols {
 			}
 
 		}
-		if(stk.isEmpty()){
+		if (stk.isEmpty()) {
 			return true;
 		}
 

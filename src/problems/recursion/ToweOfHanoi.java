@@ -1,6 +1,6 @@
 package problems.recursion;
 
-// tower of hanoi using recursion 
+/* Tower of hanoi using recursion */
 
 public class ToweOfHanoi {
 	static int count = 0;

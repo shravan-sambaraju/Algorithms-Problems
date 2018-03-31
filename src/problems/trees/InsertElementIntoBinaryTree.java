@@ -1,14 +1,53 @@
 package problems.trees;
 
+/* Insert given element into binary tree */
+
 import java.util.LinkedList;
 import java.util.Queue;
 
-
 public class InsertElementIntoBinaryTree {
 
+	class BinaryTreeNode {
+		int data;
+		BinaryTreeNode left;
+		BinaryTreeNode right;
+
+		BinaryTreeNode(int x) {
+			data = x;
+			left = null;
+			right = null;
+
+		}
+
+		public int getData() {
+			return data;
+		}
+
+		public void setData(int data) {
+			this.data = data;
+		}
+
+		public BinaryTreeNode getLeft() {
+			return left;
+		}
+
+		public void setLeft(BinaryTreeNode left) {
+			this.left = left;
+		}
+
+		public BinaryTreeNode getRight() {
+			return right;
+		}
+
+		public void setRight(BinaryTreeNode right) {
+			this.right = right;
+		}
+	}
+
 	public static BinaryTreeNode insertIntoTreeLevelOrder(BinaryTreeNode root, int data) {
+		InsertElementIntoBinaryTree insertElementIntoBinaryTree = new InsertElementIntoBinaryTree();
 		if (root == null) {
-			return new BinaryTreeNode(data);
+			return insertElementIntoBinaryTree.new BinaryTreeNode(data);
 		}
 		Queue<BinaryTreeNode> q = new LinkedList<BinaryTreeNode>();
 		q.offer(root);
@@ -18,13 +57,13 @@ public class InsertElementIntoBinaryTree {
 				if (temp.left != null) {
 					q.offer(temp.left);
 				} else {
-					temp.left = new BinaryTreeNode(data);
+					temp.left = insertElementIntoBinaryTree.new BinaryTreeNode(data);
 					return root;
 				}
 				if (temp.right != null) {
 					q.offer(temp.right);
 				} else {
-					temp.right = new BinaryTreeNode(data);
+					temp.right = insertElementIntoBinaryTree.new BinaryTreeNode(data);
 					return root;
 				}
 			}
@@ -35,8 +74,9 @@ public class InsertElementIntoBinaryTree {
 	}
 
 	public static BinaryTreeNode insertElementIntoTreeRecursive(BinaryTreeNode root, int data) {
+		InsertElementIntoBinaryTree insertElementIntoBinaryTree = new InsertElementIntoBinaryTree();
 		if (root == null) {
-			return new BinaryTreeNode(data);
+			return insertElementIntoBinaryTree.new BinaryTreeNode(data);
 
 		} else {
 			insertHelper(root, data);
@@ -47,34 +87,35 @@ public class InsertElementIntoBinaryTree {
 	}
 
 	private static void insertHelper(BinaryTreeNode head, int element) {
-		if(head.left==null){
-			head.left = new BinaryTreeNode(element);
-		}else{
+		InsertElementIntoBinaryTree insertElementIntoBinaryTree = new InsertElementIntoBinaryTree();
+
+		if (head.left == null) {
+			head.left = insertElementIntoBinaryTree.new BinaryTreeNode(element);
+		} else {
 			insertHelper(head.left, element);
 		}
-		if(head.right==null){
-			head.right = new BinaryTreeNode(element);
-		}else{
+		if (head.right == null) {
+			head.right = insertElementIntoBinaryTree.new BinaryTreeNode(element);
+		} else {
 			insertHelper(head.right, element);
 		}
 
 	}
 
 	public static void main(String args[]) {
-		BinaryTreeNode node = new BinaryTreeNode(1);
-		node.left = new BinaryTreeNode(2);
-		node.right = new BinaryTreeNode(3);
-		node.left.left = new BinaryTreeNode(4);
-		node.left.right = new BinaryTreeNode(5);
-		node.right.left = new BinaryTreeNode(6);
-		node.right.right = new BinaryTreeNode(7);
-
-		BinaryTreeNode node1 = node;
+		InsertElementIntoBinaryTree insertElementIntoBinaryTree = new InsertElementIntoBinaryTree();
+		BinaryTreeNode node = insertElementIntoBinaryTree.new BinaryTreeNode(1);
+		node.left = insertElementIntoBinaryTree.new BinaryTreeNode(2);
+		node.right = insertElementIntoBinaryTree.new BinaryTreeNode(3);
+		node.left.left = insertElementIntoBinaryTree.new BinaryTreeNode(4);
+		node.left.right = insertElementIntoBinaryTree.new BinaryTreeNode(5);
+		node.right.left = insertElementIntoBinaryTree.new BinaryTreeNode(6);
+		node.right.right = insertElementIntoBinaryTree.new BinaryTreeNode(7);
 
 		System.out.println(insertIntoTreeLevelOrder(node, 8).left.left.left.data);
 		System.out.println(insertIntoTreeLevelOrder(node, 9).left.left.right.data);
-		System.out.println(insertElementIntoTreeRecursive(node,8).left.left.left.data);
-		System.out.println(insertElementIntoTreeRecursive(node,9).left.left.right.data);
+		System.out.println(insertElementIntoTreeRecursive(node, 8).left.left.left.data);
+		System.out.println(insertElementIntoTreeRecursive(node, 9).left.left.right.data);
 
 	}
 

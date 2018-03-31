@@ -1,5 +1,7 @@
 package problems.random;
 
+/* Print trailing zeros in N factorial */
+
 public class TrailingZerosInNfactorial {
 	public static int countFactZeros(int num) {
 		int count = 0;
@@ -12,7 +14,7 @@ public class TrailingZerosInNfactorial {
 		}
 		return count;
 	}
-	
+
 	public static int factorial(int num) {
 		if (num == 1) {
 			return 1;
@@ -22,7 +24,7 @@ public class TrailingZerosInNfactorial {
 			return -1; // Error
 		}
 	}
-	
+
 	public static void main(String[] args) {
 		for (int i = 1; i < 12; i++) {
 			System.out.println(i + "! (or " + factorial(i) + ") has " + countFactZeros(i) + " zeros");

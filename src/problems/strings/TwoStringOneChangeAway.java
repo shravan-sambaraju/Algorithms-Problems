@@ -1,14 +1,15 @@
 package problems.strings;
 
+/* String which are one change away */
 
-public class TwoStringOneChangeAway {	
-public static boolean oneEditAway(String first, String second) {
+public class TwoStringOneChangeAway {
+	public static boolean oneEditAway(String first, String second) {
 		/* Length checks. */
 		if (Math.abs(first.length() - second.length()) > 1) {
 			return false;
 		}
-		
-		/* Get shorter and longer string.*/
+
+		/* Get shorter and longer string. */
 		String s1 = first.length() < second.length() ? first : second;
 		String s2 = first.length() < second.length() ? second : first;
 
@@ -17,22 +18,22 @@ public static boolean oneEditAway(String first, String second) {
 		boolean foundDifference = false;
 		while (index2 < s2.length() && index1 < s1.length()) {
 			if (s1.charAt(index1) != s2.charAt(index2)) {
-				/* Ensure that this is the first difference found.*/
-				if (foundDifference) return false;
+				/* Ensure that this is the first difference found. */
+				if (foundDifference)
+					return false;
 				foundDifference = true;
-				if (s1.length() == s2.length()) { // On replace, move shorter pointer
+				if (s1.length() == s2.length()) { // On replace, move shorter
+													// pointer
 					index1++;
 				}
 			} else {
-				index1++; // If matching, move shorter pointer 
+				index1++; // If matching, move shorter pointer
 			}
-			index2++; // Always move pointer for longer string 
+			index2++; // Always move pointer for longer string
 		}
 		return true;
 	}
-	
-	
-	
+
 	public static void main(String[] args) {
 		String a = "palee";
 		String b = "pale";

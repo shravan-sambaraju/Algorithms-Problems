@@ -1,5 +1,7 @@
 package problems.stacks;
 
+/* Reverse a given stack */
+
 import java.util.Stack;
 
 public class ReverseStack {

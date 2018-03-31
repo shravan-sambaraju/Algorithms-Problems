@@ -1,5 +1,7 @@
 package problems.recursion;
 
+/* Permutations of strings */
+
 import java.util.ArrayList;
 
 public class PermutationsOfString {
@@ -15,13 +17,13 @@ public class PermutationsOfString {
 			getPerms(prefix + c, before + after, result);
 		}
 	}
-	
+
 	public static ArrayList<String> getPerms(String str) {
 		ArrayList<String> result = new ArrayList<String>();
 		getPerms("", str, result);
 		return result;
 	}
-	
+
 	public static void main(String[] args) {
 		ArrayList<String> list = getPerms("abc");
 		System.out.println("There are " + list.size() + " permutations.");

@@ -1,5 +1,7 @@
 package problems.strings;
 
+/* Compress given string */
+
 public class StringCompression1 {	
 	public static String compressBad(String str) {
 		String compressedString = "";

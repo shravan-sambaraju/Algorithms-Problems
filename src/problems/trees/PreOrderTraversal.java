@@ -1,9 +1,48 @@
 package problems.trees;
 
+/* Print pre oder traversal of binary tree */
+
 import java.util.ArrayList;
 import java.util.Stack;
 
 public class PreOrderTraversal {
+
+	class BinaryTreeNode {
+		int data;
+		BinaryTreeNode left;
+		BinaryTreeNode right;
+
+		BinaryTreeNode(int x) {
+			data = x;
+			left = null;
+			right = null;
+
+		}
+
+		public int getData() {
+			return data;
+		}
+
+		public void setData(int data) {
+			this.data = data;
+		}
+
+		public BinaryTreeNode getLeft() {
+			return left;
+		}
+
+		public void setLeft(BinaryTreeNode left) {
+			this.left = left;
+		}
+
+		public BinaryTreeNode getRight() {
+			return right;
+		}
+
+		public void setRight(BinaryTreeNode right) {
+			this.right = right;
+		}
+	}
 
 	public static ArrayList<Integer> interativePreOder(BinaryTreeNode head) {
 		ArrayList<Integer> result = new ArrayList<Integer>();
@@ -43,13 +82,14 @@ public class PreOrderTraversal {
 	}
 
 	public static void main(String args[]) {
-		BinaryTreeNode node = new BinaryTreeNode(1);
-		node.left = new BinaryTreeNode(2);
-		node.right = new BinaryTreeNode(3);
-		node.left.left = new BinaryTreeNode(4);
-		node.left.right = new BinaryTreeNode(5);
-		node.right.left = new BinaryTreeNode(6);
-		node.right.right = new BinaryTreeNode(7);
+		PreOrderTraversal preOrderTraversal = new PreOrderTraversal();
+		BinaryTreeNode node = preOrderTraversal.new BinaryTreeNode(1);
+		node.left = preOrderTraversal.new BinaryTreeNode(2);
+		node.right = preOrderTraversal.new BinaryTreeNode(3);
+		node.left.left = preOrderTraversal.new BinaryTreeNode(4);
+		node.left.right = preOrderTraversal.new BinaryTreeNode(5);
+		node.right.left = preOrderTraversal.new BinaryTreeNode(6);
+		node.right.right = preOrderTraversal.new BinaryTreeNode(7);
 
 		System.out.println(interativePreOder(node).toString());
 		recursivePreOrder(node);
