@@ -51,6 +51,7 @@ public class CheckTwoStringsArePermutations {
 		System.out.println(isPermutation("abc", "bca"));
 		System.out.println(isPermutation("abc", "bcd"));
 		System.out.println(isPermutation2("abc", "bca"));
+		System.out.println(isPermutation2("abc", "bbc"));
 		System.out.println(isPermutation2("abc", "bcd"));
 	}
 
