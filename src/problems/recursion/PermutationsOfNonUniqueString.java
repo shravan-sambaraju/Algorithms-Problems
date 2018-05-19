@@ -1,6 +1,6 @@
 package problems.recursion;
 
-/* Permutations of all non unique strings */
+/* Permutations of all strings with duplicates result should not contain duplicates */
 
 import java.util.ArrayList;
 import java.util.HashMap;

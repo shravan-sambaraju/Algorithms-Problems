@@ -4,6 +4,8 @@ package problems.strings;
 
 public class CheckUniqueCharactersInString {
 
+	// with using extra data structure
+
 	public static boolean isUnique(String s) {
 		if (s.length() > 128) {
 			return false;
@@ -21,9 +23,31 @@ public class CheckUniqueCharactersInString {
 
 	}
 
+	/**
+	 * @param s
+	 * @return
+	 */
+	public static boolean isUnique2(String s) {
+		int checker = 0;
+		for (int i = 0; i < s.length(); i++) {
+			int value = s.charAt(i) - 'a';
+			if ((checker & (1 << value)) > 0) {
+				return false;
+			}
+
+			checker |= (1 << value);
+
+		}
+
+		return true;
+
+	}
+
 	public static void main(String args[]) {
 		System.out.println(isUnique("why"));
 		System.out.println(isUnique("whyy"));
+		System.out.println(isUnique2("why"));
+		System.out.println(isUnique2("whyy"));
 
 	}
 

@@ -34,7 +34,7 @@ public class RotateMatrix {
 	}
 
 	public static void main(String[] args) {
-		int[][] matrix = randomMatrix(3, 3, 0, 9);
+		int[][] matrix = randomMatrix(5, 5, 0, 25);
 		printMatrix(matrix);
 		rotate(matrix);
 		System.out.println();

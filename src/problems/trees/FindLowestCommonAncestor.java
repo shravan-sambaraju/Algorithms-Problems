@@ -71,5 +71,8 @@ public class FindLowestCommonAncestor {
 		BinaryTreeNode result = lca(node, node.left.left, node.right.left);
 		System.out.println(result.data);
 
+		BinaryTreeNode result2 = lca(node, node.right.left, node.right.right);
+		System.out.println(result2.data);
+
 	}
 }

@@ -6,9 +6,9 @@ import java.util.LinkedList;
 
 class Node {
 	private Node adjacent[];
-	public int adjacentCount;
+	private int adjacentCount;
 	private String vertex;
-	public RouteBetweenTwoNodes.State state;
+	RouteBetweenTwoNodes.State state;
 
 	public Node(String vertex, int adjacentLength) {
 		this.vertex = vertex;

@@ -13,11 +13,16 @@ public class ParanthesisCombination {
 				&& rightRem == 0) { /* all out of left and right parentheses */
 			list.add(String.copyValueOf(str));
 		} else {
-			str[index] = '('; // Add left and recurse
-			addParen(list, leftRem - 1, rightRem, str, index + 1);
+			if (leftRem > 0) {
+				str[index] = '('; // Add left and recurse
+				addParen(list, leftRem - 1, rightRem, str, index + 1);
 
-			str[index] = ')'; // Add right and recurse
-			addParen(list, leftRem, rightRem - 1, str, index + 1);
+			}
+			if (rightRem > leftRem) {
+				str[index] = ')'; // Add right and recurse
+				addParen(list, leftRem, rightRem - 1, str, index + 1);
+			}
+
 		}
 	}
 
