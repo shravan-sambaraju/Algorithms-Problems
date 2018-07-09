@@ -2,30 +2,22 @@ package problems.random;
 
 /* Print matrix in spiral form */
 
-public class PrintMatrixSpiral {
+class PrintMatrixSpiral {
 
-	// Function print matrix in spiral form
-	static void spiralPrint(int row, int column, int a[][]) {
+	private static void spiralPrint(int row, int column, int a[][]) {
 		int i, k = 0, l = 0;
-		/*
-		 * k - starting row index row - ending row index l - starting column
-		 * index column - ending column index i - iterator
-		 */
 
 		while (k < row && l < column) {
-			// Print the first row from the remaining rows
 			for (i = l; i < column; ++i) {
 				System.out.print(a[k][i] + " ");
 			}
 			k++;
 
-			// Print the last column from the remaining columns
 			for (i = k; i < row; ++i) {
 				System.out.print(a[i][column - 1] + " ");
 			}
 			column--;
 
-			// Print the last row from the remaining rows */
 			if (k < row) {
 				for (i = column - 1; i >= l; --i) {
 					System.out.print(a[row - 1][i] + " ");
@@ -33,7 +25,6 @@ public class PrintMatrixSpiral {
 				row--;
 			}
 
-			// Print the first column from the remaining columns */
 			if (l < column) {
 				for (i = row - 1; i >= k; --i) {
 					System.out.print(a[i][l] + " ");
@@ -43,7 +34,6 @@ public class PrintMatrixSpiral {
 		}
 	}
 
-	// driver program
 	public static void main(String[] args) {
 		int R = 4;
 		int C = 6;

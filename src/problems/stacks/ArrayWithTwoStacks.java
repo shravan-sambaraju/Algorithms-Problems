@@ -4,7 +4,8 @@ package problems.stacks;
 
 import java.util.EmptyStackException;
 
-public class ArrayWithTwoStacks {
+class ArrayWithTwoStacks {
+
 	private int[] dataArray;
 	private int size, topOne, topTwo;
 
@@ -18,7 +19,7 @@ public class ArrayWithTwoStacks {
 		topTwo = size;
 	}
 
-	public void push(int stackID, int data) {
+	private void push(int stackID, int data) {
 		if (topTwo == topOne + 1) {
 			throw new StackOverflowError();
 
@@ -33,7 +34,7 @@ public class ArrayWithTwoStacks {
 
 	}
 
-	public int pop(int stackID) {
+	private int pop(int stackID) {
 		if (stackID == 1) {
 			if (topOne == -1) {
 				throw new EmptyStackException();
@@ -55,7 +56,7 @@ public class ArrayWithTwoStacks {
 	}
 
 	@SuppressWarnings("null")
-	public int top(int stackID) {
+	private int top(int stackID) {
 		if (stackID == 1) {
 			if (topOne == -1) {
 				throw new EmptyStackException();
@@ -86,8 +87,6 @@ public class ArrayWithTwoStacks {
 		array.pop(2);
 		for (int i : array.dataArray) {
 			System.out.println(i);
-
 		}
 	}
-
 }

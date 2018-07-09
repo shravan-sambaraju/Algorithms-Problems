@@ -5,40 +5,40 @@ package problems.stacks;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 
-public class SetOfStacks {
+class SetOfStacks {
 
-	class Node {
-		public Node above;
-		public Node below;
-		public int value;
+	private class Node {
+		private Node above;
+		private Node below;
+		private int value;
 
 		public Node(int value) {
 			this.value = value;
 		}
 	}
 
-	class Stack {
+	private class Stack {
 		private int capacity;
-		public Node top;
-		public Node bottom;
-		public int size = 0;
+		private Node top;
+		private Node bottom;
+		private int size = 0;
 
 		public Stack(int capacity) {
 			this.capacity = capacity;
 		}
 
-		public boolean isFull() {
+		private boolean isFull() {
 			return capacity == size;
 		}
 
-		public void join(Node above, Node below) {
+		private void join(Node above, Node below) {
 			if (below != null)
 				below.above = above;
 			if (above != null)
 				above.below = below;
 		}
 
-		public boolean push(int v) {
+		private boolean push(int v) {
 			if (size >= capacity)
 				return false;
 			size++;
@@ -50,7 +50,7 @@ public class SetOfStacks {
 			return true;
 		}
 
-		public int pop() {
+		private int pop() {
 			if (top == null)
 				throw new EmptyStackException();
 			Node t = top;
@@ -59,11 +59,11 @@ public class SetOfStacks {
 			return t.value;
 		}
 
-		public boolean isEmpty() {
+		private boolean isEmpty() {
 			return size == 0;
 		}
 
-		public int removeBottom() {
+		private int removeBottom() {
 			Node b = bottom;
 			bottom = bottom.above;
 			if (bottom != null)
@@ -74,20 +74,20 @@ public class SetOfStacks {
 	}
 
 	ArrayList<Stack> stacks = new ArrayList<Stack>();
-	public int capacity;
+	private int capacity;
 
-	public SetOfStacks(int capacity) {
+	private SetOfStacks(int capacity) {
 		this.capacity = capacity;
 	}
 
-	public Stack getLastStack() {
+	private Stack getLastStack() {
 		if (stacks.size() == 0) {
 			return null;
 		}
 		return stacks.get(stacks.size() - 1);
 	}
 
-	public void push(int v) {
+	private void push(int v) {
 		Stack last = getLastStack();
 		if (last != null && !last.isFull()) { // add to last
 			last.push(v);
@@ -98,7 +98,7 @@ public class SetOfStacks {
 		}
 	}
 
-	public int pop() {
+	private int pop() {
 		Stack last = getLastStack();
 		if (last == null)
 			throw new EmptyStackException();
@@ -109,11 +109,11 @@ public class SetOfStacks {
 		return v;
 	}
 
-	public int popAt(int index) {
+	private int popAt(int index) {
 		return leftShift(index, true);
 	}
 
-	public int leftShift(int index, boolean removeTop) {
+	private int leftShift(int index, boolean removeTop) {
 		Stack stack = stacks.get(index);
 		int removed_item;
 		if (removeTop)
@@ -129,7 +129,7 @@ public class SetOfStacks {
 		return removed_item;
 	}
 
-	public boolean isEmpty() {
+	private boolean isEmpty() {
 		Stack last = getLastStack();
 		return last == null || last.isEmpty();
 	}
@@ -144,5 +144,4 @@ public class SetOfStacks {
 			System.out.println("Popped " + set.pop());
 		}
 	}
-
 }

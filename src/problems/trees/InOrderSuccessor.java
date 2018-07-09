@@ -2,12 +2,13 @@ package problems.trees;
 
 /* Create in order successor if given parent tag */
 
-public class InOrderSuccessor {
+class InOrderSuccessor {
+
 	static class TreeNode {
-		public int data;
-		public TreeNode left;
-		public TreeNode right;
-		public TreeNode parent;
+		private int data;
+		private TreeNode left;
+		private TreeNode right;
+		private TreeNode parent;
 		private int size = 0;
 
 		public TreeNode(int d) {
@@ -29,7 +30,7 @@ public class InOrderSuccessor {
 			}
 		}
 
-		public void insertInOrder(int d) {
+		private void insertInOrder(int d) {
 			if (d <= data) {
 				if (left == null) {
 					setLeftChild(new TreeNode(d));
@@ -46,33 +47,31 @@ public class InOrderSuccessor {
 			size++;
 		}
 
-		public int size() {
+		private int size() {
 			return size;
 		}
 
-		public boolean isBST() {
+		private boolean isBST() {
 			if (left != null) {
 				if (data < left.data || !left.isBST()) {
 					return false;
 				}
 			}
-
 			if (right != null) {
 				if (data >= right.data || !right.isBST()) {
 					return false;
 				}
 			}
-
 			return true;
 		}
 
-		public int height() {
+		private int height() {
 			int leftHeight = left != null ? left.height() : 0;
 			int rightHeight = right != null ? right.height() : 0;
 			return 1 + Math.max(leftHeight, rightHeight);
 		}
 
-		public TreeNode find(int d) {
+		private TreeNode find(int d) {
 			if (d == data) {
 				return this;
 			} else if (d <= data) {
@@ -100,17 +99,15 @@ public class InOrderSuccessor {
 
 	}
 
-	public static TreeNode inorderSucc(TreeNode n) {
+	private static TreeNode inorderSucc(TreeNode n) {
 		if (n == null)
 			return null;
 
-		// Found right children -> return left most node of right subtree
 		if (n.parent == null || n.right != null) {
 			return leftMostChild(n.right);
 		} else {
 			TreeNode q = n;
 			TreeNode x = q.parent;
-			// Go up until we�re on left instead of right
 			while (x != null && x.left != q) {
 				q = x;
 				x = x.parent;
@@ -142,5 +139,4 @@ public class InOrderSuccessor {
 			}
 		}
 	}
-
 }

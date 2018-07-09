@@ -4,12 +4,9 @@ package problems.stacks;
 
 import java.util.Stack;
 
-public class MinimumFunctionInStack {
+class MinimumFunctionInStack {
 
-	class StackWithMin extends Stack<Integer> {
-		/**
-		 * 
-		 */
+	private class StackWithMin extends Stack<Integer> {
 		private static final long serialVersionUID = 1L;
 		Stack<Integer> s2;
 
@@ -55,5 +52,4 @@ public class MinimumFunctionInStack {
 			System.out.println("New min is " + stack.min() + ", " + stack.min());
 		}
 	}
-
 }

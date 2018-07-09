@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-public class ListOfDepths {
+class ListOfDepths {
 
-	static class TreeNode {
-		public int data;
-		public TreeNode left;
-		public TreeNode right;
-		public TreeNode parent;
+	private static class TreeNode {
+		private int data;
+		private TreeNode left;
+		private TreeNode right;
+		private TreeNode parent;
 		private int size = 0;
 
 		public TreeNode(int d) {
@@ -34,7 +34,7 @@ public class ListOfDepths {
 			}
 		}
 
-		public void insertInOrder(int d) {
+		private void insertInOrder(int d) {
 			if (d <= data) {
 				if (left == null) {
 					setLeftChild(new TreeNode(d));
@@ -51,11 +51,11 @@ public class ListOfDepths {
 			size++;
 		}
 
-		public int size() {
+		private int size() {
 			return size;
 		}
 
-		public boolean isBST() {
+		private boolean isBST() {
 			if (left != null) {
 				if (data < left.data || !left.isBST()) {
 					return false;
@@ -71,13 +71,13 @@ public class ListOfDepths {
 			return true;
 		}
 
-		public int height() {
+		private int height() {
 			int leftHeight = left != null ? left.height() : 0;
 			int rightHeight = right != null ? right.height() : 0;
 			return 1 + Math.max(leftHeight, rightHeight);
 		}
 
-		public TreeNode find(int d) {
+		private TreeNode find(int d) {
 			if (d == data) {
 				return this;
 			} else if (d <= data) {
@@ -99,27 +99,25 @@ public class ListOfDepths {
 			return n;
 		}
 
-		public static TreeNode createMinimalBST(int array[]) {
+		private static TreeNode createMinimalBST(int array[]) {
 			return createMinimalBST(array, 0, array.length - 1);
 		}
 
 	}
 
-	public static ArrayList<LinkedList<TreeNode>> createLevelLinkedList(TreeNode root) {
+	private static ArrayList<LinkedList<TreeNode>> createLevelLinkedList(TreeNode root) {
 		ArrayList<LinkedList<TreeNode>> result = new ArrayList<LinkedList<TreeNode>>();
 
-		/* "Visit" the root */
 		LinkedList<TreeNode> current = new LinkedList<TreeNode>();
 		if (root != null) {
 			current.add(root);
 		}
 
 		while (current.size() > 0) {
-			result.add(current); // Add previous level
-			LinkedList<TreeNode> parents = current; // Go to next level
+			result.add(current);
+			LinkedList<TreeNode> parents = current;
 			current = new LinkedList<TreeNode>();
 			for (TreeNode parent : parents) {
-				/* Visit the children */
 				if (parent.left != null) {
 					current.add(parent.left);
 				}
@@ -128,11 +126,10 @@ public class ListOfDepths {
 				}
 			}
 		}
-
 		return result;
 	}
 
-	public static void printResult(ArrayList<LinkedList<TreeNode>> result) {
+	private static void printResult(ArrayList<LinkedList<TreeNode>> result) {
 		int depth = 0;
 		for (LinkedList<TreeNode> entry : result) {
 			Iterator<TreeNode> i = entry.listIterator();
@@ -152,7 +149,7 @@ public class ListOfDepths {
 		printResult(list);
 	}
 
-	public static TreeNode createTreeFromArray(int[] array) {
+	private static TreeNode createTreeFromArray(int[] array) {
 		if (array.length > 0) {
 			TreeNode root = new TreeNode(array[0]);
 			java.util.Queue<TreeNode> queue = new java.util.LinkedList<TreeNode>();
@@ -181,5 +178,4 @@ public class ListOfDepths {
 			return null;
 		}
 	}
-
 }

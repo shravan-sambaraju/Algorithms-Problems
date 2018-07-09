@@ -5,33 +5,33 @@ package problems.graphs;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class BuildOrder {
-	class Graph {
+class BuildOrder {
+
+	private class Graph {
 		private ArrayList<Project> nodes = new ArrayList<Project>();
 		private HashMap<String, Project> map = new HashMap<String, Project>();
 
-		public Project getOrCreateNode(String name) {
+		private Project getOrCreateNode(String name) {
 			if (!map.containsKey(name)) {
 				Project node = new Project(name);
 				nodes.add(node);
 				map.put(name, node);
 			}
-
 			return map.get(name);
 		}
 
-		public void addEdge(String startName, String endName) {
+		private void addEdge(String startName, String endName) {
 			Project start = getOrCreateNode(startName);
 			Project end = getOrCreateNode(endName);
 			start.addNeighbor(end);
 		}
 
-		public ArrayList<Project> getNodes() {
+		private ArrayList<Project> getNodes() {
 			return nodes;
 		}
 	}
 
-	class Project {
+	private class Project {
 		private ArrayList<Project> children = new ArrayList<Project>();
 		private HashMap<String, Project> map = new HashMap<String, Project>();
 		private String name;
@@ -41,11 +41,11 @@ public class BuildOrder {
 			name = n;
 		}
 
-		public String getName() {
+		private String getName() {
 			return name;
 		}
 
-		public void addNeighbor(Project node) {
+		private void addNeighbor(Project node) {
 			if (!map.containsKey(node.getName())) {
 				children.add(node);
 				map.put(node.getName(), node);
@@ -53,24 +53,24 @@ public class BuildOrder {
 			}
 		}
 
-		public void incrementDependencies() {
+		private void incrementDependencies() {
 			dependencies++;
 		}
 
-		public ArrayList<Project> getChildren() {
+		private ArrayList<Project> getChildren() {
 			return children;
 		}
 
-		public void decrementDependencies() {
+		private void decrementDependencies() {
 			dependencies--;
 		}
 
-		public int getNumberDependencies() {
+		private int getNumberDependencies() {
 			return dependencies;
 		}
 	}
 
-	public static Graph buildGraph(String[] projects, String[][] dependencies) {
+	private static Graph buildGraph(String[] projects, String[][] dependencies) {
 		BuildOrder buildOrder = new BuildOrder();
 		Graph graph = buildOrder.new Graph();
 		for (String project : projects) {
@@ -82,15 +82,10 @@ public class BuildOrder {
 			String second = dependency[1];
 			graph.addEdge(first, second);
 		}
-
 		return graph;
 	}
 
-	/*
-	 * A helper function to insert projects with zero dependencies into the
-	 * order array, starting at index offset.
-	 */
-	public static int addNonDependent(Project[] order, ArrayList<Project> projects, int offset) {
+	private static int addNonDependent(Project[] order, ArrayList<Project> projects, int offset) {
 		for (Project project : projects) {
 			if (project.getNumberDependencies() == 0) {
 				order[offset] = project;
@@ -100,40 +95,29 @@ public class BuildOrder {
 		return offset;
 	}
 
-	public static Project[] orderProjects(ArrayList<Project> projects) {
+	private static Project[] orderProjects(ArrayList<Project> projects) {
 		Project[] order = new Project[projects.size()];
 
-		/* Add “roots” to the build order first. */
 		int endOfList = addNonDependent(order, projects, 0);
 
 		int toBeProcessed = 0;
 		while (toBeProcessed < order.length) {
 			Project current = order[toBeProcessed];
-
-			/*
-			 * We have a circular dependency since there are no remaining
-			 * projects with zero dependencies.
-			 */
 			if (current == null) {
 				return null;
 			}
 
-			/* Remove myself as a dependency. */
 			ArrayList<Project> children = current.getChildren();
 			for (Project child : children) {
 				child.decrementDependencies();
 			}
-
-			/* Add children that have no one depending on them. */
 			endOfList = addNonDependent(order, children, endOfList);
-
 			toBeProcessed++;
 		}
-
 		return order;
 	}
 
-	public static String[] convertToStringList(Project[] projects) {
+	private static String[] convertToStringList(Project[] projects) {
 		String[] buildOrder = new String[projects.length];
 		for (int i = 0; i < projects.length; i++) {
 			buildOrder[i] = projects[i].getName();
@@ -141,12 +125,12 @@ public class BuildOrder {
 		return buildOrder;
 	}
 
-	public static Project[] findBuildOrder(String[] projects, String[][] dependencies) {
+	private static Project[] findBuildOrder(String[] projects, String[][] dependencies) {
 		Graph graph = buildGraph(projects, dependencies);
 		return orderProjects(graph.getNodes());
 	}
 
-	public static String[] buildOrderWrapper(String[] projects, String[][] dependencies) {
+	private static String[] buildOrderWrapper(String[] projects, String[][] dependencies) {
 		Project[] buildOrder = findBuildOrder(projects, dependencies);
 		if (buildOrder == null)
 			return null;
@@ -167,5 +151,4 @@ public class BuildOrder {
 			}
 		}
 	}
-
 }

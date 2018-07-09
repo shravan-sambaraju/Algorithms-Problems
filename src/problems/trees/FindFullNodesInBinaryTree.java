@@ -4,63 +4,23 @@ package problems.trees;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import common.utils.BinaryTreeNode;
 
-public class FindFullNodesInBinaryTree {
+class FindFullNodesInBinaryTree {
 
-	class BinaryTreeNode {
-		int data;
-		BinaryTreeNode left;
-		BinaryTreeNode right;
-
-		BinaryTreeNode(int x) {
-			data = x;
-			left = null;
-			right = null;
-
-		}
-
-		public int getData() {
-			return data;
-		}
-
-		public void setData(int data) {
-			this.data = data;
-		}
-
-		public BinaryTreeNode getLeft() {
-			return left;
-		}
-
-		public void setLeft(BinaryTreeNode left) {
-			this.left = left;
-		}
-
-		public BinaryTreeNode getRight() {
-			return right;
-		}
-
-		public void setRight(BinaryTreeNode right) {
-			this.right = right;
-		}
-	}
-
-	public static int getNumberOfFullNodesRecursion(BinaryTreeNode node) {
+	private static int getNumberOfFullNodesRecursion(BinaryTreeNode node) {
 		int count = 0;
 		if (node == null) {
 			return 0;
-
 		}
-		if (node.left != null && node.right != null) {
+		if (node.getLeft() != null && node.getRight() != null) {
 			count++;
 		}
-
-		count += getNumberOfFullNodesRecursion(node.left) + getNumberOfFullNodesRecursion(node.right);
-
+		count += getNumberOfFullNodesRecursion(node.getLeft()) + getNumberOfFullNodesRecursion(node.getRight());
 		return count;
-
 	}
 
-	public static int getNumberOfFullNodesLevelOrder(BinaryTreeNode node) {
+	private static int getNumberOfFullNodesLevelOrder(BinaryTreeNode node) {
 		int count = 0;
 		if (node == null) {
 			return 0;
@@ -69,36 +29,29 @@ public class FindFullNodesInBinaryTree {
 		q.offer(node);
 		while (!q.isEmpty()) {
 			BinaryTreeNode temp = q.poll();
-			if (temp.left != null && temp.right != null) {
+			if (temp.getLeft() != null && temp.getRight() != null) {
 				count++;
-
 			}
-			if (temp.left != null) {
-				q.offer(temp.left);
+			if (temp.getLeft() != null) {
+				q.offer(temp.getLeft());
 			}
-			if (temp.right != null) {
-				q.offer(temp.right);
-
+			if (temp.getRight() != null) {
+				q.offer(temp.getRight());
 			}
-
 		}
 		return count;
-
 	}
 
 	public static void main(String args[]) {
-		FindFullNodesInBinaryTree findFullNodesInBinaryTree = new FindFullNodesInBinaryTree();
-		BinaryTreeNode node = findFullNodesInBinaryTree.new BinaryTreeNode(1);
-		node.left = findFullNodesInBinaryTree.new BinaryTreeNode(2);
-		node.right = findFullNodesInBinaryTree.new BinaryTreeNode(3);
-		node.left.left = findFullNodesInBinaryTree.new BinaryTreeNode(4);
-		node.left.right = findFullNodesInBinaryTree.new BinaryTreeNode(5);
-		node.right.left = findFullNodesInBinaryTree.new BinaryTreeNode(6);
-		node.right.right = findFullNodesInBinaryTree.new BinaryTreeNode(7);
+		BinaryTreeNode node = new BinaryTreeNode(1);
+		node.setLeft(new BinaryTreeNode(2));
+		node.setRight(new BinaryTreeNode(3));
+		node.getLeft().setLeft(new BinaryTreeNode(4));
+		node.getLeft().setRight(new BinaryTreeNode(5));
+		node.getRight().setLeft(new BinaryTreeNode(6));
+		node.getRight().setRight(new BinaryTreeNode(7));
 
 		System.out.println(getNumberOfFullNodesRecursion(node));
 		System.out.println(getNumberOfFullNodesLevelOrder(node));
-
 	}
-
 }

@@ -4,61 +4,62 @@ package problems.graphs;
 
 import java.util.LinkedList;
 
-class Node {
-	private Node adjacent[];
-	private int adjacentCount;
-	private String vertex;
-	RouteBetweenTwoNodes.State state;
+class RouteBetweenTwoNodes {
 
-	public Node(String vertex, int adjacentLength) {
-		this.vertex = vertex;
-		adjacentCount = 0;
-		adjacent = new Node[adjacentLength];
-	}
+	private class Node {
+		private Node adjacent[];
+		private int adjacentCount;
+		private String vertex;
+		RouteBetweenTwoNodes.State state;
 
-	public void addAdjacent(Node x) {
-		if (adjacentCount < adjacent.length) {
-			this.adjacent[adjacentCount] = x;
-			adjacentCount++;
-		} else {
-			System.out.print("No more adjacent can be added");
+		private Node(String vertex, int adjacentLength) {
+			this.vertex = vertex;
+			adjacentCount = 0;
+			adjacent = new Node[adjacentLength];
+		}
+
+		private void addAdjacent(Node x) {
+			if (adjacentCount < adjacent.length) {
+				this.adjacent[adjacentCount] = x;
+				adjacentCount++;
+			} else {
+				System.out.print("No more adjacent can be added");
+			}
+		}
+
+		private Node[] getAdjacent() {
+			return adjacent;
+		}
+
+		private String getVertex() {
+			return vertex;
 		}
 	}
 
-	public Node[] getAdjacent() {
-		return adjacent;
-	}
+	private class Graph {
+		private static final int MAX_VERTICES = 6;
+		private Node vertices[];
+		private int count;
 
-	public String getVertex() {
-		return vertex;
-	}
-}
+		public Graph() {
+			vertices = new Node[MAX_VERTICES];
+			count = 0;
+		}
 
-class Graph {
-	public static int MAX_VERTICES = 6;
-	private Node vertices[];
-	public int count;
+		private void addNode(Node x) {
+			if (count < vertices.length) {
+				vertices[count] = x;
+				count++;
+			} else {
+				System.out.print("Graph full");
+			}
+		}
 
-	public Graph() {
-		vertices = new Node[MAX_VERTICES];
-		count = 0;
-	}
-
-	public void addNode(Node x) {
-		if (count < vertices.length) {
-			vertices[count] = x;
-			count++;
-		} else {
-			System.out.print("Graph full");
+		private Node[] getNodes() {
+			return vertices;
 		}
 	}
 
-	public Node[] getNodes() {
-		return vertices;
-	}
-}
-
-public class RouteBetweenTwoNodes {
 	public enum State {
 		Unvisited, Visited, Visiting;
 	}
@@ -71,16 +72,17 @@ public class RouteBetweenTwoNodes {
 		System.out.println(search(g, start, end));
 	}
 
-	public static Graph createNewGraph() {
-		Graph g = new Graph();
+	private static Graph createNewGraph() {
+		RouteBetweenTwoNodes route = new RouteBetweenTwoNodes();
+		Graph g = route.new Graph();
 		Node[] temp = new Node[6];
 
-		temp[0] = new Node("a", 3);
-		temp[1] = new Node("b", 0);
-		temp[2] = new Node("c", 0);
-		temp[3] = new Node("d", 1);
-		temp[4] = new Node("e", 1);
-		temp[5] = new Node("f", 0);
+		temp[0] = route.new Node("a", 3);
+		temp[1] = route.new Node("b", 0);
+		temp[2] = route.new Node("c", 0);
+		temp[3] = route.new Node("d", 1);
+		temp[4] = route.new Node("e", 1);
+		temp[5] = route.new Node("f", 0);
 
 		temp[0].addAdjacent(temp[1]);
 		temp[0].addAdjacent(temp[2]);
@@ -93,7 +95,7 @@ public class RouteBetweenTwoNodes {
 		return g;
 	}
 
-	public static boolean search(Graph g, Node start, Node end) {
+	private static boolean search(Graph g, Node start, Node end) {
 		LinkedList<Node> q = new LinkedList<Node>();
 		for (Node u : g.getNodes()) {
 			u.state = State.Unvisited;

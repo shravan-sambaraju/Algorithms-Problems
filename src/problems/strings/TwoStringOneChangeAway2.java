@@ -2,24 +2,22 @@ package problems.strings;
 
 /* String which are one change away */
 
-public class TwoStringOneChangeAway2 {
+class TwoStringOneChangeAway2 {
 
-	public static boolean oneEditReplace(String s1, String s2) {
+	private static boolean oneEditReplace(String s1, String s2) {
 		boolean foundDifference = false;
 		for (int i = 0; i < s1.length(); i++) {
 			if (s1.charAt(i) != s2.charAt(i)) {
 				if (foundDifference) {
 					return false;
 				}
-
 				foundDifference = true;
 			}
 		}
 		return true;
 	}
 
-	/* Check if you can insert a character into s1 to make s2. */
-	public static boolean oneEditInsert(String s1, String s2) {
+	private static boolean oneEditInsert(String s1, String s2) {
 		int index1 = 0;
 		int index2 = 0;
 		while (index2 < s2.length() && index1 < s1.length()) {
@@ -36,7 +34,7 @@ public class TwoStringOneChangeAway2 {
 		return true;
 	}
 
-	public static boolean oneEditAway(String first, String second) {
+	private static boolean oneEditAway(String first, String second) {
 		if (first.length() == second.length()) {
 			return oneEditReplace(first, second);
 		} else if (first.length() + 1 == second.length()) {
@@ -53,5 +51,4 @@ public class TwoStringOneChangeAway2 {
 		boolean isOneEdit = oneEditAway(a, b);
 		System.out.println(a + ", " + b + ": " + isOneEdit);
 	}
-
 }

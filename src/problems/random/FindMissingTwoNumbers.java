@@ -2,9 +2,9 @@ package problems.random;
 
 /* Find missing two numbers */
 
-public class FindMissingTwoNumbers {
+class FindMissingTwoNumbers {
 
-	public static int squareSumToN(int n, int power) {
+	private static int squareSumToN(int n, int power) {
 		int sum = 0;
 		for (int i = 1; i <= n; i++) {
 			sum += (int) Math.pow(i, power);
@@ -12,33 +12,23 @@ public class FindMissingTwoNumbers {
 		return sum;
 	}
 
-	public static int[] solveEquation(int r1, int r2) {
-		/*
-		 * ax^2 + bx + c --> x = [-b +- sqrt(b^2 - 4ac)] / 2a In this case, it
-		 * has to be a + not a -
-		 * 
-		 */
+	private static int[] solveEquation(int r1, int r2) {
 		int a = 2;
 		int b = -2 * r1;
 		int c = r1 * r1 - r2;
-
 		double part1 = -1 * b;
 		double part2 = Math.sqrt(b * b - 4 * a * c);
 		double part3 = 2 * a;
-
 		int solutionX = (int) ((part1 + part2) / part3);
 		int solutionY = r1 - solutionX;
-
 		int solutionX2 = (int) ((part1 - part2) / part3);
 		int solutionY2 = r1 - solutionX2;
-
 		System.out.println("Alternate: (" + solutionX2 + ", " + solutionY2 + ")");
-
 		int[] solution = { solutionX, solutionY };
 		return solution;
 	}
 
-	public static int[] missingTwo(int[] array) {
+	private static int[] missingTwo(int[] array) {
 		int max_value = array.length + 2;
 		int rem_square = squareSumToN(max_value, 2);
 		int rem_one = max_value * (max_value + 1) / 2;
@@ -47,7 +37,6 @@ public class FindMissingTwoNumbers {
 			rem_square -= array[i] * array[i];
 			rem_one -= array[i];
 		}
-
 		return solveEquation(rem_one, rem_square);
 	}
 
@@ -76,5 +65,4 @@ public class FindMissingTwoNumbers {
 			}
 		}
 	}
-
 }

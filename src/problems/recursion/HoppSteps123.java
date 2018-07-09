@@ -2,9 +2,9 @@ package problems.recursion;
 
 /* Hopp Steps 123 */
 
-public class HoppSteps123 {
+class HoppSteps123 {
 
-	public static int countWays(int n) {
+	private static int countWays(int n) {
 		if (n < 0) {
 			return 0;
 		} else if (n == 0) {
@@ -17,5 +17,4 @@ public class HoppSteps123 {
 	public static void main(String[] args) {
 		System.out.println(countWays(10));
 	}
-
 }

@@ -2,11 +2,14 @@ package problems.strings;
 
 /* Rotate given matrix */
 
-public class RotateMatrix {
+import static common.utils.UtilMethods.randomMatrix;
+import static common.utils.UtilMethods.printMatrix;
 
-	public static boolean rotate(int[][] matrix) {
+class RotateMatrix {
+
+	private static boolean rotate(int[][] matrix) {
 		if (matrix.length == 0 || matrix.length != matrix[0].length)
-			return false; // Not a square
+			return false;
 		int n = matrix.length;
 		System.out.println(n);
 
@@ -15,19 +18,15 @@ public class RotateMatrix {
 			int last = n - 1 - layer;
 			for (int i = first; i < last; i++) {
 				int offset = i - first;
-				int top = matrix[first][i]; // save top
+				int top = matrix[first][i];
 
-				// left -> top
 				matrix[first][i] = matrix[last - offset][first];
 
-				// bottom -> left
 				matrix[last - offset][first] = matrix[last][last - offset];
 
-				// right -> bottom
 				matrix[last][last - offset] = matrix[i][last];
 
-				// top -> right
-				matrix[i][last] = top; // right <- saved top
+				matrix[i][last] = top;
 			}
 		}
 		return true;
@@ -40,41 +39,4 @@ public class RotateMatrix {
 		System.out.println();
 		printMatrix(matrix);
 	}
-
-	public static int[][] randomMatrix(int M, int N, int min, int max) {
-		int[][] matrix = new int[M][N];
-		for (int i = 0; i < M; i++) {
-			for (int j = 0; j < N; j++) {
-				matrix[i][j] = randomIntInRange(min, max);
-			}
-		}
-		return matrix;
-	}
-
-	public static void printMatrix(int[][] matrix) {
-		for (int i = 0; i < matrix.length; i++) {
-			for (int j = 0; j < matrix[i].length; j++) {
-				if (matrix[i][j] < 10 && matrix[i][j] > -10) {
-					System.out.print(" ");
-				}
-				if (matrix[i][j] < 100 && matrix[i][j] > -100) {
-					System.out.print(" ");
-				}
-				if (matrix[i][j] >= 0) {
-					System.out.print(" ");
-				}
-				System.out.print(" " + matrix[i][j]);
-			}
-			System.out.println();
-		}
-	}
-
-	public static int randomIntInRange(int min, int max) {
-		return randomInt(max + 1 - min) + min;
-	}
-
-	public static int randomInt(int n) {
-		return (int) (Math.random() * n);
-	}
-
 }

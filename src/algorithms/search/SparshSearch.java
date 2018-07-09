@@ -2,17 +2,13 @@ package algorithms.search;
 
 /* Search in sparse string */
 
-public class SparshSearch {
+class SparshSearch {
 
-	public static int search(String[] strings, String str, int first, int last) {
+	private static int search(String[] strings, String str, int first, int last) {
 		if (first > last) {
 			return -1;
 		}
-
-		/* Move mid to the middle */
 		int mid = (last + first) / 2;
-
-		/* If mid is empty, find closest non-empty string. */
 		if (strings[mid].isEmpty()) {
 			int left = mid - 1;
 			int right = mid + 1;
@@ -31,17 +27,16 @@ public class SparshSearch {
 			}
 		}
 
-		/* Check for string, and recurse if necessary */
-		if (str.equals(strings[mid])) { // Found it!
+		if (str.equals(strings[mid])) {
 			return mid;
-		} else if (strings[mid].compareTo(str) < 0) { // Search right
+		} else if (strings[mid].compareTo(str) < 0) {
 			return search(strings, str, mid + 1, last);
-		} else { // Search left
+		} else {
 			return search(strings, str, first, mid - 1);
 		}
 	}
 
-	public static int search(String[] strings, String str) {
+	private static int search(String[] strings, String str) {
 		if (strings == null || str == null || str.isEmpty()) {
 			return -1;
 		}
@@ -59,5 +54,4 @@ public class SparshSearch {
 		// search(stringList, cloned));
 		// }
 	}
-
 }

@@ -2,92 +2,53 @@ package problems.trees;
 
 /* Find element in binary search tree */
 
-public class FindElementBinarySearchTree {
+import common.utils.BinaryTreeNode;
 
-	class BinaryTreeNode {
-		int data;
-		BinaryTreeNode left;
-		BinaryTreeNode right;
+class FindElementBinarySearchTree {
 
-		BinaryTreeNode(int x) {
-			data = x;
-			left = null;
-			right = null;
-
-		}
-
-		public int getData() {
-			return data;
-		}
-
-		public void setData(int data) {
-			this.data = data;
-		}
-
-		public BinaryTreeNode getLeft() {
-			return left;
-		}
-
-		public void setLeft(BinaryTreeNode left) {
-			this.left = left;
-		}
-
-		public BinaryTreeNode getRight() {
-			return right;
-		}
-
-		public void setRight(BinaryTreeNode right) {
-			this.right = right;
-		}
-	}
-
-	public BinaryTreeNode find(BinaryTreeNode root, int data) {
+	private BinaryTreeNode find(BinaryTreeNode root, int data) {
 
 		if (root == null) {
 			return null;
-
 		}
-		if (data == root.data) {
+		if (data == root.getData()) {
 			return root;
 		}
-		if (data < root.data) {
-			return find(root.left, data);
-
+		if (data < root.getData()) {
+			return find(root.getLeft(), data);
 		}
-		return find(root.right, data);
-
+		return find(root.getRight(), data);
 	}
 
-	public BinaryTreeNode findLevelOrder(BinaryTreeNode node, int data) {
+	private BinaryTreeNode findLevelOrder(BinaryTreeNode node, int data) {
 		if (node == null) {
 			return null;
 		}
 		while (node != null) {
-			if (data == node.data) {
+			if (data == node.getData()) {
 				return node;
-			} else if (data < node.data) {
-				node = node.left;
+			} else if (data < node.getData()) {
+				node = node.getLeft();
 			} else {
-				node = node.right;
+				node = node.getRight();
 			}
-
 		}
 		return null;
 	}
 
 	public static void main(String args[]) {
 		FindElementBinarySearchTree tree = new FindElementBinarySearchTree();
-		BinaryTreeNode node = tree.new BinaryTreeNode(50);
-		node.left = tree.new BinaryTreeNode(30);
-		node.right = tree.new BinaryTreeNode(70);
-		node.left.left = tree.new BinaryTreeNode(20);
-		node.left.right = tree.new BinaryTreeNode(40);
-		node.right.left = tree.new BinaryTreeNode(60);
-		node.right.right = tree.new BinaryTreeNode(80);
+		BinaryTreeNode node = new BinaryTreeNode(50);
+		node.setLeft(new BinaryTreeNode(30));
+		node.setRight(new BinaryTreeNode(70));
+		node.getLeft().setLeft(new BinaryTreeNode(20));
+		node.getLeft().setRight(new BinaryTreeNode(40));
+		node.getRight().setLeft(new BinaryTreeNode(60));
+		node.getRight().setRight(new BinaryTreeNode(80));
 
-		System.out.println(tree.find(node, 60).data);
+		System.out.println(tree.find(node, 60).getData());
 		System.out.println(tree.find(node, 133));
-		System.out.println(tree.findLevelOrder(node, 30).data);
+		System.out.println(tree.findLevelOrder(node, 30).getData());
 
 	}
 

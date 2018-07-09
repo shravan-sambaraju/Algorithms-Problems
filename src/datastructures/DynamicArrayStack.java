@@ -2,68 +2,53 @@ package datastructures;
 
 /* Java implementation of dynamic stack using array */
 
-public class DynamicArrayStack {
-	// Length of the array used to implement the stack.
-	protected int capacity;
+class DynamicArrayStack {
+	private int capacity;
 
-	// Default array capacity.
-	public static final int CAPACITY = 16; // power of 2
+	private static final int CAPACITY = 16;
 
-	public static int MINCAPACITY = 1 << 15; // power of 2
+	private static int MINCAPACITY = 1 << 15;
 
-	// Array used to implement the stack.
-	protected int[] stackRep;
+	private int[] stackRep;
 
-	// Index of the top element of the stack in the array.
-	protected int top = -1;
+	private int top = -1;
 
-	// Initializes the stack to use an array of default length.
 	public DynamicArrayStack() {
-		this(CAPACITY); // default capacity
+		this(CAPACITY);
 	}
 
-	// Initializes the stack to use an array of given length.
 	public DynamicArrayStack(int cap) {
 		capacity = cap;
-		stackRep = new int[capacity]; // compiler may give warning, but this
-		// is ok
+		stackRep = new int[capacity];
 	}
 
-	// Returns the number of elements in the stack. This method runs in O(1)
-	// time.
-	public int size() {
+	private int size() {
 		return (top + 1);
 	}
 
-	// Checks whether the stack is empty. This method runs in O(1) time.
-	public boolean isEmpty() {
+	private boolean isEmpty() {
 		return (top < 0);
 	}
 
-	// Inserts an element at the top of the stack. This method runs in O(1)
-	// time.
-	public void push(int data) throws Exception {
+	private void push(int data) throws Exception {
 		if (size() == capacity)
 			expand();
 		stackRep[++top] = data;
 	}
 
-	// Increases the stack size by double
 	private void expand() {
 		int length = size();
-		int[] newstack = new int[length << 1]; // or 2* length
+		int[] newstack = new int[length << 1];
 		System.arraycopy(stackRep, 0, newstack, 0, length);
 		stackRep = newstack;
 		this.capacity = this.capacity << 1;
 	}
 
-	// dynamic array operation: shrinks to 1/2 if more than than 3/4 empty
 	private void shrink() {
 		int length = top + 1;
 		if (length <= MINCAPACITY || top << 2 >= length)
 			return;
-		length = length + (top << 1); // still means shrink to at 1/2 or less of
-		// the heap
+		length = length + (top << 1);
 		if (top < MINCAPACITY)
 			length = MINCAPACITY;
 		int[] newStack = new int[length];
@@ -72,29 +57,22 @@ public class DynamicArrayStack {
 		capacity = length;
 	}
 
-	// Inspects the element at the top of the stack. This method runs in O(1)
-	// time.
-	public int top() throws Exception {
+	private int top() throws Exception {
 		if (isEmpty())
 			throw new Exception("Stack is empty.");
 		return stackRep[top];
 	}
 
-	// Removes the top element from the stack. This method runs in O(1) time.
-	public int pop() throws Exception {
+	private int pop() throws Exception {
 		int data;
 		if (isEmpty())
 			throw new Exception("Stack is empty.");
 		data = stackRep[top];
-		stackRep[top--] = Integer.MIN_VALUE; // dereference S[top] for garbage
-		// collection.
+		stackRep[top--] = Integer.MIN_VALUE;
 		shrink();
 		return data;
 	}
 
-	// Returns a string representation of the stack as a list of elements, with
-	// the top element at the end: [ ... , prev, top ]. This method runs in O(n)
-	// time, where n is the size of the stack.
 	public String toString() {
 		String s;
 		s = "[";

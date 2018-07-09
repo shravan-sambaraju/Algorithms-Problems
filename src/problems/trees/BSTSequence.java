@@ -5,13 +5,13 @@ package problems.trees;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class BSTSequence {
+class BSTSequence {
 
-	static class TreeNode {
-		public int data;
-		public TreeNode left;
-		public TreeNode right;
-		public TreeNode parent;
+	private static class TreeNode {
+		private int data;
+		private TreeNode left;
+		private TreeNode right;
+		private TreeNode parent;
 		private int size = 0;
 
 		public TreeNode(int d) {
@@ -33,7 +33,7 @@ public class BSTSequence {
 			}
 		}
 
-		public void insertInOrder(int d) {
+		private void insertInOrder(int d) {
 			if (d <= data) {
 				if (left == null) {
 					setLeftChild(new TreeNode(d));
@@ -50,11 +50,11 @@ public class BSTSequence {
 			size++;
 		}
 
-		public int size() {
+		private int size() {
 			return size;
 		}
 
-		public boolean isBST() {
+		private boolean isBST() {
 			if (left != null) {
 				if (data < left.data || !left.isBST()) {
 					return false;
@@ -66,17 +66,16 @@ public class BSTSequence {
 					return false;
 				}
 			}
-
 			return true;
 		}
 
-		public int height() {
+		private int height() {
 			int leftHeight = left != null ? left.height() : 0;
 			int rightHeight = right != null ? right.height() : 0;
 			return 1 + Math.max(leftHeight, rightHeight);
 		}
 
-		public TreeNode find(int d) {
+		private TreeNode find(int d) {
 			if (d == data) {
 				return this;
 			} else if (d <= data) {
@@ -98,18 +97,13 @@ public class BSTSequence {
 			return n;
 		}
 
-		public static TreeNode createMinimalBST(int array[]) {
+		private static TreeNode createMinimalBST(int array[]) {
 			return createMinimalBST(array, 0, array.length - 1);
 		}
-
 	}
 
-	public static void weaveLists(LinkedList<Integer> first, LinkedList<Integer> second,
+	private static void weaveLists(LinkedList<Integer> first, LinkedList<Integer> second,
 			ArrayList<LinkedList<Integer>> results, LinkedList<Integer> prefix) {
-		/*
-		 * One list is empty. Add the remainder to [a cloned] prefix and store
-		 * result.
-		 */
 		if (first.size() == 0 || second.size() == 0) {
 			LinkedList<Integer> result = (LinkedList<Integer>) prefix.clone();
 			result.addAll(first);
@@ -117,21 +111,11 @@ public class BSTSequence {
 			results.add(result);
 			return;
 		}
-
-		/*
-		 * Recurse with head of first added to the prefix. Removing the head
-		 * will damage first, so we’ll need to put it back where we found it
-		 * afterwards.
-		 */
 		int headFirst = first.removeFirst();
 		prefix.addLast(headFirst);
 		weaveLists(first, second, results, prefix);
 		prefix.removeLast();
 		first.addFirst(headFirst);
-
-		/*
-		 * Do the same thing with second, damaging and then restoring the list.
-		 */
 		int headSecond = second.removeFirst();
 		prefix.addLast(headSecond);
 		weaveLists(first, second, results, prefix);
@@ -139,7 +123,7 @@ public class BSTSequence {
 		second.addFirst(headSecond);
 	}
 
-	public static ArrayList<LinkedList<Integer>> allSequences(TreeNode node) {
+	private static ArrayList<LinkedList<Integer>> allSequences(TreeNode node) {
 		ArrayList<LinkedList<Integer>> result = new ArrayList<LinkedList<Integer>>();
 
 		if (node == null) {
@@ -149,12 +133,8 @@ public class BSTSequence {
 
 		LinkedList<Integer> prefix = new LinkedList<Integer>();
 		prefix.add(node.data);
-
-		/* Recurse on left and right subtrees. */
 		ArrayList<LinkedList<Integer>> leftSeq = allSequences(node.left);
 		ArrayList<LinkedList<Integer>> rightSeq = allSequences(node.right);
-
-		/* Weave together each list from the left and right sides. */
 		for (LinkedList<Integer> left : leftSeq) {
 			for (LinkedList<Integer> right : rightSeq) {
 				ArrayList<LinkedList<Integer>> weaved = new ArrayList<LinkedList<Integer>>();
@@ -177,5 +157,4 @@ public class BSTSequence {
 		}
 		System.out.println(allSeq.size());
 	}
-
 }

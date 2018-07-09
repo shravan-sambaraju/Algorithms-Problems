@@ -2,11 +2,11 @@ package datastructures;
 
 /* Java implementation of circular linkedlist */
 
-public class CircularLinkedListImplementation {
+class CircularLinkedListImplementation {
 
-	class CLLNode {
-		public CLLNode next;
-		public int data;
+	private class CLLNode {
+		private CLLNode next;
+		private int data;
 
 		public CLLNode() {
 			next = null;
@@ -18,19 +18,19 @@ public class CircularLinkedListImplementation {
 			this.data = data;
 		}
 
-		public CLLNode getNext() {
+		private CLLNode getNext() {
 			return next;
 		}
 
-		public void setNext(CLLNode node) {
+		private void setNext(CLLNode node) {
 			next = node;
 		}
 
-		public int getData() {
+		private int getData() {
 			return data;
 		}
 
-		public void setData(int elem) {
+		private void setData(int elem) {
 			data = elem;
 		}
 
@@ -39,19 +39,19 @@ public class CircularLinkedListImplementation {
 		}
 	}
 
-	protected CLLNode tail;
-	protected int length;
+	private CLLNode tail;
+	private int length;
 
 	public CircularLinkedListImplementation() {
 		tail = null;
 		length = 0;
 	}
 
-	public void add(int data) {
+	private void add(int data) {
 		addToHead(data);
 	}
 
-	public void addToHead(int data) {
+	private void addToHead(int data) {
 		CLLNode temp = new CLLNode(data);
 		if (tail == null) {
 			tail = temp;
@@ -63,20 +63,20 @@ public class CircularLinkedListImplementation {
 		length++;
 	}
 
-	public void addToTail(int data) {
+	private void addToTail(int data) {
 		addToHead(data);
 		tail = tail.getNext();
 	}
 
-	public int peek() {
+	private int peek() {
 		return tail.getNext().getData();
 	}
 
-	public int tailPeek() {
+	private int tailPeek() {
 		return tail.getData();
 	}
 
-	public int removeFromHead() {
+	private int removeFromHead() {
 		CLLNode temp = tail.getNext();
 		if (tail == tail.getNext()) {
 			tail = null;
@@ -88,7 +88,7 @@ public class CircularLinkedListImplementation {
 		return temp.getData();
 	}
 
-	public int removeFromTail() {
+	private int removeFromTail() {
 		if (isEmpty()) {
 			return -1;
 		}
@@ -108,7 +108,7 @@ public class CircularLinkedListImplementation {
 		return temp.getData();
 	}
 
-	public boolean contains(int data) {
+	private boolean contains(int data) {
 		if (tail == null)
 			return false;
 		CLLNode finger;
@@ -119,7 +119,7 @@ public class CircularLinkedListImplementation {
 		return finger.getData() == data;
 	}
 
-	public int remove(int data) {
+	private int remove(int data) {
 		if (tail == null)
 			return -1;
 		CLLNode finger = tail.getNext();
@@ -144,19 +144,19 @@ public class CircularLinkedListImplementation {
 			return -1;
 	}
 
-	public int size() {
+	private int size() {
 		return length;
 	}
 
-	public int length() {
+	private int length() {
 		return length;
 	}
 
-	public boolean isEmpty() {
+	private boolean isEmpty() {
 		return tail == null;
 	}
 
-	public void clear() {
+	private void clear() {
 		length = 0;
 		tail = null;
 	}
@@ -186,7 +186,5 @@ public class CircularLinkedListImplementation {
 		cli.addToTail(3);
 		System.out.println(cli.peek());
 		System.out.println(cli.toString());
-
 	}
-
 }

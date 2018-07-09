@@ -4,55 +4,18 @@ package problems.trees;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import common.utils.BinaryTreeNode;
 
-public class SizeOfBinaryTree {
+class SizeOfBinaryTree {
 
-	class BinaryTreeNode {
-		int data;
-		BinaryTreeNode left;
-		BinaryTreeNode right;
-
-		BinaryTreeNode(int x) {
-			data = x;
-			left = null;
-			right = null;
-
-		}
-
-		public int getData() {
-			return data;
-		}
-
-		public void setData(int data) {
-			this.data = data;
-		}
-
-		public BinaryTreeNode getLeft() {
-			return left;
-		}
-
-		public void setLeft(BinaryTreeNode left) {
-			this.left = left;
-		}
-
-		public BinaryTreeNode getRight() {
-			return right;
-		}
-
-		public void setRight(BinaryTreeNode right) {
-			this.right = right;
-		}
-	}
-
-	public static int getSizeRecursive(BinaryTreeNode node) {
+	private static int getSizeRecursive(BinaryTreeNode node) {
 		if (node == null) {
 			return 0;
 		}
-		return 1 + getSizeRecursive(node.left) + getSizeRecursive(node.right);
-
+		return 1 + getSizeRecursive(node.getLeft()) + getSizeRecursive(node.getRight());
 	}
 
-	public static int getSizeLevelOrder(BinaryTreeNode node) {
+	private static int getSizeLevelOrder(BinaryTreeNode node) {
 		int count = 0;
 		if (node == null) {
 			return count;
@@ -62,32 +25,28 @@ public class SizeOfBinaryTree {
 		while (!q.isEmpty()) {
 			BinaryTreeNode temp = q.poll();
 			count++;
-			if (temp.left != null) {
-				q.offer(temp.left);
+			if (temp.getLeft() != null) {
+				q.offer(temp.getLeft());
 
 			}
-			if (temp.right != null) {
-				q.offer(temp.right);
+			if (temp.getRight() != null) {
+				q.offer(temp.getRight());
 			}
-
 		}
-
 		return count;
-
 	}
 
 	public static void main(String args[]) {
-		SizeOfBinaryTree sizeOfBinaryTree = new SizeOfBinaryTree();
-		BinaryTreeNode node = sizeOfBinaryTree.new BinaryTreeNode(1);
-		node.left = sizeOfBinaryTree.new BinaryTreeNode(2);
-		node.right = sizeOfBinaryTree.new BinaryTreeNode(3);
-		node.left.left = sizeOfBinaryTree.new BinaryTreeNode(4);
-		node.left.right = sizeOfBinaryTree.new BinaryTreeNode(5);
-		node.right.left = sizeOfBinaryTree.new BinaryTreeNode(6);
-		node.right.right = sizeOfBinaryTree.new BinaryTreeNode(7);
+
+		BinaryTreeNode node = new BinaryTreeNode(1);
+		node.setLeft(new BinaryTreeNode(2));
+		node.setRight(new BinaryTreeNode(3));
+		node.getLeft().setLeft(new BinaryTreeNode(4));
+		node.getLeft().setRight(new BinaryTreeNode(5));
+		node.getRight().setLeft(new BinaryTreeNode(6));
+		node.getRight().setRight(new BinaryTreeNode(7));
 
 		System.out.println(getSizeRecursive(node));
 		System.out.println(getSizeLevelOrder(node));
 	}
-
 }

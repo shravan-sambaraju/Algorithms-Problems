@@ -5,8 +5,9 @@ package problems.recursion;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class PermutationsOfNonUniqueString {
-	public static HashMap<Character, Integer> buildFreqTable(String s) {
+class PermutationsOfNonUniqueString {
+
+	private static HashMap<Character, Integer> buildFreqTable(String s) {
 		HashMap<Character, Integer> map = new HashMap<Character, Integer>();
 		for (char c : s.toCharArray()) {
 			if (!map.containsKey(c)) {
@@ -17,7 +18,7 @@ public class PermutationsOfNonUniqueString {
 		return map;
 	}
 
-	public static void printPerms(HashMap<Character, Integer> map, String prefix, int remaining,
+	private static void printPerms(HashMap<Character, Integer> map, String prefix, int remaining,
 			ArrayList<String> result) {
 		if (remaining == 0) {
 			result.add(prefix);
@@ -34,7 +35,7 @@ public class PermutationsOfNonUniqueString {
 		}
 	}
 
-	public static ArrayList<String> printPerms(String s) {
+	private static ArrayList<String> printPerms(String s) {
 		ArrayList<String> result = new ArrayList<String>();
 		HashMap<Character, Integer> map = buildFreqTable(s);
 		printPerms(map, "", s.length(), result);
@@ -49,5 +50,4 @@ public class PermutationsOfNonUniqueString {
 			System.out.println(r);
 		}
 	}
-
 }

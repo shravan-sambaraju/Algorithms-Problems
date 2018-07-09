@@ -4,29 +4,26 @@ package problems.recursion;
 
 import java.util.ArrayList;
 
-public class ParanthesisCombination {
-	public static void addParen(ArrayList<String> list, int leftRem, int rightRem, char[] str, int index) {
+class ParanthesisCombination {
+	private static void addParen(ArrayList<String> list, int leftRem, int rightRem, char[] str, int index) {
 		if (leftRem < 0 || rightRem < leftRem)
-			return; // invalid state
-
-		if (leftRem == 0
-				&& rightRem == 0) { /* all out of left and right parentheses */
+			return;
+		if (leftRem == 0 && rightRem == 0) {
 			list.add(String.copyValueOf(str));
 		} else {
 			if (leftRem > 0) {
-				str[index] = '('; // Add left and recurse
+				str[index] = '(';
 				addParen(list, leftRem - 1, rightRem, str, index + 1);
 
 			}
 			if (rightRem > leftRem) {
-				str[index] = ')'; // Add right and recurse
+				str[index] = ')';
 				addParen(list, leftRem, rightRem - 1, str, index + 1);
 			}
-
 		}
 	}
 
-	public static ArrayList<String> generateParens(int count) {
+	private static ArrayList<String> generateParens(int count) {
 		char[] str = new char[count * 2];
 		ArrayList<String> list = new ArrayList<String>();
 		addParen(list, count, count, str, 0);
@@ -40,5 +37,4 @@ public class ParanthesisCombination {
 		}
 		System.out.println(list.size());
 	}
-
 }

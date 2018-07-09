@@ -4,8 +4,9 @@ package problems.recursion;
 
 import java.util.ArrayList;
 
-public class PermutationsOfString {
-	public static void getPerms(String prefix, String remainder, ArrayList<String> result) {
+class PermutationsOfString {
+
+	private static void getPerms(String prefix, String remainder, ArrayList<String> result) {
 		if (remainder.length() == 0) {
 			result.add(prefix);
 		}
@@ -18,7 +19,7 @@ public class PermutationsOfString {
 		}
 	}
 
-	public static ArrayList<String> getPerms(String str) {
+	private static ArrayList<String> getPerms(String str) {
 		ArrayList<String> result = new ArrayList<String>();
 		getPerms("", str, result);
 		return result;
@@ -31,5 +32,4 @@ public class PermutationsOfString {
 			System.out.println(s);
 		}
 	}
-
 }

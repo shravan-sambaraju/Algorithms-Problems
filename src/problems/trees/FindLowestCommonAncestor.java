@@ -2,46 +2,11 @@ package problems.trees;
 
 /* Find lowest common ancestor of given node */
 
-public class FindLowestCommonAncestor {
+import common.utils.BinaryTreeNode;
 
-	class BinaryTreeNode {
-		int data;
-		BinaryTreeNode left;
-		BinaryTreeNode right;
+class FindLowestCommonAncestor {
 
-		BinaryTreeNode(int x) {
-			data = x;
-			left = null;
-			right = null;
-
-		}
-
-		public int getData() {
-			return data;
-		}
-
-		public void setData(int data) {
-			this.data = data;
-		}
-
-		public BinaryTreeNode getLeft() {
-			return left;
-		}
-
-		public void setLeft(BinaryTreeNode left) {
-			this.left = left;
-		}
-
-		public BinaryTreeNode getRight() {
-			return right;
-		}
-
-		public void setRight(BinaryTreeNode right) {
-			this.right = right;
-		}
-	}
-
-	public static BinaryTreeNode lca(BinaryTreeNode root, BinaryTreeNode n1, BinaryTreeNode n2) {
+	private static BinaryTreeNode lca(BinaryTreeNode root, BinaryTreeNode n1, BinaryTreeNode n2) {
 		if (root == null) {
 			return null;
 		}
@@ -49,8 +14,8 @@ public class FindLowestCommonAncestor {
 			return root;
 		}
 
-		BinaryTreeNode left = lca(root.left, n1, n2);
-		BinaryTreeNode right = lca(root.right, n1, n2);
+		BinaryTreeNode left = lca(root.getLeft(), n1, n2);
+		BinaryTreeNode right = lca(root.getRight(), n1, n2);
 
 		if (left != null && right != null) {
 			return root;
@@ -59,20 +24,19 @@ public class FindLowestCommonAncestor {
 	}
 
 	public static void main(String args[]) {
-		FindLowestCommonAncestor findLowestCommonAncestor = new FindLowestCommonAncestor();
-		BinaryTreeNode node = findLowestCommonAncestor.new BinaryTreeNode(1);
-		node.left = findLowestCommonAncestor.new BinaryTreeNode(2);
-		node.right = findLowestCommonAncestor.new BinaryTreeNode(3);
-		node.left.left = findLowestCommonAncestor.new BinaryTreeNode(4);
-		node.left.right = findLowestCommonAncestor.new BinaryTreeNode(5);
-		node.right.left = findLowestCommonAncestor.new BinaryTreeNode(6);
-		node.right.right = findLowestCommonAncestor.new BinaryTreeNode(7);
 
-		BinaryTreeNode result = lca(node, node.left.left, node.right.left);
-		System.out.println(result.data);
+		BinaryTreeNode node = new BinaryTreeNode(1);
+		node.setLeft(new BinaryTreeNode(2));
+		node.setRight(new BinaryTreeNode(3));
+		node.getLeft().setLeft(new BinaryTreeNode(4));
+		node.getLeft().setRight(new BinaryTreeNode(5));
+		node.getRight().setLeft(new BinaryTreeNode(6));
+		node.getRight().setRight(new BinaryTreeNode(7));
 
-		BinaryTreeNode result2 = lca(node, node.right.left, node.right.right);
-		System.out.println(result2.data);
+		BinaryTreeNode result = lca(node, node.getLeft().getLeft(), node.getRight().getLeft());
+		System.out.println(result.getData());
 
+		BinaryTreeNode result2 = lca(node, node.getRight().getLeft(), node.getRight().getRight());
+		System.out.println(result2.getData());
 	}
 }

@@ -5,23 +5,24 @@ package problems.random;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-class Pair {
-	public int first;
-	public int second;
+class PairInArrayWhoseSumIsK {
 
-	public Pair(int first, int second) {
-		this.first = first;
-		this.second = second;
+	private class Pair {
+		private int first;
+		private int second;
+
+		public Pair(int first, int second) {
+			this.first = first;
+			this.second = second;
+		}
+
+		@Override
+		public String toString() {
+			return "(" + first + ", " + second + ")";
+		}
 	}
 
-	@Override
-	public String toString() {
-		return "(" + first + ", " + second + ")";
-	}
-}
-
-public class PairInArrayWhoseSumIsK {
-	public static ArrayList<Pair> printPairSums(int[] array, int sum) {
+	private static ArrayList<Pair> printPairSums(int[] array, int sum) {
 		ArrayList<Pair> result = new ArrayList<Pair>();
 		Arrays.sort(array);
 		int first = 0;
@@ -29,7 +30,8 @@ public class PairInArrayWhoseSumIsK {
 		while (first < last) {
 			int s = array[first] + array[last];
 			if (s == sum) {
-				result.add(new Pair(array[first], array[last]));
+				PairInArrayWhoseSumIsK pair = new PairInArrayWhoseSumIsK();
+				result.add(pair.new Pair(array[first], array[last]));
 				++first;
 				--last;
 			} else {

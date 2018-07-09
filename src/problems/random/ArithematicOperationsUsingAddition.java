@@ -2,10 +2,11 @@ package problems.random;
 
 /* Perform arithematic operations using addition */
 
-public class ArithematicOperationsUsingAddition {
+import static common.utils.UtilMethods.randomIntInRange;;
 
-	/* Flip a positive sign to negative, or a negative sign to pos */
-	public static int negate(int a) {
+class ArithematicOperationsUsingAddition {
+
+	private static int negate(int a) {
 		int neg = 0;
 		int newSign = a < 0 ? 1 : -1;
 		while (a != 0) {
@@ -15,41 +16,36 @@ public class ArithematicOperationsUsingAddition {
 		return neg;
 	}
 
-	/* Flip a positive sign to negative, or a negative sign to pos */
-	public static int negateOptimized(int a) {
+	private static int negateOptimized(int a) {
 		int neg = 0;
 		int newSign = a < 0 ? 1 : -1;
 		int delta = newSign;
 		while (a != 0) {
 			boolean differentSigns = (a + delta > 0) != (a > 0);
-			if (a + delta != 0 && differentSigns) { // If delta is too big,
-													// reset it.
+			if (a + delta != 0 && differentSigns) {
 				delta = newSign;
 			}
 			neg += delta;
 			a += delta;
-			delta += delta; // Double the delta
+			delta += delta;
 		}
 		return neg;
 	}
 
-	/* Subtract two numbers by negating b and adding them */
-	public static int minus(int a, int b) {
+	private static int minus(int a, int b) {
 		return a + negate(b);
 	}
 
-	/* Return absolute value */
-	public static int abs(int a) {
+	private static int abs(int a) {
 		if (a < 0) {
 			return negateOptimized(a);
 		} else
 			return a;
 	}
 
-	/* Multiply a by b by adding a to itself b times */
-	public static int multiply(int a, int b) {
+	private static int multiply(int a, int b) {
 		if (a < b) {
-			return multiply(b, a); // algo is faster if b < a
+			return multiply(b, a);
 		}
 		int sum = 0;
 		for (int i = abs(b); i > 0; i = minus(i, 1)) {
@@ -61,11 +57,7 @@ public class ArithematicOperationsUsingAddition {
 		return sum;
 	}
 
-	/*
-	 * Divide a by b by literally counting how many times b can go into a. That
-	 * is, count how many times you can add b to itself until you reach a.
-	 */
-	public static int divide(int a, int b) throws java.lang.ArithmeticException {
+	private static int divide(int a, int b) throws java.lang.ArithmeticException {
 		if (b == 0) {
 			throw new java.lang.ArithmeticException("ERROR: Divide by zero.");
 		}
@@ -74,7 +66,7 @@ public class ArithematicOperationsUsingAddition {
 
 		int product = 0;
 		int x = 0;
-		while (product + absb <= absa) { /* don't go past a */
+		while (product + absb <= absa) {
 			product += absb;
 			x++;
 		}
@@ -120,13 +112,4 @@ public class ArithematicOperationsUsingAddition {
 			System.out.println(ans);
 		}
 	}
-
-	public static int randomInt(int n) {
-		return (int) (Math.random() * n);
-	}
-
-	public static int randomIntInRange(int min, int max) {
-		return randomInt(max + 1 - min) + min;
-	}
-
 }

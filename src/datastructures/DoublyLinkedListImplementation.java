@@ -2,12 +2,12 @@ package datastructures;
 
 /* Java implementation of doubly linkedlist */
 
-public class DoublyLinkedListImplementation {
+class DoublyLinkedListImplementation {
 
-	class DLLNode {
-		int data;
-		DLLNode prev;
-		DLLNode next;
+	private class DLLNode {
+		private int data;
+		private DLLNode prev;
+		private DLLNode next;
 
 		public DLLNode() {
 
@@ -25,37 +25,35 @@ public class DoublyLinkedListImplementation {
 
 		}
 
-		public int getData() {
+		private int getData() {
 			return data;
 		}
 
-		public void setData(int data) {
+		private void setData(int data) {
 			this.data = data;
 		}
 
-		public DLLNode getPrev() {
+		private DLLNode getPrev() {
 			return prev;
 		}
 
-		public void setPrev(DLLNode prev) {
+		private void setPrev(DLLNode prev) {
 			this.prev = prev;
 		}
 
-		public DLLNode getNext() {
+		private DLLNode getNext() {
 			return next;
 		}
 
-		public void setNext(DLLNode next) {
+		private void setNext(DLLNode next) {
 			this.next = next;
 		}
-
 	}
 
 	private DLLNode head;
 	private DLLNode tail;
 	private int length;
 
-	// Create a new empty list.
 	public DoublyLinkedListImplementation() {
 		head = new DLLNode(-1, null, null);
 		tail = new DLLNode(-1, head, null);
@@ -63,11 +61,11 @@ public class DoublyLinkedListImplementation {
 		length = 0;
 	}
 
-	public int get(int position) {
+	private int get(int position) {
 		return -1;
 	}
 
-	public int getPosition(int data) {
+	private int getPosition(int data) {
 
 		DLLNode temp = head;
 		int pos = 0;
@@ -79,22 +77,21 @@ public class DoublyLinkedListImplementation {
 			pos += 1;
 			temp = temp.getNext();
 		}
-
 		return -1;
 	}
 
-	public int length() {
+	private int length() {
 		return length;
 	}
 
-	public void insert(int newValue) {
+	private void insert(int newValue) {
 		DLLNode newNode = new DLLNode(newValue, null, head.getNext());
 		newNode.getNext().setPrev(newNode);
 		head = newNode;
 		length += 1;
 	}
 
-	public void insertAtPosition(int data, int position) {
+	private void insertAtPosition(int data, int position) {
 		if (position < 0) {
 			position = 0;
 		}
@@ -128,14 +125,14 @@ public class DoublyLinkedListImplementation {
 		length += 1;
 	}
 
-	public void insertTail(int newValue) {
+	private void insertTail(int newValue) {
 		DLLNode newNode = new DLLNode(newValue, tail.getPrev(), tail);
 		newNode.getPrev().setNext(newNode);
 		tail.setPrev(newNode);
 		length += 1;
 	}
 
-	public void remove(int position) {
+	private void remove(int position) {
 
 		if (position < 0) {
 			position = 0;
@@ -162,11 +159,10 @@ public class DoublyLinkedListImplementation {
 			temp.getNext().setPrev(temp.getPrev());
 			temp.getPrev().setNext(temp.getNext());
 		}
-
 		length -= 1;
 	}
 
-	public synchronized void removeMatched(DLLNode node) {
+	private synchronized void removeMatched(DLLNode node) {
 		if (head == null)
 			return;
 		if (node.equals(head)) {
@@ -185,7 +181,7 @@ public class DoublyLinkedListImplementation {
 		}
 	}
 
-	public int removeHead() {
+	private int removeHead() {
 		if (length == 0)
 			return -1;
 		DLLNode save = head.getNext();
@@ -195,7 +191,7 @@ public class DoublyLinkedListImplementation {
 		return save.getData();
 	}
 
-	public int removeTail() {
+	private int removeTail() {
 		if (length == 0)
 			return -1;
 		DLLNode save = tail.getPrev();
@@ -207,7 +203,6 @@ public class DoublyLinkedListImplementation {
 
 	public static void main(String args[]) {
 
-		// insertion code
 		DoublyLinkedListImplementation dll = new DoublyLinkedListImplementation();
 		System.out.println(dll.head.data);
 		System.out.println(dll.head.prev);
@@ -225,5 +220,4 @@ public class DoublyLinkedListImplementation {
 		System.out.println(dll.head.next.next.data);
 
 	}
-
 }

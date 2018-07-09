@@ -2,7 +2,9 @@ package algorithms.sorting;
 
 /* Java implementation of radix sort */
 
-public class RadixSort {
+import static common.utils.UtilMethods.intArrayToString;
+
+class RadixSort {
 
 	private void countSort(int arr[], int exp) {
 
@@ -37,7 +39,7 @@ public class RadixSort {
 		return max;
 	}
 
-	public void radixSort(int arr[]) {
+	private void radixSort(int arr[]) {
 
 		int max = max(arr);
 		for (int exp = 1; exp <= max; exp *= 10) {
@@ -49,9 +51,6 @@ public class RadixSort {
 		int arr[] = { 101, 10, 11, 66, 94, 26, 125 };
 		RadixSort rs = new RadixSort();
 		rs.radixSort(arr);
-		for (int i = 0; i < arr.length; i++) {
-			System.out.println(arr[i]);
-		}
-
+		System.out.println(intArrayToString(arr));
 	}
 }

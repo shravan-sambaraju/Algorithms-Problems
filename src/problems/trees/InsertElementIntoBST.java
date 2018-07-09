@@ -2,60 +2,24 @@ package problems.trees;
 
 /* Insert element into binary search tree */
 
-public class InsertElementIntoBST {
+import common.utils.BinaryTreeNode;
 
-	class BinaryTreeNode {
-		int data;
-		BinaryTreeNode left;
-		BinaryTreeNode right;
+class InsertElementIntoBST {
 
-		BinaryTreeNode(int x) {
-			data = x;
-			left = null;
-			right = null;
-
-		}
-
-		public int getData() {
-			return data;
-		}
-
-		public void setData(int data) {
-			this.data = data;
-		}
-
-		public BinaryTreeNode getLeft() {
-			return left;
-		}
-
-		public void setLeft(BinaryTreeNode left) {
-			this.left = left;
-		}
-
-		public BinaryTreeNode getRight() {
-			return right;
-		}
-
-		public void setRight(BinaryTreeNode right) {
-			this.right = right;
-		}
-	}
-
-	public BinaryTreeNode insertRecursive(BinaryTreeNode root, int data) {
+	private BinaryTreeNode insertRecursive(BinaryTreeNode root, int data) {
 		if (root == null) {
 			return new BinaryTreeNode(data);
 		} else {
-			if (data < root.data) {
-				root.setLeft(insertRecursive(root.left, data));
-			} else if (data > root.data) {
-				root.setRight(insertRecursive(root.right, data));
+			if (data < root.getData()) {
+				root.setLeft(insertRecursive(root.getLeft(), data));
+			} else if (data > root.getData()) {
+				root.setRight(insertRecursive(root.getRight(), data));
 			}
 		}
 		return root;
-
 	}
 
-	public BinaryTreeNode addNode(int data, BinaryTreeNode head) {
+	private BinaryTreeNode addNode(int data, BinaryTreeNode head) {
 		BinaryTreeNode tempHead = head;
 		BinaryTreeNode n = new BinaryTreeNode(data);
 		if (head == null) {
@@ -65,33 +29,32 @@ public class InsertElementIntoBST {
 		BinaryTreeNode prev = null;
 		while (head != null) {
 			prev = head;
-			if (head.data < data) {
-				head = head.right;
+			if (head.getData() < data) {
+				head = head.getRight();
 			} else {
-				head = head.left;
+				head = head.getLeft();
 			}
 		}
-		if (prev.data < data) {
-			prev.right = n;
+		if (prev.getData() < data) {
+			prev.setRight(n);
 		} else {
-			prev.left = n;
+			prev.setLeft(n);
 		}
 		return tempHead;
 	}
 
 	public static void main(String args[]) {
-		InsertElementIntoBST insertElementIntoBST = new InsertElementIntoBST();
-		BinaryTreeNode node = insertElementIntoBST.new BinaryTreeNode(50);
-		node.left = insertElementIntoBST.new BinaryTreeNode(30);
-		node.right = insertElementIntoBST.new BinaryTreeNode(70);
-		node.left.left = insertElementIntoBST.new BinaryTreeNode(20);
-		node.left.right = insertElementIntoBST.new BinaryTreeNode(40);
-		node.right.left = insertElementIntoBST.new BinaryTreeNode(60);
-		node.right.right = insertElementIntoBST.new BinaryTreeNode(80);
+
+		BinaryTreeNode node = new BinaryTreeNode(50);
+		node.setLeft(new BinaryTreeNode(30));
+		node.setRight(new BinaryTreeNode(70));
+		node.getLeft().setLeft(new BinaryTreeNode(20));
+		node.getLeft().setRight(new BinaryTreeNode(40));
+		node.getRight().setLeft(new BinaryTreeNode(60));
+		node.getRight().setRight(new BinaryTreeNode(80));
 
 		InsertElementIntoBST insert = new InsertElementIntoBST();
-		System.out.println(insert.insertRecursive(node, 90).right.right.right.data);
-		System.out.println(insert.addNode(10, node).left.left.left.data);
-
+		System.out.println(insert.insertRecursive(node, 90).getRight().getRight().getRight().getData());
+		System.out.println(insert.addNode(10, node).getLeft().getLeft().getLeft().getData());
 	}
 }

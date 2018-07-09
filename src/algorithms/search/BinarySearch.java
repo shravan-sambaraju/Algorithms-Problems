@@ -2,9 +2,9 @@ package algorithms.search;
 
 /* Java implementation of binary search */
 
-public class BinarySearch {
+class BinarySearch {
 
-	public static boolean contains(int[] a, int b) {
+	private static boolean contains(int[] a, int b) {
 		if (a.length == 0) {
 			return false;
 		}
@@ -18,7 +18,7 @@ public class BinarySearch {
 				low = middle + 1;
 			} else if (b < a[middle]) {
 				high = middle - 1;
-			} else { // The element has been found
+			} else {
 				return true;
 			}
 		}
@@ -26,7 +26,6 @@ public class BinarySearch {
 	}
 
 	public static void main(String[] args) {
-
 		int[] input = { 24, 2, 45, 20, 56, 75, 2, 56, 99, 53, 12 };
 		int a = 2;
 		System.out.println(contains(input, a));

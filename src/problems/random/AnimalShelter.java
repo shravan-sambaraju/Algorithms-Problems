@@ -4,7 +4,7 @@ package problems.random;
 
 import java.util.LinkedList;
 
-public class AnimalShelter {
+class AnimalShelter {
 
 	abstract class Animal {
 		private int order;
@@ -53,7 +53,7 @@ public class AnimalShelter {
 	LinkedList<Cat> cats = new LinkedList<Cat>();
 	private int order = 0;
 
-	public void enqueue(Animal a) {
+	private void enqueue(Animal a) {
 		a.setOrder(order);
 		order++;
 		if (a instanceof Dog) {
@@ -63,7 +63,7 @@ public class AnimalShelter {
 		}
 	}
 
-	public Animal dequeueAny() {
+	private Animal dequeueAny() {
 		if (dogs.size() == 0) {
 			return dequeueCats();
 		} else if (cats.size() == 0) {
@@ -78,7 +78,7 @@ public class AnimalShelter {
 		}
 	}
 
-	public Animal peek() {
+	private Animal peek() {
 		if (dogs.size() == 0) {
 			return cats.peek();
 		} else if (cats.size() == 0) {
@@ -93,23 +93,23 @@ public class AnimalShelter {
 		}
 	}
 
-	public int size() {
+	private int size() {
 		return dogs.size() + cats.size();
 	}
 
-	public Dog dequeueDogs() {
+	private Dog dequeueDogs() {
 		return dogs.poll();
 	}
 
-	public Dog peekDogs() {
+	private Dog peekDogs() {
 		return dogs.peek();
 	}
 
-	public Cat dequeueCats() {
+	private Cat dequeueCats() {
 		return cats.poll();
 	}
 
-	public Cat peekCats() {
+	private Cat peekCats() {
 		return cats.peek();
 	}
 

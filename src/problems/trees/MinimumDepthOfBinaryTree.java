@@ -4,67 +4,29 @@ package problems.trees;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import common.utils.BinaryTreeNode;
 
-public class MinimumDepthOfBinaryTree {
+class MinimumDepthOfBinaryTree {
 
-	class BinaryTreeNode {
-		int data;
-		BinaryTreeNode left;
-		BinaryTreeNode right;
-
-		BinaryTreeNode(int x) {
-			data = x;
-			left = null;
-			right = null;
-
-		}
-
-		public int getData() {
-			return data;
-		}
-
-		public void setData(int data) {
-			this.data = data;
-		}
-
-		public BinaryTreeNode getLeft() {
-			return left;
-		}
-
-		public void setLeft(BinaryTreeNode left) {
-			this.left = left;
-		}
-
-		public BinaryTreeNode getRight() {
-			return right;
-		}
-
-		public void setRight(BinaryTreeNode right) {
-			this.right = right;
-		}
-	}
-
-	public static int getMinimumDepthRecursive(BinaryTreeNode node) {
+	private static int getMinimumDepthRecursive(BinaryTreeNode node) {
 		if (node == null) {
 			return 0;
 		}
 
-		if (node.left == null && node.right == null) {
-
+		if (node.getLeft() == null && node.getRight() == null) {
 			return 1;
 		}
 
-		if (node.left == null) {
-			return getMinimumDepthRecursive(node.right) + 1;
+		if (node.getLeft() == null) {
+			return getMinimumDepthRecursive(node.getRight()) + 1;
 		}
-		if (node.right == null) {
-			return getMinimumDepthRecursive(node.left) + 1;
+		if (node.getRight() == null) {
+			return getMinimumDepthRecursive(node.getLeft()) + 1;
 		}
-		return Math.min(getMinimumDepthRecursive(node.left), getMinimumDepthRecursive(node.right)) + 1;
-
+		return Math.min(getMinimumDepthRecursive(node.getLeft()), getMinimumDepthRecursive(node.getRight())) + 1;
 	}
 
-	public static int minDepthLevelOrder(BinaryTreeNode root) {
+	private static int minDepthLevelOrder(BinaryTreeNode root) {
 		if (root == null)
 			return 0;
 		Queue<BinaryTreeNode> q = new LinkedList<BinaryTreeNode>();
@@ -74,14 +36,14 @@ public class MinimumDepthOfBinaryTree {
 		while (!q.isEmpty()) {
 			BinaryTreeNode currentNode = q.poll();
 			if (currentNode != null) {
-				if (currentNode.left == null && currentNode.right == null) {
+				if (currentNode.getLeft() == null && currentNode.getRight() == null) {
 					return count;
 				}
-				if (currentNode.left != null) {
-					q.offer(currentNode.left);
+				if (currentNode.getLeft() != null) {
+					q.offer(currentNode.getLeft());
 				}
-				if (currentNode.right != null) {
-					q.offer(currentNode.right);
+				if (currentNode.getRight() != null) {
+					q.offer(currentNode.getRight());
 				}
 			} else {
 				if (!q.isEmpty()) {
@@ -94,24 +56,22 @@ public class MinimumDepthOfBinaryTree {
 	}
 
 	public static void main(String args[]) {
-		MinimumDepthOfBinaryTree minimumDepthOfBinaryTree = new MinimumDepthOfBinaryTree();
-		BinaryTreeNode node = minimumDepthOfBinaryTree.new BinaryTreeNode(1);
-		node.left = minimumDepthOfBinaryTree.new BinaryTreeNode(2);
-		node.right = minimumDepthOfBinaryTree.new BinaryTreeNode(3);
-		node.left.left = minimumDepthOfBinaryTree.new BinaryTreeNode(4);
-		node.left.right = minimumDepthOfBinaryTree.new BinaryTreeNode(5);
-		node.right.left = minimumDepthOfBinaryTree.new BinaryTreeNode(6);
-		node.right.right = minimumDepthOfBinaryTree.new BinaryTreeNode(7);
-		node.left.left.left = minimumDepthOfBinaryTree.new BinaryTreeNode(8);
-		node.left.left.right = minimumDepthOfBinaryTree.new BinaryTreeNode(9);
-		node.right.left.left = minimumDepthOfBinaryTree.new BinaryTreeNode(10);
-		node.right.left.right = minimumDepthOfBinaryTree.new BinaryTreeNode(11);
-		node.right.right.left = minimumDepthOfBinaryTree.new BinaryTreeNode(12);
-		node.right.right.right = minimumDepthOfBinaryTree.new BinaryTreeNode(13);
+
+		BinaryTreeNode node = new BinaryTreeNode(1);
+		node.setLeft(new BinaryTreeNode(2));
+		node.setRight(new BinaryTreeNode(3));
+		node.getLeft().setLeft(new BinaryTreeNode(4));
+		node.getLeft().setRight(new BinaryTreeNode(5));
+		node.getRight().setLeft(new BinaryTreeNode(6));
+		node.getRight().setRight(new BinaryTreeNode(7));
+		node.getLeft().getLeft().setLeft(new BinaryTreeNode(8));
+		node.getLeft().getLeft().setRight(new BinaryTreeNode(9));
+		node.getRight().getLeft().setLeft(new BinaryTreeNode(10));
+		node.getRight().getLeft().setRight(new BinaryTreeNode(11));
+		node.getRight().getRight().setLeft(new BinaryTreeNode(12));
+		node.getRight().getRight().setRight(new BinaryTreeNode(13));
 
 		System.out.println(getMinimumDepthRecursive(node));
 		System.out.println(minDepthLevelOrder(node));
-
 	}
-
 }

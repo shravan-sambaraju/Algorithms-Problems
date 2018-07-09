@@ -2,8 +2,9 @@ package problems.random;
 
 /* Random of 7 and 5 */
 
-public class Rand7FromRand5 {
-	public static int rand7() {
+class Rand7FromRand5 {
+
+	private static int rand7() {
 		while (true) {
 			int num = 5 * rand5() + rand5();
 			if (num < 21) {
@@ -12,12 +13,11 @@ public class Rand7FromRand5 {
 		}
 	}
 
-	public static int rand5() {
+	private static int rand5() {
 		return (int) (Math.random() * 100) % 5;
 	}
 
 	public static void main(String[] args) {
-		/* Test: call rand7 many times and inspect the results. */
 		int[] arr = new int[7];
 		int test_size = 1000000;
 		for (int k = 0; k < test_size; k++) {

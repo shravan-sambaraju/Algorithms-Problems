@@ -4,39 +4,36 @@ package problems.random;
 
 import java.util.Random;
 
-class Person {
-	public int birth;
-	public int death;
+class LivingPeopleInYear {
 
-	public Person(int birthYear, int deathYear) {
-		birth = birthYear;
-		death = deathYear;
+	private class Person {
+		private int birth;
+		private int death;
+
+		public Person(int birthYear, int deathYear) {
+			birth = birthYear;
+			death = deathYear;
+		}
 	}
-}
 
-public class LivingPeopleInYear {
-	public static int maxAliveYear(Person[] people, int min, int max) {
-		/* Build population delta array. */
+	private static int maxAliveYear(Person[] people, int min, int max) {
 		int[] populationDeltas = getPopulationDeltas(people, min, max);
 		int maxAliveYear = getMaxAliveYear(populationDeltas);
 		return maxAliveYear + min;
 	}
 
-	/* Add birth and death years to deltas array. */
-	public static int[] getPopulationDeltas(Person[] people, int min, int max) {
+	private static int[] getPopulationDeltas(Person[] people, int min, int max) {
 		int[] populationDeltas = new int[max - min + 2];
 		for (Person person : people) {
 			int birth = person.birth - min;
 			populationDeltas[birth]++;
-
 			int death = person.death - min;
 			populationDeltas[death + 1]--;
 		}
 		return populationDeltas;
 	}
 
-	/* Compute running sums and return index with max. */
-	public static int getMaxAliveYear(int[] deltas) {
+	private static int getMaxAliveYear(int[] deltas) {
 		int maxAliveYear = 0;
 		int maxAlive = 0;
 		int currentlyAlive = 0;
@@ -47,7 +44,6 @@ public class LivingPeopleInYear {
 				maxAlive = currentlyAlive;
 			}
 		}
-
 		return maxAliveYear;
 	}
 
@@ -60,11 +56,11 @@ public class LivingPeopleInYear {
 		for (int i = 0; i < n; i++) {
 			int birth = first + random.nextInt(last - first);
 			int death = birth + random.nextInt(last - birth);
-			people[i] = new Person(birth, death);
+			LivingPeopleInYear livingPeopleInYear = new LivingPeopleInYear();
+			people[i] = livingPeopleInYear.new Person(birth, death);
 			System.out.println(birth + ", " + death);
 		}
 		int year = maxAliveYear(people, first, last);
 		System.out.println(year);
 	}
-
 }

@@ -2,16 +2,16 @@ package algorithms.search;
 
 /* Given a sorted array with no size create a method which returns index */
 
-public class SortedSearchNoSize {
+class SortedSearchNoSize {
 
-	class Listy {
+	private class Listy {
 		int[] array;
 
 		public Listy(int[] arr) {
 			array = arr.clone();
 		}
 
-		public int elementAt(int index) {
+		private int elementAt(int index) {
 			if (index >= array.length) {
 				return -1;
 			}
@@ -19,12 +19,12 @@ public class SortedSearchNoSize {
 		}
 	}
 
-	public static int binarySearch(Listy list, int value, int low, int high) {
+	private static int binarySearch(Listy list, int value, int low, int high) {
 		int mid;
-
 		while (low <= high) {
 			mid = (low + high) / 2;
 			int middle = list.elementAt(mid);
+
 			if (middle > value || middle == -1) {
 				high = mid - 1;
 			} else if (middle < value) {
@@ -36,7 +36,7 @@ public class SortedSearchNoSize {
 		return -1;
 	}
 
-	public static int search(Listy list, int value) {
+	private static int search(Listy list, int value) {
 		int index = 1;
 		while (list.elementAt(index) != -1 && list.elementAt(index) < value) {
 			index *= 2;
@@ -53,5 +53,4 @@ public class SortedSearchNoSize {
 		}
 		System.out.println(search(list, 15));
 	}
-
 }
