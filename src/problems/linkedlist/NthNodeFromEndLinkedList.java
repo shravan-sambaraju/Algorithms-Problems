@@ -2,38 +2,9 @@ package problems.linkedlist;
 
 /* Fetch Nth Node from the end of linkedlist */
 
-public class NthNodeFromEndLinkedList {
+import common.utils.ListNode;
 
-	class ListNode {
-		int data;
-		ListNode next;
-
-		public ListNode() {
-
-		}
-
-		public ListNode(int data) {
-			next = null;
-			this.data = data;
-		}
-
-		public int getData() {
-			return data;
-		}
-
-		public void setData(int data) {
-			this.data = data;
-		}
-
-		public ListNode getNext() {
-			return next;
-		}
-
-		public void setNext(ListNode next) {
-			this.next = next;
-		}
-
-	}
+class NthNodeFromEndLinkedList {
 
 	int count;
 
@@ -43,51 +14,43 @@ public class NthNodeFromEndLinkedList {
 		}
 
 		int data = getNthLastNodeFromLinkListRecursive(startNode.getNext(), nodeFromLast);
-
 		count++;
-
 		if (count == nodeFromLast) {
 			return startNode.getData();
 		}
-
 		return data;
 	}
 
-	public static ListNode nthNodeFromEndIterative(ListNode head, int Nth) {
+	private static ListNode nthNodeFromEndIterative(ListNode head, int Nth) {
 		if (head == null) {
 			return null;
 		}
 		ListNode nth = head;
-		// Get nth from the start
 		for (int i = 0; i < Nth; i++) {
 			if (nth == null) {
-
 				return null;
 			}
-			nth = nth.next;
+			nth = nth.getNext();
 		}
 
 		while (nth != null) {
-			nth = nth.next;
-			head = head.next;
-
+			nth = nth.getNext();
+			head = head.getNext();
 		}
 		return head;
 	}
 
 	public static void main(String args[]) {
 
-		NthNodeFromEndLinkedList nodeFromEndLinkedList = new NthNodeFromEndLinkedList();
-
-		ListNode node = nodeFromEndLinkedList.new ListNode();
+		ListNode node = new ListNode();
 		node.setData(1);
-		ListNode node2 = nodeFromEndLinkedList.new ListNode();
+		ListNode node2 = new ListNode();
 		node2.setData(2);
 		node.setNext(node2);
-		ListNode node3 = nodeFromEndLinkedList.new ListNode();
+		ListNode node3 = new ListNode();
 		node3.setData(3);
 		node2.setNext(node3);
-		ListNode node4 = nodeFromEndLinkedList.new ListNode();
+		ListNode node4 = new ListNode();
 		node4.setData(4);
 		node3.setNext(node4);
 
@@ -104,6 +67,5 @@ public class NthNodeFromEndLinkedList {
 		System.out.println((nthNodeFromEndIterative(node, 1)).getData());
 		System.out.println((nthNodeFromEndIterative(node, 2)).getData());
 		System.out.println((nthNodeFromEndIterative(node, 3)).getData());
-
 	}
 }

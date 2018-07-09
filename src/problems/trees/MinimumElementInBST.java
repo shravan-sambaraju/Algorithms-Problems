@@ -2,84 +2,44 @@ package problems.trees;
 
 /* Find minimum element in binary search tree */
 
-public class MinimumElementInBST {
+import common.utils.BinaryTreeNode;
 
-	class BinaryTreeNode {
-		int data;
-		BinaryTreeNode left;
-		BinaryTreeNode right;
+class MinimumElementInBST {
 
-		BinaryTreeNode(int x) {
-			data = x;
-			left = null;
-			right = null;
-
-		}
-
-		public int getData() {
-			return data;
-		}
-
-		public void setData(int data) {
-			this.data = data;
-		}
-
-		public BinaryTreeNode getLeft() {
-			return left;
-		}
-
-		public void setLeft(BinaryTreeNode left) {
-			this.left = left;
-		}
-
-		public BinaryTreeNode getRight() {
-			return right;
-		}
-
-		public void setRight(BinaryTreeNode right) {
-			this.right = right;
-		}
-	}
-
-	public BinaryTreeNode minimumElement(BinaryTreeNode node) {
+	private BinaryTreeNode minimumElement(BinaryTreeNode node) {
 		if (node == null) {
 			return node;
 		} else {
-			if (node.left == null) {
+			if (node.getLeft() == null) {
 				return node;
 			} else {
-				return minimumElement(node.left);
+				return minimumElement(node.getLeft());
 			}
 		}
-
 	}
 
-	public BinaryTreeNode minimumElementLevelOrder(BinaryTreeNode root) {
+	private BinaryTreeNode minimumElementLevelOrder(BinaryTreeNode root) {
 		if (root == null) {
 			return null;
-
 		}
-		while (root.left != null) {
-			root = root.left;
-
+		while (root.getLeft() != null) {
+			root = root.getLeft();
 		}
 		return root;
-
 	}
 
 	public static void main(String args[]) {
 
 		MinimumElementInBST min = new MinimumElementInBST();
-		BinaryTreeNode node = min.new BinaryTreeNode(50);
-		node.left = min.new BinaryTreeNode(30);
-		node.right = min.new BinaryTreeNode(70);
-		node.left.left = min.new BinaryTreeNode(20);
-		node.left.right = min.new BinaryTreeNode(40);
-		node.right.left = min.new BinaryTreeNode(60);
-		node.right.right = min.new BinaryTreeNode(80);
+		BinaryTreeNode node = new BinaryTreeNode(50);
+		node.setLeft(new BinaryTreeNode(30));
+		node.setRight(new BinaryTreeNode(70));
+		node.getLeft().setLeft(new BinaryTreeNode(20));
+		node.getLeft().setRight(new BinaryTreeNode(40));
+		node.getRight().setLeft(new BinaryTreeNode(60));
+		node.getRight().setRight(new BinaryTreeNode(70));
 
-		System.out.println(min.minimumElement(node).data);
-		System.out.println(min.minimumElementLevelOrder(node).data);
+		System.out.println(min.minimumElement(node).getData());
+		System.out.println(min.minimumElementLevelOrder(node).getData());
 	}
-
 }

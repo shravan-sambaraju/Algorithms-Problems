@@ -2,9 +2,9 @@ package problems.recursion;
 
 /* Find Magic index array */
 
-public class MagicIndexArray {
+class MagicIndexArray {
 
-	public static int magicSlowUnsorted(int[] array) {
+	private static int magicSlowUnsorted(int[] array) {
 		for (int i = 0; i < array.length; i++) {
 			if (array[i] == i) {
 				return i;
@@ -13,7 +13,7 @@ public class MagicIndexArray {
 		return -1;
 	}
 
-	public static int magicFastUnsorted(int[] array, int start, int end) {
+	private static int magicFastUnsorted(int[] array, int start, int end) {
 		if (end < start) {
 			return -1;
 		}
@@ -22,25 +22,21 @@ public class MagicIndexArray {
 		if (midValue == midIndex) {
 			return midIndex;
 		}
-		/* Search left */
 		int leftIndex = Math.min(midIndex - 1, midValue);
 		int left = magicFastUnsorted(array, start, leftIndex);
 		if (left >= 0) {
 			return left;
 		}
-
-		/* Search right */
 		int rightIndex = Math.max(midIndex + 1, midValue);
 		int right = magicFastUnsorted(array, rightIndex, end);
-
 		return right;
 	}
 
-	public static int magicFastUnsorted(int[] array) {
+	private static int magicFastUnsorted(int[] array) {
 		return magicFastUnsorted(array, 0, array.length - 1);
 	}
 
-	public static int magicSlowSorted(int[] array) {
+	private static int magicSlowSorted(int[] array) {
 		for (int i = 0; i < array.length; i++) {
 			if (array[i] == i) {
 				return i;
@@ -49,7 +45,7 @@ public class MagicIndexArray {
 		return -1;
 	}
 
-	public static int magicFastSorted(int[] array, int start, int end) {
+	private static int magicFastSorted(int[] array, int start, int end) {
 		if (end < start) {
 			return -1;
 		}
@@ -63,21 +59,21 @@ public class MagicIndexArray {
 		}
 	}
 
-	public static int magicFastSorted(int[] array) {
+	private static int magicFastSorted(int[] array) {
 		return magicFastSorted(array, 0, array.length - 1);
 	}
 
 	public static void main(String[] args) {
 
-		int a[] = new int[5];// declaration and instantiation
-		a[0] = 1;// initialization
+		int a[] = new int[5];
+		a[0] = 1;
 		a[1] = 2;
 		a[2] = 2;
 		a[3] = 4;
 		a[4] = 5;
 
-		int a2[] = new int[5];// declaration and instantiation
-		a[0] = 4;// initialization
+		int a2[] = new int[5];
+		a[0] = 4;
 		a[1] = 1;
 		a[2] = 3;
 		a[3] = 7;
@@ -88,5 +84,4 @@ public class MagicIndexArray {
 		System.out.println(magicSlowSorted(a));
 		System.out.println(magicSlowSorted(a2));
 	}
-
 }

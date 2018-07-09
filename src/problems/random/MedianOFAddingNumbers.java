@@ -6,17 +6,39 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-public class MedianOFAddingNumbers {
+class MedianOFAddingNumbers {
+
+	private class MaxHeapComparator implements Comparator<Integer> {
+		@Override
+		public int compare(Integer o1, Integer o2) {
+			// TODO Auto-generated method stub
+			if (o1 < o2)
+				return 1;
+			else if (o1 == o2)
+				return 0;
+			else
+				return -1;
+		}
+	}
+
+	private class MinHeapComparator implements Comparator<Integer> {
+		@Override
+		public int compare(Integer o1, Integer o2) {
+			if (o1 > o2)
+				return 1;
+			else if (o1 == o2)
+				return 0;
+			else
+				return -1;
+		}
+	}
+
 	private static Comparator<Integer> maxHeapComparator;
 	private static Comparator<Integer> minHeapComparator;
 	private static PriorityQueue<Integer> maxHeap;
 	private static PriorityQueue<Integer> minHeap;
 
-	public static void addNewNumber(int randomNumber) {
-		/*
-		 * Note: addNewNumber maintains a condition that maxHeap.size() >=
-		 * minHeap.size()
-		 */
+	private static void addNewNumber(int randomNumber) {
 		if (maxHeap.size() == minHeap.size()) {
 			if ((minHeap.peek() != null) && randomNumber > minHeap.peek()) {
 				maxHeap.offer(minHeap.poll());
@@ -34,36 +56,27 @@ public class MedianOFAddingNumbers {
 		}
 	}
 
-	public static double getMedian() {
-		/*
-		 * maxHeap is always at least as big as minHeap. So if maxHeap is empty,
-		 * then minHeap is also.
-		 */
+	private static double getMedian() {
 		if (maxHeap.isEmpty()) {
 			return 0;
 		}
 		if (maxHeap.size() == minHeap.size()) {
 			return ((double) minHeap.peek() + (double) maxHeap.peek()) / 2;
 		} else {
-			/*
-			 * If maxHeap and minHeap are of different sizes, then maxHeap must
-			 * have one extra element. Return maxHeap�s top element.
-			 */
 			return maxHeap.peek();
 		}
 	}
 
-	public static void addNewNumberAndPrintMedian(int randomNumber) {
+	private static void addNewNumberAndPrintMedian(int randomNumber) {
 		addNewNumber(randomNumber);
 		System.out.println("Random Number = " + randomNumber);
 		printMinHeapAndMaxHeap();
 		System.out.println("\nMedian = " + getMedian() + "\n");
 	}
 
-	public static void printMinHeapAndMaxHeap() {
+	private static void printMinHeapAndMaxHeap() {
 		Integer[] minHeapArray = minHeap.toArray(new Integer[minHeap.size()]);
 		Integer[] maxHeapArray = maxHeap.toArray(new Integer[maxHeap.size()]);
-
 		Arrays.sort(minHeapArray, maxHeapComparator);
 		Arrays.sort(maxHeapArray, maxHeapComparator);
 		System.out.print("MinHeap =");
@@ -80,8 +93,9 @@ public class MedianOFAddingNumbers {
 		int arraySize = 10;
 		int range = 7;
 
-		maxHeapComparator = new MaxHeapComparator();
-		minHeapComparator = new MinHeapComparator();
+		MedianOFAddingNumbers md = new MedianOFAddingNumbers();
+		maxHeapComparator = md.new MaxHeapComparator();
+		minHeapComparator = md.new MinHeapComparator();
 		maxHeap = new PriorityQueue<Integer>(arraySize - arraySize / 2, maxHeapComparator);
 		minHeap = new PriorityQueue<Integer>(arraySize / 2, minHeapComparator);
 
@@ -89,33 +103,5 @@ public class MedianOFAddingNumbers {
 			int randomNumber = (int) (Math.random() * (range + 1));
 			addNewNumberAndPrintMedian(randomNumber);
 		}
-	}
-
-}
-
-class MaxHeapComparator implements Comparator<Integer> {
-	// Comparator that sorts integers from highest to lowest
-	@Override
-	public int compare(Integer o1, Integer o2) {
-		// TODO Auto-generated method stub
-		if (o1 < o2)
-			return 1;
-		else if (o1 == o2)
-			return 0;
-		else
-			return -1;
-	}
-}
-
-class MinHeapComparator implements Comparator<Integer> {
-	// Comparator that sorts integers from lowest to highest
-	@Override
-	public int compare(Integer o1, Integer o2) {
-		if (o1 > o2)
-			return 1;
-		else if (o1 == o2)
-			return 0;
-		else
-			return -1;
 	}
 }

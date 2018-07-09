@@ -4,15 +4,15 @@ package problems.recursion;
 
 import java.util.HashMap;
 
-public class BooleanEvaluation {
+class BooleanEvaluation {
 
-	public static int count = 0;
+	private static int count = 0;
 
-	public static boolean stringToBool(String c) {
+	private static boolean stringToBool(String c) {
 		return c.equals("1") ? true : false;
 	}
 
-	public static int countEval(String s, boolean result, HashMap<String, Integer> memo) {
+	private static int countEval(String s, boolean result, HashMap<String, Integer> memo) {
 		count++;
 		if (s.length() == 0)
 			return 0;
@@ -41,16 +41,14 @@ public class BooleanEvaluation {
 			} else if (c == '|') {
 				totalTrue = leftTrue * rightTrue + leftFalse * rightTrue + leftTrue * rightFalse;
 			}
-
 			int subWays = result ? totalTrue : total - totalTrue;
 			ways += subWays;
 		}
-
 		memo.put(result + s, ways);
 		return ways;
 	}
 
-	public static int countEval(String s, boolean result) {
+	private static int countEval(String s, boolean result) {
 		return countEval(s, result, new HashMap<String, Integer>());
 	}
 
@@ -61,5 +59,4 @@ public class BooleanEvaluation {
 		System.out.println(countEval(expression, result));
 		System.out.println(count);
 	}
-
 }

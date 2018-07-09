@@ -5,59 +5,24 @@ package problems.trees;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RootToLeafPathEqualsSum {
+import common.utils.BinaryTreeNode;
 
-	class BinaryTreeNode {
-		int data;
-		BinaryTreeNode left;
-		BinaryTreeNode right;
+class RootToLeafPathEqualsSum {
 
-		BinaryTreeNode(int x) {
-			data = x;
-			left = null;
-			right = null;
-
-		}
-
-		public int getData() {
-			return data;
-		}
-
-		public void setData(int data) {
-			this.data = data;
-		}
-
-		public BinaryTreeNode getLeft() {
-			return left;
-		}
-
-		public void setLeft(BinaryTreeNode left) {
-			this.left = left;
-		}
-
-		public BinaryTreeNode getRight() {
-			return right;
-		}
-
-		public void setRight(BinaryTreeNode right) {
-			this.right = right;
-		}
-	}
-
-	public boolean printPath(BinaryTreeNode root, int sum, List<BinaryTreeNode> path) {
+	private boolean printPath(BinaryTreeNode root, int sum, List<BinaryTreeNode> path) {
 		if (root == null) {
 			return false;
 		}
-
-		if (root.left == null && root.right == null) {
-			if (root.data == sum) {
+		if (root.getLeft() == null && root.getRight() == null) {
+			if (root.getData() == sum) {
 				path.add(root);
 				return true;
 			} else {
 				return false;
 			}
 		}
-		if (printPath(root.left, sum - root.data, path) || printPath(root.right, sum - root.data, path)) {
+		if (printPath(root.getLeft(), sum - root.getData(), path)
+				|| printPath(root.getRight(), sum - root.getData(), path)) {
 			path.add(root);
 			return true;
 		}
@@ -65,26 +30,23 @@ public class RootToLeafPathEqualsSum {
 	}
 
 	public static void main(String args[]) {
-		RootToLeafPathEqualsSum rootToLeafPathEqualsSum = new RootToLeafPathEqualsSum();
-		BinaryTreeNode node = rootToLeafPathEqualsSum.new BinaryTreeNode(1);
-		node.left = rootToLeafPathEqualsSum.new BinaryTreeNode(2);
-		node.right = rootToLeafPathEqualsSum.new BinaryTreeNode(3);
-		node.left.left = rootToLeafPathEqualsSum.new BinaryTreeNode(4);
-		node.left.right = rootToLeafPathEqualsSum.new BinaryTreeNode(5);
-		node.right.left = rootToLeafPathEqualsSum.new BinaryTreeNode(6);
-		node.right.right = rootToLeafPathEqualsSum.new BinaryTreeNode(7);
+
+		BinaryTreeNode node = new BinaryTreeNode(1);
+		node.setLeft(new BinaryTreeNode(2));
+		node.setRight(new BinaryTreeNode(3));
+		node.getLeft().setLeft(new BinaryTreeNode(4));
+		node.getLeft().setRight(new BinaryTreeNode(5));
+		node.getRight().setLeft(new BinaryTreeNode(6));
+		node.getRight().setRight(new BinaryTreeNode(7));
 
 		List<BinaryTreeNode> resultList = new ArrayList<BinaryTreeNode>();
-
 		RootToLeafPathEqualsSum rtsum = new RootToLeafPathEqualsSum();
-
 		boolean result = rtsum.printPath(node, 10, resultList);
 
 		if (result) {
-			resultList.forEach(BinaryTreeNode -> System.out.print(BinaryTreeNode.data + " "));
+			resultList.forEach(BinaryTreeNode -> System.out.print(BinaryTreeNode.getData() + " "));
 		} else {
 			System.out.println("No path for sum " + 10);
 		}
-
 	}
 }

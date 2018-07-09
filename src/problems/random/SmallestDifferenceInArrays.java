@@ -4,9 +4,9 @@ package problems.random;
 
 import java.util.Arrays;
 
-public class SmallestDifferenceInArrays {
+class SmallestDifferenceInArrays {
 
-	public static int findSmallestDifference(int[] array1, int[] array2) {
+	private static int findSmallestDifference(int[] array1, int[] array2) {
 		Arrays.sort(array1);
 		Arrays.sort(array2);
 		int a = 0;

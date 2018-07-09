@@ -4,8 +4,9 @@ package problems.random;
 
 import java.util.ArrayList;
 
-public class CalculateWaterUsingZerosInPond {
-	public static ArrayList<Integer> computePondSizes(int[][] land) {
+class CalculateWaterUsingZerosInPond {
+
+	private static ArrayList<Integer> computePondSizes(int[][] land) {
 		boolean[][] visited = new boolean[land.length][land[0].length];
 		ArrayList<Integer> pondSizes = new ArrayList<Integer>();
 		for (int r = 0; r < land.length; r++) {
@@ -19,8 +20,7 @@ public class CalculateWaterUsingZerosInPond {
 		return pondSizes;
 	}
 
-	public static int computeSize(int[][] land, boolean[][] visited, int row, int col) {
-		/* If out of bounds or already visited. */
+	private static int computeSize(int[][] land, boolean[][] visited, int row, int col) {
 		if (row < 0 || col < 0 || row >= land.length || col >= land[row].length || visited[row][col]
 				|| land[row][col] != 0) {
 			return 0;

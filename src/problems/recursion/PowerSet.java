@@ -4,10 +4,11 @@ package problems.recursion;
 
 import java.util.ArrayList;
 
-public class PowerSet {
-	public static ArrayList<ArrayList<Integer>> getSubsets(ArrayList<Integer> set, int index) {
+class PowerSet {
+
+	private static ArrayList<ArrayList<Integer>> getSubsets(ArrayList<Integer> set, int index) {
 		ArrayList<ArrayList<Integer>> allsubsets;
-		if (set.size() == index) { // Base case - add empty set
+		if (set.size() == index) {
 			allsubsets = new ArrayList<ArrayList<Integer>>();
 			allsubsets.add(new ArrayList<Integer>());
 		} else {
@@ -33,5 +34,4 @@ public class PowerSet {
 		ArrayList<ArrayList<Integer>> subsets = getSubsets(list, 0);
 		System.out.println(subsets.toString());
 	}
-
 }

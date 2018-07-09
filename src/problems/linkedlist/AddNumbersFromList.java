@@ -2,120 +2,87 @@ package problems.linkedlist;
 
 /* Add number from list */
 
-public class AddNumbersFromList {
-	class ListNode {
-		int data;
-		ListNode next;
+import common.utils.ListNode;
 
-		public ListNode() {
+class AddNumbersFromList {
 
-		}
-
-		public ListNode(int data) {
-			next = null;
-			this.data = data;
-		}
-
-		public int getData() {
-			return data;
-		}
-
-		public void setData(int data) {
-			this.data = data;
-		}
-
-		public ListNode getNext() {
-			return next;
-		}
-
-		public void setNext(ListNode next) {
-			this.next = next;
-		}
-
-	}
-
-	// NOTE : the input parameters and output LL is reversed.
-	public static ListNode addTwoReversedNumbers(ListNode l1, ListNode l2) {
+	private static ListNode addTwoReversedNumbers(ListNode l1, ListNode l2) {
 		int carry = 0;
-		AddNumbersFromList addNumbersFromList = new AddNumbersFromList();
-		ListNode head = addNumbersFromList.new ListNode(0);
+		ListNode head = new ListNode(0);
 		ListNode sum = head;
 		while (l1 != null || l2 != null) {
 			if (l1 != null) {
-				carry += l1.data;
-				l1 = l1.next;
+				carry += l1.getData();
+				l1 = l1.getNext();
 			}
 			if (l2 != null) {
-				carry += l2.data;
-				l2 = l2.next;
+				carry += l2.getData();
+				l2 = l2.getNext();
 			}
-			sum.next = addNumbersFromList.new ListNode(carry % 10);
-			sum = sum.next;
+			sum.setNext(new ListNode(carry % 10));
+			sum = sum.getNext();
 			carry /= 10;
 		}
-		sum.next = carry == 1 ? addNumbersFromList.new ListNode(1) : null;
-		return head.next;
+		sum.setNext(carry == 1 ? new ListNode(1) : null);
+		return head.getNext();
 	}
 
-	public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+	private static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 		if (l1 == null)
 			return l2;
 		if (l2 == null)
 			return l1;
-		AddNumbersFromList addNumbersFromList = new AddNumbersFromList();
-		AddNumbersFromList.ListNode head = addNumbersFromList.new ListNode(0);
+		ListNode head = new ListNode(0);
 		ListNode cur = head;
 		int advance = 0;
 		while (l1 != null && l2 != null) {
-			int sum = l1.data + l2.data + advance;
+			int sum = l1.getData() + l2.getData() + advance;
 			advance = sum / 10;
 			sum = sum % 10;
-			cur.next = addNumbersFromList.new ListNode(sum);
-			cur = cur.next;
-			l1 = l1.next;
-			l2 = l2.next;
+			cur.setNext(new ListNode(sum));
+			cur = cur.getNext();
+			l1 = l1.getNext();
+			l2 = l2.getNext();
 		}
 		if (l1 != null) {
 			if (advance != 0)
-				cur.next = addTwoNumbers(l1, addNumbersFromList.new ListNode(advance));
+				cur.setNext(addTwoNumbers(l1, new ListNode(advance)));
 			else
-				cur.next = l1;
+				cur.setNext(l1);
 		} else if (l2 != null) {
 			if (advance != 0)
-				cur.next = addTwoNumbers(l2, addNumbersFromList.new ListNode(advance));
+				cur.setNext(addTwoNumbers(l2, new ListNode(advance)));
 			else
-				cur.next = l2;
+				cur.setNext(l2);
 		} else if (advance != 0) {
-			cur.next = addNumbersFromList.new ListNode(advance);
+			cur.setNext(new ListNode(advance));
 		}
-		return head.next;
+		return head.getNext();
 	}
 
 	public static void main(String args[]) {
 
-		AddNumbersFromList addNumbersFromList = new AddNumbersFromList();
-
-		ListNode node = addNumbersFromList.new ListNode();
+		ListNode node = new ListNode();
 		node.setData(1);
-		ListNode node2 = addNumbersFromList.new ListNode();
+		ListNode node2 = new ListNode();
 		node2.setData(3);
 		node.setNext(node2);
-		ListNode node3 = addNumbersFromList.new ListNode();
+		ListNode node3 = new ListNode();
 		node3.setData(5);
 		node2.setNext(node3);
-		ListNode node4 = addNumbersFromList.new ListNode();
+		ListNode node4 = new ListNode();
 		node4.setData(7);
 		node3.setNext(node4);
 
-		ListNode node11 = addNumbersFromList.new ListNode();
+		ListNode node11 = new ListNode();
 		node11.setData(2);
-		ListNode node12 = addNumbersFromList.new ListNode();
+		ListNode node12 = new ListNode();
 		node12.setData(4);
 		node11.setNext(node12);
-		ListNode node13 = addNumbersFromList.new ListNode();
+		ListNode node13 = new ListNode();
 		node13.setData(6);
 		node12.setNext(node13);
-		ListNode node14 = addNumbersFromList.new ListNode();
+		ListNode node14 = new ListNode();
 		node14.setData(8);
 		node13.setNext(node14);
 
@@ -134,8 +101,6 @@ public class AddNumbersFromList {
 		while (finalsecond != null) {
 			System.out.println(finalsecond.getData());
 			finalsecond = finalsecond.getNext();
-
 		}
-
 	}
 }

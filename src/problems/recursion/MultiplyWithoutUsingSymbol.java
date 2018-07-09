@@ -2,11 +2,11 @@ package problems.recursion;
 
 /* Multiply without using symbols */
 
-public class MultiplyWithoutUsingSymbol {
+class MultiplyWithoutUsingSymbol {
 
-	public static int counter = 0;
+	private static int counter = 0;
 
-	public static int minProductHelper(int smaller, int bigger) {
+	private static int minProductHelper(int smaller, int bigger) {
 		if (smaller == 0) {
 			return 0;
 		} else if (smaller == 1) {
@@ -25,7 +25,7 @@ public class MultiplyWithoutUsingSymbol {
 		}
 	}
 
-	public static int minProduct(int a, int b) {
+	private static int minProduct(int a, int b) {
 		int bigger = a < b ? b : a;
 		int smaller = a < b ? a : b;
 
@@ -44,5 +44,4 @@ public class MultiplyWithoutUsingSymbol {
 		}
 		System.out.println("Adds: " + counter);
 	}
-
 }

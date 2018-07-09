@@ -2,57 +2,28 @@ package datastructures;
 
 /* Java implementation of linkedlist */
 
-class ListNode {
-	int data;
-	ListNode next;
+import common.utils.ListNode;
 
-	public ListNode() {
-
-	}
-
-	public ListNode(int data) {
-		next = null;
-		this.data = data;
-	}
-
-	public int getData() {
-		return data;
-	}
-
-	public void setData(int data) {
-		this.data = data;
-	}
-
-	public ListNode getNext() {
-		return next;
-	}
-
-	public void setNext(ListNode next) {
-		this.next = next;
-	}
-
-}
-
-public class LinkedListImplementation {
+class LinkedListImplementation {
 
 	public LinkedListImplementation() {
 		length = 0;
 	}
 
-	ListNode head;
+	private ListNode head;
 	private int length;
 
-	public synchronized ListNode getHead() {
+	private synchronized ListNode getHead() {
 		return head;
 	}
 
-	public synchronized void insertAtBegin(ListNode node) {
+	private synchronized void insertAtBegin(ListNode node) {
 		node.setNext(head);
 		head = node;
 		length++;
 	}
 
-	public synchronized void insertAtEnd(ListNode node) {
+	private synchronized void insertAtEnd(ListNode node) {
 		if (head == null) {
 			head = node;
 		} else {
@@ -64,7 +35,7 @@ public class LinkedListImplementation {
 		length++;
 	}
 
-	public void insert(int data, int position) {
+	private void insert(int data, int position) {
 
 		if (position < 0) {
 			position = 0;
@@ -91,34 +62,26 @@ public class LinkedListImplementation {
 			for (int i = 1; i < position; i += 1) {
 				temp = temp.getNext();
 			}
-
 			ListNode newNode = new ListNode();
 			newNode.setData(data);
 			newNode.setNext(temp.getNext());
 			temp.setNext(newNode);
-
 		}
-
 		length += 1;
-
 	}
 
-	public synchronized ListNode removeFromBegin() {
+	private synchronized ListNode removeFromBegin() {
 		ListNode node = head;
 		if (node != null) {
 			head = node.getNext();
 			node.setNext(null);
-
 		}
-
 		return node;
-
 	}
 
-	public synchronized ListNode removeFromEnd() {
+	private synchronized ListNode removeFromEnd() {
 		if (head == null) {
 			return null;
-
 		}
 
 		ListNode p = head, q = null, next = head.getNext();
@@ -129,14 +92,12 @@ public class LinkedListImplementation {
 		while ((next = p.getNext()) != null) {
 			q = p;
 			p = next;
-
 		}
 		q.setNext(null);
-
 		return p;
 	}
 
-	public synchronized void removeMatched(ListNode node) {
+	private synchronized void removeMatched(ListNode node) {
 		if (head == null)
 			return;
 		if (node.equals(head)) {
@@ -155,7 +116,7 @@ public class LinkedListImplementation {
 		}
 	}
 
-	public void remove(int position) {
+	private void remove(int position) {
 		if (position < 0) {
 			position = 0;
 		}
@@ -179,7 +140,7 @@ public class LinkedListImplementation {
 		length -= 1;
 	}
 
-	public int getPosition(int data) {
+	private int getPosition(int data) {
 
 		ListNode temp = head;
 		int pos = 0;
@@ -194,8 +155,6 @@ public class LinkedListImplementation {
 	}
 
 	public static void main(String args[]) {
-
-		// insertion code and remove matched
 
 		ListNode node = new ListNode();
 		node.setData(1);
@@ -215,7 +174,6 @@ public class LinkedListImplementation {
 		lli.removeMatched(node1);
 		System.out.println(lli.length);
 
-		// insertion at the end
 		LinkedListImplementation lli1 = new LinkedListImplementation();
 		ListNode node2 = new ListNode();
 		node2.setData(3);
@@ -235,7 +193,6 @@ public class LinkedListImplementation {
 		System.out.println(node3.getNext());
 		System.out.println(lli1.length);
 
-		// insert at position and remove at position and get position
 		LinkedListImplementation lli2 = new LinkedListImplementation();
 		System.out.println("**** insertion at position ****");
 		lli2.insert(5, 0);
@@ -260,8 +217,6 @@ public class LinkedListImplementation {
 		System.out.println(lli2.getPosition(100));
 		System.out.println(lli2.getPosition(6));
 
-		// remove from begin and end
-
 		System.out.println("**** remove from begin and end ****");
 		System.out.println(lli2.getHead().getData());
 		lli2.removeFromBegin();
@@ -273,7 +228,5 @@ public class LinkedListImplementation {
 		System.out.println(lli2.getHead().getData());
 		System.out.println(lli2.getHead().getNext().getData());
 		System.out.println(lli2.getHead().getNext().getNext());
-
 	}
-
 }

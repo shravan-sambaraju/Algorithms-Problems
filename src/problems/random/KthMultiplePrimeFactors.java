@@ -5,8 +5,9 @@ package problems.random;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class KthMultiplePrimeFactors {
-	public static void printQueue(Queue<Integer> q, int x) {
+class KthMultiplePrimeFactors {
+
+	private static void printQueue(Queue<Integer> q, int x) {
 		System.out.print(x + ": ");
 		for (Integer a : q) {
 			System.out.print(a / x + ", ");
@@ -14,7 +15,7 @@ public class KthMultiplePrimeFactors {
 		System.out.println("");
 	}
 
-	public static int getKthMagicNumber(int k) {
+	private static int getKthMagicNumber(int k) {
 		if (k < 0) {
 			return 0;
 		}
@@ -23,8 +24,7 @@ public class KthMultiplePrimeFactors {
 		Queue<Integer> queue5 = new LinkedList<Integer>();
 		Queue<Integer> queue7 = new LinkedList<Integer>();
 		queue3.add(1);
-		for (int i = 0; i <= k; i++) { // Include 0th iteration through kth
-										// iteration
+		for (int i = 0; i <= k; i++) {
 			int v3 = queue3.size() > 0 ? queue3.peek() : Integer.MAX_VALUE;
 			int v5 = queue5.size() > 0 ? queue5.peek() : Integer.MAX_VALUE;
 			int v7 = queue7.size() > 0 ? queue7.peek() : Integer.MAX_VALUE;

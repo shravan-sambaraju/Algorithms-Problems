@@ -2,17 +2,13 @@ package problems.queues;
 
 /* Implement dynamic size array queue */
 
-public class DynamicSizeArrayQueue {
-	// Array used to implement the queue.
+class DynamicSizeArrayQueue {
+
 	private int[] queueRep;
 	private int size, front, rear;
+	private static int CAPACITY = 16;
+	private static int MINCAPACITY = 1 << 15;
 
-	// Length of the array used to implement the queue.
-	private static int CAPACITY = 16; // Default Queue size
-
-	public static int MINCAPACITY = 1 << 15; // power of 2
-
-	// Initializes the queue to use an array of default length.
 	public DynamicSizeArrayQueue() {
 		queueRep = new int[CAPACITY];
 		size = 0;
@@ -20,7 +16,6 @@ public class DynamicSizeArrayQueue {
 		rear = 0;
 	}
 
-	// Initializes the queue to use an array of given length.
 	public DynamicSizeArrayQueue(int cap) {
 		queueRep = new int[cap];
 		size = 0;
@@ -28,9 +23,7 @@ public class DynamicSizeArrayQueue {
 		rear = 0;
 	}
 
-	// Inserts an element at the rear of the queue. This method runs in O(1)
-	// time.
-	public void enQueue(int data) throws NullPointerException, IllegalStateException {
+	private void enQueue(int data) throws NullPointerException, IllegalStateException {
 		if (size == CAPACITY)
 			expand();
 		size++;
@@ -38,10 +31,7 @@ public class DynamicSizeArrayQueue {
 		rear = (rear + 1) % CAPACITY;
 	}
 
-	// Removes the front element from the queue. This method runs in O(1) time.
-	public int deQueue() throws IllegalStateException {
-		// Effects: If queue is empty, throw IllegalStateException,
-		// else remove and return oldest element of this
+	private int deQueue() throws IllegalStateException {
 		if (size == 0)
 			throw new IllegalStateException("Queue is empty: Underflow");
 		else {
@@ -53,38 +43,29 @@ public class DynamicSizeArrayQueue {
 		}
 	}
 
-	// Checks whether the queue is empty. This method runs in O(1) time.
-	public boolean isEmpty() {
+	private boolean isEmpty() {
 		return (size == 0);
 	}
 
-	// Checks whether the queue is full. This method runs in O(1) time.
-	public boolean isFull() {
+	private boolean isFull() {
 		return (size == CAPACITY);
 	}
 
-	// Returns the number of elements in the queue. This method runs in O(1)
-	// time.
-	public int size() {
+	private int size() {
 		return size;
 	}
 
-	// Increases the queue size by double
 	private void expand() {
 		int length = size();
-		int[] newQueue = new int[length << 1]; // or 2* length
-
-		// copy items
+		int[] newQueue = new int[length << 1];
 		for (int i = front; i <= rear; i++)
 			newQueue[i - front] = queueRep[i % CAPACITY];
-
 		queueRep = newQueue;
 		front = 0;
 		rear = size - 1;
 		CAPACITY *= 2;
 	}
 
-	// dynamic array operation: shrinks to 1/2 if more than than 3/4 empty
 	@SuppressWarnings("unused")
 	private void shrink() {
 		int length = size;
@@ -98,10 +79,6 @@ public class DynamicSizeArrayQueue {
 		queueRep = newQueue;
 	}
 
-	// Returns a string representation of the queue as a list of elements, with
-	// the front element at the end: [ ... , prev, rear ]. This method runs in
-	// O(n)
-	// time, where n is the size of the queue.
 	public String toString() {
 		String result = "[";
 		for (int i = 0; i < size; i++) {
@@ -122,6 +99,5 @@ public class DynamicSizeArrayQueue {
 		darray.enQueue(3);
 		darray.deQueue();
 		System.out.println(darray.toString());
-
 	}
 }

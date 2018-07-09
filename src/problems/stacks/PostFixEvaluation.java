@@ -4,9 +4,9 @@ package problems.stacks;
 
 import java.util.Stack;
 
-public class PostFixEvaluation {
+class PostFixEvaluation {
 
-	public static int expressionEvaluation(String[] tokens) {
+	private static int expressionEvaluation(String[] tokens) {
 		Stack<Integer> s = new Stack<Integer>();
 		for (String token : tokens) {
 			if (token.equals("+")) {
@@ -38,10 +38,7 @@ public class PostFixEvaluation {
 
 	public static void main(String args[]) {
 		String[] s = { "1", "2", "3", "*", "+", "5", "-" };
-
 		int s1 = expressionEvaluation(s);
 		System.out.println(s1);
-
 	}
-
 }

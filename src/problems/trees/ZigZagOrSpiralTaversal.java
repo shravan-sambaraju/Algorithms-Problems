@@ -5,47 +5,11 @@ package problems.trees;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Stack;
+import common.utils.BinaryTreeNode;
 
-public class ZigZagOrSpiralTaversal {
+class ZigZagOrSpiralTaversal {
 
-	class BinaryTreeNode {
-		int data;
-		BinaryTreeNode left;
-		BinaryTreeNode right;
-
-		BinaryTreeNode(int x) {
-			data = x;
-			left = null;
-			right = null;
-
-		}
-
-		public int getData() {
-			return data;
-		}
-
-		public void setData(int data) {
-			this.data = data;
-		}
-
-		public BinaryTreeNode getLeft() {
-			return left;
-		}
-
-		public void setLeft(BinaryTreeNode left) {
-			this.left = left;
-		}
-
-		public BinaryTreeNode getRight() {
-			return right;
-		}
-
-		public void setRight(BinaryTreeNode right) {
-			this.right = right;
-		}
-	}
-
-	public void spiralWithTwoStack(BinaryTreeNode root) {
+	private void spiralWithTwoStack(BinaryTreeNode root) {
 		if (root == null) {
 			return;
 		}
@@ -56,31 +20,28 @@ public class ZigZagOrSpiralTaversal {
 		while (!s1.isEmpty() || !s2.isEmpty()) {
 			while (!s1.isEmpty()) {
 				root = s1.pop();
-				System.out.print(root.data + " ");
-				if (root.left != null) {
-					s2.push(root.left);
+				System.out.print(root.getData() + " ");
+				if (root.getLeft() != null) {
+					s2.push(root.getLeft());
 				}
-				if (root.right != null) {
-					s2.push(root.right);
+				if (root.getRight() != null) {
+					s2.push(root.getRight());
 				}
 			}
 			while (!s2.isEmpty()) {
 				root = s2.pop();
-				System.out.print(root.data + " ");
-				if (root.right != null) {
-					s1.push(root.right);
+				System.out.print(root.getData() + " ");
+				if (root.getRight() != null) {
+					s1.push(root.getRight());
 				}
-				if (root.left != null) {
-					s1.push(root.left);
+				if (root.getLeft() != null) {
+					s1.push(root.getLeft());
 				}
 			}
 		}
 	}
 
-	/**
-	 * One deque with count method to print tree in spiral order
-	 */
-	public void spiralWithOneDeque(BinaryTreeNode root) {
+	private void spiralWithOneDeque(BinaryTreeNode root) {
 		if (root == null) {
 			return;
 		}
@@ -93,24 +54,24 @@ public class ZigZagOrSpiralTaversal {
 			while (count > 0) {
 				if (flip) {
 					root = deque.pollFirst();
-					System.out.print(root.data + " ");
-					if (root.left != null) {
-						deque.offerLast(root.left);
+					System.out.print(root.getData() + " ");
+					if (root.getLeft() != null) {
+						deque.offerLast(root.getLeft());
 						currentCount++;
 					}
-					if (root.right != null) {
-						deque.offerLast(root.right);
+					if (root.getRight() != null) {
+						deque.offerLast(root.getRight());
 						currentCount++;
 					}
 				} else {
 					root = deque.pollLast();
-					System.out.print(root.data + " ");
-					if (root.right != null) {
-						deque.offerFirst(root.right);
+					System.out.print(root.getData() + " ");
+					if (root.getRight() != null) {
+						deque.offerFirst(root.getRight());
 						currentCount++;
 					}
-					if (root.left != null) {
-						deque.offerFirst(root.left);
+					if (root.getLeft() != null) {
+						deque.offerFirst(root.getLeft());
 						currentCount++;
 					}
 				}
@@ -121,39 +82,35 @@ public class ZigZagOrSpiralTaversal {
 		}
 	}
 
-	/**
-	 * One deque with delimiter to print tree in spiral order
-	 */
-	public void spiralWithOneDequeDelimiter(BinaryTreeNode root) {
+	private void spiralWithOneDequeDelimiter(BinaryTreeNode root) {
 		if (root == null) {
 			return;
 		}
 		Deque<BinaryTreeNode> q = new LinkedList<>();
 		q.offer(null);
 		q.offerFirst(root);
-		// if only delimiter(in this case null) is left in queue then break
 		while (q.size() > 1) {
 			root = q.peekFirst();
 			while (root != null) {
 				root = q.pollFirst();
-				System.out.print(root.data + " ");
-				if (root.left != null) {
-					q.offerLast(root.left);
+				System.out.print(root.getData() + " ");
+				if (root.getLeft() != null) {
+					q.offerLast(root.getLeft());
 				}
-				if (root.right != null) {
-					q.offerLast(root.right);
+				if (root.getRight() != null) {
+					q.offerLast(root.getRight());
 				}
 				root = q.peekFirst();
 			}
 			root = q.peekLast();
 			while (root != null) {
-				System.out.print(root.data + " ");
+				System.out.print(root.getData() + " ");
 				root = q.pollLast();
-				if (root.right != null) {
-					q.offerFirst(root.right);
+				if (root.getRight() != null) {
+					q.offerFirst(root.getRight());
 				}
-				if (root.left != null) {
-					q.offerFirst(root.left);
+				if (root.getLeft() != null) {
+					q.offerFirst(root.getLeft());
 				}
 				root = q.peekLast();
 			}
@@ -161,14 +118,14 @@ public class ZigZagOrSpiralTaversal {
 	}
 
 	public static void main(String args[]) {
-		ZigZagOrSpiralTaversal zagOrSpiralTaversal = new ZigZagOrSpiralTaversal();
-		BinaryTreeNode node = zagOrSpiralTaversal.new BinaryTreeNode(1);
-		node.left = zagOrSpiralTaversal.new BinaryTreeNode(2);
-		node.right = zagOrSpiralTaversal.new BinaryTreeNode(3);
-		node.left.left = zagOrSpiralTaversal.new BinaryTreeNode(4);
-		node.left.right = zagOrSpiralTaversal.new BinaryTreeNode(5);
-		node.right.left = zagOrSpiralTaversal.new BinaryTreeNode(6);
-		node.right.right = zagOrSpiralTaversal.new BinaryTreeNode(7);
+
+		BinaryTreeNode node = new BinaryTreeNode(1);
+		node.setLeft(new BinaryTreeNode(2));
+		node.setRight(new BinaryTreeNode(3));
+		node.getLeft().setLeft(new BinaryTreeNode(4));
+		node.getLeft().setRight(new BinaryTreeNode(5));
+		node.getRight().setLeft(new BinaryTreeNode(6));
+		node.getRight().setRight(new BinaryTreeNode(7));
 
 		ZigZagOrSpiralTaversal zg = new ZigZagOrSpiralTaversal();
 		zg.spiralWithTwoStack(node);
@@ -177,6 +134,5 @@ public class ZigZagOrSpiralTaversal {
 		zg.spiralWithOneDeque(node);
 		System.out.println();
 		zg.spiralWithOneDequeDelimiter(node);
-
 	}
 }

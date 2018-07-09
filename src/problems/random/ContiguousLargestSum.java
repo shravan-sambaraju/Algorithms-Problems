@@ -2,8 +2,8 @@ package problems.random;
 
 /* Calculate continuous largest sum */
 
-public class ContiguousLargestSum {
-	public static int getMaxSum(int[] a) {
+class ContiguousLargestSum {
+	private static int getMaxSum(int[] a) {
 		int maxSum = 0;
 		int runningSum = 0;
 		for (int i = 0; i < a.length; i++) {

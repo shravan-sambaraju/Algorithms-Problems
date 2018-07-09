@@ -5,18 +5,18 @@ package problems.queues;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class StackWithTwoQueues<T> {
+class StackWithTwoQueues<T> {
 	private Queue<T> Q1 = new LinkedList<T>();
 	private Queue<T> Q2 = new LinkedList<T>();
 
-	public void push(T data) {
+	private void push(T data) {
 		if (Q1.isEmpty())
 			Q2.offer(data);
 		else
 			Q1.offer(data);
 	}
 
-	public T pop() {
+	private T pop() {
 		int i = 0, size;
 		if (Q2.isEmpty()) {
 			size = Q1.size();

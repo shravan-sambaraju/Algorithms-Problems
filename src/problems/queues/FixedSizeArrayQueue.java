@@ -2,15 +2,12 @@ package problems.queues;
 
 /* Implement fixed size array queue */
 
-public class FixedSizeArrayQueue {
-	// Array used to implement the queue.
+class FixedSizeArrayQueue {
+
 	private int[] queueRep;
 	private int size, front, rear;
+	private static final int CAPACITY = 16;
 
-	// Length of the array used to implement the queue.
-	private static final int CAPACITY = 16; // Default Queue size
-
-	// Initializes the queue to use an array of default length.
 	public FixedSizeArrayQueue() {
 		queueRep = new int[CAPACITY];
 		size = 0;
@@ -18,7 +15,6 @@ public class FixedSizeArrayQueue {
 		rear = 0;
 	}
 
-	// Initializes the queue to use an array of given length.
 	public FixedSizeArrayQueue(int cap) {
 		queueRep = new int[cap];
 		size = 0;
@@ -26,9 +22,7 @@ public class FixedSizeArrayQueue {
 		rear = 0;
 	}
 
-	// Inserts an element at the rear of the queue. This method runs in O(1)
-	// time.
-	public void enQueue(int data) throws NullPointerException, IllegalStateException {
+	private void enQueue(int data) throws NullPointerException, IllegalStateException {
 		if (size == CAPACITY)
 			throw new IllegalStateException("Queue is full: Overflow");
 		else {
@@ -38,10 +32,7 @@ public class FixedSizeArrayQueue {
 		}
 	}
 
-	// Removes the front element from the queue. This method runs in O(1) time.
-	public int deQueue() throws IllegalStateException {
-		// Effects: If queue is empty, throw IllegalStateException,
-		// else remove and return oldest element of this
+	private int deQueue() throws IllegalStateException {
 		if (size == 0)
 			throw new IllegalStateException("Queue is empty: Underflow");
 		else {
@@ -53,26 +44,18 @@ public class FixedSizeArrayQueue {
 		}
 	}
 
-	// Checks whether the queue is empty. This method runs in O(1) time.
-	public boolean isEmpty() {
+	private boolean isEmpty() {
 		return (size == 0);
 	}
 
-	// Checks whether the queue is full. This method runs in O(1) time.
-	public boolean isFull() {
+	private boolean isFull() {
 		return (size == CAPACITY);
 	}
 
-	// Returns the number of elements in the queue. This method runs in O(1)
-	// time.
-	public int size() {
+	private int size() {
 		return size;
 	}
 
-	// Returns a string representation of the queue as a list of elements, with
-	// the front element at the end: [ ... , prev, rear ]. This method runs in
-	// O(n)
-	// time, where n is the size of the queue.
 	public String toString() {
 		String result = "[";
 		for (int i = 0; i < size; i++) {
@@ -93,7 +76,5 @@ public class FixedSizeArrayQueue {
 		fqueue.enQueue(3);
 		fqueue.deQueue();
 		System.out.println(fqueue.toString());
-
 	}
-
 }

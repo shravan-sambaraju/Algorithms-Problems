@@ -4,16 +4,15 @@ package problems.strings;
 
 import java.util.Arrays;
 
-public class CheckTwoStringsArePermutations {
+class CheckTwoStringsArePermutations {
 
-	public static String sort(String s) {
+	private static String sort(String s) {
 		char[] content = s.toCharArray();
 		Arrays.sort(content);
 		return new String(content);
-
 	}
 
-	static boolean isPermutation(String s, String t) {
+	private static boolean isPermutation(String s, String t) {
 		if (s.length() != t.length()) {
 			return false;
 		}
@@ -22,10 +21,9 @@ public class CheckTwoStringsArePermutations {
 
 	////// second approach
 
-	static boolean isPermutation2(String s, String t) {
+	private static boolean isPermutation2(String s, String t) {
 		if (s.length() != t.length()) {
 			return false;
-
 		}
 		int[] letters = new int[128];
 		char[] s_array = s.toCharArray();
@@ -39,11 +37,8 @@ public class CheckTwoStringsArePermutations {
 			if (letters[c] < 0) {
 				return false;
 			}
-
 		}
-
 		return true;
-
 	}
 
 	public static void main(String args[]) {
@@ -54,5 +49,4 @@ public class CheckTwoStringsArePermutations {
 		System.out.println(isPermutation2("abc", "bbc"));
 		System.out.println(isPermutation2("abc", "bcd"));
 	}
-
 }

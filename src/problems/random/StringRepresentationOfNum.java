@@ -3,18 +3,20 @@ package problems.random;
 /* Generate string representation of given number */
 
 import java.util.LinkedList;
+import static common.utils.UtilMethods.randomIntInRange;
 
-public class StringRepresentationOfNum {
-	public static String[] smalls = { "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
+class StringRepresentationOfNum {
+
+	private static String[] smalls = { "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
 			"Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen",
 			"Nineteen" };
-	public static String[] tens = { "", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty",
+	private static String[] tens = { "", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty",
 			"Ninety" };
-	public static String[] bigs = { "", "Thousand", "Million", "Billion" };
-	public static String hundred = "Hundred";
-	public static String negative = "Negative";
+	private static String[] bigs = { "", "Thousand", "Million", "Billion" };
+	private static String hundred = "Hundred";
+	private static String negative = "Negative";
 
-	public static String convert(int num) {
+	private static String convert(int num) {
 		if (num == 0) {
 			return smalls[0];
 		} else if (num < 0) {
@@ -29,17 +31,14 @@ public class StringRepresentationOfNum {
 				String chunk = convertChunk(num % 1000) + " " + bigs[chunkCount];
 				parts.addFirst(chunk);
 			}
-			num /= 1000; // shift chunk
+			num /= 1000;
 			chunkCount++;
 		}
 
 		return listToString(parts);
 	}
 
-	/*
-	 * Convert a linked list of strings to a string, dividing it up with spaces.
-	 */
-	public static String listToString(LinkedList<String> parts) {
+	private static String listToString(LinkedList<String> parts) {
 		StringBuilder sb = new StringBuilder();
 		while (parts.size() > 1) {
 			sb.append(parts.pop());
@@ -49,17 +48,15 @@ public class StringRepresentationOfNum {
 		return sb.toString();
 	}
 
-	public static String convertChunk(int number) {
+	private static String convertChunk(int number) {
 		LinkedList<String> parts = new LinkedList<String>();
 
-		/* Convert hundreds place */
 		if (number >= 100) {
 			parts.addLast(smalls[number / 100]);
 			parts.addLast(hundred);
 			number %= 100;
 		}
 
-		/* Convert tens place */
 		if (number >= 10 && number <= 19) {
 			parts.addLast(smalls[number]);
 		} else if (number >= 20) {
@@ -67,71 +64,54 @@ public class StringRepresentationOfNum {
 			number %= 10;
 		}
 
-		/* Convert ones place */
 		if (number >= 1 && number <= 9) {
 			parts.addLast(smalls[number]);
 		}
-
 		return listToString(parts);
 	}
 
 	public static void main(String[] args) {
-		/* numbers between 100000 and 1000000 */
+
 		for (int i = 0; i < 8; i++) {
 			int value = (int) (-1 * Math.pow(10, i));
 			String s = convert(value);
 			System.out.println(value + ": " + s);
 		}
 
-		/* numbers between 0 and 100 */
 		for (int i = 0; i < 10; i++) {
 			int value = randomIntInRange(0, 100);
 			String s = convert(value);
 			System.out.println(value + ": " + s);
 		}
 
-		/* numbers between 100 and 1000 */
 		for (int i = 0; i < 10; i++) {
 			int value = randomIntInRange(100, 1000);
 			String s = convert(value);
 			System.out.println(value + ": " + s);
 		}
 
-		/* numbers between 1000 and 100000 */
 		for (int i = 0; i < 10; i++) {
 			int value = randomIntInRange(1000, 100000);
 			String s = convert(value);
 			System.out.println(value + ": " + s);
 		}
 
-		/* numbers between 100000 and 100000000 */
 		for (int i = 0; i < 10; i++) {
 			int value = randomIntInRange(100000, 100000000);
 			String s = convert(value);
 			System.out.println(value + ": " + s);
 		}
 
-		/* numbers between 100000000 and 1000000000 */
 		for (int i = 0; i < 10; i++) {
 			int value = randomIntInRange(100000000, 1000000000);
 			String s = convert(value);
 			System.out.println(value + ": " + s);
 		}
 
-		/* numbers between 1000000000 and Integer.MAX_VALUE */
 		for (int i = 0; i < 10; i++) {
 			int value = randomIntInRange(1000000000, Integer.MAX_VALUE);
 			String s = convert(value);
 			System.out.println(value + ": " + s);
 		}
 	}
-
-	public static int randomInt(int n) {
-		return (int) (Math.random() * n);
-	}
-
-	public static int randomIntInRange(int min, int max) {
-		return randomInt(max + 1 - min) + min;
-	}
-
 }

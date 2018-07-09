@@ -4,14 +4,9 @@ package problems.random;
 
 import java.util.HashMap;
 
-/* Calculate number of similar letters  */
+class EqualLettersNumbersSubArray {
 
-public class EqualLettersNumbersSubArray {
-	/*
-	 * Compute the difference between the number of letters and numbers between
-	 * the beginning of the array and each index.
-	 */
-	public static int[] computeDeltaArray(char[] array) {
+	private static int[] computeDeltaArray(char[] array) {
 		int[] deltas = new int[array.length];
 		int delta = 0;
 		for (int i = 0; i < array.length; i++) {
@@ -25,11 +20,7 @@ public class EqualLettersNumbersSubArray {
 		return deltas;
 	}
 
-	/*
-	 * Find the matching pair of values in the deltas array with the largest
-	 * difference in indices.
-	 */
-	public static int[] findLongestMatch(int[] deltas) {
+	private static int[] findLongestMatch(int[] deltas) {
 		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 		map.put(0, -1);
 		int[] max = new int[2];
@@ -49,7 +40,7 @@ public class EqualLettersNumbersSubArray {
 		return max;
 	}
 
-	public static char[] extract(char[] array, int start, int end) {
+	private static char[] extract(char[] array, int start, int end) {
 		if (start > end)
 			return null;
 		char[] subarray = new char[end - start + 1];
@@ -59,21 +50,14 @@ public class EqualLettersNumbersSubArray {
 		return subarray;
 	}
 
-	public static char[] findLongestSubarray(char[] array) {
-		/* Compute deltas betw count of numbers and count of letters. */
+	private static char[] findLongestSubarray(char[] array) {
+
 		int[] deltas = computeDeltaArray(array);
-
-		/* Find pair in deltas with matching values and largest span. */
 		int[] match = findLongestMatch(deltas);
-
-		/*
-		 * Return the subarray. Note that it starts one *after* the initial
-		 * occurence of this delta.
-		 */
 		return extract(array, match[0] + 1, match[1]);
 	}
 
-	public static boolean isEqual(char[] array, int start, int end) {
+	private static boolean isEqual(char[] array, int start, int end) {
 		int counter = 0;
 		for (int i = start; i < end; i++) {
 			if (Character.isLetter(array[i])) {
@@ -101,9 +85,7 @@ public class EqualLettersNumbersSubArray {
 			for (int i = 0; i < max.length; i++) {
 				System.out.print(max[i] + " ");
 			}
-
 			System.out.println("\nIs Valid? " + isEqual(max, 0, max.length));
 		}
 	}
-
 }

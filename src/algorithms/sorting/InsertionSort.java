@@ -5,7 +5,7 @@ package algorithms.sorting;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InsertionSort {
+class InsertionSort {
 
 	public static void main(String[] args) {
 		List<Integer> normalList = new ArrayList<Integer>();
@@ -18,10 +18,9 @@ public class InsertionSort {
 		normalList.add(2);
 		insertionSort(normalList);
 		System.out.println(normalList.toString());
-
 	}
 
-	public static ArrayList<Integer> insertionSort(List<Integer> normalList) {
+	private static ArrayList<Integer> insertionSort(List<Integer> normalList) {
 		int i, j, key, temp;
 		for (i = 1; i < normalList.size(); i++) {
 			key = normalList.get(i);
@@ -32,11 +31,7 @@ public class InsertionSort {
 				normalList.set(j + 1, temp);
 				j--;
 			}
-
 		}
-
 		return (ArrayList<Integer>) normalList;
-
 	}
-
 }

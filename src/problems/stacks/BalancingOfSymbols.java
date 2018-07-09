@@ -4,9 +4,9 @@ package problems.stacks;
 
 import java.util.Stack;
 
-public class BalancingOfSymbols {
+class BalancingOfSymbols {
 
-	public static boolean isValidExpression(String s) {
+	private static boolean isValidExpression(String s) {
 		Stack<Character> stk = new Stack<Character>();
 		if (s == null || s.length() == 0) {
 			return true;
@@ -33,26 +33,18 @@ public class BalancingOfSymbols {
 			} else {
 				if (s.charAt(i) == '[' || s.charAt(i) == '{' || s.charAt(i) == '(') {
 					stk.push(s.charAt(i));
-
 				}
-
 			}
-
 		}
 		if (stk.isEmpty()) {
 			return true;
 		}
-
 		return false;
-
 	}
 
 	public static void main(String args[]) {
-
 		String s = "({[A]})";
 		boolean check = isValidExpression(s);
 		System.out.println(check);
-
 	}
-
 }

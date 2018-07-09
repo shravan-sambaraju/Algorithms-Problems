@@ -2,19 +2,18 @@ package problems.random;
 
 /* Swap two numbers without third */
 
-public class SwapNumbersWithoutThird {
+class SwapNumbersWithoutThird {
 
-	public static void swap(int a, int b) {
-		// Example for a = 9, b = 4
-		a = a - b; // a = 9 - 4 = 5
-		b = a + b; // b = 5 + 4 = 9
-		a = b - a; // a = 9 - 5
+	private static void swap(int a, int b) {
+		a = a - b;
+		b = a + b;
+		a = b - a;
 
 		System.out.println("a: " + a);
 		System.out.println("b: " + b);
 	}
 
-	public static void swap_opt(int a, int b) {
+	private static void swap_opt(int a, int b) {
 		a = a ^ b;
 		b = a ^ b;
 		a = a ^ b;
@@ -33,5 +32,4 @@ public class SwapNumbersWithoutThird {
 		swap(a, b);
 		swap_opt(a, b);
 	}
-
 }

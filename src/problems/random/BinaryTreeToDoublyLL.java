@@ -2,11 +2,21 @@ package problems.random;
 
 /* Convert binary tree to doubly linkedlist */
 
-public class BinaryTreeToDoublyLL {
+class BinaryTreeToDoublyLL {
 
-	static int count = 0;
+	private class BiNode {
+		public BiNode node1;
+		public BiNode node2;
+		public int data;
 
-	public static BiNode convert(BiNode root) {
+		public BiNode(int d) {
+			data = d;
+		}
+	}
+
+	private static int count = 0;
+
+	private static BiNode convert(BiNode root) {
 		if (root == null) {
 			return null;
 		}
@@ -21,11 +31,10 @@ public class BinaryTreeToDoublyLL {
 		if (part2 != null) {
 			concat(root, part2);
 		}
-
 		return part1 == null ? root : part1;
 	}
 
-	public static BiNode getTail(BiNode node) {
+	private static BiNode getTail(BiNode node) {
 		if (node == null) {
 			return null;
 		}
@@ -36,12 +45,12 @@ public class BinaryTreeToDoublyLL {
 		return node;
 	}
 
-	public static void concat(BiNode x, BiNode y) {
+	private static void concat(BiNode x, BiNode y) {
 		x.node2 = y;
 		y.node1 = x;
 	}
 
-	public static void printLinkedListTree(BiNode root) {
+	private static void printLinkedListTree(BiNode root) {
 		for (BiNode node = root; node != null; node = node.node2) {
 			if (node.node2 != null && node.node2.node1 != node) {
 				System.out.print("inconsistent node: " + node);
@@ -51,10 +60,11 @@ public class BinaryTreeToDoublyLL {
 		System.out.println();
 	}
 
-	public static BiNode createTree() {
+	private static BiNode createTree() {
 		BiNode[] nodes = new BiNode[7];
 		for (int i = 0; i < nodes.length; i++) {
-			nodes[i] = new BiNode(i);
+			BinaryTreeToDoublyLL bi = new BinaryTreeToDoublyLL();
+			nodes[i] = bi.new BiNode(i);
 		}
 		nodes[4].node1 = nodes[2];
 		nodes[4].node2 = nodes[5];
@@ -65,7 +75,7 @@ public class BinaryTreeToDoublyLL {
 		return nodes[4];
 	}
 
-	public static void printAsTree(BiNode root, String spaces) {
+	private static void printAsTree(BiNode root, String spaces) {
 		if (root == null) {
 			System.out.println(spaces + "- null");
 			return;
@@ -81,16 +91,5 @@ public class BinaryTreeToDoublyLL {
 		BiNode n = convert(root);
 		printLinkedListTree(n);
 		System.out.println(count);
-	}
-
-}
-
-class BiNode {
-	public BiNode node1;
-	public BiNode node2;
-	public int data;
-
-	public BiNode(int d) {
-		data = d;
 	}
 }

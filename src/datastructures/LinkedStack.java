@@ -3,29 +3,26 @@ package datastructures;
 /* Java implementation of linked stack */
 
 import java.util.EmptyStackException;
+import common.utils.ListNode;
 
-public class LinkedStack {
-	private int length; // indicates the size of the linked list
+class LinkedStack {
+
+	private int length;
 	private ListNode top;
 
-	// Constructor: Creates an empty stack.
 	public LinkedStack() {
 		length = 0;
 		top = null;
 	}
 
-	// Adds the specified data to the top of this stack.
-	public void push(int data) {
+	private void push(int data) {
 		ListNode temp = new ListNode(data);
 		temp.setNext(top);
 		top = temp;
 		length++;
 	}
 
-	// Removes the data at the top of this stack and returns a
-	// reference to it. Throws an EmptyStackException if the stack
-	// is empty.
-	public int pop() throws EmptyStackException {
+	private int pop() throws EmptyStackException {
 		if (isEmpty())
 			throw new EmptyStackException();
 		int result = top.getData();
@@ -34,27 +31,20 @@ public class LinkedStack {
 		return result;
 	}
 
-	// Returns a reference to the data at the top of this stack.
-	// The data is not removed from the stack. Throws an
-	// EmptyStackException if the stack is empty.
-	public int peek() throws EmptyStackException {
+	private int peek() throws EmptyStackException {
 		if (isEmpty())
 			throw new EmptyStackException();
-
 		return top.getData();
 	}
 
-	// Returns true if this stack is empty and false otherwise.
-	public boolean isEmpty() {
+	private boolean isEmpty() {
 		return (length == 0);
 	}
 
-	// Returns the number of elements in the stack.
-	public int size() {
+	private int size() {
 		return length;
 	}
 
-	// Returns a string representation of this stack.
 	public String toString() {
 		String result = "";
 		ListNode current = top;
@@ -62,7 +52,6 @@ public class LinkedStack {
 			result = result + current.toString() + "\n";
 			current = current.getNext();
 		}
-
 		return result;
 	}
 }

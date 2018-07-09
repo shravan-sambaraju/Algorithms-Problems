@@ -4,64 +4,26 @@ package problems.trees;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import common.utils.BinaryTreeNode;
 
-public class ValidateBinaryTreesAreIdentical {
+class ValidateBinaryTreesAreIdentical {
 
-	class BinaryTreeNode {
-		int data;
-		BinaryTreeNode left;
-		BinaryTreeNode right;
-
-		BinaryTreeNode(int x) {
-			data = x;
-			left = null;
-			right = null;
-
-		}
-
-		public int getData() {
-			return data;
-		}
-
-		public void setData(int data) {
-			this.data = data;
-		}
-
-		public BinaryTreeNode getLeft() {
-			return left;
-		}
-
-		public void setLeft(BinaryTreeNode left) {
-			this.left = left;
-		}
-
-		public BinaryTreeNode getRight() {
-			return right;
-		}
-
-		public void setRight(BinaryTreeNode right) {
-			this.right = right;
-		}
-	}
-
-	public static boolean checkIdenticalRecursive(BinaryTreeNode head1, BinaryTreeNode head2) {
+	private static boolean checkIdenticalRecursive(BinaryTreeNode head1, BinaryTreeNode head2) {
 		if (head1 == null && head2 == null) {
 			return true;
 
 		}
 		if (head1 == null || head2 == null) {
 			return false;
-
 		}
-		return (checkIdenticalRecursive(head1.left, head2.left) && checkIdenticalRecursive(head1.right, head2.right));
-
+		return (checkIdenticalRecursive(head1.getLeft(), head2.getLeft())
+				&& checkIdenticalRecursive(head1.getRight(), head2.getRight()));
 	}
 
-	public static boolean checkIdenticalLevelOrder(BinaryTreeNode node1, BinaryTreeNode node2) {
+	private static boolean checkIdenticalLevelOrder(BinaryTreeNode node1, BinaryTreeNode node2) {
 
 		Queue<BinaryTreeNode> q = new LinkedList<BinaryTreeNode>();
 		Queue<BinaryTreeNode> q1 = new LinkedList<BinaryTreeNode>();
-
 		q.offer(node1);
 		q1.offer(node2);
 
@@ -69,49 +31,45 @@ public class ValidateBinaryTreesAreIdentical {
 			BinaryTreeNode temp1 = q.poll();
 			BinaryTreeNode temp2 = q1.poll();
 
-			if (temp1.left != null && temp2.left != null) {
-				q.offer(temp1.left);
-				q1.offer(temp2.left);
+			if (temp1.getLeft() != null && temp2.getLeft() != null) {
+				q.offer(temp1.getLeft());
+				q1.offer(temp2.getLeft());
 			}
-			if (temp2.right != null && temp1.right != null) {
-				q.offer(temp1.right);
-				q1.offer(temp2.right);
-
+			if (temp2.getRight() != null && temp1.getRight() != null) {
+				q.offer(temp1.getRight());
+				q1.offer(temp2.getRight());
 			}
 
-			if ((temp1.left == null && temp2.left != null) || (temp2.right == null && temp1.right != null)
-					|| (temp1.left != null && temp2.left == null) || (temp2.right != null && temp1.right == null)) {
-
+			if ((temp1.getLeft() == null && temp2.getLeft() != null)
+					|| (temp2.getRight() == null && temp1.getRight() != null)
+					|| (temp1.getLeft() != null && temp2.getLeft() == null)
+					|| (temp2.getRight() != null && temp1.getRight() == null)) {
 				return false;
 			}
-
 		}
 		return true;
-
 	}
 
 	public static void main(String args[]) {
-		ValidateBinaryTreesAreIdentical validateBinaryTreesAreIdentical = new ValidateBinaryTreesAreIdentical();
-		BinaryTreeNode node = validateBinaryTreesAreIdentical.new BinaryTreeNode(1);
-		node.left = validateBinaryTreesAreIdentical.new BinaryTreeNode(2);
-		node.right = validateBinaryTreesAreIdentical.new BinaryTreeNode(3);
-		node.left.left = validateBinaryTreesAreIdentical.new BinaryTreeNode(4);
-		node.left.right = validateBinaryTreesAreIdentical.new BinaryTreeNode(5);
-		node.right.left = validateBinaryTreesAreIdentical.new BinaryTreeNode(6);
-		node.right.right = validateBinaryTreesAreIdentical.new BinaryTreeNode(7);
 
-		BinaryTreeNode node2 = validateBinaryTreesAreIdentical.new BinaryTreeNode(1);
-		node2.left = validateBinaryTreesAreIdentical.new BinaryTreeNode(2);
-		node2.right = validateBinaryTreesAreIdentical.new BinaryTreeNode(3);
-		node2.left.left = validateBinaryTreesAreIdentical.new BinaryTreeNode(4);
-		node2.left.right = validateBinaryTreesAreIdentical.new BinaryTreeNode(5);
-		node2.right.left = validateBinaryTreesAreIdentical.new BinaryTreeNode(6);
-		node2.right.right = validateBinaryTreesAreIdentical.new BinaryTreeNode(7);
-		node2.right.right.right = validateBinaryTreesAreIdentical.new BinaryTreeNode(9);
+		BinaryTreeNode node = new BinaryTreeNode(1);
+		node.setLeft(new BinaryTreeNode(2));
+		node.setRight(new BinaryTreeNode(3));
+		node.getLeft().setLeft(new BinaryTreeNode(4));
+		node.getLeft().setRight(new BinaryTreeNode(5));
+		node.getRight().setLeft(new BinaryTreeNode(6));
+		node.getRight().setRight(new BinaryTreeNode(7));
+
+		BinaryTreeNode node2 = new BinaryTreeNode(1);
+		node2.setLeft(new BinaryTreeNode(2));
+		node2.setRight(new BinaryTreeNode(3));
+		node2.getLeft().setLeft(new BinaryTreeNode(4));
+		node2.getLeft().setRight(new BinaryTreeNode(5));
+		node2.getRight().setLeft(new BinaryTreeNode(6));
+		node2.getRight().setRight(new BinaryTreeNode(7));
+		node2.getRight().getRight().setRight(new BinaryTreeNode(9));
 
 		// System.out.println(checkIdenticalRecursive(node,node2));
 		System.out.println(checkIdenticalLevelOrder(node, node2));
-
 	}
-
 }

@@ -2,9 +2,9 @@ package problems.random;
 
 /* Get majority elements in array */
 
-public class getMajorityElementInArray {
+class getMajorityElementInArray {
 
-	public static int getCandidate(int[] array) {
+	private static int getCandidate(int[] array) {
 		int majority = 0;
 		int count = 0;
 		for (int n : array) {
@@ -20,18 +20,17 @@ public class getMajorityElementInArray {
 		return majority;
 	}
 
-	public static boolean validate(int[] array, int majority) {
+	private static boolean validate(int[] array, int majority) {
 		int count = 0;
 		for (int n : array) {
 			if (n == majority) {
 				count++;
 			}
 		}
-
 		return count > array.length / 2;
 	}
 
-	public static int findMajorityElement(int[] array) {
+	private static int findMajorityElement(int[] array) {
 		int candidate = getCandidate(array);
 		return validate(array, candidate) ? candidate : -1;
 	}
@@ -41,5 +40,4 @@ public class getMajorityElementInArray {
 		System.out.println(array.length);
 		System.out.println(findMajorityElement(array));
 	}
-
 }

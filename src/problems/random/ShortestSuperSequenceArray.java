@@ -8,16 +8,58 @@ import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-public class ShortestSuperSequenceArray {
+class ShortestSuperSequenceArray {
 
-	public static Range getShortestClosure(ArrayList<Queue<Integer>> lists) {
+	private class Range {
+		private int start;
+		private int end;
+
+		public Range(int s, int e) {
+			start = s;
+			end = e;
+		}
+
+		private int length() {
+			return end - start + 1;
+		}
+
+		private boolean shorterThan(Range other) {
+			return length() < other.length();
+		}
+
+		private int getStart() {
+			return start;
+		}
+
+		private int getEnd() {
+			return end;
+		}
+	}
+
+	private class HeapNode implements Comparable<HeapNode> {
+		private int locationWithinList;
+		private int listId;
+
+		private HeapNode(int location, int list) {
+			locationWithinList = location;
+			listId = list;
+		}
+
+		@Override
+		public int compareTo(HeapNode n) {
+			return locationWithinList - n.locationWithinList;
+		}
+	}
+
+	private static Range getShortestClosure(ArrayList<Queue<Integer>> lists) {
 		PriorityQueue<HeapNode> minHeap = new PriorityQueue<HeapNode>();
 		int max = Integer.MIN_VALUE;
+		ShortestSuperSequenceArray ss = new ShortestSuperSequenceArray();
 
-		/* Insert min element from each list. */
 		for (int i = 0; i < lists.size(); i++) {
 			int head = lists.get(i).remove();
-			minHeap.add(new HeapNode(head, i));
+
+			minHeap.add(ss.new HeapNode(head, i));
 			max = Math.max(max, head);
 		}
 
@@ -26,47 +68,29 @@ public class ShortestSuperSequenceArray {
 		int bestRangeMax = max;
 
 		while (true) {
-			/* Remove min node. */
 			HeapNode n = minHeap.poll();
 			Queue<Integer> list = lists.get(n.listId);
-
-			/* Compare range to best range. */
 			min = n.locationWithinList;
 			if (max - min < bestRangeMax - bestRangeMin) {
 				bestRangeMax = max;
 				bestRangeMin = min;
 			}
-
-			/*
-			 * If there are no more elements, then there's no more subsequences
-			 * and we can break.
-			 */
 			if (list.size() == 0) {
 				break;
 			}
-
-			/* Add new head of list to heap. */
 			n.locationWithinList = list.remove();
 			minHeap.add(n);
 			max = Math.max(max, n.locationWithinList);
 		}
-
-		return new Range(bestRangeMin, bestRangeMax);
+		return ss.new Range(bestRangeMin, bestRangeMax);
 	}
 
-	/*
-	 * Get list of queues (linked lists) storing the indices at which each
-	 * element in smallArray appears in bigArray.
-	 */
-	public static ArrayList<Queue<Integer>> getLocationsForElements(int[] big, int[] small) {
-		/* Initialize hash map from item value to locations. */
+	private static ArrayList<Queue<Integer>> getLocationsForElements(int[] big, int[] small) {
 		HashMap<Integer, Queue<Integer>> itemLocations = new HashMap<Integer, Queue<Integer>>();
 		for (int s : small) {
 			Queue<Integer> queue = new LinkedList<Integer>();
 			itemLocations.put(s, queue);
 		}
-
-		/* Walk through big array, adding the item locations to hash map */
 		for (int i = 0; i < big.length; i++) {
 			Queue<Integer> queue = itemLocations.get(big[i]);
 			if (queue != null) {
@@ -79,7 +103,7 @@ public class ShortestSuperSequenceArray {
 		return allLocations;
 	}
 
-	public static Range shortestSupersequence(int[] big, int[] small) {
+	private static Range shortestSupersequence(int[] big, int[] small) {
 		ArrayList<Queue<Integer>> locations = getLocationsForElements(big, small);
 		if (locations == null)
 			return null;
@@ -96,47 +120,5 @@ public class ShortestSuperSequenceArray {
 		} else {
 			System.out.println(shortest.getStart() + ", " + shortest.getEnd());
 		}
-	}
-
-}
-
-class Range {
-	private int start;
-	private int end;
-
-	public Range(int s, int e) {
-		start = s;
-		end = e;
-	}
-
-	public int length() {
-		return end - start + 1;
-	}
-
-	public boolean shorterThan(Range other) {
-		return length() < other.length();
-	}
-
-	public int getStart() {
-		return start;
-	}
-
-	public int getEnd() {
-		return end;
-	}
-}
-
-class HeapNode implements Comparable<HeapNode> {
-	public int locationWithinList;
-	public int listId;
-
-	public HeapNode(int location, int list) {
-		locationWithinList = location;
-		listId = list;
-	}
-
-	@Override
-	public int compareTo(HeapNode n) {
-		return locationWithinList - n.locationWithinList;
 	}
 }

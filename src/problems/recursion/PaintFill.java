@@ -2,13 +2,13 @@ package problems.recursion;
 
 /* Fill colours in screen */
 
-public class PaintFill {
+class PaintFill {
 
 	public enum Color {
 		Black, White, Red, Yellow, Green
 	}
 
-	public static String PrintColor(Color c) {
+	private static String PrintColor(Color c) {
 		switch (c) {
 		case Black:
 			return "B";
@@ -24,7 +24,7 @@ public class PaintFill {
 		return "X";
 	}
 
-	public static void PrintScreen(Color[][] screen) {
+	private static void PrintScreen(Color[][] screen) {
 		for (int r = 0; r < screen.length; r++) {
 			for (int c = 0; c < screen[0].length; c++) {
 				System.out.print(PrintColor(screen[r][c]));
@@ -33,11 +33,11 @@ public class PaintFill {
 		}
 	}
 
-	public static int randomInt(int n) {
+	private static int randomInt(int n) {
 		return (int) (Math.random() * n);
 	}
 
-	public static boolean PaintFill(Color[][] screen, int r, int c, Color ocolor, Color ncolor) {
+	private static boolean PaintFill(Color[][] screen, int r, int c, Color ocolor, Color ncolor) {
 		if (r < 0 || r >= screen.length || c < 0 || c >= screen[0].length) {
 			return false;
 		}
@@ -51,7 +51,7 @@ public class PaintFill {
 		return true;
 	}
 
-	public static boolean PaintFill(Color[][] screen, int r, int c, Color ncolor) {
+	private static boolean PaintFill(Color[][] screen, int r, int c, Color ncolor) {
 		if (screen[r][c] == ncolor)
 			return false;
 		return PaintFill(screen, r, c, screen[r][c], ncolor);
@@ -73,5 +73,4 @@ public class PaintFill {
 		System.out.println();
 		PrintScreen(screen);
 	}
-
 }

@@ -4,81 +4,48 @@ package problems.linkedlist;
 
 import java.util.HashMap;
 import java.util.Map;
+import common.utils.ListNode;
 
-class RandomListNode {
-	int data;
-	RandomListNode next;
-	RandomListNode random;
+class RandomPointerLinkedList {
 
-	public int getData() {
-		return data;
-	}
-
-	public void setData(int data) {
-		this.data = data;
-	}
-
-	public RandomListNode getNext() {
-		return next;
-	}
-
-	public void setNext(RandomListNode next) {
-		this.next = next;
-	}
-
-	public RandomListNode getRandom() {
-		return random;
-	}
-
-	public void setRandom(RandomListNode random) {
-		this.random = random;
-	}
-
-}
-
-public class RandomPointerLinkedList {
-
-	public RandomListNode cloneUsingCopy(RandomListNode head) {
+	private ListNode cloneUsingCopy(ListNode head) {
 		if (head == null) {
 			return head;
 		}
 
-		RandomListNode current = head;
+		ListNode current = head;
 		while (current != null) {
-			RandomListNode temp = new RandomListNode();
+			ListNode temp = new ListNode();
 			temp.setData(current.getData());
-			temp.next = current.next;
-			current.next = temp;
-			current = current.next.next;
+			temp.setNext(current.getNext());
+			current.setNext(temp);
+			current = current.getNext().getNext();
 		}
 
 		current = head;
 		while (current != null) {
-			current.next.random = current.random.next;
-			current = current.next.next;
-
+			current.getNext().setRandom(current.getRandom().getNext());
+			current = current.getNext().getNext();
 		}
 
-		RandomListNode copy = head.next;
+		ListNode copy = head.getNext();
 		current = head;
-		while (current.next != null) {
-			RandomListNode temp = current.next;
-			current.setNext(current.next.next);
+		while (current.getNext() != null) {
+			ListNode temp = current.getNext();
+			current.setNext(current.getNext().getNext());
 			current = temp;
 		}
-
 		return copy;
-
 	}
 
-	public RandomListNode usingHashMap(RandomListNode head) {
-		RandomListNode X, Y;
+	private ListNode usingHashMap(ListNode head) {
+		ListNode X, Y;
 		X = head;
 
-		Map<RandomListNode, RandomListNode> map = new HashMap<RandomListNode, RandomListNode>();
+		Map<ListNode, ListNode> map = new HashMap<ListNode, ListNode>();
 		while (X != null) {
-			Y = new RandomListNode();
-			Y.setData(X.data);
+			Y = new ListNode();
+			Y.setData(X.getData());
 			Y.setNext(null);
 			Y.setRandom(null);
 			map.put(X, Y);
@@ -91,23 +58,20 @@ public class RandomPointerLinkedList {
 			Y.setNext(map.get(X.getNext()));
 			Y.setRandom(map.get(X.getRandom()));
 			X = X.getNext();
-
 		}
-
 		return map.get(head);
-
 	}
 
 	public static void main(String args[]) {
-		RandomListNode node = new RandomListNode();
+		ListNode node = new ListNode();
 		node.setData(1);
-		RandomListNode node2 = new RandomListNode();
+		ListNode node2 = new ListNode();
 		node2.setData(2);
 		node.setNext(node2);
-		RandomListNode node3 = new RandomListNode();
+		ListNode node3 = new ListNode();
 		node3.setData(3);
 		node2.setNext(node3);
-		RandomListNode node4 = new RandomListNode();
+		ListNode node4 = new ListNode();
 		node4.setData(4);
 		node3.setNext(node4);
 		node.setRandom(node3);
@@ -115,35 +79,33 @@ public class RandomPointerLinkedList {
 		node3.setRandom(node);
 		node4.setRandom(node2);
 
-		RandomListNode nodetobeSent = node;
+		ListNode nodetobeSent = node;
 
 		while (node != null) {
 			System.out.println(node.getData());
 			System.out.println(node.getRandom().getData());
-			node = node.next;
+			node = node.getNext();
 		}
 
 		System.out.println("*****************");
 
 		RandomPointerLinkedList rp = new RandomPointerLinkedList();
-		RandomListNode random = rp.cloneUsingCopy(nodetobeSent);
+		ListNode random = rp.cloneUsingCopy(nodetobeSent);
 
 		while (random != null) {
 			System.out.println(random.getData());
 			System.out.println(random.getRandom().getData());
-			random = random.next;
+			random = random.getNext();
 		}
 
 		System.out.println("*****************");
 
-		RandomListNode random2 = rp.usingHashMap(nodetobeSent);
+		ListNode random2 = rp.usingHashMap(nodetobeSent);
 
 		while (random2 != null) {
 			System.out.println(random2.getData());
 			System.out.println(random2.getRandom().getData());
-			random2 = random2.next;
+			random2 = random2.getNext();
 		}
-
 	}
-
 }

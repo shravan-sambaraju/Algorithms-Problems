@@ -2,8 +2,9 @@ package problems.random;
 
 /* Print trailing zeros in N factorial */
 
-public class TrailingZerosInNfactorial {
-	public static int countFactZeros(int num) {
+class TrailingZerosInNfactorial {
+
+	private static int countFactZeros(int num) {
 		int count = 0;
 		if (num < 0) {
 			System.out.println("Factorial is not defined for negative numbers");
@@ -15,13 +16,13 @@ public class TrailingZerosInNfactorial {
 		return count;
 	}
 
-	public static int factorial(int num) {
+	private static int factorial(int num) {
 		if (num == 1) {
 			return 1;
 		} else if (num > 1) {
 			return num * factorial(num - 1);
 		} else {
-			return -1; // Error
+			return -1;
 		}
 	}
 

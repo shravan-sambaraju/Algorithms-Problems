@@ -1,9 +1,10 @@
 package problems.random;
 
-/* Find unsorted sequence in an array */
+/* Find indices m and n such that if you sort m through n total array would be sorted */
 
-public class UnsortedSequenceInArrray {
-	public static int findEndOfLeftSubsequence(int[] array) {
+class UnsortedSequenceInArrray {
+
+	private static int findEndOfLeftSubsequence(int[] array) {
 		for (int i = 1; i < array.length; i++) {
 			if (array[i] < array[i - 1]) {
 				return i - 1;
@@ -12,7 +13,7 @@ public class UnsortedSequenceInArrray {
 		return array.length - 1;
 	}
 
-	public static int findStartOfRightSubsequence(int[] array) {
+	private static int findStartOfRightSubsequence(int[] array) {
 		for (int i = array.length - 2; i >= 0; i--) {
 			if (array[i] > array[i + 1]) {
 				return i + 1;
@@ -21,7 +22,7 @@ public class UnsortedSequenceInArrray {
 		return 0;
 	}
 
-	public static int shrinkLeft(int[] array, int min_index, int start) {
+	private static int shrinkLeft(int[] array, int min_index, int start) {
 		int comp = array[min_index];
 		for (int i = start - 1; i >= 0; i--) {
 			if (array[i] <= comp) {
@@ -31,7 +32,7 @@ public class UnsortedSequenceInArrray {
 		return 0;
 	}
 
-	public static int shrinkRight(int[] array, int max_index, int start) {
+	private static int shrinkRight(int[] array, int max_index, int start) {
 		int comp = array[max_index];
 		for (int i = start; i < array.length; i++) {
 			if (array[i] >= comp) {
@@ -41,20 +42,17 @@ public class UnsortedSequenceInArrray {
 		return array.length - 1;
 	}
 
-	public static void findUnsortedSequence(int[] array) {
-		// find left subsequence
-		int end_left = findEndOfLeftSubsequence(array);
+	private static void findUnsortedSequence(int[] array) {
 
+		int end_left = findEndOfLeftSubsequence(array);
 		if (end_left >= array.length - 1) {
 			// System.out.println("The array is already sorted.");
-			return; // Already sorted
+			return;
 		}
 
-		// find right subsequence
 		int start_right = findStartOfRightSubsequence(array);
-
-		int max_index = end_left; // max of left side
-		int min_index = start_right; // min of right side
+		int max_index = end_left;
+		int min_index = start_right;
 		for (int i = end_left + 1; i < start_right; i++) {
 			if (array[i] < array[min_index]) {
 				min_index = i;
@@ -64,10 +62,7 @@ public class UnsortedSequenceInArrray {
 			}
 		}
 
-		// slide left until less than array[min_index]
 		int left_index = shrinkLeft(array, min_index, end_left);
-
-		// slide right until greater than array[max_index]
 		int right_index = shrinkRight(array, max_index, start_right);
 
 		if (validate(array, left_index, right_index)) {
@@ -77,12 +72,7 @@ public class UnsortedSequenceInArrray {
 		}
 	}
 
-	/*
-	 * Validate that sorting between these indices will sort the array. Note
-	 * that this is not a complete validation, as it does not check if these are
-	 * the best possible indices.
-	 */
-	public static boolean validate(int[] array, int left_index, int right_index) {
+	private static boolean validate(int[] array, int left_index, int right_index) {
 		int[] middle = new int[right_index - left_index + 1];
 		for (int i = left_index; i <= right_index; i++) {
 			middle[i - left_index] = array[i];
@@ -103,5 +93,4 @@ public class UnsortedSequenceInArrray {
 		int[] array = { 1, 9, 4, 3, 5 };
 		findUnsortedSequence(array);
 	}
-
 }

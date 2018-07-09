@@ -2,8 +2,9 @@ package problems.strings;
 
 /* Check if the other is rotation of given string */
 
-public class StringRotationOfOther {
-	public static boolean isSubstring(String big, String small) {
+class StringRotationOfOther {
+
+	private static boolean isSubstring(String big, String small) {
 		if (big.indexOf(small) >= 0) {
 			return true;
 		} else {
@@ -11,11 +12,9 @@ public class StringRotationOfOther {
 		}
 	}
 
-	public static boolean isRotation(String s1, String s2) {
+	private static boolean isRotation(String s1, String s2) {
 		int len = s1.length();
-		/* check that s1 and s2 are equal length and not empty */
 		if (len == s2.length() && len > 0) {
-			/* concatenate s1 and s1 within new buffer */
 			String s1s1 = s1 + s1;
 			return isSubstring(s1s1, s2);
 		}
@@ -31,5 +30,4 @@ public class StringRotationOfOther {
 			System.out.println(word1 + ", " + word2 + ": " + is_rotation);
 		}
 	}
-
 }
