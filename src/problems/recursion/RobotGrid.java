@@ -4,110 +4,115 @@ package problems.recursion;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+
 import static common.utils.UtilMethods.randomIntInRange;
 
 class RobotGrid {
 
-	private class Point {
-		private int row, column;
+    private static ArrayList<Point> getPath(boolean[][] maze) {
+        if (maze == null || maze.length == 0) {
+            return null;
+        }
+        ArrayList<Point> path = new ArrayList<Point>();
+        HashSet<Point> failedPoints = new HashSet<Point>();
+        if (getPath(maze, maze.length - 1, maze[0].length - 1, path, failedPoints)) {
+            return path;
+        }
+        return null;
+    }
 
-		public Point(int row, int column) {
-			this.row = row;
-			this.column = column;
-		}
+    private static boolean getPath(
+        boolean[][] maze, int row, int col, ArrayList<Point> path, HashSet<Point> failedPoints) {
+        if (col < 0 || row < 0 || !maze[row][col]) {
+            return false;
+        }
 
-		@Override
-		public String toString() {
-			return "(" + row + ", " + column + ")";
-		}
+        RobotGrid rb = new RobotGrid();
+        Point p = rb.new Point(row, col);
 
-		@Override
-		public int hashCode() {
-			return this.toString().hashCode();
-		}
+        if (failedPoints.contains(p)) {
+            return false;
+        }
 
-		@Override
-		public boolean equals(Object o) {
-			if ((o instanceof Point) && (((Point) o).row == this.row) && (((Point) o).column == this.column)) {
-				return true;
-			} else {
-				return false;
-			}
-		}
-	}
+        boolean isAtOrigin = (row == 0) && (col == 0);
+        if (isAtOrigin
+            || getPath(maze, row, col - 1, path, failedPoints)
+            || getPath(maze, row - 1, col, path, failedPoints)) {
+            path.add(p);
+            return true;
+        }
+        failedPoints.add(p);
+        return false;
+    }
 
-	private static ArrayList<Point> getPath(boolean[][] maze) {
-		if (maze == null || maze.length == 0)
-			return null;
-		ArrayList<Point> path = new ArrayList<Point>();
-		HashSet<Point> failedPoints = new HashSet<Point>();
-		if (getPath(maze, maze.length - 1, maze[0].length - 1, path, failedPoints)) {
-			return path;
-		}
-		return null;
-	}
+    public static void main(String[] args) {
+        int size = 20;
+        boolean[][] maze = randomBooleanMatrix(size, size, 60);
 
-	private static boolean getPath(boolean[][] maze, int row, int col, ArrayList<Point> path,
-			HashSet<Point> failedPoints) {
-		if (col < 0 || row < 0 || !maze[row][col]) {
-			return false;
-		}
+        printMatrix(maze);
 
-		RobotGrid rb = new RobotGrid();
-		Point p = rb.new Point(row, col);
+        ArrayList<Point> path = getPath(maze);
+        if (path != null) {
+            System.out.println(path.toString());
+        } else {
+            System.out.println("No path found.");
+        }
+    }
 
-		if (failedPoints.contains(p)) {
-			return false;
-		}
+    private static boolean[][] randomBooleanMatrix(int M, int N, int percentTrue) {
+        boolean[][] matrix = new boolean[M][N];
+        for (int i = 0; i < M; i++) {
+            for (int j = 0; j < N; j++) {
+                matrix[i][j] = randomBoolean(percentTrue);
+            }
+        }
+        return matrix;
+    }
 
-		boolean isAtOrigin = (row == 0) && (col == 0);
-		if (isAtOrigin || getPath(maze, row, col - 1, path, failedPoints)
-				|| getPath(maze, row - 1, col, path, failedPoints)) {
-			path.add(p);
-			return true;
-		}
-		failedPoints.add(p);
-		return false;
-	}
+    private static boolean randomBoolean(int percentTrue) {
+        return randomIntInRange(1, 100) <= percentTrue;
+    }
 
-	public static void main(String[] args) {
-		int size = 20;
-		boolean[][] maze = randomBooleanMatrix(size, size, 60);
+    private static void printMatrix(boolean[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j]) {
+                    System.out.print("1");
+                } else {
+                    System.out.print("0");
+                }
+            }
+            System.out.println();
+        }
+    }
 
-		printMatrix(maze);
+    private class Point {
+        private int row, column;
 
-		ArrayList<Point> path = getPath(maze);
-		if (path != null) {
-			System.out.println(path.toString());
-		} else {
-			System.out.println("No path found.");
-		}
-	}
+        public Point(int row, int column) {
+            this.row = row;
+            this.column = column;
+        }
 
-	private static boolean[][] randomBooleanMatrix(int M, int N, int percentTrue) {
-		boolean[][] matrix = new boolean[M][N];
-		for (int i = 0; i < M; i++) {
-			for (int j = 0; j < N; j++) {
-				matrix[i][j] = randomBoolean(percentTrue);
-			}
-		}
-		return matrix;
-	}
+        @Override
+        public String toString() {
+            return "(" + row + ", " + column + ")";
+        }
 
-	private static boolean randomBoolean(int percentTrue) {
-		return randomIntInRange(1, 100) <= percentTrue;
-	}
+        @Override
+        public int hashCode() {
+            return this.toString().hashCode();
+        }
 
-	private static void printMatrix(boolean[][] matrix) {
-		for (int i = 0; i < matrix.length; i++) {
-			for (int j = 0; j < matrix[i].length; j++) {
-				if (matrix[i][j]) {
-					System.out.print("1");
-				} else {
-					System.out.print("0");
-				}
-			}
-			System.out.println();
-		}
-	}
+        @Override
+        public boolean equals(Object o) {
+            if ((o instanceof Point)
+                && (((Point) o).row == this.row)
+                && (((Point) o).column == this.column)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
 }

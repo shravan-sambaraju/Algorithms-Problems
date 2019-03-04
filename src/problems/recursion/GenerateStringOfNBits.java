@@ -6,32 +6,31 @@ import java.util.Arrays;
 
 class GenerateStringOfNBits {
 
-	private int ArrayOfBits[];
+    private int ArrayOfBits[];
 
-	public GenerateStringOfNBits() {
+    public GenerateStringOfNBits() {
+    }
 
-	}
+    public GenerateStringOfNBits(int sizeOfArray) {
+        ArrayOfBits = new int[sizeOfArray];
+    }
 
-	public GenerateStringOfNBits(int sizeOfArray) {
-		ArrayOfBits = new int[sizeOfArray];
-	}
+    public static void main(String args[]) {
+        int n = 3;
+        GenerateStringOfNBits nBits = new GenerateStringOfNBits(n);
+        nBits.generateArray(n);
+    }
 
-	private void generateArray(int numberOfBits) {
+    private void generateArray(int numberOfBits) {
 
-		if (numberOfBits <= 0) {
-			System.out.println(Arrays.toString(ArrayOfBits));
+        if (numberOfBits <= 0) {
+            System.out.println(Arrays.toString(ArrayOfBits));
 
-		} else {
-			ArrayOfBits[numberOfBits - 1] = 0;
-			generateArray(numberOfBits - 1);
-			ArrayOfBits[numberOfBits - 1] = 1;
-			generateArray(numberOfBits - 1);
-		}
-	}
-
-	public static void main(String args[]) {
-		int n = 3;
-		GenerateStringOfNBits nBits = new GenerateStringOfNBits(n);
-		nBits.generateArray(n);
-	}
+        } else {
+            ArrayOfBits[numberOfBits - 1] = 0;
+            generateArray(numberOfBits - 1);
+            ArrayOfBits[numberOfBits - 1] = 1;
+            generateArray(numberOfBits - 1);
+        }
+    }
 }

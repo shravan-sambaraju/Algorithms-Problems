@@ -10,195 +10,197 @@ import java.util.Set;
 
 class MostCommonBabyNamesSynonyms {
 
-	private class Graph {
-		private ArrayList<GraphNode> nodes;
-		private HashMap<String, GraphNode> map;
+    private static Graph constructGraph(HashMap<String, Integer> names) {
+        MostCommonBabyNamesSynonyms mb = new MostCommonBabyNamesSynonyms();
+        Graph graph = mb.new Graph();
+        for (Entry<String, Integer> entry : names.entrySet()) {
+            String name = entry.getKey();
+            int frequency = entry.getValue();
+            graph.createNode(name, frequency);
+        }
+        return graph;
+    }
 
-		public Graph() {
-			map = new HashMap<String, GraphNode>();
-			nodes = new ArrayList<GraphNode>();
-		}
+    private static void connectEdges(Graph graph, String[][] synonyms) {
+        for (String[] entry : synonyms) {
+            String name1 = entry[0];
+            String name2 = entry[1];
+            graph.addEdge(name1, name2);
+        }
+    }
 
-		private boolean hasNode(String name) {
-			return map.containsKey(name);
-		}
+    private static int getComponentFrequency(GraphNode node) {
+        if (node.isVisited()) {
+            return 0;
+        }
+        node.setIsVisited(true);
+        int sum = node.getFrequency();
+        for (GraphNode child : node.getNeighbors()) {
+            sum += getComponentFrequency(child);
+        }
+        return sum;
+    }
 
-		private GraphNode createNode(String name, int freq) {
-			if (map.containsKey(name)) {
-				return getNode(name);
-			}
+    private static HashMap<String, Integer> getTrueFrequencies(Graph graph) {
+        HashMap<String, Integer> rootNames = new HashMap<String, Integer>();
+        for (GraphNode node : graph.getNodes()) {
+            if (!node.isVisited()) {
+                int frequency = getComponentFrequency(node);
+                String name = node.getName();
+                rootNames.put(name, frequency);
+            }
+        }
+        return rootNames;
+    }
 
-			GraphNode node = new GraphNode(name, freq);
-			nodes.add(node);
-			map.put(name, node);
-			return node;
-		}
+    private static HashMap<String, Integer> trulyMostPopular(
+        HashMap<String, Integer> names, String[][] synonyms) {
+        Graph graph = constructGraph(names);
+        connectEdges(graph, synonyms);
+        HashMap<String, Integer> rootNames = getTrueFrequencies(graph);
+        return rootNames;
+    }
 
-		private GraphNode getNode(String name) {
-			return map.get(name);
-		}
+    public static void main(String[] args) {
+        HashMap<String, Integer> names = new HashMap<String, Integer>();
 
-		private ArrayList<GraphNode> getNodes() {
-			return nodes;
-		}
+        names.put("John", 3);
+        names.put("Jonathan", 4);
+        names.put("Johnny", 5);
+        names.put("Chris", 1);
+        names.put("Kris", 3);
+        names.put("Brian", 2);
+        names.put("Bryan", 4);
+        names.put("Carleton", 4);
 
-		private void addEdge(String startName, String endName) {
-			GraphNode start = getNode(startName);
-			GraphNode end = getNode(endName);
-			if (start != null && end != null) {
-				start.addNeighbor(end);
-				end.addNeighbor(start);
-			}
-		}
-	}
+        String[][] synonyms = {
+            {"John", "Jonathan"}, {"Jonathan", "Johnny"}, {"Chris", "Kris"}, {"Brian", "Bryan"}
+        };
 
-	private class GraphNode {
-		private ArrayList<GraphNode> neighbors;
-		private HashMap<String, GraphNode> map;
-		private String name;
-		private int frequency;
-		private boolean visited = false;
+        HashMap<String, Integer> rootNames = trulyMostPopular(names, synonyms);
+        for (Entry<String, Integer> entry : rootNames.entrySet()) {
+            String name = entry.getKey();
+            int frequency = entry.getValue();
+            System.out.println(name + ": " + frequency);
+        }
+    }
 
-		public GraphNode(String nm, int freq) {
-			name = nm;
-			frequency = freq;
-			neighbors = new ArrayList<GraphNode>();
-			map = new HashMap<String, GraphNode>();
-		}
+    private class Graph {
+        private ArrayList<GraphNode> nodes;
+        private HashMap<String, GraphNode> map;
 
-		private String getName() {
-			return name;
-		}
+        public Graph() {
+            map = new HashMap<String, GraphNode>();
+            nodes = new ArrayList<GraphNode>();
+        }
 
-		private int getFrequency() {
-			return frequency;
-		}
+        private boolean hasNode(String name) {
+            return map.containsKey(name);
+        }
 
-		private boolean addNeighbor(GraphNode node) {
-			if (map.containsKey(node.getName())) {
-				return false;
-			}
-			neighbors.add(node);
-			map.put(node.getName(), node);
-			return true;
-		}
+        private GraphNode createNode(String name, int freq) {
+            if (map.containsKey(name)) {
+                return getNode(name);
+            }
 
-		private ArrayList<GraphNode> getNeighbors() {
-			return neighbors;
-		}
+            GraphNode node = new GraphNode(name, freq);
+            nodes.add(node);
+            map.put(name, node);
+            return node;
+        }
 
-		private boolean isVisited() {
-			return visited;
-		}
+        private GraphNode getNode(String name) {
+            return map.get(name);
+        }
 
-		private void setIsVisited(boolean v) {
-			visited = v;
-		}
-	}
+        private ArrayList<GraphNode> getNodes() {
+            return nodes;
+        }
 
-	private class NameSet {
-		private Set<String> names = new HashSet<String>();
-		private int frequency = 0;
-		private String rootName;
+        private void addEdge(String startName, String endName) {
+            GraphNode start = getNode(startName);
+            GraphNode end = getNode(endName);
+            if (start != null && end != null) {
+                start.addNeighbor(end);
+                end.addNeighbor(start);
+            }
+        }
+    }
 
-		public NameSet(String name, int freq) {
-			names.add(name);
-			frequency = freq;
-			rootName = name;
-		}
+    private class GraphNode {
+        private ArrayList<GraphNode> neighbors;
+        private HashMap<String, GraphNode> map;
+        private String name;
+        private int frequency;
+        private boolean visited = false;
 
-		private Set<String> getNames() {
-			return names;
-		}
+        public GraphNode(String nm, int freq) {
+            name = nm;
+            frequency = freq;
+            neighbors = new ArrayList<GraphNode>();
+            map = new HashMap<String, GraphNode>();
+        }
 
-		private String getRootName() {
-			return rootName;
-		}
+        private String getName() {
+            return name;
+        }
 
-		private void copyNamesWithFrequency(Set<String> more, int freq) {
-			names.addAll(more);
-			frequency += freq;
-		}
+        private int getFrequency() {
+            return frequency;
+        }
 
-		private int getFrequency() {
-			return frequency;
-		}
+        private boolean addNeighbor(GraphNode node) {
+            if (map.containsKey(node.getName())) {
+                return false;
+            }
+            neighbors.add(node);
+            map.put(node.getName(), node);
+            return true;
+        }
 
-		private int size() {
-			return names.size();
-		}
-	}
+        private ArrayList<GraphNode> getNeighbors() {
+            return neighbors;
+        }
 
-	private static Graph constructGraph(HashMap<String, Integer> names) {
-		MostCommonBabyNamesSynonyms mb = new MostCommonBabyNamesSynonyms();
-		Graph graph = mb.new Graph();
-		for (Entry<String, Integer> entry : names.entrySet()) {
-			String name = entry.getKey();
-			int frequency = entry.getValue();
-			graph.createNode(name, frequency);
-		}
-		return graph;
-	}
+        private boolean isVisited() {
+            return visited;
+        }
 
-	private static void connectEdges(Graph graph, String[][] synonyms) {
-		for (String[] entry : synonyms) {
-			String name1 = entry[0];
-			String name2 = entry[1];
-			graph.addEdge(name1, name2);
-		}
-	}
+        private void setIsVisited(boolean v) {
+            visited = v;
+        }
+    }
 
-	private static int getComponentFrequency(GraphNode node) {
-		if (node.isVisited()) {
-			return 0;
-		}
-		node.setIsVisited(true);
-		int sum = node.getFrequency();
-		for (GraphNode child : node.getNeighbors()) {
-			sum += getComponentFrequency(child);
-		}
-		return sum;
-	}
+    private class NameSet {
+        private Set<String> names = new HashSet<String>();
+        private int frequency = 0;
+        private String rootName;
 
-	private static HashMap<String, Integer> getTrueFrequencies(Graph graph) {
-		HashMap<String, Integer> rootNames = new HashMap<String, Integer>();
-		for (GraphNode node : graph.getNodes()) {
-			if (!node.isVisited()) {
-				int frequency = getComponentFrequency(node);
-				String name = node.getName();
-				rootNames.put(name, frequency);
-			}
-		}
-		return rootNames;
-	}
+        public NameSet(String name, int freq) {
+            names.add(name);
+            frequency = freq;
+            rootName = name;
+        }
 
-	private static HashMap<String, Integer> trulyMostPopular(HashMap<String, Integer> names, String[][] synonyms) {
-		Graph graph = constructGraph(names);
-		connectEdges(graph, synonyms);
-		HashMap<String, Integer> rootNames = getTrueFrequencies(graph);
-		return rootNames;
-	}
+        private Set<String> getNames() {
+            return names;
+        }
 
-	public static void main(String[] args) {
-		HashMap<String, Integer> names = new HashMap<String, Integer>();
+        private String getRootName() {
+            return rootName;
+        }
 
-		names.put("John", 3);
-		names.put("Jonathan", 4);
-		names.put("Johnny", 5);
-		names.put("Chris", 1);
-		names.put("Kris", 3);
-		names.put("Brian", 2);
-		names.put("Bryan", 4);
-		names.put("Carleton", 4);
+        private void copyNamesWithFrequency(Set<String> more, int freq) {
+            names.addAll(more);
+            frequency += freq;
+        }
 
-		String[][] synonyms = { { "John", "Jonathan" }, { "Jonathan", "Johnny" }, { "Chris", "Kris" },
-				{ "Brian", "Bryan" } };
+        private int getFrequency() {
+            return frequency;
+        }
 
-		HashMap<String, Integer> rootNames = trulyMostPopular(names, synonyms);
-		for (Entry<String, Integer> entry : rootNames.entrySet()) {
-			String name = entry.getKey();
-			int frequency = entry.getValue();
-			System.out.println(name + ": " + frequency);
-		}
-	}
+        private int size() {
+            return names.size();
+        }
+    }
 }

@@ -2,157 +2,160 @@ package problems.random;
 
 /* Find words which are one edit away */
 
+import common.utils.HashMapList;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import common.utils.HashMapList;
-
 class WordsOneEditAway {
 
-	private class BFSData {
-		private Queue<PathNode> toVisit = new LinkedList<PathNode>();
-		private HashMap<String, PathNode> visited = new HashMap<String, PathNode>();
+    private static LinkedList<String> transform(String startWord, String stopWord, String[] words) {
+        HashMapList<String, String> wildcardToWordList = getWildcardToWordList(words);
+        WordsOneEditAway wordsEdit = new WordsOneEditAway();
+        BFSData sourceData = wordsEdit.new BFSData(startWord);
+        BFSData destData = wordsEdit.new BFSData(stopWord);
 
-		public BFSData(String root) {
-			PathNode sourcePath = new PathNode(root, null);
-			toVisit.add(sourcePath);
-			visited.put(root, sourcePath);
-		}
+        while (!sourceData.isFinished() && !destData.isFinished()) {
 
-		private boolean isFinished() {
-			return toVisit.isEmpty();
-		}
-	}
+            String collision = searchLevel(wildcardToWordList, sourceData, destData);
+            if (collision != null) {
+                return mergePaths(sourceData, destData, collision);
+            }
 
-	private class PathNode {
-		private String word = null;
-		private PathNode previousNode = null;
+            collision = searchLevel(wildcardToWordList, destData, sourceData);
+            if (collision != null) {
+                return mergePaths(sourceData, destData, collision);
+            }
+        }
+        return null;
+    }
 
-		public PathNode(String word, PathNode previous) {
-			this.word = word;
-			previousNode = previous;
-		}
+    private static String searchLevel(
+        HashMapList<String, String> wildcardToWordList, BFSData primary, BFSData secondary) {
 
-		private String getWord() {
-			return word;
-		}
+        int count = primary.toVisit.size();
+        for (int i = 0; i < count; i++) {
+            PathNode pathNode = primary.toVisit.poll();
+            String word = pathNode.getWord();
 
-		public LinkedList<String> collapse(boolean startsWithRoot) {
-			LinkedList<String> path = new LinkedList<String>();
-			PathNode node = this;
-			while (node != null) {
-				if (startsWithRoot) {
-					path.addLast(node.word);
-				} else {
-					path.addFirst(node.word);
-				}
-				node = node.previousNode;
-			}
-			return path;
-		}
-	}
+            if (secondary.visited.containsKey(word)) {
+                return pathNode.getWord();
+            }
 
-	private static LinkedList<String> transform(String startWord, String stopWord, String[] words) {
-		HashMapList<String, String> wildcardToWordList = getWildcardToWordList(words);
-		WordsOneEditAway wordsEdit = new WordsOneEditAway();
-		BFSData sourceData = wordsEdit.new BFSData(startWord);
-		BFSData destData = wordsEdit.new BFSData(stopWord);
+            ArrayList<String> words = getValidLinkedWords(word, wildcardToWordList);
+            for (String w : words) {
+                if (!primary.visited.containsKey(w)) {
+                    WordsOneEditAway wordsEdit = new WordsOneEditAway();
+                    PathNode next = wordsEdit.new PathNode(w, pathNode);
+                    primary.visited.put(w, next);
+                    primary.toVisit.add(next);
+                }
+            }
+        }
+        return null;
+    }
 
-		while (!sourceData.isFinished() && !destData.isFinished()) {
+    private static LinkedList<String> mergePaths(BFSData bfs1, BFSData bfs2, String connection) {
+        PathNode end1 = bfs1.visited.get(connection);
+        PathNode end2 = bfs2.visited.get(connection);
+        LinkedList<String> pathOne = end1.collapse(false);
+        LinkedList<String> pathTwo = end2.collapse(true);
+        pathTwo.removeFirst();
+        pathOne.addAll(pathTwo);
+        return pathOne;
+    }
 
-			String collision = searchLevel(wildcardToWordList, sourceData, destData);
-			if (collision != null) {
-				return mergePaths(sourceData, destData, collision);
-			}
+    private static ArrayList<String> getWildcardRoots(String word) {
+        ArrayList<String> words = new ArrayList<String>();
+        for (int i = 0; i < word.length(); i++) {
+            String w = word.substring(0, i) + "_" + word.substring(i + 1);
+            words.add(w);
+        }
+        return words;
+    }
 
-			collision = searchLevel(wildcardToWordList, destData, sourceData);
-			if (collision != null) {
-				return mergePaths(sourceData, destData, collision);
-			}
-		}
-		return null;
-	}
+    private static HashMapList<String, String> getWildcardToWordList(String[] words) {
+        HashMapList<String, String> wildcardToWords = new HashMapList<String, String>();
+        for (String word : words) {
+            ArrayList<String> linked = getWildcardRoots(word);
+            for (String linkedWord : linked) {
+                wildcardToWords.put(linkedWord, word);
+            }
+        }
+        return wildcardToWords;
+    }
 
-	private static String searchLevel(HashMapList<String, String> wildcardToWordList, BFSData primary,
-			BFSData secondary) {
+    private static ArrayList<String> getValidLinkedWords(
+        String word, HashMapList<String, String> wildcardToWords) {
+        ArrayList<String> wildcards = getWildcardRoots(word);
+        ArrayList<String> linkedWords = new ArrayList<String>();
+        for (String wildcard : wildcards) {
+            ArrayList<String> words = wildcardToWords.get(wildcard);
+            for (String linkedWord : words) {
+                if (!linkedWord.equals(word)) {
+                    linkedWords.add(linkedWord);
+                }
+            }
+        }
+        return linkedWords;
+    }
 
-		int count = primary.toVisit.size();
-		for (int i = 0; i < count; i++) {
-			PathNode pathNode = primary.toVisit.poll();
-			String word = pathNode.getWord();
+    public static void main(String[] args) {
+        String[] words = {
+            "maps", "tan", "tree", "apple", "cans", "help", "aped", "pree", "pret", "apes", "flat",
+            "trap", "fret", "trip", "trie", "frat", "fril"
+        };
+        LinkedList<String> list = transform("tree", "flat", words);
 
-			if (secondary.visited.containsKey(word)) {
-				return pathNode.getWord();
-			}
+        if (list == null) {
+            System.out.println("No path.");
+        } else {
+            System.out.println(list.toString());
+        }
+    }
 
-			ArrayList<String> words = getValidLinkedWords(word, wildcardToWordList);
-			for (String w : words) {
-				if (!primary.visited.containsKey(w)) {
-					WordsOneEditAway wordsEdit = new WordsOneEditAway();
-					PathNode next = wordsEdit.new PathNode(w, pathNode);
-					primary.visited.put(w, next);
-					primary.toVisit.add(next);
-				}
-			}
-		}
-		return null;
-	}
+    private class BFSData {
+        private Queue<PathNode> toVisit = new LinkedList<PathNode>();
+        private HashMap<String, PathNode> visited = new HashMap<String, PathNode>();
 
-	private static LinkedList<String> mergePaths(BFSData bfs1, BFSData bfs2, String connection) {
-		PathNode end1 = bfs1.visited.get(connection);
-		PathNode end2 = bfs2.visited.get(connection);
-		LinkedList<String> pathOne = end1.collapse(false);
-		LinkedList<String> pathTwo = end2.collapse(true);
-		pathTwo.removeFirst();
-		pathOne.addAll(pathTwo);
-		return pathOne;
-	}
+        public BFSData(String root) {
+            PathNode sourcePath = new PathNode(root, null);
+            toVisit.add(sourcePath);
+            visited.put(root, sourcePath);
+        }
 
-	private static ArrayList<String> getWildcardRoots(String word) {
-		ArrayList<String> words = new ArrayList<String>();
-		for (int i = 0; i < word.length(); i++) {
-			String w = word.substring(0, i) + "_" + word.substring(i + 1);
-			words.add(w);
-		}
-		return words;
-	}
+        private boolean isFinished() {
+            return toVisit.isEmpty();
+        }
+    }
 
-	private static HashMapList<String, String> getWildcardToWordList(String[] words) {
-		HashMapList<String, String> wildcardToWords = new HashMapList<String, String>();
-		for (String word : words) {
-			ArrayList<String> linked = getWildcardRoots(word);
-			for (String linkedWord : linked) {
-				wildcardToWords.put(linkedWord, word);
-			}
-		}
-		return wildcardToWords;
-	}
+    private class PathNode {
+        private String word = null;
+        private PathNode previousNode = null;
 
-	private static ArrayList<String> getValidLinkedWords(String word, HashMapList<String, String> wildcardToWords) {
-		ArrayList<String> wildcards = getWildcardRoots(word);
-		ArrayList<String> linkedWords = new ArrayList<String>();
-		for (String wildcard : wildcards) {
-			ArrayList<String> words = wildcardToWords.get(wildcard);
-			for (String linkedWord : words) {
-				if (!linkedWord.equals(word)) {
-					linkedWords.add(linkedWord);
-				}
-			}
-		}
-		return linkedWords;
-	}
+        public PathNode(String word, PathNode previous) {
+            this.word = word;
+            previousNode = previous;
+        }
 
-	public static void main(String[] args) {
-		String[] words = { "maps", "tan", "tree", "apple", "cans", "help", "aped", "pree", "pret", "apes", "flat",
-				"trap", "fret", "trip", "trie", "frat", "fril" };
-		LinkedList<String> list = transform("tree", "flat", words);
+        private String getWord() {
+            return word;
+        }
 
-		if (list == null) {
-			System.out.println("No path.");
-		} else {
-			System.out.println(list.toString());
-		}
-	}
+        public LinkedList<String> collapse(boolean startsWithRoot) {
+            LinkedList<String> path = new LinkedList<String>();
+            PathNode node = this;
+            while (node != null) {
+                if (startsWithRoot) {
+                    path.addLast(node.word);
+                } else {
+                    path.addFirst(node.word);
+                }
+                node = node.previousNode;
+            }
+            return path;
+        }
+    }
 }

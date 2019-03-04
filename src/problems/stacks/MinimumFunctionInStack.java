@@ -6,50 +6,50 @@ import java.util.Stack;
 
 class MinimumFunctionInStack {
 
-	private class StackWithMin extends Stack<Integer> {
-		private static final long serialVersionUID = 1L;
-		Stack<Integer> s2;
+    public static void main(String[] args) {
+        MinimumFunctionInStack min = new MinimumFunctionInStack();
+        StackWithMin stack = min.new StackWithMin();
+        int[] array = {2, 1, 3, 1};
+        for (int value : array) {
+            stack.push(value);
+            System.out.print(value + ", ");
+        }
+        System.out.println('\n');
+        for (int i = 0; i < array.length; i++) {
+            System.out.println("Popped " + stack.pop());
+            System.out.println("New min is " + stack.min() + ", " + stack.min());
+        }
+    }
 
-		public StackWithMin() {
-			s2 = new Stack<Integer>();
-		}
+    private class StackWithMin extends Stack<Integer> {
+        private static final long serialVersionUID = 1L;
+        Stack<Integer> s2;
 
-		public void push(int value) {
-			if (value <= min()) {
-				s2.push(value);
-			}
-			super.push(value);
-		}
+        public StackWithMin() {
+            s2 = new Stack<Integer>();
+        }
 
-		public Integer pop() {
-			int value = super.pop();
-			if (value == min()) {
-				s2.pop();
-			}
-			return value;
-		}
+        public void push(int value) {
+            if (value <= min()) {
+                s2.push(value);
+            }
+            super.push(value);
+        }
 
-		public int min() {
-			if (s2.isEmpty()) {
-				return Integer.MAX_VALUE;
-			} else {
-				return s2.peek();
-			}
-		}
-	}
+        public Integer pop() {
+            int value = super.pop();
+            if (value == min()) {
+                s2.pop();
+            }
+            return value;
+        }
 
-	public static void main(String[] args) {
-		MinimumFunctionInStack min = new MinimumFunctionInStack();
-		StackWithMin stack = min.new StackWithMin();
-		int[] array = { 2, 1, 3, 1 };
-		for (int value : array) {
-			stack.push(value);
-			System.out.print(value + ", ");
-		}
-		System.out.println('\n');
-		for (int i = 0; i < array.length; i++) {
-			System.out.println("Popped " + stack.pop());
-			System.out.println("New min is " + stack.min() + ", " + stack.min());
-		}
-	}
+        public int min() {
+            if (s2.isEmpty()) {
+                return Integer.MAX_VALUE;
+            } else {
+                return s2.peek();
+            }
+        }
+    }
 }

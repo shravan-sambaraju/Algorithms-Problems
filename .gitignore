@@ -65,6 +65,7 @@ bin/
 *.iws
 *.iml
 *.ipr
+out
 
 ### NetBeans ###
 /nbproject/private/
