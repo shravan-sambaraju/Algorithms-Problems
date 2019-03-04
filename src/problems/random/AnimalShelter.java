@@ -6,134 +6,133 @@ import java.util.LinkedList;
 
 class AnimalShelter {
 
-	abstract class Animal {
-		private int order;
-		protected String name;
+  LinkedList<Dog> dogs = new LinkedList<Dog>();
+  LinkedList<Cat> cats = new LinkedList<Cat>();
+  private int order = 0;
 
-		public Animal(String n) {
-			name = n;
-		}
+  public static void main(String[] args) {
+    AnimalShelter animals = new AnimalShelter();
+    animals.enqueue(animals.new Cat("Callie"));
+    animals.enqueue(animals.new Cat("Kiki"));
+    animals.enqueue(animals.new Dog("Fido"));
+    animals.enqueue(animals.new Dog("Dora"));
+    animals.enqueue(animals.new Cat("Kari"));
+    animals.enqueue(animals.new Dog("Dexter"));
+    animals.enqueue(animals.new Dog("Dobo"));
+    animals.enqueue(animals.new Cat("Copa"));
 
-		public abstract String name();
+    System.out.println(animals.dequeueAny().name());
+    System.out.println(animals.dequeueAny().name());
+    System.out.println(animals.dequeueAny().name());
 
-		public void setOrder(int ord) {
-			order = ord;
-		}
+    animals.enqueue(animals.new Dog("Dapa"));
+    animals.enqueue(animals.new Cat("Kilo"));
 
-		public int getOrder() {
-			return order;
-		}
+    while (animals.size() != 0) {
+      System.out.println(animals.dequeueAny().name());
+    }
+  }
 
-		public boolean isOlderThan(Animal a) {
-			return this.order < a.getOrder();
-		}
-	}
+  private void enqueue(Animal a) {
+    a.setOrder(order);
+    order++;
+    if (a instanceof Dog) {
+      dogs.addLast((Dog) a);
+    } else if (a instanceof Cat) {
+      cats.addLast((Cat) a);
+    }
+  }
 
-	class Cat extends Animal {
-		public Cat(String n) {
-			super(n);
-		}
+  private Animal dequeueAny() {
+    if (dogs.size() == 0) {
+      return dequeueCats();
+    } else if (cats.size() == 0) {
+      return dequeueDogs();
+    }
+    Dog dog = dogs.peek();
+    Cat cat = cats.peek();
+    if (dog.isOlderThan(cat)) {
+      return dogs.poll();
+    } else {
+      return cats.poll();
+    }
+  }
 
-		public String name() {
-			return "Cat: " + name;
-		}
-	}
+  private Animal peek() {
+    if (dogs.size() == 0) {
+      return cats.peek();
+    } else if (cats.size() == 0) {
+      return dogs.peek();
+    }
+    Dog dog = dogs.peek();
+    Cat cat = cats.peek();
+    if (dog.isOlderThan(cat)) {
+      return dog;
+    } else {
+      return cat;
+    }
+  }
 
-	class Dog extends Animal {
-		public Dog(String n) {
-			super(n);
-		}
+  private int size() {
+    return dogs.size() + cats.size();
+  }
 
-		public String name() {
-			return "Dog: " + name;
-		}
-	}
+  private Dog dequeueDogs() {
+    return dogs.poll();
+  }
 
-	LinkedList<Dog> dogs = new LinkedList<Dog>();
-	LinkedList<Cat> cats = new LinkedList<Cat>();
-	private int order = 0;
+  private Dog peekDogs() {
+    return dogs.peek();
+  }
 
-	private void enqueue(Animal a) {
-		a.setOrder(order);
-		order++;
-		if (a instanceof Dog) {
-			dogs.addLast((Dog) a);
-		} else if (a instanceof Cat) {
-			cats.addLast((Cat) a);
-		}
-	}
+  private Cat dequeueCats() {
+    return cats.poll();
+  }
 
-	private Animal dequeueAny() {
-		if (dogs.size() == 0) {
-			return dequeueCats();
-		} else if (cats.size() == 0) {
-			return dequeueDogs();
-		}
-		Dog dog = dogs.peek();
-		Cat cat = cats.peek();
-		if (dog.isOlderThan(cat)) {
-			return dogs.poll();
-		} else {
-			return cats.poll();
-		}
-	}
+  private Cat peekCats() {
+    return cats.peek();
+  }
 
-	private Animal peek() {
-		if (dogs.size() == 0) {
-			return cats.peek();
-		} else if (cats.size() == 0) {
-			return dogs.peek();
-		}
-		Dog dog = dogs.peek();
-		Cat cat = cats.peek();
-		if (dog.isOlderThan(cat)) {
-			return dog;
-		} else {
-			return cat;
-		}
-	}
+  abstract class Animal {
+    protected String name;
+    private int order;
 
-	private int size() {
-		return dogs.size() + cats.size();
-	}
+    public Animal(String n) {
+      name = n;
+    }
 
-	private Dog dequeueDogs() {
-		return dogs.poll();
-	}
+    public abstract String name();
 
-	private Dog peekDogs() {
-		return dogs.peek();
-	}
+    public int getOrder() {
+      return order;
+    }
 
-	private Cat dequeueCats() {
-		return cats.poll();
-	}
+    public void setOrder(int ord) {
+      order = ord;
+    }
 
-	private Cat peekCats() {
-		return cats.peek();
-	}
+    public boolean isOlderThan(Animal a) {
+      return this.order < a.getOrder();
+    }
+  }
 
-	public static void main(String[] args) {
-		AnimalShelter animals = new AnimalShelter();
-		animals.enqueue(animals.new Cat("Callie"));
-		animals.enqueue(animals.new Cat("Kiki"));
-		animals.enqueue(animals.new Dog("Fido"));
-		animals.enqueue(animals.new Dog("Dora"));
-		animals.enqueue(animals.new Cat("Kari"));
-		animals.enqueue(animals.new Dog("Dexter"));
-		animals.enqueue(animals.new Dog("Dobo"));
-		animals.enqueue(animals.new Cat("Copa"));
+  class Cat extends Animal {
+    public Cat(String n) {
+      super(n);
+    }
 
-		System.out.println(animals.dequeueAny().name());
-		System.out.println(animals.dequeueAny().name());
-		System.out.println(animals.dequeueAny().name());
+    public String name() {
+      return "Cat: " + name;
+    }
+  }
 
-		animals.enqueue(animals.new Dog("Dapa"));
-		animals.enqueue(animals.new Cat("Kilo"));
+  class Dog extends Animal {
+    public Dog(String n) {
+      super(n);
+    }
 
-		while (animals.size() != 0) {
-			System.out.println(animals.dequeueAny().name());
-		}
-	}
-
+    public String name() {
+      return "Dog: " + name;
+    }
+  }
 }

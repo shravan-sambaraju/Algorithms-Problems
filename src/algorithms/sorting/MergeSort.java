@@ -6,64 +6,66 @@ import common.utils.UtilMethods;
 
 class MergeSort {
 
-	private void merge(int arr[], int l, int m, int r) {
-		int n1 = m - l + 1;
-		int n2 = r - m;
+  public static void main(String args[]) {
+    int arr[] = {12, 11, 13, 5, 6, 7};
 
-		int L[] = new int[n1];
-		int R[] = new int[n2];
+    System.out.println("Given Array");
+    System.out.println(UtilMethods.intArrayToString(arr));
 
-		for (int i = 0; i < n1; ++i)
-			L[i] = arr[l + i];
-		for (int j = 0; j < n2; ++j)
-			R[j] = arr[m + 1 + j];
+    MergeSort ob = new MergeSort();
+    ob.sort(arr, 0, arr.length - 1);
 
-		int i = 0, j = 0;
+    System.out.println("Sorted Array");
+    System.out.println(UtilMethods.intArrayToString(arr));
+  }
 
-		int k = l;
-		while (i < n1 && j < n2) {
-			if (L[i] <= R[j]) {
-				arr[k] = L[i];
-				i++;
-			} else {
-				arr[k] = R[j];
-				j++;
-			}
-			k++;
-		}
+  private void merge(int arr[], int l, int m, int r) {
+    int n1 = m - l + 1;
+    int n2 = r - m;
 
-		while (i < n1) {
-			arr[k] = L[i];
-			i++;
-			k++;
-		}
+    int L[] = new int[n1];
+    int R[] = new int[n2];
 
-		while (j < n2) {
-			arr[k] = R[j];
-			j++;
-			k++;
-		}
-	}
+    for (int i = 0; i < n1; ++i) {
+      L[i] = arr[l + i];
+    }
+    for (int j = 0; j < n2; ++j) {
+      R[j] = arr[m + 1 + j];
+    }
 
-	private void sort(int arr[], int l, int r) {
-		if (l < r) {
-			int m = (l + r) / 2;
-			sort(arr, l, m);
-			sort(arr, m + 1, r);
-			merge(arr, l, m, r);
-		}
-	}
+    int i = 0, j = 0;
 
-	public static void main(String args[]) {
-		int arr[] = { 12, 11, 13, 5, 6, 7 };
+    int k = l;
+    while (i < n1 && j < n2) {
+      if (L[i] <= R[j]) {
+        arr[k] = L[i];
+        i++;
+      } else {
+        arr[k] = R[j];
+        j++;
+      }
+      k++;
+    }
 
-		System.out.println("Given Array");
-		System.out.println(UtilMethods.intArrayToString(arr));
+    while (i < n1) {
+      arr[k] = L[i];
+      i++;
+      k++;
+    }
 
-		MergeSort ob = new MergeSort();
-		ob.sort(arr, 0, arr.length - 1);
+    while (j < n2) {
+      arr[k] = R[j];
+      j++;
+      k++;
+    }
+  }
 
-		System.out.println("Sorted Array");
-		System.out.println(UtilMethods.intArrayToString(arr));
-	}
+  private void sort(int arr[], int l, int r) {
+    if (l < r) {
+      int m = (l + r) / 2;
+      sort(arr, l, m);
+      sort(arr, m + 1, r);
+      merge(arr, l, m, r);
+    }
+  }
 }

@@ -2,110 +2,111 @@ package problems.linkedlist;
 
 /* Clone a linkedlist with random pointer */
 
+import common.utils.ListNode;
+
 import java.util.HashMap;
 import java.util.Map;
-import common.utils.ListNode;
 
 class RandomPointerLinkedList {
 
-	private ListNode cloneUsingCopy(ListNode head) {
-		if (head == null) {
-			return head;
-		}
+  public static void main(String args[]) {
+    ListNode node = new ListNode();
+    node.setData(1);
+    ListNode node2 = new ListNode();
+    node2.setData(2);
+    node.setNext(node2);
+    ListNode node3 = new ListNode();
+    node3.setData(3);
+    node2.setNext(node3);
+    ListNode node4 = new ListNode();
+    node4.setData(4);
+    node3.setNext(node4);
+    node.setRandom(node3);
+    node2.setRandom(node4);
+    node3.setRandom(node);
+    node4.setRandom(node2);
 
-		ListNode current = head;
-		while (current != null) {
-			ListNode temp = new ListNode();
-			temp.setData(current.getData());
-			temp.setNext(current.getNext());
-			current.setNext(temp);
-			current = current.getNext().getNext();
-		}
+    ListNode nodetobeSent = node;
 
-		current = head;
-		while (current != null) {
-			current.getNext().setRandom(current.getRandom().getNext());
-			current = current.getNext().getNext();
-		}
+    while (node != null) {
+      System.out.println(node.getData());
+      System.out.println(node.getRandom().getData());
+      node = node.getNext();
+    }
 
-		ListNode copy = head.getNext();
-		current = head;
-		while (current.getNext() != null) {
-			ListNode temp = current.getNext();
-			current.setNext(current.getNext().getNext());
-			current = temp;
-		}
-		return copy;
-	}
+    System.out.println("*****************");
 
-	private ListNode usingHashMap(ListNode head) {
-		ListNode X, Y;
-		X = head;
+    RandomPointerLinkedList rp = new RandomPointerLinkedList();
+    ListNode random = rp.cloneUsingCopy(nodetobeSent);
 
-		Map<ListNode, ListNode> map = new HashMap<ListNode, ListNode>();
-		while (X != null) {
-			Y = new ListNode();
-			Y.setData(X.getData());
-			Y.setNext(null);
-			Y.setRandom(null);
-			map.put(X, Y);
-			X = X.getNext();
-		}
-		X = head;
-		while (X != null) {
-			Y = map.get(X);
-			Y.setData(X.getData());
-			Y.setNext(map.get(X.getNext()));
-			Y.setRandom(map.get(X.getRandom()));
-			X = X.getNext();
-		}
-		return map.get(head);
-	}
+    while (random != null) {
+      System.out.println(random.getData());
+      System.out.println(random.getRandom().getData());
+      random = random.getNext();
+    }
 
-	public static void main(String args[]) {
-		ListNode node = new ListNode();
-		node.setData(1);
-		ListNode node2 = new ListNode();
-		node2.setData(2);
-		node.setNext(node2);
-		ListNode node3 = new ListNode();
-		node3.setData(3);
-		node2.setNext(node3);
-		ListNode node4 = new ListNode();
-		node4.setData(4);
-		node3.setNext(node4);
-		node.setRandom(node3);
-		node2.setRandom(node4);
-		node3.setRandom(node);
-		node4.setRandom(node2);
+    System.out.println("*****************");
 
-		ListNode nodetobeSent = node;
+    ListNode random2 = rp.usingHashMap(nodetobeSent);
 
-		while (node != null) {
-			System.out.println(node.getData());
-			System.out.println(node.getRandom().getData());
-			node = node.getNext();
-		}
+    while (random2 != null) {
+      System.out.println(random2.getData());
+      System.out.println(random2.getRandom().getData());
+      random2 = random2.getNext();
+    }
+  }
 
-		System.out.println("*****************");
+  private ListNode cloneUsingCopy(ListNode head) {
+    if (head == null) {
+      return head;
+    }
 
-		RandomPointerLinkedList rp = new RandomPointerLinkedList();
-		ListNode random = rp.cloneUsingCopy(nodetobeSent);
+    ListNode current = head;
+    while (current != null) {
+      ListNode temp = new ListNode();
+      temp.setData(current.getData());
+      temp.setNext(current.getNext());
+      current.setNext(temp);
+      current = current.getNext().getNext();
+    }
 
-		while (random != null) {
-			System.out.println(random.getData());
-			System.out.println(random.getRandom().getData());
-			random = random.getNext();
-		}
+    current = head;
+    while (current != null) {
+      current.getNext().setRandom(current.getRandom().getNext());
+      current = current.getNext().getNext();
+    }
 
-		System.out.println("*****************");
+    ListNode copy = head.getNext();
+    current = head;
+    while (current.getNext() != null) {
+      ListNode temp = current.getNext();
+      current.setNext(current.getNext().getNext());
+      current = temp;
+    }
+    return copy;
+  }
 
-		ListNode random2 = rp.usingHashMap(nodetobeSent);
+  private ListNode usingHashMap(ListNode head) {
+    ListNode X, Y;
+    X = head;
 
-		while (random2 != null) {
-			System.out.println(random2.getData());
-			System.out.println(random2.getRandom().getData());
-			random2 = random2.getNext();
-		}
-	}
+    Map<ListNode, ListNode> map = new HashMap<ListNode, ListNode>();
+    while (X != null) {
+      Y = new ListNode();
+      Y.setData(X.getData());
+      Y.setNext(null);
+      Y.setRandom(null);
+      map.put(X, Y);
+      X = X.getNext();
+    }
+    X = head;
+    while (X != null) {
+      Y = map.get(X);
+      Y.setData(X.getData());
+      Y.setNext(map.get(X.getNext()));
+      Y.setRandom(map.get(X.getRandom()));
+      X = X.getNext();
+    }
+    return map.get(head);
+  }
 }

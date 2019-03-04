@@ -10,115 +10,116 @@ import java.util.Queue;
 
 class ShortestSuperSequenceArray {
 
-	private class Range {
-		private int start;
-		private int end;
+  private static Range getShortestClosure(ArrayList<Queue<Integer>> lists) {
+    PriorityQueue<HeapNode> minHeap = new PriorityQueue<HeapNode>();
+    int max = Integer.MIN_VALUE;
+    ShortestSuperSequenceArray ss = new ShortestSuperSequenceArray();
 
-		public Range(int s, int e) {
-			start = s;
-			end = e;
-		}
+    for (int i = 0; i < lists.size(); i++) {
+      int head = lists.get(i).remove();
 
-		private int length() {
-			return end - start + 1;
-		}
+      minHeap.add(ss.new HeapNode(head, i));
+      max = Math.max(max, head);
+    }
 
-		private boolean shorterThan(Range other) {
-			return length() < other.length();
-		}
+    int min = minHeap.peek().locationWithinList;
+    int bestRangeMin = min;
+    int bestRangeMax = max;
 
-		private int getStart() {
-			return start;
-		}
+    while (true) {
+      HeapNode n = minHeap.poll();
+      Queue<Integer> list = lists.get(n.listId);
+      min = n.locationWithinList;
+      if (max - min < bestRangeMax - bestRangeMin) {
+        bestRangeMax = max;
+        bestRangeMin = min;
+      }
+      if (list.size() == 0) {
+        break;
+      }
+      n.locationWithinList = list.remove();
+      minHeap.add(n);
+      max = Math.max(max, n.locationWithinList);
+    }
+    return ss.new Range(bestRangeMin, bestRangeMax);
+  }
 
-		private int getEnd() {
-			return end;
-		}
-	}
+  private static ArrayList<Queue<Integer>> getLocationsForElements(int[] big, int[] small) {
+    HashMap<Integer, Queue<Integer>> itemLocations = new HashMap<Integer, Queue<Integer>>();
+    for (int s : small) {
+      Queue<Integer> queue = new LinkedList<Integer>();
+      itemLocations.put(s, queue);
+    }
+    for (int i = 0; i < big.length; i++) {
+      Queue<Integer> queue = itemLocations.get(big[i]);
+      if (queue != null) {
+        queue.add(i);
+      }
+    }
 
-	private class HeapNode implements Comparable<HeapNode> {
-		private int locationWithinList;
-		private int listId;
+    ArrayList<Queue<Integer>> allLocations = new ArrayList<Queue<Integer>>();
+    allLocations.addAll(itemLocations.values());
+    return allLocations;
+  }
 
-		private HeapNode(int location, int list) {
-			locationWithinList = location;
-			listId = list;
-		}
+  private static Range shortestSupersequence(int[] big, int[] small) {
+    ArrayList<Queue<Integer>> locations = getLocationsForElements(big, small);
+    if (locations == null) {
+      return null;
+    }
+    return getShortestClosure(locations);
+  }
 
-		@Override
-		public int compareTo(HeapNode n) {
-			return locationWithinList - n.locationWithinList;
-		}
-	}
+  public static void main(String[] args) {
+    int[] array = {7, 5, 9, 0, 2, 1, 3, 5, 7, 9, 1, 1, 5, 8, 8, 9, 7};
+    int[] set = {1, 5, 9};
+    System.out.println(array.length);
+    Range shortest = shortestSupersequence(array, set);
+    if (shortest == null) {
+      System.out.println("not found");
+    } else {
+      System.out.println(shortest.getStart() + ", " + shortest.getEnd());
+    }
+  }
 
-	private static Range getShortestClosure(ArrayList<Queue<Integer>> lists) {
-		PriorityQueue<HeapNode> minHeap = new PriorityQueue<HeapNode>();
-		int max = Integer.MIN_VALUE;
-		ShortestSuperSequenceArray ss = new ShortestSuperSequenceArray();
+  private class Range {
+    private int start;
+    private int end;
 
-		for (int i = 0; i < lists.size(); i++) {
-			int head = lists.get(i).remove();
+    public Range(int s, int e) {
+      start = s;
+      end = e;
+    }
 
-			minHeap.add(ss.new HeapNode(head, i));
-			max = Math.max(max, head);
-		}
+    private int length() {
+      return end - start + 1;
+    }
 
-		int min = minHeap.peek().locationWithinList;
-		int bestRangeMin = min;
-		int bestRangeMax = max;
+    private boolean shorterThan(Range other) {
+      return length() < other.length();
+    }
 
-		while (true) {
-			HeapNode n = minHeap.poll();
-			Queue<Integer> list = lists.get(n.listId);
-			min = n.locationWithinList;
-			if (max - min < bestRangeMax - bestRangeMin) {
-				bestRangeMax = max;
-				bestRangeMin = min;
-			}
-			if (list.size() == 0) {
-				break;
-			}
-			n.locationWithinList = list.remove();
-			minHeap.add(n);
-			max = Math.max(max, n.locationWithinList);
-		}
-		return ss.new Range(bestRangeMin, bestRangeMax);
-	}
+    private int getStart() {
+      return start;
+    }
 
-	private static ArrayList<Queue<Integer>> getLocationsForElements(int[] big, int[] small) {
-		HashMap<Integer, Queue<Integer>> itemLocations = new HashMap<Integer, Queue<Integer>>();
-		for (int s : small) {
-			Queue<Integer> queue = new LinkedList<Integer>();
-			itemLocations.put(s, queue);
-		}
-		for (int i = 0; i < big.length; i++) {
-			Queue<Integer> queue = itemLocations.get(big[i]);
-			if (queue != null) {
-				queue.add(i);
-			}
-		}
+    private int getEnd() {
+      return end;
+    }
+  }
 
-		ArrayList<Queue<Integer>> allLocations = new ArrayList<Queue<Integer>>();
-		allLocations.addAll(itemLocations.values());
-		return allLocations;
-	}
+  private class HeapNode implements Comparable<HeapNode> {
+    private int locationWithinList;
+    private int listId;
 
-	private static Range shortestSupersequence(int[] big, int[] small) {
-		ArrayList<Queue<Integer>> locations = getLocationsForElements(big, small);
-		if (locations == null)
-			return null;
-		return getShortestClosure(locations);
-	}
+    private HeapNode(int location, int list) {
+      locationWithinList = location;
+      listId = list;
+    }
 
-	public static void main(String[] args) {
-		int[] array = { 7, 5, 9, 0, 2, 1, 3, 5, 7, 9, 1, 1, 5, 8, 8, 9, 7 };
-		int[] set = { 1, 5, 9 };
-		System.out.println(array.length);
-		Range shortest = shortestSupersequence(array, set);
-		if (shortest == null) {
-			System.out.println("not found");
-		} else {
-			System.out.println(shortest.getStart() + ", " + shortest.getEnd());
-		}
-	}
+    @Override
+    public int compareTo(HeapNode n) {
+      return locationWithinList - n.locationWithinList;
+    }
+  }
 }

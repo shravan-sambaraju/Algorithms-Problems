@@ -1,64 +1,67 @@
 package datastructures;
 
-/* Java implementation of  fixed size array using stack */
+/* Java implementation of fixed size array using stack */
 
 class FixedSizeArrayStack {
 
-	private int capacity;
+  private static final int CAPACITY = 16;
+  private int capacity;
+  private int[] stackRep;
 
-	private static final int CAPACITY = 16;
+  private int top = -1;
 
-	private int[] stackRep;
+  public FixedSizeArrayStack() {
+    this(CAPACITY);
+  }
 
-	private int top = -1;
+  public FixedSizeArrayStack(int cap) {
+    capacity = cap;
+    stackRep = new int[capacity];
+  }
 
-	public FixedSizeArrayStack() {
-		this(CAPACITY);
-	}
+  private int size() {
+    return (top + 1);
+  }
 
-	public FixedSizeArrayStack(int cap) {
-		capacity = cap;
-		stackRep = new int[capacity];
-	}
+  private boolean isEmpty() {
+    return (top < 0);
+  }
 
-	private int size() {
-		return (top + 1);
-	}
+  private void push(int data) throws Exception {
+    if (size() == capacity) {
+      throw new Exception("Stack is full.");
+    }
+    stackRep[++top] = data;
+  }
 
-	private boolean isEmpty() {
-		return (top < 0);
-	}
+  private int top() throws Exception {
+    if (isEmpty()) {
+      throw new Exception("Stack is empty.");
+    }
+    return stackRep[top];
+  }
 
-	private void push(int data) throws Exception {
-		if (size() == capacity)
-			throw new Exception("Stack is full.");
-		stackRep[++top] = data;
-	}
+  private int pop() throws Exception {
+    int data;
+    if (isEmpty()) {
+      throw new Exception("Stack is empty.");
+    }
+    data = stackRep[top];
+    stackRep[top--] = Integer.MIN_VALUE;
+    return data;
+  }
 
-	private int top() throws Exception {
-		if (isEmpty())
-			throw new Exception("Stack is empty.");
-		return stackRep[top];
-	}
-
-	private int pop() throws Exception {
-		int data;
-		if (isEmpty())
-			throw new Exception("Stack is empty.");
-		data = stackRep[top];
-		stackRep[top--] = Integer.MIN_VALUE;
-		return data;
-	}
-
-	public String toString() {
-		String s;
-		s = "[";
-		if (size() > 0)
-			s += stackRep[0];
-		if (size() > 1)
-			for (int i = 1; i <= size() - 1; i++) {
-				s += ", " + stackRep[i];
-			}
-		return s + "]";
-	}
+  public String toString() {
+    String s;
+    s = "[";
+    if (size() > 0) {
+      s += stackRep[0];
+    }
+    if (size() > 1) {
+      for (int i = 1; i <= size() - 1; i++) {
+        s += ", " + stackRep[i];
+      }
+    }
+    return s + "]";
+  }
 }

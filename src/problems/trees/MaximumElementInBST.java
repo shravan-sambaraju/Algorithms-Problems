@@ -6,40 +6,40 @@ import common.utils.BinaryTreeNode;
 
 class MaximumElementInBST {
 
-	private BinaryTreeNode maximumElement(BinaryTreeNode node) {
-		if (node == null) {
-			return node;
-		} else {
-			if (node.getRight() == null) {
-				return node;
-			} else {
-				return maximumElement(node.getRight());
-			}
-		}
-	}
+  public static void main(String args[]) {
 
-	private BinaryTreeNode maximumElementLevelOrder(BinaryTreeNode root) {
-		if (root == null) {
-			return null;
-		}
-		while (root.getRight() != null) {
-			root = root.getRight();
-		}
-		return root;
-	}
+    BinaryTreeNode node = new BinaryTreeNode(50);
+    node.setLeft(new BinaryTreeNode(30));
+    node.setRight(new BinaryTreeNode(70));
+    node.getLeft().setLeft(new BinaryTreeNode(20));
+    node.getLeft().setRight(new BinaryTreeNode(40));
+    node.getRight().setLeft(new BinaryTreeNode(60));
+    node.getRight().setRight(new BinaryTreeNode(80));
 
-	public static void main(String args[]) {
+    MaximumElementInBST max = new MaximumElementInBST();
+    System.out.println(max.maximumElement(node).getData());
+    System.out.println(max.maximumElementLevelOrder(node).getData());
+  }
 
-		BinaryTreeNode node = new BinaryTreeNode(50);
-		node.setLeft(new BinaryTreeNode(30));
-		node.setRight(new BinaryTreeNode(70));
-		node.getLeft().setLeft(new BinaryTreeNode(20));
-		node.getLeft().setRight(new BinaryTreeNode(40));
-		node.getRight().setLeft(new BinaryTreeNode(60));
-		node.getRight().setRight(new BinaryTreeNode(80));
+  private BinaryTreeNode maximumElement(BinaryTreeNode node) {
+    if (node == null) {
+      return node;
+    } else {
+      if (node.getRight() == null) {
+        return node;
+      } else {
+        return maximumElement(node.getRight());
+      }
+    }
+  }
 
-		MaximumElementInBST max = new MaximumElementInBST();
-		System.out.println(max.maximumElement(node).getData());
-		System.out.println(max.maximumElementLevelOrder(node).getData());
-	}
+  private BinaryTreeNode maximumElementLevelOrder(BinaryTreeNode root) {
+    if (root == null) {
+      return null;
+    }
+    while (root.getRight() != null) {
+      root = root.getRight();
+    }
+    return root;
+  }
 }
