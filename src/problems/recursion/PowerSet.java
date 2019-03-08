@@ -1,7 +1,6 @@
 package problems.recursion;
 
-/* Generate power set */
-// TODO: 2019-03-08a
+/* Generate power set (all subsets of a set) */
 
 import java.util.ArrayList;
 

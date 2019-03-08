@@ -58,7 +58,7 @@ class PartitionListToEvenOddPivot {
     node8.setData(2);
     node7.setNext(node8);
 
-    ListNode finalNode = partition(node, 5);
+    ListNode finalNode = partition(node, 3);
 
     while (finalNode != null) {
       System.out.println(finalNode.getData());
