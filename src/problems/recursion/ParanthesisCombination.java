@@ -1,6 +1,6 @@
 package problems.recursion;
 
-/* Check if paranthesis are properly closed */
+/* Check if given paranthesis are properly closed */
 
 import java.util.ArrayList;
 

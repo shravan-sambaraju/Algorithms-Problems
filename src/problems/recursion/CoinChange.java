@@ -1,6 +1,6 @@
 package problems.recursion;
 
-/* Change coin denomination */
+/* find number of ways you can change coin denomination */
 
 class CoinChange {
 

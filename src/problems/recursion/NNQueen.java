@@ -1,6 +1,6 @@
 package problems.recursion;
 
-/* Place NxN queens */
+/* Place N chess queens on an N×N chessboard so that no two queens attack each other */
 
 import java.util.ArrayList;
 

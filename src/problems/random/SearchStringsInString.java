@@ -1,6 +1,6 @@
 package problems.random;
 
-/* Search string in a given strings */
+/* Search string in a given stringsandarrays */
 
 import common.utils.HashMapList;
 

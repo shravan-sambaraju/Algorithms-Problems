@@ -1,6 +1,6 @@
 package problems.stacks;
 
-/* Create a stack which return minimum element in o(1) */
+/* Create a stack which return minimum element in o(1) time */
 
 import java.util.Stack;
 

@@ -1,6 +1,6 @@
 package problems.stacks;
 
-/* Balance brackets */
+/* check the Balancing of brackets */
 
 import java.util.Stack;
 

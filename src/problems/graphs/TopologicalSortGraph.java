@@ -1,6 +1,6 @@
 package problems.graphs;
 
-/* Sort given graph topologically */
+/* Sort the given graph topologically */
 
 import java.util.Iterator;
 import java.util.LinkedList;

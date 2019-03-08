@@ -1,6 +1,6 @@
 package problems.recursion;
 
-/* Hopp Steps 123 */
+/* Count number of ways of Hopp Steps 123 */
 
 class HoppSteps123 {
 
