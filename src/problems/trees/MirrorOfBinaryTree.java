@@ -4,7 +4,7 @@ import common.utils.BinaryTreeNode;
 
 /* Create mirror of binary search tree */
 
-class MirrorOFbinaryTree {
+class MirrorOfBinaryTree {
 
   public static void main(String args[]) {
     BinaryTreeNode node = new BinaryTreeNode(1);
@@ -16,7 +16,7 @@ class MirrorOFbinaryTree {
     node.getRight().setRight(new BinaryTreeNode(7));
 
     recursiveInorder(node);
-    MirrorOFbinaryTree mirror = new MirrorOFbinaryTree();
+    MirrorOfBinaryTree mirror = new MirrorOfBinaryTree();
     System.out.println();
     BinaryTreeNode mirrortree = mirror.mirrorOfBinaryTree(node);
     recursiveInorder(mirrortree);

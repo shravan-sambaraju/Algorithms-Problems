@@ -1,6 +1,6 @@
 package problems.random;
 
-/* Print trailing zeros in N factorial */
+/* Print number of trailing zeros in N factorial */
 
 class TrailingZerosInNfactorial {
 
