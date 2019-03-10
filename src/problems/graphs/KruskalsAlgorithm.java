@@ -1,7 +1,6 @@
 package problems.graphs;
 
 /** Implement Kruskals algorithm */
-
 import java.util.Arrays;
 
 class KruskalsAlgorithm {

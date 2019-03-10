@@ -1,6 +1,8 @@
 package problems.random;
 
-/** Longest word made from other words */
+/**
+ * Given a list of words, write a program to find the longest word made of other words in the list.
+ */
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;

@@ -1,7 +1,6 @@
 package problems.linkedlists;
 
 /** Merge given sorted linkedlists */
-
 import common.utils.ListNode;
 
 class MergeSortedLinkedLists {

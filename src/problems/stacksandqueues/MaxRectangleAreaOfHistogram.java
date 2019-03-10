@@ -1,7 +1,6 @@
 package problems.stacksandqueues;
 
 /** Calculate maximum area of histogram */
-
 import java.util.Stack;
 
 class MaxRectangleAreaOfHistogram {

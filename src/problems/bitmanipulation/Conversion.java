@@ -1,7 +1,6 @@
 package problems.bitmanipulation;
 
 /** Number of bits required to convert a to b */
-
 import static common.utils.UtilMethods.toFullBinaryString;
 
 public class Conversion {

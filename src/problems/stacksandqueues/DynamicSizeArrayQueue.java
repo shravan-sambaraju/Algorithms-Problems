@@ -1,7 +1,6 @@
 package problems.stacksandqueues;
 
 /** Implement dynamic size array queue */
-
 class DynamicSizeArrayQueue {
 
   private static int CAPACITY = 16;

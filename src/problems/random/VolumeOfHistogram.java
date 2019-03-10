@@ -1,6 +1,9 @@
 package problems.random;
 
-/** Find volume of histogram */
+/**
+ * Imagine a histogram (bar graph). Design an algorithm to compute the volume of water it could hold
+ * if someone poured water across the top. You can assume that each histogram bar has width 1.
+ */
 class VolumeOfHistogram {
 
   private static int computeHistogramVolume(int[] histo) {

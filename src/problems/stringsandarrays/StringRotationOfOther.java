@@ -1,7 +1,6 @@
 package problems.stringsandarrays;
 
 /** Check if the strings are rotation of each other */
-
 class StringRotationOfOther {
 
   private static boolean isSubstring(String big, String small) {

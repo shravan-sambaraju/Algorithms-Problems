@@ -1,7 +1,6 @@
 package problems.trees;
 
 /** Find lowest common ancestor of given node */
-
 import common.utils.BinaryTreeNode;
 
 class FindLowestCommonAncestor {

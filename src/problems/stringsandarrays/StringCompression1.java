@@ -1,7 +1,6 @@
 package problems.stringsandarrays;
 
 /** Compress given string */
-
 class StringCompression1 {
 
   private static String compressBad(String str) {

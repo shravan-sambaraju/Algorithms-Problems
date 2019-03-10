@@ -8,7 +8,6 @@ package problems.recursion;
  * placed on top of a smaller disk. Write a program to move the disks from the first tower to the
  * last using recursion.
  */
-
 class ToweOfHanoi {
   private static int count = 0;
 

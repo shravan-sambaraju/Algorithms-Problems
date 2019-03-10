@@ -1,6 +1,9 @@
 package problems.random;
 
-/** Find indices m and n such that if you sort m through n total array would be sorted */
+/**
+ * Given an array of integers,write a method to find indices m and n such that if you sorted
+ * elements m through n, the entire array would be sorted. Minimize n - m
+ */
 class SubSortedArrayForTotal {
 
   private static int findEndOfLeftSubsequence(int[] array) {

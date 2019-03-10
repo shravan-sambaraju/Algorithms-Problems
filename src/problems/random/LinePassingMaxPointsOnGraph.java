@@ -5,7 +5,10 @@ import common.utils.HashMapList;
 import java.util.ArrayList;
 import java.util.Set;
 
-/** Check if line is passing maximum points on graph */
+/**
+ * Given a two-dimensional graph with points on it, find a line which passes the most number of
+ * points.
+ */
 class LinePassingMaxPointsOnGraph {
 
   private static Line findBestLine(GraphPoint[] points) {

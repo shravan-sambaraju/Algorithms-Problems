@@ -1,7 +1,6 @@
 package problems.stringsandarrays;
 
 /** Check if given string is permutational palindrome */
-
 class StringPermutationalPalindrome {
 
   private static boolean isPermutationPalindrome(String s) {

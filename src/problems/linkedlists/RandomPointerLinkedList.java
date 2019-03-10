@@ -1,7 +1,6 @@
 package problems.linkedlists;
 
 /** Clone a linkedlist consisting of random pointer which points to any of random node */
-
 import common.utils.ListNode;
 
 import java.util.HashMap;

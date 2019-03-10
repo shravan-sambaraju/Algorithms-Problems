@@ -1,7 +1,6 @@
 package algorithms.sorting;
 
 /** Java implementation of quick sort */
-
 import static common.utils.UtilMethods.intArrayToString;
 
 class QuickSort {

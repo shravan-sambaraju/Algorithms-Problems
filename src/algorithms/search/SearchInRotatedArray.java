@@ -1,7 +1,6 @@
 package algorithms.search;
 
 /** Java implementation to search in rotated array */
-
 class SearchInRotatedArray {
 
   private static int search(int a[], int x) {

@@ -1,7 +1,6 @@
 package algorithms.sorting;
 
 /** Java implementation of merge sort */
-
 import common.utils.UtilMethods;
 
 class MergeSort {

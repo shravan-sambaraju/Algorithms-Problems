@@ -1,7 +1,6 @@
 package common.utils;
 
 /** Implement hashmaplist */
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;

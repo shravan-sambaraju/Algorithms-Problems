@@ -1,7 +1,6 @@
 package problems.recursion;
 
 /** find number of ways you can change coin denomination */
-
 class CoinChange {
 
   private static int makeChange(int n, int[] denoms) {

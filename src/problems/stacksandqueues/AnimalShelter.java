@@ -8,7 +8,6 @@ package problems.stacksandqueues;
  * data structures to maintain this system and implement operations such as enqueue, dequeueAny,
  * dequeueDog, and dequeueCat. You may use the built in Linked list data structure.
  */
-
 import java.util.LinkedList;
 
 class AnimalShelter {

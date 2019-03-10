@@ -1,7 +1,6 @@
 package problems.stringsandarrays;
 
 /** URLify the given string */
-
 class URLify {
 
   private static void replaceSpaces(char[] str, int trueLength) {

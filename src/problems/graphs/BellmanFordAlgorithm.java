@@ -1,7 +1,6 @@
 package problems.graphs;
 
 /** Implement Bellman Ford algorithm */
-
 class BellmanFordAlgorithm {
 
   public static void main(String[] args) {

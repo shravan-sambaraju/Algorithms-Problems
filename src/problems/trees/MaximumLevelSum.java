@@ -1,7 +1,6 @@
 package problems.trees;
 
 /** Find maximum level sum in given binary tree */
-
 import common.utils.BinaryTreeNode;
 
 import java.util.LinkedList;

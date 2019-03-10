@@ -1,6 +1,9 @@
 package problems.random;
 
-/** Find maximum size of sub square */
+/**
+ * Imagine you have a square matrix, where each cell(pixel) is either black or white Design an
+ * algorithm to find the maximum sub square such that all four borders are filled with black pixels.
+ */
 import static common.utils.UtilMethods.printMatrix;
 import static common.utils.UtilMethods.randomMatrix;
 

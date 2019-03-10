@@ -1,7 +1,6 @@
 package problems.stacksandqueues;
 
 /** Implement queue in linkedlist */
-
 import common.utils.ListNode;
 
 class LinkedListQueue {

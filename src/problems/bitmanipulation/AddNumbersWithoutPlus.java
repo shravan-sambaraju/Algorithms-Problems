@@ -1,7 +1,6 @@
 package problems.bitmanipulation;
 
 /** Add numbers without addition symbol */
-
 class AddNumbersWithoutPlus {
   private static int add(int a, int b) {
     if (b == 0) {

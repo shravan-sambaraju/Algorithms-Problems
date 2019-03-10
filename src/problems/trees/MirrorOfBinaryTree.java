@@ -3,7 +3,6 @@ package problems.trees;
 import common.utils.BinaryTreeNode;
 
 /** Create mirror of binary search tree */
-
 class MirrorOfBinaryTree {
 
   public static void main(String args[]) {

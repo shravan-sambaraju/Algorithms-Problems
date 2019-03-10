@@ -1,7 +1,6 @@
 package problems.linkedlists;
 
 /** Find middle element of linkedlist */
-
 import common.utils.ListNode;
 
 class FindMiddleOfLinkedList {

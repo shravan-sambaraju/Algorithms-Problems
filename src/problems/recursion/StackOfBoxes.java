@@ -6,7 +6,6 @@ package problems.recursion;
  * than the box above it in width, height, and depth. Implement a method to compute the height of
  * the tallest possible stack.The height of a stack is the sum of the heights of each box.
  */
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;

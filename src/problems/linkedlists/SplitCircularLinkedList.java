@@ -1,7 +1,6 @@
 package problems.linkedlists;
 
 /** Split given circular linkedlist */
-
 import common.utils.ListNode;
 
 class SplitCircularLinkedList {

@@ -1,7 +1,6 @@
 package problems.stacksandqueues;
 
 /** Implement queue using two stacks */
-
 import java.util.Stack;
 
 class QueueWithTwoStacks<T> {

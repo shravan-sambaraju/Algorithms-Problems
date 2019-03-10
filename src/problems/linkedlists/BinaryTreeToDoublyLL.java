@@ -1,7 +1,6 @@
 package problems.linkedlists;
 
 /** Convert binary tree to doubly linkedlist */
-
 class BinaryTreeToDoublyLL {
 
   private static int count = 0;

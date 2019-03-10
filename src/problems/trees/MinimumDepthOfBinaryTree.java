@@ -1,7 +1,6 @@
 package problems.trees;
 
 /** Find minimum depth of binary tree */
-
 import common.utils.BinaryTreeNode;
 
 import java.util.LinkedList;

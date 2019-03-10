@@ -1,7 +1,6 @@
 package datastructures;
 
 /** Java implementation of fixed size array using stack */
-
 class FixedSizeArrayStack {
 
   private static final int CAPACITY = 16;

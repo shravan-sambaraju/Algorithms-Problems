@@ -1,7 +1,6 @@
 package problems.bitmanipulation;
 
 /** Swap bits at odd and even places */
-
 import static common.utils.UtilMethods.toFullBinaryString;
 
 public class PairSwap {

@@ -1,7 +1,6 @@
 package algorithms.sorting;
 
 /** Java implementation of shell sort */
-
 import static common.utils.UtilMethods.intArrayToString;
 
 class ShellSort {

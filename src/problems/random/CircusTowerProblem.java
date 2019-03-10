@@ -6,11 +6,10 @@ package problems.random;
  * below him or her. Given the heights and weights of each person in the circus, write a method to
  * compute the largest possible number of people in such a tower.
  */
-
 import java.util.ArrayList;
 import java.util.Collections;
 
-class CircusToweProblem {
+class CircusTowerProblem {
 
   private static ArrayList<HtWt> max(ArrayList<HtWt> seq1, ArrayList<HtWt> seq2) {
     if (seq1 == null) {
@@ -65,7 +64,7 @@ class CircusToweProblem {
   private static ArrayList<HtWt> initialize() {
     ArrayList<HtWt> items = new ArrayList<HtWt>();
 
-    CircusToweProblem circus = new CircusToweProblem();
+    CircusTowerProblem circus = new CircusTowerProblem();
     HtWt item = circus.new HtWt(65, 60);
     items.add(item);
 

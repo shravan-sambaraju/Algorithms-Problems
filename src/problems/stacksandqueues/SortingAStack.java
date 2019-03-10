@@ -1,7 +1,6 @@
 package problems.stacksandqueues;
 
 /** Sort a given stack */
-
 import java.util.Stack;
 
 class SortingAStack {

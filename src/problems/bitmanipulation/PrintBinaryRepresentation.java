@@ -1,7 +1,6 @@
 package problems.bitmanipulation;
 
 /** Given a real number between 0 and 1 as double print the binary representation */
-
 public class PrintBinaryRepresentation {
 
   private static String printBinary(double num) {

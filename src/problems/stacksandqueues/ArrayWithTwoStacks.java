@@ -1,7 +1,6 @@
 package problems.stacksandqueues;
 
 /** Implement array with two stacks */
-
 import java.util.EmptyStackException;
 
 class ArrayWithTwoStacks {
