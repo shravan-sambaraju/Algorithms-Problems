@@ -1,7 +1,6 @@
 package problems.trees;
 
-/* Find element in binary node */
-
+/** Find element in binary node */
 import common.utils.BinaryTreeNode;
 
 import java.util.LinkedList;

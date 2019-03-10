@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Find maximum of two numbers without if else */
-
+/** Find maximum of two numbers without if else */
 class MaxOfTwoWithoutIfElse {
 
   private static int flip(int bit) {

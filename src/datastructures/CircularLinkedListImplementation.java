@@ -1,7 +1,6 @@
 package datastructures;
 
-/* Java implementation of circular linkedlist */
-
+/** Java implementation of circular linkedlist */
 class CircularLinkedListImplementation {
 
   private CLLNode tail;

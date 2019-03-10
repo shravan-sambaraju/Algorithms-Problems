@@ -1,7 +1,6 @@
 package algorithms.sorting;
 
-/* Java implementation of radix sort */
-
+/** Java implementation of radix sort */
 import static common.utils.UtilMethods.intArrayToString;
 
 class RadixSort {

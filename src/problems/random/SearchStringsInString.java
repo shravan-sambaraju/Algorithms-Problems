@@ -1,7 +1,9 @@
 package problems.random;
 
-/* Search string in a given strings */
-
+/**
+ * Given a string b and an array of smaller strings T, design a method to search b for each small
+ * string in T.
+ */
 import common.utils.HashMapList;
 
 import java.util.ArrayList;

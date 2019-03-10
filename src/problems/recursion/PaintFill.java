@@ -1,7 +1,9 @@
 package problems.recursion;
 
-/* Fill colours in screen */
-
+/**
+ * given a screen (represented by a two-dimensional array of colors), a point, and a new color, fill
+ * in the surrounding area until the color changes from the original color
+ */
 class PaintFill {
 
   private static String PrintColor(Color c) {

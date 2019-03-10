@@ -1,7 +1,10 @@
 package problems.random;
 
-/* Get majority elements in array */
-
+/**
+ * A majority element is an element that makes up more than half of the items in an array. Given a
+ * positive integers array, find the majority element. If there is no majority element, return -1.
+ * Do this in 0 (N) time and O( 1) space.
+ */
 class getMajorityElementInArray {
 
   private static int getCandidate(int[] array) {

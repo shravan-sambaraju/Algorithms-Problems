@@ -1,7 +1,9 @@
 package problems.random;
 
-/* Calculate continuous largest sum */
-
+/**
+ * You are given an array of integers (both positive and negative). Find the contiguous sequence
+ * with the largest sum. Return the sum.
+ */
 class ContiguousLargestSum {
   private static int getMaxSum(int[] a) {
     int maxSum = 0;

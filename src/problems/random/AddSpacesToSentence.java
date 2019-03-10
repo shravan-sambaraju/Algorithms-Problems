@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Add spaces to sentence */
-
+/** Add spaces to sentence where spaces are missing */
 import java.util.HashSet;
 
 import static common.utils.UtilMethods.getListOfWords;

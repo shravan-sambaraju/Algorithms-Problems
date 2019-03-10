@@ -1,7 +1,6 @@
 package algorithms.search;
 
-/* Search in sparse string */
-
+/** Search in sparse string */
 class SparshSearch {
 
   private static int search(String[] strings, String str, int first, int last) {

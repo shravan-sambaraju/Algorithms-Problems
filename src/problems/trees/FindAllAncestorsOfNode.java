@@ -1,7 +1,6 @@
 package problems.trees;
 
-/* Find all ancestors of given node */
-
+/** Find all ancestors of given node */
 import common.utils.BinaryTreeNode;
 
 class FindAllAncestorsOfNode {

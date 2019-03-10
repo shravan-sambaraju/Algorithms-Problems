@@ -1,7 +1,6 @@
 package problems.trees;
 
-/* Find minimum element in binary search tree */
-
+/** Find minimum element in binary search tree */
 import common.utils.BinaryTreeNode;
 
 class MinimumElementInBST {

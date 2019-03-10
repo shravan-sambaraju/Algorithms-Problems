@@ -1,7 +1,6 @@
 package algorithms.sorting;
 
-/* Sort string anagrams next to each other */
-
+/** Sort string anagrams next to each other */
 import java.util.Arrays;
 import java.util.Comparator;
 

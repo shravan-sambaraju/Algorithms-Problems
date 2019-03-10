@@ -1,7 +1,6 @@
 package problems.trees;
 
-/* Find diameter of binary tree */
-
+/** Find diameter of binary tree */
 import common.utils.BinaryTreeNode;
 
 class DiameterOfBinaryTree {

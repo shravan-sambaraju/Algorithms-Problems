@@ -1,7 +1,6 @@
 package problems.trees;
 
-/* Print pre oder traversal of binary tree */
-
+/** Print pre oder traversal of binary tree */
 import common.utils.BinaryTreeNode;
 
 import java.util.ArrayList;

@@ -1,7 +1,6 @@
 package algorithms.sorting;
 
-/* Java implementation of insertion sort */
-
+/** Java implementation of insertion sort */
 import java.util.ArrayList;
 import java.util.List;
 

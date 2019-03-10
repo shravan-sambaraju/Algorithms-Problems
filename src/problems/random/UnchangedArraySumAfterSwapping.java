@@ -1,7 +1,9 @@
 package problems.random;
 
-/* FInd unchanged array sum after swapping */
-
+/**
+ * Given two arrays of integers, find a pair of values (one value from each array) that you can swap
+ * to give the two arrays the same sum.
+ */
 import java.util.Arrays;
 
 class UnchangedArraySumAfterSwapping {
@@ -55,8 +57,8 @@ class UnchangedArraySumAfterSwapping {
   }
 
   public static void main(String[] args) {
-    int[] array1 = {1, 1, 1, 2, 2, 4};
-    int[] array2 = {3, 3, 3, 6};
+    int[] array1 = {-9, -1, -4, 8, 9, 6, -5, -7, 3, 9};
+    int[] array2 = {6, 6, 4, -1, 7, -6, -9, 4, -8, 8};
     int[] swaps = findSwapValues(array1, array2);
     if (swaps == null) {
       System.out.println("null");

@@ -1,7 +1,9 @@
 package problems.random;
 
-/* Equal letter numbers in sub array */
-
+/**
+ * Given an array filled with letters and numbers, find the longest subarray with an equal number of
+ * letters and numbers.
+ */
 import java.util.HashMap;
 
 class EqualLettersNumbersSubArray {

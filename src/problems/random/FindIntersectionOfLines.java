@@ -1,7 +1,9 @@
 package problems.random;
 
-/* Find intersection of lines */
-
+/**
+ * Find intersection of lines if any when given two line segments (represented as start point and
+ * end point)
+ */
 class FindIntersectionOfLines {
 
   private static Point createPoint(int[] coordinates) {

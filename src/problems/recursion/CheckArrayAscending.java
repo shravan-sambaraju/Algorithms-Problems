@@ -1,7 +1,6 @@
 package problems.recursion;
 
-/* Check if array is sorted in ascending order using recursion */
-
+/** Check if array is sorted in ascending order using recursion */
 class CheckArrayAscending {
 
   private static boolean checkAscending(int[] A, int indexofA) {

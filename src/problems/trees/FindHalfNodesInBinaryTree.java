@@ -1,7 +1,6 @@
 package problems.trees;
 
-/* Find all half nodes in binary tree */
-
+/** Find all half nodes in binary tree */
 import common.utils.BinaryTreeNode;
 
 import java.util.LinkedList;

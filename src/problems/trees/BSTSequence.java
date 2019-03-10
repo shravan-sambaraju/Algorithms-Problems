@@ -1,7 +1,6 @@
 package problems.trees;
 
-/* A binary tree is created using array print all combination of array */
-
+/** A binary tree is created using array print all combination of array */
 import java.util.ArrayList;
 import java.util.LinkedList;
 

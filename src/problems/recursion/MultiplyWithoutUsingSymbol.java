@@ -1,7 +1,6 @@
 package problems.recursion;
 
-/* Multiply without using symbols */
-
+/** Multiply without using symbol */
 class MultiplyWithoutUsingSymbol {
 
   private static int counter = 0;

@@ -1,7 +1,6 @@
 package problems.trees;
 
-/* Find element in binary search tree */
-
+/** Find element in binary search tree */
 import common.utils.BinaryTreeNode;
 
 class FindElementBinarySearchTree {

@@ -1,7 +1,6 @@
 package problems.trees;
 
-/* Lowest common ancestor of two pointers in binary search tree */
-
+/** Lowest common ancestor of two pointers in binary search tree */
 import common.utils.BinaryTreeNode;
 
 class LCAOfTwoPointersInBST {

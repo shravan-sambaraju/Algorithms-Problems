@@ -1,7 +1,9 @@
 package problems.random;
 
-/* Find maximum sum in a given matrix */
-
+/**
+ * Given an NxN matrix of positive and negative integers, write code to find the sub matrix with the
+ * largest possible sum.
+ */
 import static common.utils.UtilMethods.printMatrix;
 import static common.utils.UtilMethods.randomMatrix;
 

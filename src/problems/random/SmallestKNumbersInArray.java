@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Find smallest k numbers in array */
-
+/** Design an algorithm to find the smallest K numbers in an array. */
 import java.util.Comparator;
 import java.util.PriorityQueue;
 

@@ -1,7 +1,6 @@
 package algorithms.sorting;
 
-/* Java implementation of Bucket sort */
-
+/** Java implementation of Bucket sort */
 import java.util.Random;
 
 import static common.utils.UtilMethods.intArrayToString;
