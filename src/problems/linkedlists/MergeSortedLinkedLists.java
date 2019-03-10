@@ -1,6 +1,6 @@
 package problems.linkedlists;
 
-/* Merge given sorted linkedlists */
+/** Merge given sorted linkedlists */
 
 import common.utils.ListNode;
 
@@ -80,11 +80,11 @@ class MergeSortedLinkedLists {
     node14.setData(8);
     node13.setNext(node14);
 
-    /*
+    /**
      * ListNode sortedNode = mergeUsingRecursion(node, node11);
      *
-     * while(sortedNode!=null){ System.out.println(sortedNode.getData());
-     * sortedNode = sortedNode.getNext(); }
+     * <p>while(sortedNode!=null){ System.out.println(sortedNode.getData()); sortedNode =
+     * sortedNode.getNext(); }
      */
     System.out.println("**********");
     ListNode sortedNode2 = mergeTwoLists(node, node11);

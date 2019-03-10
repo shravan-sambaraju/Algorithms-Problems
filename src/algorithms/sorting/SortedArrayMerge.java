@@ -1,6 +1,6 @@
 package algorithms.sorting;
 
-/* Merge two sorted arrays into a single array */
+/** Merge two sorted arrays into a single array */
 
 import static common.utils.UtilMethods.intArrayToString;
 

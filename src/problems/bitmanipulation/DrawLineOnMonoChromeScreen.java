@@ -1,6 +1,6 @@
 package problems.bitmanipulation;
 
-/* Draw line on monochrome screen which is stored as single array of bits */
+/** Draw line on monochrome screen which is stored as single array of bits */
 
 public class DrawLineOnMonoChromeScreen {
 

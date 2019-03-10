@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Random of 7 and 5 */
-
+/** Random of 7 and 5 */
 class Rand7FromRand5 {
 
   private static int rand7() {

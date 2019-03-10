@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Implement langton ant problem */
-
+/** Implement langton ant problem */
 import java.util.HashSet;
 
 class LangtonAnt {

@@ -1,6 +1,6 @@
 package problems.linkedlists;
 
-/* find common elements in the given linkedlists */
+/** find common elements in the given linkedlists */
 
 import common.utils.ListNode;
 

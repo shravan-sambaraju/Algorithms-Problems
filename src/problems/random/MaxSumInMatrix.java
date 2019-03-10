@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Find maximum sum in a given matrix */
-
+/** Find maximum sum in a given matrix */
 import static common.utils.UtilMethods.printMatrix;
 import static common.utils.UtilMethods.randomMatrix;
 

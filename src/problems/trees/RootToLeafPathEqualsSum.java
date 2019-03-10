@@ -1,6 +1,6 @@
 package problems.trees;
 
-/* Print if root to leaf path is equal to the given sum */
+/** Print if root to leaf path is equal to the given sum */
 
 import common.utils.BinaryTreeNode;
 

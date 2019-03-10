@@ -1,6 +1,6 @@
 package datastructures;
 
-/* Java implementation of dynamic stack using array */
+/** Java implementation of dynamic stack using array */
 
 class DynamicArrayStack {
   private static final int CAPACITY = 16;

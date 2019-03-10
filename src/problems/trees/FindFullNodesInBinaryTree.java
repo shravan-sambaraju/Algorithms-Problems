@@ -1,6 +1,6 @@
 package problems.trees;
 
-/* Find all full nodes in binary tree */
+/** Find all full nodes in binary tree */
 
 import common.utils.BinaryTreeNode;
 

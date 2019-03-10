@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Given String and value ex- catcatgocatgo matches aabab (cat-a and go-b) */
-
+/** Given String and value ex- catcatgocatgo matches aabab (cat-a and go-b) */
 public class StringPatternMatcher {
   public static boolean doesMatch(String pattern, String value) {
     if (pattern.length() == 0) {

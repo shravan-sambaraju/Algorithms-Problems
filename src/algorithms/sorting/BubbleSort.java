@@ -1,6 +1,6 @@
 package algorithms.sorting;
 
-/* Java implementation of bubble sort */
+/** Java implementation of bubble sort */
 
 class BubbleSort {
 

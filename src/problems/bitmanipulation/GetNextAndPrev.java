@@ -1,6 +1,9 @@
 package problems.bitmanipulation;
 
-/* Given positive Integer print next smallest and next largest numbers that have same number of 1 bits */
+/**
+ * Given positive Integer print next smallest and next largest numbers that have same number of 1
+ * bits
+ */
 
 public class GetNextAndPrev {
 

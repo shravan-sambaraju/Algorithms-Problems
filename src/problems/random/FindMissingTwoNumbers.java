@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Find missing two numbers */
-
+/** Find missing two numbers */
 class FindMissingTwoNumbers {
 
   private static int squareSumToN(int n, int power) {

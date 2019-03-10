@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Divide a board using k planks */
-
+/** Divide a board using k planks */
 import java.util.HashSet;
 
 class DivingBoardUsingKplanks {

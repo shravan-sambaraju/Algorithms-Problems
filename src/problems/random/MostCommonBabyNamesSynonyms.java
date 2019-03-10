@@ -1,7 +1,6 @@
 package problems.random;
 
-/* FInd most common baby name synonyms */
-
+/** FInd most common baby name synonyms */
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;

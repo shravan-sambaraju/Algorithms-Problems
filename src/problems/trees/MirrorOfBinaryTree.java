@@ -2,7 +2,7 @@ package problems.trees;
 
 import common.utils.BinaryTreeNode;
 
-/* Create mirror of binary search tree */
+/** Create mirror of binary search tree */
 
 class MirrorOfBinaryTree {
 

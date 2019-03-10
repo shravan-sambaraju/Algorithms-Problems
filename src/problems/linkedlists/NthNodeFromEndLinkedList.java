@@ -1,6 +1,6 @@
 package problems.linkedlists;
 
-/* Fetch Nth Node from the end of linkedlist */
+/** Fetch Nth Node from the end of linkedlist */
 
 import common.utils.ListNode;
 

@@ -1,6 +1,6 @@
 package algorithms.search;
 
-/* Search in sparse string */
+/** Search in sparse string */
 
 class SparshSearch {
 

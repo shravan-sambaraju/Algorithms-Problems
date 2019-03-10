@@ -1,6 +1,6 @@
 package problems.stringsandarrays;
 
-/* Check if given strings are permutations of each other */
+/** Check if given strings are permutations of each other */
 
 import java.util.Arrays;
 

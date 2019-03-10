@@ -1,6 +1,8 @@
 package problems.linkedlists;
 
-/* Reorder given linkedlist such that the result consists of elements in order 1,n,2,n-1,3,n-2.... */
+/**
+ * Reorder given linkedlist such that the result consists of elements in order 1,n,2,n-1,3,n-2....
+ */
 
 import common.utils.ListNode;
 

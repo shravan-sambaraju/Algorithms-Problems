@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Find intersection of lines */
-
+/** Find intersection of lines */
 class FindIntersectionOfLines {
 
   private static Point createPoint(int[] coordinates) {

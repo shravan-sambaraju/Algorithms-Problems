@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Schedule massause meeting */
-
+/** Schedule massause meeting */
 class MassauseBackToBack {
 
   private static int maxMinutesInterativeTwoSides(int[] massages) {

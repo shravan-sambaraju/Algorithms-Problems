@@ -1,6 +1,6 @@
-package problems.queues;
+package problems.stacksandqueues;
 
-/* Implement fixed size array queue */
+/** Implement fixed size array queue */
 
 class FixedSizeArrayQueue {
 

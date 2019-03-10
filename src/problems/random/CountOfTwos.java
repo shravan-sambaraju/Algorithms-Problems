@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Count of twos in range */
-
+/** Count of twos in range */
 class CountOfTwos {
 
   private static int count2sInRangeAtDigit(int number, int d) {

@@ -2,8 +2,7 @@ package problems.random;
 
 import java.util.HashSet;
 
-/* Find pair of values from two integer arrays by swapping which two arrays gives same sum */
-
+/** Find pair of values from two integer arrays by swapping which two arrays gives same sum */
 public class SwapPairInEachArrayForSumK {
   public static int sum(int[] array) {
     int s = 0;

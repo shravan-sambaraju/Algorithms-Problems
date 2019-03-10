@@ -1,7 +1,6 @@
 package problems.random;
 
-/* FInd unchanged array sum after swapping */
-
+/** FInd unchanged array sum after swapping */
 import java.util.Arrays;
 
 class UnchangedArraySumAfterSwapping {

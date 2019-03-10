@@ -1,6 +1,6 @@
 package algorithms.sorting;
 
-/* Java implementation of Counting Sort */
+/** Java implementation of Counting Sort */
 
 class CountingSort {
 

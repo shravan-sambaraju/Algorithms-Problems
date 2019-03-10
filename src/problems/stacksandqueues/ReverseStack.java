@@ -1,6 +1,6 @@
-package problems.stacks;
+package problems.stacksandqueues;
 
-/* Reverse a given stack */
+/** Reverse a given stack */
 
 import java.util.Stack;
 

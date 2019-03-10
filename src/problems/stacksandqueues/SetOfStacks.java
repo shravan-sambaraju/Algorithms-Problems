@@ -1,6 +1,6 @@
-package problems.stacks;
+package problems.stacksandqueues;
 
-/* Implement stack of plates */
+/** Implement stack of plates */
 
 import java.util.ArrayList;
 import java.util.EmptyStackException;

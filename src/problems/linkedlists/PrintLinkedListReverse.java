@@ -1,6 +1,6 @@
 package problems.linkedlists;
 
-/* Print given linkedlist in reverse */
+/** Print given linkedlist in reverse */
 
 import common.utils.ListNode;
 

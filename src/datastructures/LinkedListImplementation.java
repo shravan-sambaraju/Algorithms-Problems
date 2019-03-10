@@ -1,6 +1,6 @@
 package datastructures;
 
-/* Java implementation of linkedlist */
+/** Java implementation of linkedlist */
 
 import common.utils.ListNode;
 

@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Longest word made from other words */
-
+/** Longest word made from other words */
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;

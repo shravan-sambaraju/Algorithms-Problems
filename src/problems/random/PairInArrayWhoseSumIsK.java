@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Find pairs in array whose sum is k */
-
+/** Find pairs in array whose sum is k */
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;

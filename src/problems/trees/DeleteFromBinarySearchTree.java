@@ -2,7 +2,7 @@ package problems.trees;
 
 import common.utils.BinaryTreeNode;
 
-/* Delete a node from binary tree */
+/** Delete a node from binary tree */
 
 class DeleteFromBinarySearchTree {
 

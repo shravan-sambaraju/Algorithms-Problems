@@ -1,6 +1,6 @@
-package problems.stacks;
+package problems.stacksandqueues;
 
-/* Sort a given stack */
+/** Sort a given stack */
 
 import java.util.Stack;
 

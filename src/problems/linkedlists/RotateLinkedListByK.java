@@ -1,6 +1,6 @@
 package problems.linkedlists;
 
-/* Rotate linkedlist by k */
+/** Rotate linkedlist by k */
 
 import common.utils.ListNode;
 

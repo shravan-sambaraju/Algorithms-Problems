@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Find words which are one edit away */
-
+/** Find words which are one edit away */
 import common.utils.HashMapList;
 
 import java.util.ArrayList;

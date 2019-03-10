@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Print skyline */
-
+/** Print skyline */
 class SkylinesDivideandConquer {
 
   private static Skyline GetSkyline(Building[] buildings, int start, int end) {

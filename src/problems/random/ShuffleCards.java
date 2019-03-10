@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Shuffle playing cards */
-
+/** Shuffle playing cards */
 import static common.utils.UtilMethods.intArrayToString;
 
 class ShuffleCards {

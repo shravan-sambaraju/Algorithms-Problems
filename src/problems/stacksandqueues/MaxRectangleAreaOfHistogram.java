@@ -1,6 +1,6 @@
-package problems.stacks;
+package problems.stacksandqueues;
 
-/* Calculate maximum area of histogram */
+/** Calculate maximum area of histogram */
 
 import java.util.Stack;
 

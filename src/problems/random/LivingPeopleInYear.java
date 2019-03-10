@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Find number of people living in given year */
-
+/** Find number of people living in given year */
 import java.util.Random;
 
 class LivingPeopleInYear {

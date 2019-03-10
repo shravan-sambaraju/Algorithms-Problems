@@ -1,6 +1,6 @@
 package problems.graphs;
 
-/* Implement Prims Algorithm */
+/** Implement Prims Algorithm */
 
 class PrimsAlgorithm {
 

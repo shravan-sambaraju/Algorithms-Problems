@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Print matrix in spiral form */
-
+/** Print matrix in spiral form */
 class PrintMatrixSpiral {
 
   private static void spiralPrint(int row, int column, int a[][]) {

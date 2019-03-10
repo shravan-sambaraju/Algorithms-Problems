@@ -1,6 +1,6 @@
-package problems.queues;
+package problems.stacksandqueues;
 
-/* Implement queue using two stacks */
+/** Implement queue using two stacks */
 
 import java.util.Stack;
 

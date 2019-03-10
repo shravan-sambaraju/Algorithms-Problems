@@ -1,6 +1,6 @@
 package problems.trees;
 
-/* Find all root to leaf paths in binary tree */
+/** Find all root to leaf paths in binary tree */
 
 import common.utils.BinaryTreeNode;
 

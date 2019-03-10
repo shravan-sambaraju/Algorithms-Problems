@@ -1,6 +1,6 @@
-package problems.stacks;
+package problems.stacksandqueues;
 
-/* check the Balancing of brackets */
+/** check the Balancing of brackets */
 
 import java.util.Stack;
 

@@ -1,6 +1,6 @@
 package problems.trees;
 
-/* Find maximum element in binary tree */
+/** Find maximum element in binary tree */
 
 import common.utils.BinaryTreeNode;
 

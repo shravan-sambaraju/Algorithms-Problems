@@ -5,8 +5,7 @@ import common.utils.HashMapList;
 import java.util.ArrayList;
 import java.util.Set;
 
-/* Check if line is passing maximum points on graph */
-
+/** Check if line is passing maximum points on graph */
 class LinePassingMaxPointsOnGraph {
 
   private static Line findBestLine(GraphPoint[] points) {

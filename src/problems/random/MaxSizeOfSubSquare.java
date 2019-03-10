@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Find maximum size of sub square */
-
+/** Find maximum size of sub square */
 import static common.utils.UtilMethods.printMatrix;
 import static common.utils.UtilMethods.randomMatrix;
 

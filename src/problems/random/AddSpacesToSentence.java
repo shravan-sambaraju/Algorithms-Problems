@@ -1,8 +1,6 @@
 package problems.random;
 
-/* Add spaces to sentence */
-// TODO: 2019-03-08
-
+/** Add spaces to sentence where spaces are missing */
 import java.util.HashSet;
 
 import static common.utils.UtilMethods.getListOfWords;

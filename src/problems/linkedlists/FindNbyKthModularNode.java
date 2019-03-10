@@ -1,6 +1,6 @@
 package problems.linkedlists;
 
-/* Find N by Kth modular node in linkedlist */
+/** Find N by Kth modular node in linkedlist */
 
 import common.utils.ListNode;
 

@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Search string in a given stringsandarrays */
-
+/** Search string in a given stringsandarrays */
 import common.utils.HashMapList;
 
 import java.util.ArrayList;

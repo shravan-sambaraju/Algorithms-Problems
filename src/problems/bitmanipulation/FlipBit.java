@@ -1,6 +1,9 @@
 package problems.bitmanipulation;
 
-/* Given an integer and you can flip exactly one bit from a 0 to a 1. find the length of longest sequence of 1s we can create */
+/**
+ * Given an integer and you can flip exactly one bit from a 0 to a 1. find the length of longest
+ * sequence of 1s we can create
+ */
 
 public class FlipBit {
 

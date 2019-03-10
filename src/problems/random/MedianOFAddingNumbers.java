@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Find median of adding numbers */
-
+/** Find median of adding numbers */
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;

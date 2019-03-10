@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Find shortest super sequence array */
-
+/** Find shortest super sequence array */
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;

@@ -1,6 +1,8 @@
 package problems.linkedlists;
 
-/* Check whether the given linkedlist is odd or even */
+/** Check whether the given linkedlist is odd or even
+ *
+ */
 
 import common.utils.ListNode;
 

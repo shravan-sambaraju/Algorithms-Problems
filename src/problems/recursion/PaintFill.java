@@ -1,7 +1,9 @@
 package problems.recursion;
 
-/* given a screen (represented by a two-dimensional array of colors), a point, and a new color,
-fill in the surrounding area until the color changes from the original color */
+/**
+ * given a screen (represented by a two-dimensional array of colors), a point, and a new color, fill
+ * in the surrounding area until the color changes from the original color
+ */
 
 class PaintFill {
 

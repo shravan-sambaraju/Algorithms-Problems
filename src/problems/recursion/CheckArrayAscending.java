@@ -1,6 +1,6 @@
 package problems.recursion;
 
-/* Check if array is sorted in ascending order using recursion */
+/** Check if array is sorted in ascending order using recursion */
 
 class CheckArrayAscending {
 

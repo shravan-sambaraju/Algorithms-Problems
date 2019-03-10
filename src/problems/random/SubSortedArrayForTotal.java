@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Find indices m and n such that if you sort m through n total array would be sorted */
-
+/** Find indices m and n such that if you sort m through n total array would be sorted */
 class SubSortedArrayForTotal {
 
   private static int findEndOfLeftSubsequence(int[] array) {

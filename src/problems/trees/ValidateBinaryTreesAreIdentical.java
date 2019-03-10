@@ -1,6 +1,6 @@
 package problems.trees;
 
-/* Validate if given binary trees are identical */
+/** Validate if given binary trees are identical */
 
 import common.utils.BinaryTreeNode;
 

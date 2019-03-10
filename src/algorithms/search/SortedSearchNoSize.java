@@ -1,6 +1,6 @@
 package algorithms.search;
 
-/* Given a sorted array with no size create a method which returns index */
+/** Given a sorted array with no size create a method which returns index */
 
 class SortedSearchNoSize {
 

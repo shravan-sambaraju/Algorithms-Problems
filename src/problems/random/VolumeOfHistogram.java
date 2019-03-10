@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Find volume of histogram */
-
+/** Find volume of histogram */
 class VolumeOfHistogram {
 
   private static int computeHistogramVolume(int[] histo) {

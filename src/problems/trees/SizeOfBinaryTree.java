@@ -1,6 +1,6 @@
 package problems.trees;
 
-/* Print size of binary tree */
+/** Print size of binary tree */
 
 import common.utils.BinaryTreeNode;
 

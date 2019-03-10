@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Generate random set from an array */
-
+/** Generate random set from an array */
 import static common.utils.UtilMethods.intArrayToString;
 
 class RandomSetFromArray {

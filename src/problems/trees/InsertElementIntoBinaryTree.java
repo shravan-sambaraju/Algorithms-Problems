@@ -1,6 +1,6 @@
 package problems.trees;
 
-/* Insert given element into binary tree */
+/** Insert given element into binary tree */
 
 import common.utils.BinaryTreeNode;
 

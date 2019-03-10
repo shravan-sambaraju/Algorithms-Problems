@@ -1,6 +1,6 @@
-package problems.stacks;
+package problems.stacksandqueues;
 
-/* Post fix evaluation using stack */
+/** Post fix evaluation using stack */
 
 import java.util.Stack;
 

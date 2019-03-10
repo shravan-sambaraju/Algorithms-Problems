@@ -1,6 +1,6 @@
 package problems.trees;
 
-/* Create a minimal BST from given array */
+/** Create a minimal BST from given array */
 
 import java.util.ArrayList;
 import java.util.Iterator;

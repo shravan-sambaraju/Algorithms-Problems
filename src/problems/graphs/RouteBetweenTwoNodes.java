@@ -1,6 +1,6 @@
 package problems.graphs;
 
-/* Find Route between two nodes in a graph */
+/** Find Route between two nodes in a graph */
 
 import java.util.LinkedList;
 

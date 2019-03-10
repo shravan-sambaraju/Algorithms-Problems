@@ -1,6 +1,6 @@
 package problems.stringsandarrays;
 
-/* URLify the given string */
+/** URLify the given string */
 
 class URLify {
 

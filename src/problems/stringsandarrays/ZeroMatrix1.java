@@ -1,6 +1,6 @@
 package problems.stringsandarrays;
 
-/* In a given matrix if the element is 0 change the row and column consisting 0 to zeros */
+/** In a given matrix if the element is 0 change the row and column consisting 0 to zeros */
 
 import static common.utils.UtilMethods.printMatrix;
 import static common.utils.UtilMethods.randomMatrix;

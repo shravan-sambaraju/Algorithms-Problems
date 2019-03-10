@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Equal letter numbers in sub array */
-
+/** Equal letter numbers in sub array */
 import java.util.HashMap;
 
 class EqualLettersNumbersSubArray {

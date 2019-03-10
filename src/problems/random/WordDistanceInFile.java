@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Given two words in a file count distance between them in terms of words */
-
+/** Given two words in a file count distance between them in terms of words */
 import common.utils.HashMapList;
 
 import java.util.ArrayList;

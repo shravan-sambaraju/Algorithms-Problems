@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Get majority elements in array */
-
+/** Get majority elements in array */
 class getMajorityElementInArray {
 
   private static int getCandidate(int[] array) {

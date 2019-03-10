@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Fill Rectangle with words */
-
+/** Fill Rectangle with words */
 import java.util.ArrayList;
 import java.util.HashMap;
 

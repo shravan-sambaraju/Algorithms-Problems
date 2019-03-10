@@ -1,6 +1,6 @@
 package datastructures;
 
-/* Java implementation of fixed size array using stack */
+/** Java implementation of fixed size array using stack */
 
 class FixedSizeArrayStack {
 

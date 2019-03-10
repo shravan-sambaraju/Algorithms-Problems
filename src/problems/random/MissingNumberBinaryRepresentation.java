@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Find missing number using binary representation */
-
+/** Find missing number using binary representation */
 import java.util.ArrayList;
 import java.util.Random;
 

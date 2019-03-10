@@ -2,7 +2,7 @@ package problems.trees;
 
 import common.utils.BinaryTreeNode;
 
-/* Validate if given tree is binary search tree */
+/** Validate if given tree is binary search tree */
 
 class ValidateBinarySearchTree {
 

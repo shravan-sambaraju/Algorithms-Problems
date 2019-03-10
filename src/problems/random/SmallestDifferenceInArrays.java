@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Find smallest difference in array */
-
+/** Find smallest difference in array */
 import java.util.Arrays;
 
 class SmallestDifferenceInArrays {

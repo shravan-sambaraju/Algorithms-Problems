@@ -1,7 +1,6 @@
 package problems.random;
 
-/* Find kth multiple of prime factors */
-
+/** Find kth multiple of prime factors */
 import java.util.LinkedList;
 import java.util.Queue;
 
