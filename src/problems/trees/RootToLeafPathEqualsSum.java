@@ -51,24 +51,22 @@ class RootToLeafPathEqualsSum {
   }
 
   public boolean hasPathSum(BinaryTreeNode root, int sum) {
-    if (root == null)
-      return false;
+    if (root == null) return false;
     Stack<BinaryTreeNode> stackNode = new Stack<>();
     Stack<Integer> stackValue = new Stack<>();
 
     stackNode.push(root);
     stackValue.push(root.getData());
-    while (!stackNode.isEmpty()){
+    while (!stackNode.isEmpty()) {
       BinaryTreeNode node = stackNode.pop();
       int value = stackValue.pop();
-      if (node.getLeft() == null && node.getRight() == null && value == sum)
-        return true;
-      else{
-        if (node.getRight() != null){
+      if (node.getLeft() == null && node.getRight() == null && value == sum) return true;
+      else {
+        if (node.getRight() != null) {
           stackNode.push(node.getRight());
           stackValue.push(node.getRight().getData() + value);
         }
-        if (node.getLeft() != null){
+        if (node.getLeft() != null) {
           stackNode.push(node.getLeft());
           stackValue.push(node.getLeft().getData() + value);
         }
@@ -76,5 +74,4 @@ class RootToLeafPathEqualsSum {
     }
     return false;
   }
-
 }
