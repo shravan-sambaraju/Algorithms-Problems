@@ -1,7 +1,10 @@
 package problems.recursion;
 
-/** Permutations of strings without duplicates in string */
 import java.util.ArrayList;
+
+/**
+ * Permutations of strings without duplicates in string
+ */
 
 class PermutationsOfString {
 
