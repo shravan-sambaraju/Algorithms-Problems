@@ -3,7 +3,6 @@ package tobeorganized.puzzles;
 public class ElephantTravel {
 
   public static int calculateMaxsugarCanes(
-
       int sugarCanes, int travelDistance, int maximumCapacity) {
 
     int trips = sugarCanes / maximumCapacity * 2 - 1;
