@@ -57,8 +57,12 @@ class MissingNumberFromArray {
 
   public static void main(String[] args) {
     int arr[] = {0, 10, 2, -10, -20};
+    int arr1[] = {3, 5, 4, -1, 5, 1, -1};
     int arr_size = arr.length;
+    int arr_size1 = arr1.length;
     int missing = findMissing(arr, arr_size);
+    int missing2 = findMissing(arr1, arr_size1);
     System.out.println("The smallest positive missing number is " + missing);
+    System.out.println("The smallest positive missing number is " + missing2);
   }
 }

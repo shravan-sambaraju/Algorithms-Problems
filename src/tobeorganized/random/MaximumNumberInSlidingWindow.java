@@ -3,7 +3,7 @@ package tobeorganized.random;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-class MaxinumNumberInSlidingWindow {
+class MaximumNumberInSlidingWindow {
 
   public int[] maxSlidingWindow(int[] a, int k) {
     if (a == null || k <= 0) {
