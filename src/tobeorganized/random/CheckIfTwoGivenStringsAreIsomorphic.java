@@ -2,7 +2,7 @@ package tobeorganized.random;
 
 class CheckIfTwoGivenStringsAreIsomorphic {
 
-  public boolean isIsomorphic(String s, String t) {
+  public static boolean isIsomorphic(String s, String t) {
     if (s == null || t == null || s.length() != t.length()) {
       return false;
     }
@@ -19,5 +19,11 @@ class CheckIfTwoGivenStringsAreIsomorphic {
       m2[c2] = i + 1;
     }
     return true;
+  }
+
+  public static void main(String[] args) {
+
+    System.out.println(isIsomorphic("egg", "odd"));
+    System.out.println(isIsomorphic("foo", "bar"));
   }
 }

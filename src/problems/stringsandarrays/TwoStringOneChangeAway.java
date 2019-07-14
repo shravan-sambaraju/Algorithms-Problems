@@ -1,6 +1,6 @@
 package problems.stringsandarrays;
 
-/** Check if the strings are one change away */
+/** Check if the stringsandarrays are one change away */
 class TwoStringOneChangeAway {
 
   private static boolean oneEditAway(String first, String second) {

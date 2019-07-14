@@ -26,7 +26,8 @@ public class EditDistance {
       // if we have reached the end of s2, then we have to delete all the remaining characters of s1
       else if (i2 == s2.length()) dp[i1][i2] = s1.length() - i1;
 
-      // If the strings have a matching character, we can recursively match for the remaining
+      // If the stringsandarrays have a matching character, we can recursively match for the
+      // remaining
       // lengths
       else if (s1.charAt(i1) == s2.charAt(i2))
         dp[i1][i2] = findMinOperationsRecursive(dp, s1, s2, i1 + 1, i2 + 1);
@@ -52,7 +53,8 @@ public class EditDistance {
 
     for (int i1 = 1; i1 <= s1.length(); i1++) {
       for (int i2 = 1; i2 <= s2.length(); i2++) {
-        // If the strings have a matching character, we can recursively match for the remaining
+        // If the stringsandarrays have a matching character, we can recursively match for the
+        // remaining
         // lengths
         if (s1.charAt(i1 - 1) == s2.charAt(i2 - 1)) dp[i1][i2] = dp[i1 - 1][i2 - 1];
         else

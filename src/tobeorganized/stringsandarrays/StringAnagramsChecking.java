@@ -1,4 +1,4 @@
-package tobeorganized.strings;
+package tobeorganized.stringsandarrays;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

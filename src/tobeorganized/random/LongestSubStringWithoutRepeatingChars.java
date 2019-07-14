@@ -3,7 +3,7 @@ package tobeorganized.random;
 import java.util.HashSet;
 import java.util.Set;
 
-class longestSubStringWithoutRepeatingChars {
+class LongestSubStringWithoutRepeatingChars {
 
   public int lengthOfLongestSubstring(String s) {
     Set<Character> set = new HashSet<Character>();

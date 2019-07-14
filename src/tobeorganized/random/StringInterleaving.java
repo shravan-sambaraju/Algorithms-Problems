@@ -25,7 +25,7 @@ public class StringInterleaving {
   private boolean findSIRecursive(
       Map<String, Boolean> dp, String m, String n, String p, int mIndex, int nIndex, int pIndex) {
 
-    // if we have reached the end of the all the strings
+    // if we have reached the end of the all the stringsandarrays
     if (mIndex == m.length() && nIndex == n.length() && pIndex == p.length()) return true;
 
     // if we have reached the end of 'p' but 'm' or 'n' still has some characters left
