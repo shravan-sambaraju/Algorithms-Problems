@@ -8,6 +8,7 @@ class TreeNode {
   TreeNode left;
   TreeNode right;
   TreeNode next;
+  int count = 1;
 
   TreeNode(int x) {
     val = x;
