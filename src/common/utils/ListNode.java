@@ -1,9 +1,9 @@
 package common.utils;
 
 public class ListNode {
-  private int data;
-  private ListNode next;
-  private ListNode random;
+  public int data;
+  public ListNode next;
+  public ListNode random;
 
   public ListNode() {}
 
