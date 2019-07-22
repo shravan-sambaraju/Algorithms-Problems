@@ -12,6 +12,7 @@ public class CountPossibleWaysToExpressN {
     System.out.println(en.countWaysBottomUp(6));
   }
 
+  // (Time Complexity - O(N), Space complexity - O(N))
   public int countWays(int n) {
     int dp[] = new int[n + 1];
     return countWaysRecursive(dp, n);
@@ -40,6 +41,7 @@ public class CountPossibleWaysToExpressN {
     return dp[n];
   }
 
+  // (Time Complexity - O(N), Space complexity - O(N))
   public int countWaysBottomUp(int n) {
     int dp[] = new int[n + 1];
     dp[0] = 1;

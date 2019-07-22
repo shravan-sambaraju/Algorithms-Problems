@@ -21,6 +21,7 @@ class CoinChange {
     System.out.println(cc.minimumCoinsChangeBottomUp(denominations1, 7));
   }
 
+  // (Time Complexity - O(N*C), Space complexity - O(N*C))
   public int countChange(int[] denominations, int total) {
     Integer[][] dp = new Integer[denominations.length][total + 1];
     return this.countChangeRecursive(dp, denominations, total, 0);
@@ -51,6 +52,7 @@ class CoinChange {
     return dp[currentIndex][total];
   }
 
+  // (Time Complexity - O(N*C), Space complexity - O(N*C))
   public int countChangeBottomUp(int[] denominations, int total) {
     int n = denominations.length;
     int[][] dp = new int[n][total + 1];
@@ -70,6 +72,7 @@ class CoinChange {
     return dp[n - 1][total];
   }
 
+  // (Time Complexity - O(N*C), Space complexity - O(N*C))
   public int minimumCoinsChange(int[] denominations, int total) {
     int result = this.minimumCoinsRecursive(denominations, total, 0);
     return (result == Integer.MAX_VALUE ? -1 : result);
@@ -98,6 +101,7 @@ class CoinChange {
     return Math.min(count1, count2);
   }
 
+  // (Time Complexity - O(N*C), Space complexity - O(N*C))
   public int minimumCoinsChangeBottomUp(int[] denominations, int total) {
     int n = denominations.length;
     int[][] dp = new int[n][total + 1];

@@ -1,9 +1,9 @@
 package tobeorganized.recursion;
 
-public class CountOfSubsetsHasSumK {
+public class CountOfSubsetsHasTargetSum {
 
   public static void main(String[] args) {
-    CountOfSubsetsHasSumK ss = new CountOfSubsetsHasSumK();
+    CountOfSubsetsHasTargetSum ss = new CountOfSubsetsHasTargetSum();
     int[] num = {1, 1, 2, 3};
     System.out.println(ss.countSubsets(num, 4));
     System.out.println(ss.countSubsetsBottomUp(num, 4));
@@ -12,6 +12,7 @@ public class CountOfSubsetsHasSumK {
     System.out.println(ss.countSubsetsBottomUp(num, 9));
   }
 
+  //(Time Complexity - O(N*S), Space complexity - O(N*S))
   public int countSubsets(int[] num, int sum) {
     Integer[][] dp = new Integer[num.length][sum + 1];
     return this.countSubsetsRecursive(dp, num, sum, 0);
@@ -40,6 +41,7 @@ public class CountOfSubsetsHasSumK {
     return dp[currentIndex][sum];
   }
 
+  //(Time Complexity - O(N*S), Space complexity - O(N*S))
   public int countSubsetsBottomUp(int[] num, int sum) {
     int n = num.length;
     int[][] dp = new int[n][sum + 1];

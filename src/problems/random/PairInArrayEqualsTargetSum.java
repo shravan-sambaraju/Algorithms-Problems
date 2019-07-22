@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
-class PairInArrayWhoseSumIsK {
+class PairInArrayEqualsTargetSum {
 
   static int arr[] = new int[] {1, 5, 7, -1, 5};
 
@@ -17,7 +17,7 @@ class PairInArrayWhoseSumIsK {
     while (first < last) {
       int s = array[first] + array[last];
       if (s == sum) {
-        PairInArrayWhoseSumIsK pair = new PairInArrayWhoseSumIsK();
+        PairInArrayEqualsTargetSum pair = new PairInArrayEqualsTargetSum();
         result.add(pair.new Pair(array[first], array[last]));
         ++first;
         --last;

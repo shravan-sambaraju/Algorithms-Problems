@@ -1,9 +1,9 @@
 package tobeorganized.recursion;
 
-public class ArraySubSetHasSumK {
+public class ArraySubSetHasTargetSum {
 
   public static void main(String[] args) {
-    ArraySubSetHasSumK ss = new ArraySubSetHasSumK();
+    ArraySubSetHasTargetSum ss = new ArraySubSetHasTargetSum();
     int[] num = {1, 2, 3, 7};
     System.out.println(ss.canPartition(num, 6));
     num = new int[] {1, 2, 7, 1, 5};
@@ -12,6 +12,7 @@ public class ArraySubSetHasSumK {
     System.out.println(ss.canPartition(num, 6));
   }
 
+  //(Time Complexity - O(N*S), Space complexity - O(N*S))
   public boolean canPartition(int[] num, int sum) {
     int n = num.length;
     boolean[][] dp = new boolean[n][sum + 1];

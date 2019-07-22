@@ -10,6 +10,8 @@ public class CutRodLengthsForMaxProfit {
     System.out.println(maxProfit);
   }
 
+
+  // (Time Complexity - O(N*C), Space complexity - O(N*C))
   public int solveRodCutting(int[] lengths, int[] prices, int n) {
     // base checks
     if (n <= 0 || prices.length == 0 || prices.length != lengths.length) return 0;

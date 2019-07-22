@@ -11,7 +11,7 @@ public class MinJumpsRequiredToReachEndArray {
     System.out.println(aj.countMinJumps(jumps));
     System.out.println(aj.countMinJumpsBottomUp(jumps));
   }
-
+  // (Time Complexity - O(N^2), Space complexity - O(N))
   public int countMinJumps(int[] jumps) {
     int dp[] = new int[jumps.length];
     return this.countMinJumpsRecursive(dp, jumps, 0);
@@ -39,6 +39,7 @@ public class MinJumpsRequiredToReachEndArray {
     return dp[currentIndex];
   }
 
+  // (Time Complexity - O(N^2), Space complexity - O(N))
   public int countMinJumpsBottomUp(int[] jumps) {
     int[] dp = new int[jumps.length];
 

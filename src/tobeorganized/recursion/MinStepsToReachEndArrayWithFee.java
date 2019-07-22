@@ -12,6 +12,7 @@ public class MinStepsToReachEndArrayWithFee {
     System.out.println(sc.findMinFeeBottomUp(fee));
   }
 
+  // (Time Complexity - O(N), Space complexity - O(N))
   public int findMinFee(int[] fee) {
     int dp[] = new int[fee.length];
     return findMinFeeRecursive(dp, fee, 0);
@@ -34,6 +35,7 @@ public class MinStepsToReachEndArrayWithFee {
     return dp[currentIndex];
   }
 
+  // (Time Complexity - O(N), Space complexity - O(N))
   public int findMinFeeBottomUp(int[] fee) {
     int dp[] = new int[fee.length + 1]; // +1 to handle the 0th step
     dp[0] = 0; // if there are no steps, we dont have to pay any fee

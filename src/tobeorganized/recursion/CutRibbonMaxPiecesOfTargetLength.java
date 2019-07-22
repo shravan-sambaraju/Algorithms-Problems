@@ -1,9 +1,9 @@
 package tobeorganized.recursion;
 
-public class CutRibbonMaxPiecesOfLengthK {
+public class CutRibbonMaxPiecesOfTargetLength {
 
   public static void main(String[] args) {
-    CutRibbonMaxPiecesOfLengthK cr = new CutRibbonMaxPiecesOfLengthK();
+    CutRibbonMaxPiecesOfTargetLength cr = new CutRibbonMaxPiecesOfTargetLength();
     int[] ribbonLengths = {2, 3, 5};
     System.out.println(cr.countRibbonPieces(ribbonLengths, 5));
     System.out.println(cr.countRibbonPiecesBottomUp(ribbonLengths, 5));
@@ -18,6 +18,7 @@ public class CutRibbonMaxPiecesOfLengthK {
     System.out.println(cr.countRibbonPiecesBottomUp(ribbonLengths, 7));
   }
 
+  // (Time Complexity - O(N*C), Space complexity - O(N*C))
   public int countRibbonPieces(int[] ribbonLengths, int total) {
     int maxPieces = this.countRibbonPiecesRecursive(ribbonLengths, total, 0);
     return maxPieces == Integer.MIN_VALUE ? -1 : maxPieces;
@@ -46,6 +47,7 @@ public class CutRibbonMaxPiecesOfLengthK {
     return Math.max(c1, c2);
   }
 
+  // (Time Complexity - O(N*C), Space complexity - O(N*C))
   public int countRibbonPiecesBottomUp(int[] ribbonLengths, int total) {
     int n = ribbonLengths.length;
     int[][] dp = new int[n][total + 1];

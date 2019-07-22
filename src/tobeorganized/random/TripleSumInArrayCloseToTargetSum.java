@@ -2,7 +2,7 @@ package tobeorganized.random;
 
 import java.util.Arrays;
 
-public class TripleSumInArrayCloseToTarget {
+public class TripleSumInArrayCloseToTargetSum {
 
   public static int searchTriplet(int[] arr, int targetSum) {
     Arrays.sort(arr);
@@ -27,8 +27,8 @@ public class TripleSumInArrayCloseToTarget {
   }
 
   public static void main(String[] args) {
-    System.out.println(TripleSumInArrayCloseToTarget.searchTriplet(new int[] {-2, 0, 1, 2}, 2));
-    System.out.println(TripleSumInArrayCloseToTarget.searchTriplet(new int[] {-3, -1, 1, 2}, 1));
-    System.out.println(TripleSumInArrayCloseToTarget.searchTriplet(new int[] {1, 0, 1, 1}, 100));
+    System.out.println(TripleSumInArrayCloseToTargetSum.searchTriplet(new int[] {-2, 0, 1, 2}, 2));
+    System.out.println(TripleSumInArrayCloseToTargetSum.searchTriplet(new int[] {-3, -1, 1, 2}, 1));
+    System.out.println(TripleSumInArrayCloseToTargetSum.searchTriplet(new int[] {1, 0, 1, 1}, 100));
   }
 }

@@ -15,12 +15,14 @@ class Knapsack {
 
     int[] profits2 = {15, 50, 60, 90};
     int[] weights2 = {1, 3, 4, 5};
+    System.out.println("unlimited items");
     System.out.println(ks.solveKnapsackUnlimited(profits2, weights2, 8));
     System.out.println(ks.solveKnapsackBottomUpUnlimited(profits2, weights2, 8));
     System.out.println(ks.solveKnapsackUnlimited(profits2, weights2, 6));
     System.out.println(ks.solveKnapsackBottomUpUnlimited(profits2, weights2, 6));
   }
 
+  // (Time Complexity - O(N*C), Space complexity - O(N*C))
   public int solveKnapsack(int[] profits, int[] weights, int capacity) {
     Integer[][] dp = new Integer[profits.length][capacity + 1];
     return this.knapsackRecursive(dp, profits, weights, capacity, 0);
@@ -38,11 +40,12 @@ class Knapsack {
     // recursive call after choosing the element at the currentIndex
     // if the weight of the element at currentIndex exceeds the capacity, we shouldn't process this
     int profit1 = 0;
-    if (weights[currentIndex] <= capacity)
+    if (weights[currentIndex] <= capacity) {
       profit1 =
           profits[currentIndex]
               + knapsackRecursive(
                   dp, profits, weights, capacity - weights[currentIndex], currentIndex + 1);
+      }
 
     // recursive call after excluding the element at the currentIndex
     int profit2 = knapsackRecursive(dp, profits, weights, capacity, currentIndex + 1);
@@ -51,6 +54,7 @@ class Knapsack {
     return dp[currentIndex][capacity];
   }
 
+  // (Time Complexity - O(N*C), Space complexity - O(N*C))
   public int solveKnapsackBottomUp(int[] profits, int[] weights, int capacity) {
     // base checks
     if (capacity <= 0 || profits.length == 0 || weights.length != profits.length) return 0;
@@ -71,7 +75,8 @@ class Knapsack {
       for (int c = 1; c <= capacity; c++) {
         int profit1 = 0, profit2 = 0;
         // include the item, if it is not more than the capacity
-        if (weights[i] <= c) profit1 = profits[i] + dp[i - 1][c - weights[i]];
+        if (weights[i] <= c)
+          profit1 = profits[i] + dp[i - 1][c - weights[i]];
         // exclude the item
         profit2 = dp[i - 1][c];
         // take maximum
@@ -84,7 +89,42 @@ class Knapsack {
     return dp[n - 1][capacity];
   }
 
-  private void printSelectedElements(int dp[][], int[] weights, int[] profits, int capacity) {
+  // (Time Complexity - O(N*C), Space complexity - O(C))
+  static int solveKnapsackBottomUp2(int[] profits, int[] weights, int capacity) {
+// basic checks
+    if (capacity <= 0 || profits.length == 0 || weights.length != profits.length)
+      return 0;
+
+    int n = profits.length;
+    // we only need one previous row to find the optimal solution, overall we need '2' rows
+    // the above solution is similar to the previous solution, the only difference is that
+    // we use `i%2` instead if `i` and `(i-1)%2` instead if `i-1`
+    int[][] dp = new int[2][capacity+1];
+
+    // if we have only one weight, we will take it if it is not more than the capacity
+    for(int c=0; c <= capacity; c++) {
+      if(weights[0] <= c)
+        dp[0][c] = dp[1][c] = profits[0];
+    }
+
+    // process all sub-arrays for all the capacities
+    for(int i=1; i < n; i++) {
+      for(int c=0; c <= capacity; c++) {
+        int profit1= 0, profit2 = 0;
+        // include the item, if it is not more than the capacity
+        if(weights[i] <= c)
+          profit1 = profits[i] + dp[(i-1)%2][c-weights[i]];
+        // exclude the item
+        profit2 = dp[(i-1)%2][c];
+        // take maximum
+        dp[i%2][c] = Math.max(profit1, profit2);
+      }
+    }
+
+    return dp[(n-1)%2][capacity];
+  }
+
+    private void printSelectedElements(int dp[][], int[] weights, int[] profits, int capacity) {
     System.out.print("Selected weights:");
     int totalProfit = dp[weights.length - 1][capacity];
     for (int i = weights.length - 1; i > 0; i--) {
@@ -99,9 +139,11 @@ class Knapsack {
     System.out.println("");
   }
 
+  // allowed to use unlimited quantity of items
+  // (Time Complexity - O(N*C), Space complexity - O(N*C))
   public int solveKnapsackUnlimited(int[] profits, int[] weights, int capacity) {
     Integer[][] dp = new Integer[profits.length][capacity + 1];
-    return this.knapsackRecursive(dp, profits, weights, capacity, 0);
+    return this.knapsackRecursiveUnlimited(dp, profits, weights, capacity, 0);
   }
 
   private int knapsackRecursiveUnlimited(
@@ -134,6 +176,7 @@ class Knapsack {
     return dp[currentIndex][capacity];
   }
 
+  // (Time Complexity - O(N*C), Space complexity - O(N*C))
   public int solveKnapsackBottomUpUnlimited(int[] profits, int[] weights, int capacity) {
     // base checks
     if (capacity <= 0 || profits.length == 0 || weights.length != profits.length) return 0;
@@ -148,7 +191,8 @@ class Knapsack {
     for (int i = 0; i < n; i++) {
       for (int c = 1; c <= capacity; c++) {
         int profit1 = 0, profit2 = 0;
-        if (weights[i] <= c) profit1 = profits[i] + dp[i][c - weights[i]];
+        if (weights[i] <= c)
+          profit1 = profits[i] + dp[i][c - weights[i]];
         if (i > 0) profit2 = dp[i - 1][c];
         dp[i][c] = profit1 > profit2 ? profit1 : profit2;
       }

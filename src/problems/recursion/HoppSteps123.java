@@ -3,6 +3,7 @@ package problems.recursion;
 /** Count number of ways of Hopp Steps 123 */
 class HoppSteps123 {
 
+  // (Time Complexity - O(N), Space complexity - O(N))
   private static int countWays(int n) {
     int dp[] = new int[n + 1];
     return CountWaysRecursive(dp, n);
@@ -26,6 +27,7 @@ class HoppSteps123 {
     return dp[n];
   }
 
+  // (Time Complexity - O(N), Space complexity - O(N))
   public static int CountWaysBottomUp(int n) {
     int dp[] = new int[n + 1];
     dp[0] = 1;
