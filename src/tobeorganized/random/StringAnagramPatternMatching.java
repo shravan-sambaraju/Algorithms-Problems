@@ -3,7 +3,7 @@ package tobeorganized.random;
 import java.util.HashMap;
 import java.util.Map;
 
-public class StringPatternMatching {
+public class StringAnagramPatternMatching {
 
   public static boolean findPermutation(String str, String pattern) {
     int windowStart = 0, matched = 0;
@@ -40,12 +40,12 @@ public class StringPatternMatching {
 
   public static void main(String[] args) {
     System.out.println(
-        "Permutation exist: " + StringPatternMatching.findPermutation("oidbcaf", "abc"));
+        "Permutation exist: " + StringAnagramPatternMatching.findPermutation("oidbcaf", "abc"));
     System.out.println(
-        "Permutation exist: " + StringPatternMatching.findPermutation("odicf", "dc"));
+        "Permutation exist: " + StringAnagramPatternMatching.findPermutation("odicf", "dc"));
     System.out.println(
-        "Permutation exist: " + StringPatternMatching.findPermutation("bcdxabcdy", "bcdyabcdx"));
+        "Permutation exist: " + StringAnagramPatternMatching.findPermutation("bcdxabcdy", "bcdyabcdx"));
     System.out.println(
-        "Permutation exist: " + StringPatternMatching.findPermutation("aaacb", "abc"));
+        "Permutation exist: " + StringAnagramPatternMatching.findPermutation("aaacb", "abc"));
   }
 }
