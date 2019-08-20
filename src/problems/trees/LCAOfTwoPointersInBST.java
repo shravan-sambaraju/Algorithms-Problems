@@ -22,6 +22,37 @@ class LCAOfTwoPointersInBST {
     }
   }
 
+  public static BinaryTreeNode lowestCommonAncestorIterative(BinaryTreeNode root, BinaryTreeNode p, BinaryTreeNode q) {
+
+    // Value of p
+    int pVal = p.data;
+
+    // Value of q;
+    int qVal = q.data;
+
+    // Start from the root node of the tree
+    BinaryTreeNode node = root;
+
+    // Traverse the tree
+    while (node != null) {
+
+      // Value of ancestor/parent node.
+      int parentVal = node.data;
+
+      if (pVal > parentVal && qVal > parentVal) {
+        // If both p and q are greater than parent
+        node = node.right;
+      } else if (pVal < parentVal && qVal < parentVal) {
+        // If both p and q are lesser than parent
+        node = node.left;
+      } else {
+        // We have found the split point, i.e. the LCA node.
+        return node;
+      }
+    }
+    return null;
+  }
+
   public static void main(String args[]) {
 
     BinaryTreeNode node = new BinaryTreeNode(50);
@@ -34,6 +65,8 @@ class LCAOfTwoPointersInBST {
     node.getRight().getRight().setRight(new BinaryTreeNode(100));
 
     BinaryTreeNode lca = findLCA(node, node.getLeft().getLeft(), node.getRight().getLeft());
+    BinaryTreeNode lca2 = lowestCommonAncestorIterative(node, node.getLeft().getLeft(), node.getRight().getLeft());
     System.out.println(lca.getData());
+    System.out.println(lca2.getData());
   }
 }

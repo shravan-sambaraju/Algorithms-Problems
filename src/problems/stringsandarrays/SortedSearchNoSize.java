@@ -1,4 +1,4 @@
-package algorithms.search;
+package problems.stringsandarrays;
 
 /** Given a sorted array with no size create a method which returns index */
 class SortedSearchNoSize {

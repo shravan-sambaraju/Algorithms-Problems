@@ -1,4 +1,4 @@
-package algorithms.search;
+package problems.stringsandarrays;
 
 /** Java implementation to search in rotated array */
 class SearchInRotatedArray {

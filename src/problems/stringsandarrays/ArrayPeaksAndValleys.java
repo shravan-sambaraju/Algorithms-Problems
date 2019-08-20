@@ -1,4 +1,4 @@
-package algorithms.sorting;
+package problems.stringsandarrays;
 
 /** Print Array in form of peaks and valleys */
 import common.utils.UtilMethods;

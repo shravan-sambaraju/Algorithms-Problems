@@ -1,4 +1,4 @@
-package algorithms.sorting;
+package problems.stringsandarrays;
 
 /** Sort string anagrams next to each other */
 import java.util.Arrays;
