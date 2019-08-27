@@ -1,54 +1,56 @@
 package tobeorganized.random;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-
 public class LongestSubStringWithBalancedParanthesis {
 
-  public static int longestMatchingParanthesis(String s) {
-    int maxLength = 0, end = -1;
-    Deque<Integer> leftIndex = new ArrayDeque<>();
+  public int longestValidParentheses(String s) {
+    int ans = 0;
+    int[] dp = new int[s.length()];
     for (int i = 0; i < s.length(); i++) {
-      if (s.charAt(i) == '(') {
-        leftIndex.addFirst(i);
-      } else if (leftIndex.isEmpty()) {
-        end = i;
-      } else {
-        leftIndex.removeFirst();
-        int start = leftIndex.isEmpty() ? end : leftIndex.peekFirst();
-        maxLength = Math.max(maxLength, i - start);
+      if (s.charAt(i) == ')'
+          && i - 1 >= 0) { // read dp[i-1] to get index of "(" related to ")" in this position
+        int checkLeftIndex = i - dp[i - 1] - 1;
+        if (checkLeftIndex >= 0 && s.charAt(checkLeftIndex) == '(') {
+          dp[i] = dp[i - 1] + 2; // case "(( ))" , dp = {0,0,2,2+2}
+          if (checkLeftIndex - 1 >= 0) {
+            dp[i] += dp[checkLeftIndex - 1]; // Case"() (())", dp = {0,2,0,0,2,2+2+2}
+          }
+          ans = Math.max(ans, dp[i]);
+        }
       }
     }
-
-    return maxLength;
+    return ans;
   }
 
   // constant space
 
-  private static int longestMatchingParenthesesConstantSpace(String s) {
-    return Math.max(
-        parseFromSide(s, '(', 0, s.length(), 1), parseFromSide(s, ')', s.length() - 1, -1, -1));
-  }
-
-  private static int parseFromSide(String s, char paren, int begin, int end, int dir) {
-    int maxLength = 0, numParensSoFar = 0, length = 0;
-    for (int i = begin; i != end; i += dir) {
-      if (s.charAt(i) == paren) {
-        ++numParensSoFar;
-        ++length;
-      } else { // s.charAt(i) != paren
-        if (numParensSoFar <= 0) {
-          numParensSoFar = length = 0;
-        } else {
-          --numParensSoFar;
-          ++length;
-          if (numParensSoFar == 0) {
-            maxLength = Math.max(maxLength, length);
-          }
-        }
+  public int longestValidParenthesesConstantSpace(String s) {
+    int left = 0, right = 0, maxlength = 0;
+    for (int i = 0; i < s.length(); i++) {
+      if (s.charAt(i) == '(') {
+        left++;
+      } else {
+        right++;
+      }
+      if (left == right) {
+        maxlength = Math.max(maxlength, 2 * right);
+      } else if (right >= left) {
+        left = right = 0;
       }
     }
-    return maxLength;
+    left = right = 0;
+    for (int i = s.length() - 1; i >= 0; i--) {
+      if (s.charAt(i) == '(') {
+        left++;
+      } else {
+        right++;
+      }
+      if (left == right) {
+        maxlength = Math.max(maxlength, 2 * left);
+      } else if (left >= right) {
+        left = right = 0;
+      }
+    }
+    return maxlength;
   }
 
   public static void main(String[] args) {}
