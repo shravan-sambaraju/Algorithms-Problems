@@ -5,11 +5,10 @@ public class StringToIntegerReverseInteger {
   public static int stringToInteger(String s) {
     int result = 0;
 
-    for (int i =0; i < s.length(); i++) {
+    for (int i = 0; i < s.length(); i++) {
       result = result * 10;
       int temp = s.charAt(i) - '0';
       result = result + temp;
-
     }
 
     return result;

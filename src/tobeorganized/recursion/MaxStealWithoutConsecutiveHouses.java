@@ -40,22 +40,20 @@ public class MaxStealWithoutConsecutiveHouses {
     dp[1] = wealth[0]; // only one house, so the thief have to steal from it
 
     // please note that dp[] has one extra element to handle zero house
-    for (int i = 1; i < wealth.length; i++)
-      dp[i + 1] = Math.max(wealth[i] + dp[i - 1], dp[i]);
+    for (int i = 1; i < wealth.length; i++) dp[i + 1] = Math.max(wealth[i] + dp[i - 1], dp[i]);
 
     return dp[wealth.length];
   }
 
   // (Time Complexity - O(N), Space complexity - O(1))
   public int findMaxStealBottomUp2(int[] wealth) {
-    if(wealth.length == 0) return 0;
-    int n1=0, n2=wealth[0], temp;
-    for(int i=1; i < wealth.length; i++) {
+    if (wealth.length == 0) return 0;
+    int n1 = 0, n2 = wealth[0], temp;
+    for (int i = 1; i < wealth.length; i++) {
       temp = Math.max(n1 + wealth[i], n2);
       n1 = n2;
       n2 = temp;
     }
     return n2;
   }
-
 }

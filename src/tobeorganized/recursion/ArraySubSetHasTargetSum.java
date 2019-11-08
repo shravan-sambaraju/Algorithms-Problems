@@ -12,7 +12,7 @@ public class ArraySubSetHasTargetSum {
     System.out.println(ss.canPartition(num, 6));
   }
 
-  //(Time Complexity - O(N*S), Space complexity - O(N*S))
+  // (Time Complexity - O(N*S), Space complexity - O(N*S))
   public boolean canPartition(int[] num, int sum) {
     int n = num.length;
     boolean[][] dp = new boolean[n][sum + 1];

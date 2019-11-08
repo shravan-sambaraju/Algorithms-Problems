@@ -42,8 +42,8 @@ public class FindFirstMissingPositive {
   }
 
   public static void main(String[] args) {
-      int[] array = {7,8,9,11,12};
-      int[] array2 = {3,4,-1,1};
+    int[] array = {7, 8, 9, 11, 12};
+    int[] array2 = {3, 4, -1, 1};
     System.out.println(firstMissingPositive(array));
     System.out.println(firstMissingPositive(array2));
   }

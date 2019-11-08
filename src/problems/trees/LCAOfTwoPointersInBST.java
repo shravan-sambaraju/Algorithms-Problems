@@ -22,7 +22,8 @@ class LCAOfTwoPointersInBST {
     }
   }
 
-  public static BinaryTreeNode lowestCommonAncestorIterative(BinaryTreeNode root, BinaryTreeNode p, BinaryTreeNode q) {
+  public static BinaryTreeNode lowestCommonAncestorIterative(
+      BinaryTreeNode root, BinaryTreeNode p, BinaryTreeNode q) {
 
     // Value of p
     int pVal = p.data;
@@ -65,7 +66,8 @@ class LCAOfTwoPointersInBST {
     node.getRight().getRight().setRight(new BinaryTreeNode(100));
 
     BinaryTreeNode lca = findLCA(node, node.getLeft().getLeft(), node.getRight().getLeft());
-    BinaryTreeNode lca2 = lowestCommonAncestorIterative(node, node.getLeft().getLeft(), node.getRight().getLeft());
+    BinaryTreeNode lca2 =
+        lowestCommonAncestorIterative(node, node.getLeft().getLeft(), node.getRight().getLeft());
     System.out.println(lca.getData());
     System.out.println(lca2.getData());
   }

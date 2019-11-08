@@ -4,6 +4,16 @@ import java.util.Arrays;
 
 class Heap {
 
+  public static void main(String[] args) {
+    int[] heapArray = {1, 4, 7, 12, 15, 14, 9, 2, 3, 16};
+
+    System.out.println("Before heapify: " + Arrays.toString(heapArray));
+    new Heap().buildMaxHeap(heapArray, heapArray.length);
+    System.out.println("After heapify: " + Arrays.toString(heapArray));
+    new Heap().buildMinHeap(heapArray, heapArray.length);
+    System.out.println("After heapify: " + Arrays.toString(heapArray));
+  }
+
   private void maxHeapify(int[] heapArray, int index, int heapSize) {
     int largest = index;
     while (largest < heapSize / 2) { // check parent nodes only
@@ -63,15 +73,5 @@ class Heap {
     for (int i = (heapSize - 1) / 2; i >= 0; i--) {
       minHeapify(heapArray, i, heapSize);
     }
-  }
-
-  public static void main(String[] args) {
-    int[] heapArray = {1, 4, 7, 12, 15, 14, 9, 2, 3, 16};
-
-    System.out.println("Before heapify: " + Arrays.toString(heapArray));
-    new Heap().buildMaxHeap(heapArray, heapArray.length);
-    System.out.println("After heapify: " + Arrays.toString(heapArray));
-    new Heap().buildMinHeap(heapArray, heapArray.length);
-    System.out.println("After heapify: " + Arrays.toString(heapArray));
   }
 }

@@ -12,6 +12,8 @@ class MinimumStepsToReachEndOfArray {
     return furthestReachSoFar >= lastIndex;
   }
 
+  public static void main(String[] args) {}
+
   // minimum jumps to reach end of array
   public int jump(int[] A) {
     int jumps = 0, curEnd = 0, curFarthest = 0;
@@ -24,6 +26,4 @@ class MinimumStepsToReachEndOfArray {
     }
     return jumps;
   }
-
-  public static void main(String[] args) {}
 }

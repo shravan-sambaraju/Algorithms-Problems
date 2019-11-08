@@ -27,13 +27,13 @@ import java.util.List;
 
 class CombinationsOfTargetSum {
 
+  private int[] dp;
+
   public static void main(String[] args) {
 
     System.out.println(combinationSum1(new int[] {2, 3, 6, 7}, 7).toString());
     System.out.println(combinationSum1(new int[] {2, 3, 5}, 8).toString());
   }
-
-  private int[] dp;
 
   // combinational Sum 1  (Time Complexity - O(n^2), Space complexity - O(n))
   public static List<List<Integer>> combinationSum1(int[] nums, int target) {

@@ -2,7 +2,7 @@ package datastructures;
 
 /** Solve Producer consumer problem using blocking queue */
 public class BlockingQueueDemonstration {
-  public static void main(String args[]) throws Exception {
+  public static void main(String[] args) throws Exception {
     final BlockingQueue<Integer> q = new BlockingQueue<Integer>(5);
 
     Thread t1 =
@@ -13,11 +13,11 @@ public class BlockingQueueDemonstration {
               public void run() {
                 try {
                   for (int i = 0; i < 50; i++) {
-                    q.enqueue(new Integer(i));
+                    q.enqueue(i);
                     System.out.println("enqueued " + i);
                   }
                 } catch (InterruptedException ie) {
-
+                  System.out.println("caught exception");
                 }
               }
             });
@@ -45,11 +45,10 @@ public class BlockingQueueDemonstration {
               @Override
               public void run() {
                 try {
-                  for (int i = 0; i < 25; i++) {
+                  for (int i = 0; i < 25; i++)
                     System.out.println("Thread 3 dequeued: " + q.dequeue());
-                  }
                 } catch (InterruptedException ie) {
-
+                  System.out.println("Caught exception");
                 }
               }
             });

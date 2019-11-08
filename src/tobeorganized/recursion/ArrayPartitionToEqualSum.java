@@ -15,7 +15,7 @@ public class ArrayPartitionToEqualSum {
     System.out.println(ps.canPartitionBottomUp(num));
   }
 
-  //(Time Complexity - O(N*S), Space complexity - O(N*S))
+  // (Time Complexity - O(N*S), Space complexity - O(N*S))
   public boolean canPartition(int[] num) {
     int sum = 0;
     for (int i = 0; i < num.length; i++) sum += num[i];
@@ -51,7 +51,7 @@ public class ArrayPartitionToEqualSum {
     return dp[currentIndex][sum];
   }
 
-  //(Time Complexity - O(N*S), Space complexity - O(N*S))
+  // (Time Complexity - O(N*S), Space complexity - O(N*S))
   public boolean canPartitionBottomUp(int[] num) {
     int n = num.length;
     // find the total sum

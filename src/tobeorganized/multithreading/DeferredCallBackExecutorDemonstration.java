@@ -1,4 +1,4 @@
-package tobeorganized.objectorienteddesign;
+package tobeorganized.multithreading;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;

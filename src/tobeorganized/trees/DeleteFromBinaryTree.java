@@ -6,6 +6,33 @@ public class DeleteFromBinaryTree {
 
   private BinaryTreeNode root;
 
+  public static void main(String args[]) {
+
+    DeleteFromBinaryTree bsT = new DeleteFromBinaryTree();
+
+    bsT.add(6);
+    bsT.add(7);
+    bsT.add(8);
+    bsT.add(12);
+    bsT.add(1);
+    bsT.add(15);
+
+    System.out.print("Tree : ");
+    bsT.printTree(bsT.getRoot());
+
+    System.out.print("\nDeleting BinaryTreeNode 6: ");
+    bsT.delete(6, bsT.getRoot());
+    bsT.printTree(bsT.getRoot());
+
+    System.out.print("\nDeleting BinaryTreeNode 15: ");
+    bsT.delete(15, bsT.getRoot());
+    bsT.printTree(bsT.getRoot());
+
+    System.out.print("\nDeleting BinaryTreeNode 1: ");
+    bsT.delete(1, bsT.getRoot());
+    bsT.printTree(bsT.getRoot());
+  }
+
   public BinaryTreeNode getRoot() {
     return root;
   }
@@ -154,32 +181,5 @@ public class DeleteFromBinaryTree {
     System.out.print(current.getData() + ",");
     printTree(current.getLeft());
     printTree(current.getRight());
-  }
-
-  public static void main(String args[]) {
-
-    DeleteFromBinaryTree bsT = new DeleteFromBinaryTree();
-
-    bsT.add(6);
-    bsT.add(7);
-    bsT.add(8);
-    bsT.add(12);
-    bsT.add(1);
-    bsT.add(15);
-
-    System.out.print("Tree : ");
-    bsT.printTree(bsT.getRoot());
-
-    System.out.print("\nDeleting BinaryTreeNode 6: ");
-    bsT.delete(6, bsT.getRoot());
-    bsT.printTree(bsT.getRoot());
-
-    System.out.print("\nDeleting BinaryTreeNode 15: ");
-    bsT.delete(15, bsT.getRoot());
-    bsT.printTree(bsT.getRoot());
-
-    System.out.print("\nDeleting BinaryTreeNode 1: ");
-    bsT.delete(1, bsT.getRoot());
-    bsT.printTree(bsT.getRoot());
   }
 }

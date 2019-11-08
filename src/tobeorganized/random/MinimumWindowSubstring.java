@@ -38,7 +38,9 @@ class MinimumWindowSubstring {
       }
     }
 
-    return minLength > str.length() ? "cant find" : str.substring(subStrStart, subStrStart + minLength);
+    return minLength > str.length()
+        ? "cant find"
+        : str.substring(subStrStart, subStrStart + minLength);
   }
 
   public static void main(String[] args) {

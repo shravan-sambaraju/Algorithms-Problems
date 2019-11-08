@@ -44,7 +44,8 @@ public class StringAnagramPatternMatching {
     System.out.println(
         "Permutation exist: " + StringAnagramPatternMatching.findPermutation("odicf", "dc"));
     System.out.println(
-        "Permutation exist: " + StringAnagramPatternMatching.findPermutation("bcdxabcdy", "bcdyabcdx"));
+        "Permutation exist: "
+            + StringAnagramPatternMatching.findPermutation("bcdxabcdy", "bcdyabcdx"));
     System.out.println(
         "Permutation exist: " + StringAnagramPatternMatching.findPermutation("aaacb", "abc"));
   }

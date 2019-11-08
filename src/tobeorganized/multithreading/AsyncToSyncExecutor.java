@@ -1,4 +1,4 @@
-package tobeorganized.objectorienteddesign;
+package tobeorganized.multithreading;
 
 interface Callback {
 

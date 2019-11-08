@@ -12,7 +12,8 @@ import java.util.Set;
 
 class FindLowestCommonAncestor {
 
-  private static BinaryTreeNode lcaRecursion(BinaryTreeNode root, BinaryTreeNode n1, BinaryTreeNode n2) {
+  private static BinaryTreeNode lcaRecursion(
+      BinaryTreeNode root, BinaryTreeNode n1, BinaryTreeNode n2) {
     if (root == null) {
       return null;
     }
@@ -29,7 +30,8 @@ class FindLowestCommonAncestor {
     return left != null ? left : right;
   }
 
-  public static BinaryTreeNode lowestCommonAncestorIterative(BinaryTreeNode root, BinaryTreeNode p, BinaryTreeNode q) {
+  public static BinaryTreeNode lowestCommonAncestorIterative(
+      BinaryTreeNode root, BinaryTreeNode p, BinaryTreeNode q) {
 
     // Stack for tree traversal
     Deque<BinaryTreeNode> stack = new ArrayDeque<>();
@@ -67,12 +69,9 @@ class FindLowestCommonAncestor {
 
     // The first ancestor of q which appears in
     // p's ancestor set() is their lowest common ancestor.
-    while (!ancestors.contains(q))
-      q = parent.get(q);
+    while (!ancestors.contains(q)) q = parent.get(q);
     return q;
   }
-
-
 
   public static void main(String args[]) {
 
@@ -85,12 +84,15 @@ class FindLowestCommonAncestor {
     node.getRight().setRight(new BinaryTreeNode(7));
 
     BinaryTreeNode result = lcaRecursion(node, node.getLeft().getLeft(), node.getRight().getLeft());
-    BinaryTreeNode result1 = lowestCommonAncestorIterative(node, node.getLeft().getLeft(), node.getRight().getLeft());
+    BinaryTreeNode result1 =
+        lowestCommonAncestorIterative(node, node.getLeft().getLeft(), node.getRight().getLeft());
     System.out.println(result.getData());
     System.out.println(result1.getData());
 
-    BinaryTreeNode result2 = lcaRecursion(node, node.getRight().getLeft(), node.getRight().getRight());
-    BinaryTreeNode result3 = lowestCommonAncestorIterative(node, node.getRight().getLeft(), node.getRight().getRight());
+    BinaryTreeNode result2 =
+        lcaRecursion(node, node.getRight().getLeft(), node.getRight().getRight());
+    BinaryTreeNode result3 =
+        lowestCommonAncestorIterative(node, node.getRight().getLeft(), node.getRight().getRight());
     System.out.println(result2.getData());
     System.out.println(result3.getData());
   }

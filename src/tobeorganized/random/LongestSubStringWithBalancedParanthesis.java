@@ -2,6 +2,10 @@ package tobeorganized.random;
 
 public class LongestSubStringWithBalancedParanthesis {
 
+  public static void main(String[] args) {}
+
+  // constant space
+
   public int longestValidParentheses(String s) {
     int ans = 0;
     int[] dp = new int[s.length()];
@@ -20,8 +24,6 @@ public class LongestSubStringWithBalancedParanthesis {
     }
     return ans;
   }
-
-  // constant space
 
   public int longestValidParenthesesConstantSpace(String s) {
     int left = 0, right = 0, maxlength = 0;
@@ -52,6 +54,4 @@ public class LongestSubStringWithBalancedParanthesis {
     }
     return maxlength;
   }
-
-  public static void main(String[] args) {}
 }

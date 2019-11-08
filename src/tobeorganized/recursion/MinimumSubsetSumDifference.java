@@ -15,7 +15,7 @@ public class MinimumSubsetSumDifference {
     System.out.println(ps.canPartitionBottomUp(num));
   }
 
-  //(Time Complexity - O(N*S), Space complexity - O(N*S))
+  // (Time Complexity - O(N*S), Space complexity - O(N*S))
   public int canPartition(int[] num) {
     int sum = 0;
     for (int i = 0; i < num.length; i++) sum += num[i];
@@ -43,8 +43,7 @@ public class MinimumSubsetSumDifference {
     return dp[currentIndex][sum1];
   }
 
-
-  //(Time Complexity - O(N*S), Space complexity - O(N*S))
+  // (Time Complexity - O(N*S), Space complexity - O(N*S))
   public int canPartitionBottomUp(int[] num) {
     int sum = 0;
     for (int i = 0; i < num.length; i++) sum += num[i];
