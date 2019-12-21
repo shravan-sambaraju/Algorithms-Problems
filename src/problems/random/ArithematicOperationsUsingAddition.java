@@ -1,10 +1,7 @@
 package problems.random;
 
 /** Perform arithematic operations using addition */
-
-import static common.utils.UtilMethods.randomIntInRange;
-
-;
+import static common.utils.UtilMethods.randomIntInRange;;
 
 class ArithematicOperationsUsingAddition {
 
