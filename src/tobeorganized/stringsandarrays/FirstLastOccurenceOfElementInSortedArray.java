@@ -2,6 +2,8 @@ package tobeorganized.stringsandarrays;
 
 import java.util.Arrays;
 
+// maximum and minimum index
+
 public class FirstLastOccurenceOfElementInSortedArray {
 
   public static int[] searchRange(int[] nums, int target) {
