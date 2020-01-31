@@ -25,6 +25,25 @@ class SortingAStack {
     s.push(temp);
   }
 
+  public static void sortStackInterative(Stack<Integer> stack) {
+    // Write -- Your -- Code
+    Stack<Integer> newStack = new Stack<>();
+
+    while (!stack.isEmpty()) {
+      Integer value = stack.pop();
+      if (!newStack.isEmpty() && value >= newStack.peek()) {
+        newStack.push(value);
+      } else {
+        while (!newStack.isEmpty() && newStack.peek() > value) {
+          stack.push(newStack.pop());
+        }
+        newStack.push(value);
+      }
+    }
+
+    while (!newStack.isEmpty()) stack.push(newStack.pop());
+  }
+
   public static void main(String args[]) {
     Stack<Integer> stack = new Stack<Integer>();
     stack.push(4);
@@ -35,5 +54,8 @@ class SortingAStack {
     System.out.println(stack.toString());
     Stack sorted = sortStack(stack);
     System.out.println(sorted.toString());
+
+    Stack sortedIterative = sortStack(stack);
+    System.out.println(sortedIterative.toString());
   }
 }

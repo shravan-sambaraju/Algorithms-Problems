@@ -2,8 +2,8 @@ package tobeorganized.stringsandarrays;
 
 import java.util.Arrays;
 
-public class MoveZeroesToLeft {
-  static void move_zeros_to_left_in_array(int[] A) {
+public class MoveZeroes {
+  static void moveZeroesToLeftOrStart(int[] A) {
     if (A == null) {
       return;
     }
@@ -26,12 +26,26 @@ public class MoveZeroesToLeft {
     }
   }
 
+  public static void moveZeroesToRightOrEnd(int[] nums) {
+    int pos = 0;
+    for (int i = 0; i < nums.length; i++) {
+      if (nums[i] != 0) {
+        if (i != pos) {
+          nums[pos] = nums[i];
+          nums[i] = 0;
+        }
+        pos++;
+      }
+    }
+  }
+
   public static void main(String[] args) {
     int[] v = new int[] {1, 10, -1, 11, 5, 0, -7, 0, 25, -35};
     System.out.println("Original Array: " + Arrays.toString(v));
-    move_zeros_to_left_in_array(v);
-    for (int i = 0; i < v.length; i++) {
-      System.out.print(v[i] + ", ");
-    }
+    moveZeroesToLeftOrStart(v);
+    System.out.println(Arrays.toString(v));
+    System.out.println("");
+    moveZeroesToRightOrEnd(v);
+    System.out.println(Arrays.toString(v));
   }
 }

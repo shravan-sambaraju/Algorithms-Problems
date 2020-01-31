@@ -5,22 +5,15 @@ import java.util.Map;
 
 class MaximumSizeSubArraySumEqualsK {
   public int maxSubArrayLen(int[] nums, int k) {
-    if (nums.length == 0 || nums == null) {
-      return 0;
-    }
-    int sum = 0, max = 0;
-    Map<Integer, Integer> result = new HashMap<Integer, Integer>();
-    for (int i = 0; i < nums.length; i++) {
-      sum = sum + nums[i];
-      if (sum == k) {
-        max = Math.max(max, i + 1);
-      } else if (result.containsKey(sum - k)) {
-        max = Math.max(max, i - result.get(sum - k));
+    int maxSum = 0, windowSum;
+    for (int i = 0; i <= nums.length - k; i++) {
+      windowSum = 0;
+      for (int j = i; j < i + k; j++) {
+        windowSum += nums[j];
       }
-      if (!result.containsKey(sum)) {
-        result.put(sum, i);
-      }
+      maxSum = Math.max(maxSum, windowSum);
     }
-    return max;
+
+    return maxSum;
   }
 }
