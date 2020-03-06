@@ -1,30 +1,35 @@
 package tobeorganized.heaps;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class TopKFrequentElementsInArray {
 
-  public List<Integer> topKFrequent(int[] nums, int k) {
+  public static List<Integer> topKFrequent(int[] nums, int k) {
     Map<Integer, Integer> map = new HashMap<>();
     for (int n : nums) {
       map.put(n, map.getOrDefault(n, 0) + 1);
     }
 
-    PriorityQueue<Map.Entry<Integer, Integer>> maxHeap =
-        new PriorityQueue<>((a, b) -> (b.getValue() - a.getValue()));
+    PriorityQueue<Map.Entry<Integer, Integer>> minHeap =
+        new PriorityQueue<Map.Entry<Integer, Integer>>((e1, e2) -> e1.getValue() - e2.getValue());
+
     for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-      maxHeap.add(entry);
+      minHeap.add(entry);
+      if (minHeap.size() > k) {
+        minHeap.poll();
+      }
     }
 
-    List<Integer> res = new ArrayList<>();
-    while (res.size() < k) {
-      Map.Entry<Integer, Integer> entry = maxHeap.poll();
-      res.add(entry.getKey());
+    // create a list of top k numbers
+    List<Integer> topNumbers = new ArrayList<>(k);
+    while (!minHeap.isEmpty()) {
+      topNumbers.add(minHeap.poll().getKey());
     }
-    return res;
+    return topNumbers;
+  }
+
+  public static void main(String[] args) {
+    int[] nums = {1, 1, 1, 2, 2, 3};
+    System.out.println(topKFrequent(nums, 2));
   }
 }

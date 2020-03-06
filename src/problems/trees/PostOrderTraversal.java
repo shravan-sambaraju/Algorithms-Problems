@@ -4,6 +4,8 @@ package problems.trees;
 import common.utils.BinaryTreeNode;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Stack;
 
 class PostOrderTraversal {
@@ -14,6 +16,27 @@ class PostOrderTraversal {
       recursivePostOrder(head.getRight());
       System.out.println(head.getData());
     }
+  }
+
+  public List<Integer> postorderTraversalReverseMethod(BinaryTreeNode root) {
+    List<Integer> list = new ArrayList<>();
+    if (root == null) {
+      return list;
+    }
+    Stack<BinaryTreeNode> stack = new Stack<>();
+    stack.push(root);
+    while (!stack.isEmpty()) {
+      BinaryTreeNode temp = stack.pop();
+      list.add(temp.data);
+      if (temp.right != null) {
+        stack.add(temp.right);
+      }
+      if (temp.left != null) {
+        stack.add(temp.left);
+      }
+    }
+    Collections.reverse(list);
+    return list;
   }
 
   private static ArrayList<Integer> iterativePostOrderUsingOneStack(BinaryTreeNode head) {

@@ -33,11 +33,7 @@ class SearchInSortedRotatedArray {
     return -1;
   }
 
-  public static void main(String[] args) {
-    System.out.println(SearchInSortedRotatedArray.searchWithDuplicates(new int[] {3, 3, 7, 3}, 7));
-  }
-
-  public int search(int[] nums, int target) {
+  public static int search(int[] nums, int target) {
     if (nums == null || nums.length == 0) return -1;
     int l = 0, r = nums.length - 1, m = 0;
     // find out the index of the smallest element.
@@ -69,5 +65,9 @@ class SearchInSortedRotatedArray {
     }
 
     return -1;
+  }
+
+  public static void main(String[] args) {
+    System.out.println(SearchInSortedRotatedArray.searchWithDuplicates(new int[] {3, 3, 7, 3}, 7));
   }
 }
