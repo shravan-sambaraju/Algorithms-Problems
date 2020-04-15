@@ -67,7 +67,38 @@ class SearchInSortedRotatedArray {
     return -1;
   }
 
+  public static int binarySearchRecursive(int[] arr, int start, int end, int key) {
+    // assuming all the keys are unique.
+
+    if (start > end) {
+      return -1;
+    }
+
+    int mid = start + (end - start) / 2;
+
+    if (arr[mid] == key) {
+      return mid;
+    }
+
+    if (arr[start] <= arr[mid] && key <= arr[mid] && key >= arr[start]) {
+      return binarySearchRecursive(arr, start, mid - 1, key);
+    } else if (arr[mid] <= arr[end] && key >= arr[mid] && key <= arr[end]) {
+      return binarySearchRecursive(arr, mid + 1, end, key);
+    } else if (arr[end] <= arr[mid]) {
+      return binarySearchRecursive(arr, mid + 1, end, key);
+    } else if (arr[start] >= arr[mid]) {
+      return binarySearchRecursive(arr, start, mid - 1, key);
+    }
+
+    return -1;
+  }
+
+  static int binarySearchRotated(int[] arr, int key) {
+    return binarySearchRecursive(arr, 0, arr.length - 1, key);
+  }
+
   public static void main(String[] args) {
     System.out.println(SearchInSortedRotatedArray.searchWithDuplicates(new int[] {3, 3, 7, 3}, 7));
+    System.out.println(SearchInSortedRotatedArray.search(new int[] {1, 2, 7, 4, 5}, 7));
   }
 }
