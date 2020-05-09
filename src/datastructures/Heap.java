@@ -9,9 +9,9 @@ class Heap {
 
     System.out.println("Before heapify: " + Arrays.toString(heapArray));
     new Heap().buildMaxHeap(heapArray, heapArray.length);
-    System.out.println("After heapify: " + Arrays.toString(heapArray));
+    System.out.println("After max heapify: " + Arrays.toString(heapArray));
     new Heap().buildMinHeap(heapArray, heapArray.length);
-    System.out.println("After heapify: " + Arrays.toString(heapArray));
+    System.out.println("After min heapify: " + Arrays.toString(heapArray));
   }
 
   private void maxHeapify(int[] heapArray, int index, int heapSize) {

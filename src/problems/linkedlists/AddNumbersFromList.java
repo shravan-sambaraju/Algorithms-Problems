@@ -27,27 +27,28 @@ class AddNumbersFromList {
   }
 
   public ListNode addTwoReversedNumbersRecursive(ListNode l1, ListNode l2) {
-    return addTwoReversedNumbersRecursiveHelper(l1,l2, 0);
+    return addTwoReversedNumbersRecursiveHelper(l1, l2, 0);
   }
-  private ListNode addTwoReversedNumbersRecursiveHelper(ListNode l1, ListNode l2, int carry){
-    if(l1 == null && l2 == null){
-      if(carry >0){
+
+  private ListNode addTwoReversedNumbersRecursiveHelper(ListNode l1, ListNode l2, int carry) {
+    if (l1 == null && l2 == null) {
+      if (carry > 0) {
         return new ListNode(carry);
       }
       return null;
     }
 
-    int value1 = l1!=null ? l1.data : 0;
-    int value2 = l2!=null ? l2.data : 0;
+    int value1 = l1 != null ? l1.data : 0;
+    int value2 = l2 != null ? l2.data : 0;
 
     int sum = value1 + value2 + carry;
 
-    ListNode current = new ListNode(sum%10);
+    ListNode current = new ListNode(sum % 10);
 
-    ListNode l1Next = l1 !=null ? l1.next : null;
-    ListNode l2Next = l2!=null ? l2.next : null;
+    ListNode l1Next = l1 != null ? l1.next : null;
+    ListNode l2Next = l2 != null ? l2.next : null;
 
-    current.next = addTwoReversedNumbersRecursiveHelper(l1Next, l2Next, sum/10);
+    current.next = addTwoReversedNumbersRecursiveHelper(l1Next, l2Next, sum / 10);
 
     return current;
   }
