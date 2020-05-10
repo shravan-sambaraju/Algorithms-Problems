@@ -67,4 +67,9 @@ public class RomanToDecimalInterconversion {
     }
     return str;
   }
+
+  public static void main(String[] args) {
+    System.out.println(romanToInteger("MCMLXXXIII"));
+    System.out.println(IntegerToRoman(1983));
+  }
 }
