@@ -1,4 +1,4 @@
-package tobeorganized.trees;
+package datastructures;
 
 import java.util.HashMap;
 import java.util.Map;
