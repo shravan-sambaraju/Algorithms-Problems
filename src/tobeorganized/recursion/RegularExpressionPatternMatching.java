@@ -6,7 +6,7 @@ package tobeorganized.recursion;
  * preceding element.
  */
 public class RegularExpressionPatternMatching {
-  public static boolean isMatch(String s, String p) {
+  public static boolean isMatchDp(String s, String p) {
 
     if (s == null || p == null) {
       return false;
@@ -38,8 +38,61 @@ public class RegularExpressionPatternMatching {
     return dp[s.length()][p.length()];
   }
 
+  public static boolean isMatchIterative(String text, String pattern) {
+    if (text.isEmpty() && pattern.isEmpty()) {
+      return true;
+    }
+
+    if (!text.isEmpty() && pattern.isEmpty()) {
+      return false;
+    }
+
+    if (pattern.length() > 1 && pattern.charAt(1) == '*') {
+
+      String remainingPattern = pattern.substring(2);
+      String remainingText = text;
+
+      for (int i = 0; i < text.length() + 1; ++i) {
+        if (isMatchIterative(remainingText, remainingPattern)) {
+          return true;
+        }
+
+        if (remainingText.isEmpty()) {
+          return false;
+        }
+
+        if (pattern.charAt(0) != '.' && remainingText.charAt(0) != pattern.charAt(0)) {
+          return false;
+        }
+
+        remainingText = remainingText.substring(1);
+      }
+    }
+
+    if (text.isEmpty() || pattern.isEmpty()) {
+      return false;
+    }
+
+    if (pattern.charAt(0) == '.' || pattern.charAt(0) == text.charAt(0)) {
+      String remainingText = "";
+      if (text.length() >= 2) {
+        remainingText = text.substring(1);
+      }
+
+      String remainingPattern = "";
+      if (pattern.length() >= 2) {
+        remainingPattern = pattern.substring(1);
+      }
+
+      return isMatchIterative(remainingText, remainingPattern);
+    }
+
+    return false;
+  }
+
   public static void main(String[] args) {
-    System.out.println(isMatch("aa", "a"));
-    System.out.println(isMatch("aa", "a*"));
+    System.out.println(isMatchDp("aa", "a"));
+    System.out.println(isMatchDp("aa", "a*"));
+    System.out.println(isMatchIterative("fabbbc", ".ab*c"));
   }
 }
