@@ -93,6 +93,29 @@ class SearchInSortedRotatedArray {
     return -1;
   }
 
+  static int binarySearchRotatedIterative(int[] arr, int key) {
+    int start = 0;
+    int mid = 0;
+    int end = arr.length - 1;
+
+    if (start > end) return -1;
+
+    while (start <= end) {
+
+      mid = start + (end - start) / 2;
+
+      if (arr[mid] == key) return mid;
+
+      if (arr[start] <= arr[mid] && key <= arr[mid] && key >= arr[start]) end = mid - 1;
+      else if (arr[mid] <= arr[end] && key >= arr[mid] && key <= arr[end]) start = mid + 1;
+      else if (arr[start] <= arr[mid] && arr[mid] <= arr[end] && key > arr[end]) start = mid + 1;
+      else if (arr[end] <= arr[mid]) start = mid + 1;
+      else if (arr[start] >= arr[mid]) end = mid - 1;
+      else return -1;
+    }
+    return -1;
+  }
+
   static int binarySearchRotated(int[] arr, int key) {
     return binarySearchRecursive(arr, 0, arr.length - 1, key);
   }

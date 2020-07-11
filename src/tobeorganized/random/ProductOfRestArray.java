@@ -1,6 +1,6 @@
 package tobeorganized.random;
 
-class ProductOfRestArray {
+class  ProductOfRestArray {
 
   private static void restOfArrayMethod1(int[] array) {
     int sum = 1;
