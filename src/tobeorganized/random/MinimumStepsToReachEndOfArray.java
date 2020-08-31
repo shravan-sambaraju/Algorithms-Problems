@@ -2,7 +2,7 @@ package tobeorganized.random;
 
 class MinimumStepsToReachEndOfArray {
 
-  // can read end of array
+  // can reach end of array
   public static boolean canReachEnd(int[] maxAdvanceSteps) {
 
     int furthestReachSoFar = 0, lastIndex = maxAdvanceSteps.length - 1;
