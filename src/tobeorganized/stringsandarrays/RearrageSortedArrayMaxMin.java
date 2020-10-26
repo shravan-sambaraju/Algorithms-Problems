@@ -22,6 +22,28 @@ public class RearrageSortedArrayMaxMin {
     }
   }
 
+  public static void maxMin2(int[] arr) {
+    // Create a result array to hold re-arranged version of given arr
+    int[] result = new int[arr.length];
+
+    int pointerSmall = 0; // PointerSmall => Start of arr
+    int pointerLarge = arr.length - 1; // PointerLarge => End of arr
+
+    // Flag which will help in switching between two pointers
+    boolean switchPointer = true;
+
+    for (int i = 0; i < arr.length; i++) {
+      if (switchPointer) result[i] = arr[pointerLarge--]; // copy large values
+      else result[i] = arr[pointerSmall++]; // copy small values
+
+      switchPointer = !switchPointer; // switching between samll and large
+    }
+
+    for (int j = 0; j < arr.length; j++) {
+      arr[j] = result[j]; // copying to original array
+    }
+  }
+
   public static void main(String args[]) {
 
     int[] arr = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};

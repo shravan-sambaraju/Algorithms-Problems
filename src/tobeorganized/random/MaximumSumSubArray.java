@@ -1,6 +1,6 @@
 package tobeorganized.random;
 
-class MaximumSubArray {
+class MaximumSumSubArray {
 
   public int maxSubArray(int[] nums) {
     if (nums == null || nums.length == 0) return 0;
@@ -13,20 +13,20 @@ class MaximumSubArray {
   }
 
   static void maxSubArraySum(int a[], int size) {
-    int maxSoFar = Integer.MIN_VALUE, maxEndHere = 0, start = 0, end = 0, s = 0;
+    int maxSoFar = Integer.MIN_VALUE, maxEndHere = 0, start = 0, end = 0, interimstart = 0;
 
     for (int i = 0; i < size; i++) {
       maxEndHere += a[i];
 
       if (maxSoFar < maxEndHere) {
         maxSoFar = maxEndHere;
-        start = s;
+        start = interimstart;
         end = i;
       }
 
       if (maxEndHere < 0) {
         maxEndHere = 0;
-        s = i + 1;
+        interimstart = i + 1;
       }
     }
     System.out.println("Maximum contiguous sum is " + maxSoFar);

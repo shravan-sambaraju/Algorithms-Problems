@@ -1,79 +1,61 @@
 package datastructures;
 
-public class MyQueue {
-
-  private int size;
-  private int queueArray[];
+public class MyQueue<V> {
+  private int maxSize;
+  private V[] array;
   private int front;
   private int back;
-  private int numofItems;
+  private int currentSize;
 
-  public MyQueue(int s) {
-    size = s;
-    queueArray = new int[size];
+  /*
+  Java does not allow generic type arrays. So we have used an
+  array of Object type and type-casted it to the generic type V.
+  This type-casting is unsafe and produces a warning.
+  Comment out the line below and execute again to see the warning.
+  */
+  @SuppressWarnings("unchecked")
+  public MyQueue(int maxSize) {
+    this.maxSize = maxSize;
+    array = (V[]) new Object[maxSize];
     front = 0;
     back = -1;
-    numofItems = 0;
+    currentSize = 0;
   }
 
-  public static void main(String[] args) {
-    MyQueue queue = new MyQueue(5);
-    queue.enqueue(2);
-    queue.enqueue(4);
-    queue.enqueue(6);
-    queue.enqueue(8);
-    queue.enqueue(10);
-
-    queue.dequeue();
-    queue.dequeue();
-
-    queue.enqueue(12);
-    queue.enqueue(14);
-
-    System.out.println("Queue:");
-    while (!queue.isEmpty()) {
-      System.out.print(queue.dequeue() + " ");
-    }
+  public int getMaxSize() {
+    return maxSize;
   }
 
-  public void enqueue(int value) {
-    if (isFull()) {
-      System.err.println("Your queue is full!");
-      return;
-    }
-    if (back == size - 1) {
-      back = -1;
-    }
-    queueArray[++back] = value;
-    ++numofItems;
-  }
-
-  public int dequeue() {
-    if (isEmpty()) {
-      System.err.println("Your queue is empty!");
-      return -1;
-    }
-    int tmp = queueArray[front++];
-    if (front == size) {
-      front = 0;
-    }
-    numofItems--;
-    return tmp;
-  }
-
-  public int top() {
-    return queueArray[front];
+  public int getCurrentSize() {
+    return currentSize;
   }
 
   public boolean isEmpty() {
-    return numofItems == 0;
+    return currentSize == 0;
   }
 
   public boolean isFull() {
-    return numofItems == size;
+    return currentSize == maxSize;
   }
 
-  public int size() {
-    return numofItems;
+  public V top() {
+    return array[front];
+  }
+
+  public void enqueue(V value) {
+    if (isFull()) return;
+    back = (back + 1) % maxSize; // to keep the index in range
+    array[back] = value;
+    currentSize++;
+  }
+
+  public V dequeue() {
+    if (isEmpty()) return null;
+
+    V temp = array[front];
+    front = (front + 1) % maxSize; // to keep the index in range
+    currentSize--;
+
+    return temp;
   }
 }
