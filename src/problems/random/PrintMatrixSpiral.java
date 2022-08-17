@@ -1,36 +1,51 @@
 package problems.random;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 /** Print matrix in spiral form */
 class PrintMatrixSpiral {
 
-  private static void spiralPrint(int row, int column, int a[][]) {
-    int i, k = 0, l = 0;
-
-    while (k < row && l < column) {
-      for (i = l; i < column; ++i) {
-        System.out.print(a[k][i] + " ");
-      }
-      k++;
-
-      for (i = k; i < row; ++i) {
-        System.out.print(a[i][column - 1] + " ");
-      }
-      column--;
-
-      if (k < row) {
-        for (i = column - 1; i >= l; --i) {
-          System.out.print(a[row - 1][i] + " ");
-        }
-        row--;
-      }
-
-      if (l < column) {
-        for (i = row - 1; i >= k; --i) {
-          System.out.print(a[i][l] + " ");
-        }
-        l++;
-      }
+  private static List<Integer> spiralPrint(int row, int column, int array[][]) {
+    if(array == null){
+      return Collections.emptyList();
     }
+
+    ArrayList<Integer> spiralResult = new ArrayList<>();
+
+    int i =0, currRow =0, currCol =0, rows = array.length-1, cols = array[0].length-1;
+
+    while(currRow <= rows && currCol <= cols){
+
+      for(i=currCol; i<= cols; i++){
+        spiralResult.add(array[currRow][i]);
+      }
+      currRow++;
+
+      for(i = currRow; i<= rows; i++){
+        spiralResult.add(array[i][cols]);
+      }
+      cols--;
+
+      if(currRow <= rows){
+        for(i= cols; i>= currCol; i--){
+          spiralResult.add(array[rows][i]);
+        }
+        rows--;
+      }
+
+      if(currCol <= cols){
+        for(i = rows; i>= currRow; i--){
+          spiralResult.add(array[i][currCol]);
+        }
+        currCol++;
+      }
+
+
+    }
+
+    return spiralResult;
   }
 
   public static void main(String[] args) {

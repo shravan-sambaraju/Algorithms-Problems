@@ -13,23 +13,23 @@ class MaximumSumSubArray {
   }
 
   static void maxSubArraySum(int a[], int size) {
-    int maxSoFar = Integer.MIN_VALUE, maxEndHere = 0, start = 0, end = 0, interimstart = 0;
+    int finalMax = Integer.MIN_VALUE, tempMax = 0, start = 0, end = 0, interimstart = 0;
 
     for (int i = 0; i < size; i++) {
-      maxEndHere += a[i];
+      tempMax += a[i];
 
-      if (maxSoFar < maxEndHere) {
-        maxSoFar = maxEndHere;
+      if (finalMax < tempMax) {
+        finalMax = tempMax;
         start = interimstart;
         end = i;
       }
 
-      if (maxEndHere < 0) {
-        maxEndHere = 0;
+      if (tempMax < 0) {
+        tempMax = 0;
         interimstart = i + 1;
       }
     }
-    System.out.println("Maximum contiguous sum is " + maxSoFar);
+    System.out.println("Maximum contiguous sum is " + finalMax);
     System.out.println("Starting index " + start);
     System.out.println("Ending index " + end);
   }

@@ -26,6 +26,7 @@ public class MoveZeroes {
     }
   }
 
+  // doesnt maintain order sometimes
   public static void moveZeroesToRightOrEnd(int[] nums) {
     int pos = 0;
     for (int i = 0; i < nums.length; i++) {

@@ -6,38 +6,47 @@ import java.util.List;
 class PrintMatrixInSpiral {
 
   public List<Integer> spiralOrder(int[][] matrix) {
-    List<Integer> list = new ArrayList<Integer>();
+    List<Integer> res = new ArrayList<Integer>();
+
     if (matrix.length == 0) {
-      return list;
-    }
-    int rows = matrix.length - 1, columns = matrix[0].length - 1;
-    int i = 0, currentRow = 0, currentColumn = 0;
-    while (currentRow <= rows && currentColumn <= columns) {
-      for (i = currentRow; i <= columns; i++) {
-        list.add(matrix[currentRow][i]);
-      }
-      currentRow++;
-
-      for (i = currentRow; i <= rows; i++) {
-        list.add(matrix[i][columns]);
-      }
-      columns--;
-
-      if (currentRow <= rows) {
-        for (i = columns; i >= currentColumn; i--) {
-          list.add(matrix[rows][i]);
-        }
-        rows--;
-      }
-
-      if (currentColumn <= columns) {
-        for (i = rows; i >= currentRow; i--) {
-          list.add(matrix[i][currentColumn]);
-        }
-        currentColumn++;
-      }
+      return res;
     }
 
-    return list;
+    int rowBegin = 0;
+    int rowEnd = matrix.length - 1;
+    int colBegin = 0;
+    int colEnd = matrix[0].length - 1;
+
+    while (rowBegin <= rowEnd && colBegin <= colEnd) {
+      // Traverse Right
+      for (int j = colBegin; j <= colEnd; j++) {
+        res.add(matrix[rowBegin][j]);
+      }
+      rowBegin++;
+
+      // Traverse Down
+      for (int j = rowBegin; j <= rowEnd; j++) {
+        res.add(matrix[j][colEnd]);
+      }
+      colEnd--;
+
+      if (rowBegin <= rowEnd) {
+        // Traverse Left
+        for (int j = colEnd; j >= colBegin; j--) {
+          res.add(matrix[rowEnd][j]);
+        }
+      }
+      rowEnd--;
+
+      if (colBegin <= colEnd) {
+        // Traver Up
+        for (int j = rowEnd; j >= rowBegin; j--) {
+          res.add(matrix[j][colBegin]);
+        }
+      }
+      colBegin++;
+    }
+
+    return res;
   }
 }
