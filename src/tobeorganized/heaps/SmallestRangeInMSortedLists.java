@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
 
-/**
+/*
  * Given ‘M’ sorted arrays, find the smallest range that includes at least one number from each of
  * the ‘M’ lists.
  */

@@ -1,6 +1,6 @@
 package problems.trees;
 
-/** Create in order successor if given parent tag */
+/* Create in order successor if given parent tag */
 class InOrderSuccessor {
 
   private static TreeNode inorderSucc(TreeNode n) {

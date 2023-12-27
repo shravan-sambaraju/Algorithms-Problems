@@ -3,7 +3,7 @@ package tobeorganized.multithreading;
 import java.util.Random;
 import java.util.concurrent.Semaphore;
 
-/** */
+/* */
 class DiningPhilisopherProblem {
 
   public static void main(String args[]) throws InterruptedException {

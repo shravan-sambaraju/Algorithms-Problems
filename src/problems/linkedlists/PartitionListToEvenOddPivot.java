@@ -1,6 +1,6 @@
 package problems.linkedlists;
 
-/** Partition linkedlist to even and odd across pivot */
+/* Partition linkedlist to even and odd across pivot */
 
 // TODO: 2019-03-08a
 

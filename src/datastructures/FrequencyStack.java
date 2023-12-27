@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-/**
+/*
  * Design a class that simulates a Stack data structure, implementing the following two operations:
  *
  * <p>push(int num): Pushes the number ‘num’ on the stack. pop(): Returns the most frequent number

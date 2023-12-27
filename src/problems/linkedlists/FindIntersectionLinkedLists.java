@@ -1,6 +1,6 @@
 package problems.linkedlists;
 
-/** Find intersection of given linkedlists */
+/* Find intersection of given linkedlists */
 import common.utils.ListNode;
 
 class FindIntersectionLinkedLists {

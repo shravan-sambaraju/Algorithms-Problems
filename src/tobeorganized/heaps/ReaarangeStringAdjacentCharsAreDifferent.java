@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-/**
+/*
  * Given a string, find if its letters can be rearranged in such a way that no two same characters
  * come next to each other.
  */

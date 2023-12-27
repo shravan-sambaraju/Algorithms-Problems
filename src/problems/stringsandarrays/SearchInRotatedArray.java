@@ -1,6 +1,6 @@
 package problems.stringsandarrays;
 
-/** Java implementation to search in rotated array */
+/* Java implementation to search in rotated array */
 class SearchInRotatedArray {
 
   private static int search(int a[], int x) {

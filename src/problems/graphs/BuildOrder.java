@@ -1,6 +1,6 @@
 package problems.graphs;
 
-/** Print build order */
+/* Print build order */
 import java.util.ArrayList;
 import java.util.HashMap;
 

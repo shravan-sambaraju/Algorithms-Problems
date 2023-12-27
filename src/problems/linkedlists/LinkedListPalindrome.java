@@ -1,6 +1,6 @@
 package problems.linkedlists;
 
-/** Check whether if given linkedlist is palindrome */
+/* Check whether if given linkedlist is palindrome */
 import common.utils.ListNode;
 
 class LinkedListPalindrome {

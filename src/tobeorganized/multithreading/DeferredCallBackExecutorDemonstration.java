@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
-/** */
+/* */
 class DeferredCallBackExecutorDemonstration {
   public static void main(String args[]) throws InterruptedException {
     DeferredCallbackExecutor.runLateThenEarlyCallback();

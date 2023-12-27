@@ -1,6 +1,6 @@
 package problems.trees;
 
-/** Find width of binary tree */
+/* Find width of binary tree */
 import common.utils.BinaryTreeNode;
 
 class WidthOfBinaryTree {

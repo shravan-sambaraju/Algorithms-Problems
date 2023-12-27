@@ -1,6 +1,6 @@
 package tobeorganized.multithreading;
 
-/** */
+/* */
 class BarrierDemonstration {
   public static void main(String args[]) throws Exception {
     Barrier.runTest();

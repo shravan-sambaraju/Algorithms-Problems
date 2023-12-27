@@ -1,6 +1,6 @@
 package problems.trees;
 
-/** Print post order traversal of binary tree */
+/* Print post order traversal of binary tree */
 import common.utils.BinaryTreeNode;
 
 import java.util.ArrayList;

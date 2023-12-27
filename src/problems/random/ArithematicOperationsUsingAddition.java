@@ -1,6 +1,6 @@
 package problems.random;
 
-/** Perform arithematic operations using addition */
+/* Perform arithematic operations using addition */
 import static common.utils.UtilMethods.randomIntInRange;;
 
 class ArithematicOperationsUsingAddition {

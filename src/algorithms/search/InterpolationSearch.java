@@ -1,6 +1,6 @@
 package algorithms.search;
 
-/** Java implementation of interpolation search */
+/* Java implementation of interpolation search */
 class InterpolationSearch {
 
   private static int interpolationSearch(int[] A, int data) {

@@ -1,6 +1,6 @@
 package problems.random;
 
-/** Swap two numbers without third */
+/* Swap two numbers without third */
 class SwapNumbersWithoutThird {
 
   private static void swap(int a, int b) {

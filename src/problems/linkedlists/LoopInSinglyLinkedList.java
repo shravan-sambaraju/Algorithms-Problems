@@ -1,6 +1,6 @@
 package problems.linkedlists;
 
-/** Detect loop in a linkedlist */
+/* Detect loop in a linkedlist */
 import common.utils.ListNode;
 
 class LoopInSinglyLinkedList {

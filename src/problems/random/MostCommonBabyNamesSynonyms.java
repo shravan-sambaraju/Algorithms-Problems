@@ -1,6 +1,6 @@
 package problems.random;
 
-/**
+/*
  * Each year, the government releases a list of the 10000 most common baby names and their
  * frequencies (the number of babies with that name). The only problem with this is that some names
  * have multiple spellings. For example, "John" and "Jon" are essentially the same name but would be

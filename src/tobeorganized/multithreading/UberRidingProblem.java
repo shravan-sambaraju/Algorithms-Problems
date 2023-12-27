@@ -7,7 +7,7 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.ReentrantLock;
 
-/** */
+/* */
 class UberRidingProblem {
   public static void main(String args[]) throws InterruptedException {
     UberSeatingProblem.runTest();

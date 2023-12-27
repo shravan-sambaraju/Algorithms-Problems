@@ -1,6 +1,6 @@
 package tobeorganized.multithreading;
 
-/** */
+/* */
 class Semaphore {
   public static void main(String args[]) throws InterruptedException {
 

@@ -1,6 +1,6 @@
 package problems.graphs;
 
-/** Implement BFS for graph */
+/* Implement BFS for graph */
 import java.util.Iterator;
 import java.util.LinkedList;
 

@@ -2,7 +2,7 @@ package tobeorganized.multithreading;
 
 import java.util.concurrent.Semaphore;
 
-/** */
+/* */
 class UnisexBathroomDemonstration {
   public static void main(String args[]) throws InterruptedException {
     UnisexBathroom.runTest();

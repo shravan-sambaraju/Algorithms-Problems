@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.ReentrantLock;
 
-/** */
+/* */
 class BarberShopDemo {
   public static void main(String args[]) throws InterruptedException {
     BarberShopProblem.runTest();

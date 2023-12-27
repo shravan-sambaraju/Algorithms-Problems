@@ -1,6 +1,6 @@
 package datastructures;
 
-/** Java implementation of doubly linkedlist */
+/* Java implementation of doubly linkedlist */
 class DoublyLinkedListImplementation {
 
   private DLLNode head;

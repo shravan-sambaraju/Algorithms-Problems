@@ -1,6 +1,6 @@
 package problems.linkedlists;
 
-/** Reverse given singly linkedlist */
+/* Reverse given singly linkedlist */
 import common.utils.ListNode;
 
 class ReverseSinglyLinkedList {

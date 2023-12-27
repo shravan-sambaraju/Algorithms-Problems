@@ -1,6 +1,6 @@
 package problems.random;
 
-/**
+/*
  * You are given two stringsandarrays, pattern and value.The pattern string consists of just the
  * letters a and b, describing a pattern with in a string . For example , the string catcatgocatgo
  * matches the pattern aabab (where cat is a and go is b). It also matches patterns like a, ab, and

@@ -1,6 +1,6 @@
 package problems.graphs;
 
-/** Implement Dijkstra algorithm */
+/* Implement Dijkstra algorithm */
 class DijkstraAlgorithm {
 
   static final int V = 9;

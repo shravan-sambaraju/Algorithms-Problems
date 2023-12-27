@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
 
-/**
+/*
  * Given two sorted arrays in descending order, find ‘K’ pairs with the largest sum where each pair
  * consists of numbers from both the arrays.
  */

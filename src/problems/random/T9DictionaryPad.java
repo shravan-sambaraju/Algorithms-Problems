@@ -1,6 +1,6 @@
 package problems.random;
 
-/**
+/*
  * On old cell phones, users typed on a numeric keypad and the phone would provide a list of words
  * that matched these numbers. Each digit mapped to a set of 0 - 4 letters. Implement an algorithm
  * to return a list of matching words, given a sequence of digits.
@@ -26,7 +26,7 @@ public class T9DictionaryPad {
     {'w', 'x', 'y', 'z'} // 9
   };
 
-  /** Convert from a string to its T9 representation. */
+  /* Convert from a string to its T9 representation. */
   public static String convertToT9(String word, HashMap<Character, Character> letterToNumberMap) {
     StringBuilder sb = new StringBuilder();
     for (char c : word.toCharArray()) {
@@ -38,7 +38,7 @@ public class T9DictionaryPad {
     return sb.toString();
   }
 
-  /** Convert mapping of number->letters into letter->number */
+  /* Convert mapping of number->letters into letter->number */
   public static HashMap<Character, Character> createLetterToNumberMap() {
     HashMap<Character, Character> letterToNumberMap = new HashMap<Character, Character>();
     for (int i = 0; i < t9Letters.length; i++) {
@@ -53,15 +53,15 @@ public class T9DictionaryPad {
     return letterToNumberMap;
   }
 
-  /**
+  /*
    * Create a hash table that maps from a number to all words that have this numerical
    * representation.
    */
   public static HashMapList<String, String> initializeDictionary(String[] words) {
-    /** Create hash table that maps from a letter to the digit */
+    /* Create hash table that maps from a letter to the digit */
     HashMap<Character, Character> letterToNumberMap = createLetterToNumberMap();
 
-    /** Create word -> number map */
+    /* Create word -> number map */
     HashMapList<String, String> wordsToNumbers = new HashMapList<String, String>();
     for (String word : words) {
       String numbers = convertToT9(word, letterToNumberMap);

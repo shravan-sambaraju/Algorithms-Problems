@@ -1,6 +1,6 @@
 package problems.recursion;
 
-/** find number of ways you can change coin denomination */
+/* find number of ways you can change coin denomination */
 class CoinChange {
 
   public static void main(String[] args) {

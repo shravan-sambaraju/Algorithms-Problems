@@ -1,6 +1,6 @@
 package datastructures;
 
-/** Java implementation of linked stack */
+/* Java implementation of linked stack */
 import common.utils.ListNode;
 
 import java.util.EmptyStackException;

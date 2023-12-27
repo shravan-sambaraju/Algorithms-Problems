@@ -1,6 +1,6 @@
 package problems.trees;
 
-/** Find maximum element in binary search tree */
+/* Find maximum element in binary search tree */
 import common.utils.BinaryTreeNode;
 
 class MaximumElementInBST {

@@ -1,6 +1,6 @@
 package problems.trees;
 
-/** Print inorder traversal of binary node */
+/* Print inorder traversal of binary node */
 import common.utils.BinaryTreeNode;
 
 import java.util.ArrayList;

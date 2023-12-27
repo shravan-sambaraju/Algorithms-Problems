@@ -1,6 +1,6 @@
 package problems.trees;
 
-/** Find deepest node in binary tree */
+/* Find deepest node in binary tree */
 import common.utils.BinaryTreeNode;
 
 import java.util.LinkedList;

@@ -1,6 +1,6 @@
 package problems.trees;
 
-/** Print given binary tree in zig zag */
+/* Print given binary tree in zig zag */
 import common.utils.BinaryTreeNode;
 
 import java.util.Deque;

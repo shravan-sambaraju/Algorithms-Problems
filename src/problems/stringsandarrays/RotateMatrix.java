@@ -1,6 +1,6 @@
 package problems.stringsandarrays;
 
-/** Rotate given matrix */
+/* Rotate given matrix */
 import static common.utils.UtilMethods.printMatrix;
 import static common.utils.UtilMethods.randomMatrix;
 

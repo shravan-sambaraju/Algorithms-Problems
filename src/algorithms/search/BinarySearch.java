@@ -1,6 +1,6 @@
 package algorithms.search;
 
-/** Java implementation of binary search */
+/* Java implementation of binary search */
 class BinarySearch {
 
   private static boolean contains(int[] a, int b) {

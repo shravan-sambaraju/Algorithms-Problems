@@ -1,6 +1,6 @@
 package problems.stacksandqueues;
 
-/** Implement fixed size array queue */
+/* Implement fixed size array queue */
 class FixedSizeArrayQueue {
 
   private static final int CAPACITY = 16;

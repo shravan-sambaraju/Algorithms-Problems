@@ -1,6 +1,6 @@
 package problems.linkedlists;
 
-/** Add number from from two list */
+/* Add number from from two list */
 import common.utils.ListNode;
 
 class AddNumbersFromList {

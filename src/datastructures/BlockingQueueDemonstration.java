@@ -1,6 +1,6 @@
 package datastructures;
 
-/** Solve Producer consumer problem using blocking queue */
+/* Solve Producer consumer problem using blocking queue */
 public class BlockingQueueDemonstration {
   public static void main(String[] args) throws Exception {
     final BlockingQueue<Integer> q = new BlockingQueue<Integer>(5);

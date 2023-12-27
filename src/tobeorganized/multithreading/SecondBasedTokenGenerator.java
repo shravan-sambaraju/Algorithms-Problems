@@ -3,7 +3,7 @@ package tobeorganized.multithreading;
 import java.util.HashSet;
 import java.util.Set;
 
-/** */
+/* */
 class SecondBasedTokenGenerator {
   public static void main(String args[]) throws InterruptedException {
     TokenBucketFilter.runTestMaxTokenIsTen();

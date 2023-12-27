@@ -33,7 +33,7 @@ public class ReverseArrayListRecursion {
     System.out.println("Reversed list reversed again: " + output);
   }
 
-  /**
+  /*
    * A recursive algorithm to reverse a List in Java
    *
    * @param list

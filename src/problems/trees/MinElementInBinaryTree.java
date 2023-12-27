@@ -1,6 +1,6 @@
 package problems.trees;
 
-/** Find minimum element in binary tree */
+/* Find minimum element in binary tree */
 import common.utils.BinaryTreeNode;
 
 import java.util.LinkedList;

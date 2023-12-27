@@ -2,7 +2,7 @@ package tobeorganized.heaps;
 
 import java.util.PriorityQueue;
 
-/**
+/*
  * Given a set of investment projects with their respective profits, we need to find the most
  * profitable investment projects. We will be given an initial capital, and we can start an
  * investment project only when we have the required capital. Once a project is selected, we can

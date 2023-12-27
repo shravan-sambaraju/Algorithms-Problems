@@ -1,6 +1,6 @@
 package problems.linkedlists;
 
-/** Reverse the given linkedlist by k nodes */
+/* Reverse the given linkedlist by k nodes */
 import common.utils.ListNode;
 
 class ReverseKNodesLinkedList {

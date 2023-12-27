@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-/**
+/*
  * Given a string and a number ‘K’, find if the string can be rearranged such that the same
  * characters are at least ‘K’ distance apart from each other.
  */

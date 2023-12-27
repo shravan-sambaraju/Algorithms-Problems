@@ -1,6 +1,6 @@
 package tobeorganized.stringsandarrays;
 
-/**
+/*
  * Given a binary string of 0s and 1s. The task is to find the maximum difference between the number
  * of 0s and number of 1s in any sub-string of the given binary string. That is maximize ( number of
  * 0s – number of 1s ) for any sub-string in the given binary string.

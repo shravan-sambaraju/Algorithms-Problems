@@ -13,7 +13,7 @@ public class MaxProfitStockKTransactions {
     System.out.println("Max profit slow solution " + sbt.maxProfitSlowSolution(prices, 3));
   }
 
-  /** Below solution is accepted by leetcode and runs in space proportional to prices length. */
+  /* Below solution is accepted by leetcode and runs in space proportional to prices length. */
   public int maxProfitLinearSpace(int k, int[] prices) {
     if (k == 0 || prices.length == 0) {
       return 0;
@@ -51,7 +51,7 @@ public class MaxProfitStockKTransactions {
     return profit;
   }
 
-  /**
+  /*
    * This is faster method which does optimization on slower method Time complexity here is O(K *
    * number of days)
    *
@@ -75,7 +75,7 @@ public class MaxProfitStockKTransactions {
     return T[K][prices.length - 1];
   }
 
-  /**
+  /*
    * This is slow method but easier to understand. Time complexity is O(k * number of days ^ 2)
    * T[i][j] = max(T[i][j-1], max(prices[j] - prices[m] + T[i-1][m])) where m is 0...j-1
    */

@@ -1,6 +1,6 @@
 package problems.random;
 
-/**
+/*
  * Given a list of people with their birth and death years, implement a method to compute the year
  * with the most number of people alive. You may assume that all people were born between 1900 and
  * 2000 (inclusive). Ifa person was alive during any portion of that year, they should be included

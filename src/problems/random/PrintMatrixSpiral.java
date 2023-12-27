@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/** Print matrix in spiral form */
+/* Print matrix in spiral form */
 class PrintMatrixSpiral {
 
   private static List<Integer> spiralPrint(int row, int column, int array[][]) {

@@ -1,6 +1,6 @@
 package problems.linkedlists;
 
-/** Exchange adjacent nodes in linkedlist */
+/* Exchange adjacent nodes in linkedlist */
 import common.utils.ListNode;
 
 class ExchangeAdjacentNodes {

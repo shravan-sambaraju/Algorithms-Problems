@@ -1,6 +1,6 @@
 package problems.bitmanipulation;
 
-/**
+/*
  * Given two 32 bit numbers M and N and position i and j insert M into N where M starts at j and
  * ends at i
  */

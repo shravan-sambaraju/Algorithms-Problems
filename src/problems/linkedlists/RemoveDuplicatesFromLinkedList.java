@@ -1,6 +1,6 @@
 package problems.linkedlists;
 
-/** Remove duplicates from linkedlist */
+/* Remove duplicates from linkedlist */
 import common.utils.ListNode;
 
 import java.util.HashMap;

@@ -1,6 +1,6 @@
 package problems.stringsandarrays;
 
-/** Print Array in form of peaks and valleys */
+/* Print Array in form of peaks and valleys */
 import common.utils.UtilMethods;
 
 import java.util.Arrays;

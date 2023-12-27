@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
-/**
+/*
  * We are given an undirected graph that has characteristics of a k-ary tree. In such a graph, we
  * can choose any node as the root to make a k-ary tree. The root (or the tree) with the minimum
  * height will be called Minimum Height Tree (MHT). There can be multiple MHTs for a graph. In this

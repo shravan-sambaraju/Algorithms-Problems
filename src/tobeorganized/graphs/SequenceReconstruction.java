@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
-/**
+/*
  * Given a sequence originalSeq and an array of sequences, write a method to find if originalSeq can
  * be uniquely reconstructed from the array of sequences.
  *

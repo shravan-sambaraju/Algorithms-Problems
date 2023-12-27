@@ -1,6 +1,6 @@
 package problems.stringsandarrays;
 
-/** Check unique characters in string */
+/* Check unique characters in string */
 class CheckUniqueCharactersInString {
 
   // with using extra data structure

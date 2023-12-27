@@ -5,7 +5,7 @@ interface Callback {
   public void done();
 }
 
-/** */
+/* */
 class AsyncToSyncExecutor {
   public static void main(String args[]) throws Exception {
     SynchronousExecutor executor = new SynchronousExecutor();

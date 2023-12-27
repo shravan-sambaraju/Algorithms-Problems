@@ -2,7 +2,7 @@ package problems.recursion;
 
 import java.util.ArrayList;
 
-/** Permutations of stringsandarrays without duplicates in string */
+/* Permutations of stringsandarrays without duplicates in string */
 class PermutationsOfString {
 
   private static void getPerms(String prefix, String remainder, ArrayList<String> result) {

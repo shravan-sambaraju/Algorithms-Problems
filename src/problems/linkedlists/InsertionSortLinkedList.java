@@ -1,6 +1,6 @@
 package problems.linkedlists;
 
-/** Sort given linkedlist using insertion sort */
+/* Sort given linkedlist using insertion sort */
 import common.utils.ListNode;
 
 class InsertionSortLinkedList {

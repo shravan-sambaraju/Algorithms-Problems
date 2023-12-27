@@ -1,6 +1,6 @@
 package problems.recursion;
 
-/** Generate all combination bits of given size k size using recursion */
+/* Generate all combination bits of given size k size using recursion */
 import java.util.Arrays;
 
 class GenerateStringOfNBits {

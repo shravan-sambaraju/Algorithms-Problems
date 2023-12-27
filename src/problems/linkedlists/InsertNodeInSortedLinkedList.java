@@ -1,6 +1,6 @@
 package problems.linkedlists;
 
-/** Insert node in a sorted linkedlist */
+/* Insert node in a sorted linkedlist */
 import common.utils.ListNode;
 
 class InsertNodeInSortedLinkedList {

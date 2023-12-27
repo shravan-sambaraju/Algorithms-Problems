@@ -1,6 +1,6 @@
 package problems.trees;
 
-/** Insert element into binary search tree */
+/* Insert element into binary search tree */
 import common.utils.BinaryTreeNode;
 
 class InsertElementIntoBST {

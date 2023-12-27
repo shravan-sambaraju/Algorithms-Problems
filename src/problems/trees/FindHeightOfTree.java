@@ -1,6 +1,6 @@
 package problems.trees;
 
-/** Find height of binary tree */
+/* Find height of binary tree */
 import common.utils.BinaryTreeNode;
 
 import java.util.LinkedList;

@@ -1,6 +1,6 @@
 package problems.random;
 
-/**
+/*
  * Given a string b and an array of smaller stringsandarrays T, design a method to search b for each
  * small string in T.
  */
