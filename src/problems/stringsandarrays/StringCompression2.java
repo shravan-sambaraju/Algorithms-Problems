@@ -1,6 +1,10 @@
 package problems.stringsandarrays;
 
-/** Compress given string */
+/*
+ * Implement a method to perform basic string compression using a StringBuilder to count repeated
+ * consecutive characters (e.g., 'aabcccccaaa' -> 'a2b1c5a3'), returning the original string if the
+ * compressed version is not shorter.
+ */
 class StringCompression2 {
 
   private static String compress(String str) {

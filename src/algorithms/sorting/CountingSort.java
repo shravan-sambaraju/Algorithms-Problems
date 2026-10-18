@@ -1,6 +1,9 @@
 package algorithms.sorting;
 
-/** Java implementation of Counting Sort */
+/*
+ * Given an array of characters, sort the array in lexicographical (ascending) order in linear time
+ * using the Counting Sort algorithm.
+ */
 class CountingSort {
 
   public static void main(String args[]) {

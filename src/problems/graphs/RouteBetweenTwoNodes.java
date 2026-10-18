@@ -1,8 +1,11 @@
 package problems.graphs;
 
-/** Find Route between two nodes in a graph */
 import java.util.LinkedList;
 
+/*
+ * Given a directed graph, design an algorithm to find out whether there is a route between two
+ * given nodes.
+ */
 class RouteBetweenTwoNodes {
 
   public static void main(String a[]) {

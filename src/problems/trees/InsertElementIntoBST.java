@@ -1,8 +1,11 @@
 package problems.trees;
 
-/** Insert element into binary search tree */
 import common.utils.BinaryTreeNode;
 
+/*
+ * Given the root of a Binary Search Tree (BST) and a data value, insert the new value into its
+ * appropriate position in the BST.
+ */
 class InsertElementIntoBST {
 
   public static void main(String args[]) {

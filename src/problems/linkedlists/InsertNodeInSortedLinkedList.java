@@ -1,8 +1,11 @@
 package problems.linkedlists;
 
-/** Insert node in a sorted linkedlist */
 import common.utils.ListNode;
 
+/*
+ * Given a sorted singly linked list and a new node, insert the new node into the correct position
+ * so that the linked list remains sorted.
+ */
 class InsertNodeInSortedLinkedList {
 
   private static ListNode insertNode(ListNode head, ListNode newNode) {

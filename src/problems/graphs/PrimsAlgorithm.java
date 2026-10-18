@@ -1,6 +1,9 @@
 package problems.graphs;
 
-/** Implement Prims Algorithm */
+/*
+ * Given a connected, undirected, weighted graph represented as an adjacency matrix, implement
+ * Prim's algorithm to find the Minimum Spanning Tree (MST).
+ */
 class PrimsAlgorithm {
 
   public static void main(String[] args) {

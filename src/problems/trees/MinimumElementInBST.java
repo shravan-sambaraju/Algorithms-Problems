@@ -1,8 +1,10 @@
 package problems.trees;
 
-/** Find minimum element in binary search tree */
 import common.utils.BinaryTreeNode;
 
+/*
+ * Given the root of a Binary Search Tree (BST), find the node with the minimum value in the BST.
+ */
 class MinimumElementInBST {
 
   public static void main(String args[]) {

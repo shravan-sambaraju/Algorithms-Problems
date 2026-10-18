@@ -1,6 +1,8 @@
 package problems.random;
 
-/** Print number of trailing zeros in N factorial */
+/*
+ * Write an algorithm which computes the number of trailing zeros in n factorial (n!).
+ */
 class TrailingZerosInNfactorial {
 
   private static int countFactZeros(int num) {

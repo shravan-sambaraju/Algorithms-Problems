@@ -1,11 +1,12 @@
 package problems.linkedlists;
 
-/** Partition linkedlist to even and odd across pivot */
-
-// TODO: 2019-03-08a
-
 import common.utils.ListNode;
 
+/*
+ * Write code to partition a linked list around a value x (or into even and odd values), such that
+ * all nodes less than x come before all nodes greater than or equal to x while preserving their
+ * relative order.
+ */
 class PartitionListToEvenOddPivot {
 
   private static ListNode partition(ListNode head, int K) {

@@ -1,13 +1,15 @@
 package problems.trees;
 
-/** Print level order traversal of binary tree */
 import common.utils.BinaryTreeNode;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
+/*
+ * Given a binary tree, traverse and return its node values in level-order (breadth-first traversal
+ * from top to bottom, level by level, and also in reverse level order).
+ */
 class LevelOrderTraversal {
 
   private static ArrayList<Integer> levelOrder(BinaryTreeNode root) {

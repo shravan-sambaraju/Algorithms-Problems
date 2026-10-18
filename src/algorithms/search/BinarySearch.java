@@ -1,6 +1,10 @@
 package algorithms.search;
 
-/** Java implementation of binary search */
+/*
+ * Given a sorted array of integers and a target value, implement the Binary Search algorithm to
+ * determine whether the target value exists in the array by repeatedly dividing the search
+ * interval in half.
+ */
 class BinarySearch {
 
   private static boolean contains(int[] a, int b) {

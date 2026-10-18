@@ -1,8 +1,10 @@
 package problems.stacksandqueues;
 
-/** Implement queue using two stacks */
 import java.util.Stack;
 
+/*
+ * Implement a MyQueue class which implements a FIFO queue using two stacks.
+ */
 class QueueWithTwoStacks<T> {
   private Stack<T> S1 = new Stack<T>();
   private Stack<T> S2 = new Stack<T>();

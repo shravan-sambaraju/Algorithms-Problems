@@ -1,6 +1,6 @@
 package problems.recursion;
 
-/**
+/*
  * You have 3 towers and N disks of different sizes which can slide onto any tower. The puzzle
  * starts with disks sorted in ascending order of size from top to bottom (Le., each disk sits on
  * top of an even larger one). You have the following constraints: (1) Only one disk can be moved at

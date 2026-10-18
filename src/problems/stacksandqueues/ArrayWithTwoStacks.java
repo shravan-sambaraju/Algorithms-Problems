@@ -1,8 +1,11 @@
 package problems.stacksandqueues;
 
-/** Implement array with two stacks */
 import java.util.EmptyStackException;
 
+/*
+ * Implement two stacks in a single array such that neither stack overflows until there is no space
+ * left in the entire array.
+ */
 class ArrayWithTwoStacks {
 
   private int[] dataArray;

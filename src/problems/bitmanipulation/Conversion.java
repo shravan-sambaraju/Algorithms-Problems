@@ -1,8 +1,11 @@
 package problems.bitmanipulation;
 
-/** Number of bits required to convert a to b */
 import static common.utils.UtilMethods.toFullBinaryString;
 
+/*
+ * Write a function to determine the number of bits you would need to flip to convert integer A to
+ * integer B.
+ */
 public class Conversion {
 
   private static int bitSwapRequired(int a, int b) {

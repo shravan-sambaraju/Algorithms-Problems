@@ -1,8 +1,11 @@
 package problems.stacksandqueues;
 
-/** Calculate maximum area of histogram */
 import java.util.Stack;
 
+/*
+ * Given an array of integers representing the heights of bars in a histogram where the width of
+ * each bar is 1, find the area of the largest rectangle that can be formed within the histogram.
+ */
 class MaxRectangleAreaOfHistogram {
 
   public static void main(String args[]) {

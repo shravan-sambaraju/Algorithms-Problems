@@ -1,8 +1,11 @@
 package algorithms.sorting;
 
-/** Java implementation of merge sort */
 import common.utils.UtilMethods;
 
+/*
+ * Given an array of integers, sort the elements in ascending order using the divide-and-conquer
+ * Merge Sort algorithm.
+ */
 class MergeSort {
 
   public static void main(String args[]) {

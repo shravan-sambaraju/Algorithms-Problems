@@ -1,8 +1,11 @@
 package algorithms.sorting;
 
-/** Java implementation of quick sort */
 import static common.utils.UtilMethods.intArrayToString;
 
+/*
+ * Given an array of integers, sort the elements in ascending order using the divide-and-conquer
+ * Quick Sort algorithm by partitioning the array around a pivot element.
+ */
 class QuickSort {
 
   private int array[];

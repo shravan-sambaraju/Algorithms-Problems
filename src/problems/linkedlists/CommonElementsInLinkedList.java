@@ -1,8 +1,11 @@
 package problems.linkedlists;
 
-/** find common elements in the given linkedlists */
 import common.utils.ListNode;
 
+/*
+ * Given two sorted singly linked lists, return a new linked list containing the common elements
+ * (intersection of values) present in both lists.
+ */
 class CommonElementsInLinkedList {
 
   private static ListNode commonElement(ListNode list1, ListNode list2) {

@@ -1,9 +1,13 @@
 package common.utils;
 
+/*
+ * Utility class representing a node in a binary tree with integer data and left and right child
+ * references, along with helper methods to construct and print trees.
+ */
 public class BinaryTreeNode {
-  private int data;
-  private BinaryTreeNode left;
-  private BinaryTreeNode right;
+  public int data;
+  public BinaryTreeNode left;
+  public BinaryTreeNode right;
 
   public BinaryTreeNode(int x) {
     data = x;

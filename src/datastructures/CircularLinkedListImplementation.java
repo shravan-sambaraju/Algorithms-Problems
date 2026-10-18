@@ -1,6 +1,9 @@
 package datastructures;
 
-/** Java implementation of circular linkedlist */
+/*
+ * Design and implement a Circular Linked List supporting insertion at the head and tail, deletion
+ * from the head,tail, or by value, and traversal operations.
+ */
 class CircularLinkedListImplementation {
 
   private CLLNode tail;

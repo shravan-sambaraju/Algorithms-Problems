@@ -1,16 +1,16 @@
 package problems.random;
 
-/**
- * You are given two arrays, one shorter (with all distinct elements) and one longer. Find the
- * shortest subarray in the longer array that contains all the elements in the shorter array.The
- * items can appear in any order.
- */
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+/*
+ * You are given two arrays, one shorter (with all distinct elements) and one longer. Find the
+ * shortest subarray in the longer array that contains all the elements in the shorter array.The
+ * items can appear in any order.
+ */
 class ShortestSuperSequenceArray {
 
   private static Range getShortestClosure(ArrayList<Queue<Integer>> lists) {

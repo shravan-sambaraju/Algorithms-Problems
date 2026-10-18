@@ -1,8 +1,10 @@
 package problems.stringsandarrays;
 
-/** Check if given strings are permutations of each other */
 import java.util.Arrays;
 
+/*
+ * Given two strings, write a method to decide if one is a permutation of the other.
+ */
 class CheckTwoStringsArePermutations {
 
   private static String sort(String s) {

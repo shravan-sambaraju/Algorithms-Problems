@@ -1,8 +1,11 @@
 package problems.stacksandqueues;
 
-/** check the Balancing of brackets */
 import java.util.Stack;
 
+/*
+ * Given an expression string containing parentheses, brackets, and braces '()', '{}', '[]', write
+ * a program to examine whether the pairs and the orders of symbols are balanced using a stack.
+ */
 class BalancingOfSymbols {
 
   private static boolean isValidExpression(String s) {

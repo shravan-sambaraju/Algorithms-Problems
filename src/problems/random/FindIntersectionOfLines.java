@@ -1,8 +1,8 @@
 package problems.random;
 
-/**
- * Find intersection of lines if any when given two line segments (represented as start point and
- * end point)
+/*
+ * Given two straight line segments (each represented as a start point and an end point), compute
+ * their point of intersection, if any.
  */
 class FindIntersectionOfLines {
 

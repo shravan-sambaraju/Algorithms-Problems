@@ -1,8 +1,11 @@
 package problems.stacksandqueues;
 
-/** Implement queue in linkedlist */
 import common.utils.ListNode;
 
+/*
+ * Design and implement a FIFO Queue data structure using a singly linked list supporting enqueue,
+ * dequeue, first, isEmpty, and size operations.
+ */
 class LinkedListQueue {
   private int length;
   private ListNode front, rear;

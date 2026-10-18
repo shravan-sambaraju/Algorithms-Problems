@@ -1,6 +1,9 @@
 package problems.stringsandarrays;
 
-/** Check unique characters in string */
+/*
+ * Implement an algorithm to determine if a string has all unique characters. What if you cannot
+ * use additional data structures?
+ */
 class CheckUniqueCharactersInString {
 
   // with using extra data structure

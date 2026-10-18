@@ -1,6 +1,10 @@
 package problems.stringsandarrays;
 
-/** Compress given string */
+/*
+ * Implement a method to perform basic string compression using the counts of repeated characters
+ * (e.g., the string aabcccccaaa would become a2b1c5a3). If the 'compressed' string would not
+ * become smaller than the original string, your method should return the original string.
+ */
 class StringCompression {
 
   private static String compress(String str) {

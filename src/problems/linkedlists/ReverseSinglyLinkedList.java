@@ -1,8 +1,11 @@
 package problems.linkedlists;
 
-/** Reverse given singly linkedlist */
 import common.utils.ListNode;
 
+/*
+ * Given the head of a singly linked list, reverse the linked list iteratively and recursively, and
+ * return the new head.
+ */
 class ReverseSinglyLinkedList {
 
   private static ListNode reverseListIterative(ListNode head) {

@@ -1,12 +1,12 @@
 package problems.random;
 
-/**
- * Design an algorithm to find the kth number such that the only prime factors are 3, 5, and 7. Note
- * that 3, 5, and 7 do not have to be factors, but it should not have any other prime factors.
- */
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+ * Design an algorithm to find the kth number such that the only prime factors are 3, 5, and 7. Note
+ * that 3, 5, and 7 do not have to be factors, but it should not have any other prime factors.
+ */
 class KthMultiplePrimeFactors {
 
   private static void printQueue(Queue<Integer> q, int x) {

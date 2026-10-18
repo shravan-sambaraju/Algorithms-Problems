@@ -1,10 +1,13 @@
 package problems.trees;
 
-/** Create a minimal BST from given array */
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 
+/*
+ * Given a binary tree, design an algorithm which creates a linked list of all the nodes at each
+ * depth (e.g., if you have a tree with depth D, you'll have D linked lists).
+ */
 class ListOfDepths {
 
   private static ArrayList<LinkedList<TreeNode>> createLevelLinkedList(TreeNode root) {

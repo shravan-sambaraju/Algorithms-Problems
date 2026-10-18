@@ -1,10 +1,12 @@
 package datastructures;
 
-/** Java implementation of linked stack */
 import common.utils.ListNode;
-
 import java.util.EmptyStackException;
 
+/*
+ * Design and implement a stack data structure using a singly linked list supporting push, pop,
+ * peek, isEmpty, and size operations in O(1) time.
+ */
 class LinkedStack {
 
   private int length;

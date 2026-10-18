@@ -1,6 +1,10 @@
 package problems.graphs;
 
-/** Implement Dijkstra algorithm */
+/*
+ * Given a weighted graph represented as an adjacency matrix and a source vertex, implement
+ * Dijkstra's algorithm to find the shortest path distance from the source vertex to all other
+ * vertices.
+ */
 class DijkstraAlgorithm {
 
   static final int V = 9;

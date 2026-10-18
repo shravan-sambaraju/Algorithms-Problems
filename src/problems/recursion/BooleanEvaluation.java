@@ -1,8 +1,12 @@
 package problems.recursion;
 
-/** Calculate number of ways in which given expression can be evaluated */
 import java.util.HashMap;
 
+/*
+ * Given a boolean expression consisting of the symbols 0 (false), 1 (true), & (AND), | (OR), and ^
+ * (XOR), and a desired boolean result value result, implement a function to count the number of
+ * ways of parenthesizing the expression such that it evaluates to result.
+ */
 class BooleanEvaluation {
 
   private static int count = 0;

@@ -2,7 +2,10 @@ package problems.trees;
 
 import common.utils.BinaryTreeNode;
 
-/** Create mirror of binary search tree */
+/*
+ * Given a binary tree, convert it into its mirror image (invert left and right subtrees of all
+ * nodes) and check whether two binary trees are mirrors of each other.
+ */
 class MirrorOfBinaryTree {
 
   public static void main(String args[]) {

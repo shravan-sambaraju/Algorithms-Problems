@@ -1,9 +1,12 @@
 package problems.graphs;
 
-/** Implement BFS for graph */
 import java.util.Iterator;
 import java.util.LinkedList;
 
+/*
+ * Given a directed graph represented using an adjacency list, implement the Breadth-First Search
+ * (BFS) traversal starting from a given source vertex.
+ */
 class BFS {
 
   public static void main(String args[]) {

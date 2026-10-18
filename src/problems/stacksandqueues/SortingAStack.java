@@ -1,8 +1,12 @@
 package problems.stacksandqueues;
 
-/** Sort a given stack */
 import java.util.Stack;
 
+/*
+ * Write a program to sort a stack such that the smallest items are on the top. You can use an
+ * additional temporary stack, but you may not copy the elements into any other data structure
+ * (such as an array).
+ */
 class SortingAStack {
 
   private static Stack sortStack(Stack<Integer> s) {
@@ -25,6 +29,25 @@ class SortingAStack {
     s.push(temp);
   }
 
+  public static void sortStackInterative(Stack<Integer> stack) {
+    // Write -- Your -- Code
+    Stack<Integer> newStack = new Stack<>();
+
+    while (!stack.isEmpty()) {
+      Integer value = stack.pop();
+      if (!newStack.isEmpty() && value >= newStack.peek()) {
+        newStack.push(value);
+      } else {
+        while (!newStack.isEmpty() && newStack.peek() > value) {
+          stack.push(newStack.pop());
+        }
+        newStack.push(value);
+      }
+    }
+
+    while (!newStack.isEmpty()) stack.push(newStack.pop());
+  }
+
   public static void main(String args[]) {
     Stack<Integer> stack = new Stack<Integer>();
     stack.push(4);
@@ -35,5 +58,8 @@ class SortingAStack {
     System.out.println(stack.toString());
     Stack sorted = sortStack(stack);
     System.out.println(sorted.toString());
+
+    Stack sortedIterative = sortStack(stack);
+    System.out.println(sortedIterative.toString());
   }
 }

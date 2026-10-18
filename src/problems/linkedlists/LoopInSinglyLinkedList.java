@@ -1,8 +1,12 @@
 package problems.linkedlists;
 
-/** Detect loop in a linkedlist */
 import common.utils.ListNode;
 
+/*
+ * Given a singly linked list which might contain a cycle (loop), implement an algorithm that
+ * detects whether a loop exists, finds the node at the beginning of the loop, and determines the
+ * length of the loop.
+ */
 class LoopInSinglyLinkedList {
 
   private static ListNode findBeginOfLoop(ListNode node) {

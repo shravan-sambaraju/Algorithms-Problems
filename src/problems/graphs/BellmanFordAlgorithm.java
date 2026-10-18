@@ -1,6 +1,10 @@
 package problems.graphs;
 
-/** Implement Bellman Ford algorithm */
+/*
+ * Given a weighted directed graph and a source vertex, implement the Bellman-Ford algorithm to
+ * find the shortest paths from the source vertex to all other vertices and detect negative-weight
+ * cycles.
+ */
 class BellmanFordAlgorithm {
 
   public static void main(String[] args) {

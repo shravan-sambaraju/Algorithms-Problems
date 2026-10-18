@@ -1,8 +1,10 @@
 package problems.recursion;
 
-/** Generate power set (all subsets of a set) */
 import java.util.ArrayList;
 
+/*
+ * Write a method to return all subsets (the power set) of a given set.
+ */
 class PowerSet {
 
   private static ArrayList<ArrayList<Integer>> getSubsets(ArrayList<Integer> set, int index) {

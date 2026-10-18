@@ -1,11 +1,13 @@
 package problems.trees;
 
-/** Find deepest node in binary tree */
 import common.utils.BinaryTreeNode;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+ * Given a binary tree, find and return the deepest node (the last node processed in a level-order
+ * traversal) in the binary tree.
+ */
 class FindDeepestNodeInBinaryTree {
 
   private static BinaryTreeNode getdeepestBinaryNode(BinaryTreeNode head) {

@@ -1,11 +1,13 @@
 package problems.trees;
 
-/** Validate if given binary trees are identical */
 import common.utils.BinaryTreeNode;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+ * Given the roots of two binary trees, write a function to check whether the two binary trees are
+ * structurally identical and have the same node values.
+ */
 class ValidateBinaryTreesAreIdentical {
 
   private static boolean checkIdenticalRecursive(BinaryTreeNode head1, BinaryTreeNode head2) {

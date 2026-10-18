@@ -1,9 +1,14 @@
 package problems.stacksandqueues;
 
-/** Implement stack of plates */
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 
+/*
+ * Imagine a (literal) stack of plates. If the stack gets too high, it might topple. Therefore, in
+ * real life, we would likely start a new stack when the previous stack exceeds some threshold.
+ * Implement a data structure SetOfStacks that mimics this, along with popAt(int index) which
+ * performs a pop operation on a specific sub-stack.
+ */
 class SetOfStacks {
 
   ArrayList<Stack> stacks = new ArrayList<Stack>();

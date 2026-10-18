@@ -1,6 +1,9 @@
 package problems.stacksandqueues;
 
-/** Implement dynamic size array queue */
+/*
+ * Design and implement a circular queue backed by a dynamically resizing array that automatically
+ * doubles its capacity when full and shrinks when sparsely populated.
+ */
 class DynamicSizeArrayQueue {
 
   private static int CAPACITY = 16;

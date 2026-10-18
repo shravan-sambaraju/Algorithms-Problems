@@ -1,11 +1,14 @@
 package problems.trees;
 
-/** Print if root to leaf path is equal to the given sum */
 import common.utils.BinaryTreeNode;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
+/*
+ * Given a binary tree and a target sum, determine if the tree has a root-to-leaf path such that
+ * adding up all the values along the path equals the given sum.
+ */
 class RootToLeafPathEqualsSum {
 
   public static void main(String args[]) {
@@ -45,6 +48,31 @@ class RootToLeafPathEqualsSum {
         || printPath(root.getRight(), sum - root.getData(), path)) {
       path.add(root);
       return true;
+    }
+    return false;
+  }
+
+  public boolean hasPathSum(BinaryTreeNode root, int sum) {
+    if (root == null) return false;
+    Stack<BinaryTreeNode> stackNode = new Stack<>();
+    Stack<Integer> stackValue = new Stack<>();
+
+    stackNode.push(root);
+    stackValue.push(root.getData());
+    while (!stackNode.isEmpty()) {
+      BinaryTreeNode node = stackNode.pop();
+      int value = stackValue.pop();
+      if (node.getLeft() == null && node.getRight() == null && value == sum) return true;
+      else {
+        if (node.getRight() != null) {
+          stackNode.push(node.getRight());
+          stackValue.push(node.getRight().getData() + value);
+        }
+        if (node.getLeft() != null) {
+          stackNode.push(node.getLeft());
+          stackValue.push(node.getLeft().getData() + value);
+        }
+      }
     }
     return false;
   }

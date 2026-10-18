@@ -1,6 +1,9 @@
 package datastructures;
 
-/** Java implementation of doubly linkedlist */
+/*
+ * Design and implement a Doubly Linked List supporting insertion and deletion at the head, tail,
+ * and arbitrary positions, as well as forward and backward traversal.
+ */
 class DoublyLinkedListImplementation {
 
   private DLLNode head;

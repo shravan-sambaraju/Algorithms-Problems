@@ -1,6 +1,9 @@
 package datastructures;
 
-/** Java implementation of fixed size array using stack */
+/*
+ * Design and implement a bounded stack data structure backed by a fixed-size array supporting
+ * push, pop, top, size, and isEmpty operations.
+ */
 class FixedSizeArrayStack {
 
   private static final int CAPACITY = 16;

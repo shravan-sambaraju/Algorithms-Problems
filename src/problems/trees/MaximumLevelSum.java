@@ -1,11 +1,13 @@
 package problems.trees;
 
-/** Find maximum level sum in given binary tree */
 import common.utils.BinaryTreeNode;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+ * Given a binary tree, find the level that has the maximum sum of node values and return that
+ * maximum sum.
+ */
 class MaximumLevelSum {
 
   private static void maxSumLevel(BinaryTreeNode root) {

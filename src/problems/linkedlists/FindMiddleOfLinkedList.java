@@ -1,8 +1,11 @@
 package problems.linkedlists;
 
-/** Find middle element of linkedlist */
 import common.utils.ListNode;
 
+/*
+ * Given a singly linked list, find and return the middle node of the linked list in a single pass
+ * using slow and fast pointers.
+ */
 class FindMiddleOfLinkedList {
 
   private static ListNode getMiddleNode(ListNode head) {

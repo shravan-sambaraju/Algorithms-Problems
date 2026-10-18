@@ -1,10 +1,12 @@
 package algorithms.sorting;
 
-/** Java implementation of Bucket sort */
 import java.util.Random;
-
 import static common.utils.UtilMethods.intArrayToString;
 
+/*
+ * Given an array of non-negative integers and the maximum value in the array, sort the elements in
+ * ascending order using the Bucket Sort algorithm.
+ */
 class BucketSort {
 
   private static int[] sort(int[] sequence, int maxValue) {

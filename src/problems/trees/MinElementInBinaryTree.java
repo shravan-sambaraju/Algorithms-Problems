@@ -1,11 +1,12 @@
 package problems.trees;
 
-/** Find minimum element in binary tree */
 import common.utils.BinaryTreeNode;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+ * Given a binary tree, find the minimum element value present in the binary tree.
+ */
 class MinElementInBinaryTree {
 
   private static int minElementRecursion(BinaryTreeNode head) {

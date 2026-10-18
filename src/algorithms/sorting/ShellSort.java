@@ -1,8 +1,11 @@
 package algorithms.sorting;
 
-/** Java implementation of shell sort */
 import static common.utils.UtilMethods.intArrayToString;
 
+/*
+ * Given an array of integers, sort the elements in ascending order using the Shell Sort algorithm
+ * (a generalization of insertion sort that allows the exchange of items that are far apart).
+ */
 class ShellSort {
 
   public static void main(String args[]) {

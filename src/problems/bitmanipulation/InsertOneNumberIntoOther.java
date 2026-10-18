@@ -1,11 +1,11 @@
 package problems.bitmanipulation;
 
-/**
- * Given two 32 bit numbers M and N and position i and j insert M into N where M starts at j and
- * ends at i
- */
 import static common.utils.UtilMethods.toFullBinaryString;
 
+/*
+ * You are given two 32-bit numbers, N and M, and two bit positions, i and j. Write a method to
+ * insert M into N such that M starts at bit j and ends at bit i.
+ */
 public class InsertOneNumberIntoOther {
 
   private static int updateBits(int n, int m, int i, int j) {

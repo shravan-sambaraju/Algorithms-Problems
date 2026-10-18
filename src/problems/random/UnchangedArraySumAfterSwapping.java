@@ -1,11 +1,11 @@
 package problems.random;
 
-/**
+import java.util.Arrays;
+
+/*
  * Given two arrays of integers, find a pair of values (one value from each array) that you can swap
  * to give the two arrays the same sum.
  */
-import java.util.Arrays;
-
 class UnchangedArraySumAfterSwapping {
 
   private static int sum(int[] array) {

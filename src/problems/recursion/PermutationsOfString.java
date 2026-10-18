@@ -1,8 +1,10 @@
 package problems.recursion;
 
-/** Permutations of strings without duplicates in string */
 import java.util.ArrayList;
 
+/*
+ * Write a method to compute all permutations of a string of unique characters.
+ */
 class PermutationsOfString {
 
   private static void getPerms(String prefix, String remainder, ArrayList<String> result) {

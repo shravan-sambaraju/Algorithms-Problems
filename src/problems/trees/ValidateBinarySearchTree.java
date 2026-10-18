@@ -2,7 +2,9 @@ package problems.trees;
 
 import common.utils.BinaryTreeNode;
 
-/** Validate if given tree is binary search tree */
+/*
+ * Implement a function to check if a binary tree is a valid Binary Search Tree (BST).
+ */
 class ValidateBinarySearchTree {
 
   private BinaryTreeNode prev;

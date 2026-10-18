@@ -1,8 +1,11 @@
 package problems.recursion;
 
-/** Place N chess queens on an N×N chessboard so that no two queens attack each other */
 import java.util.ArrayList;
 
+/*
+ * Write an algorithm to print all ways of arranging N queens on an NxN chessboard so that none of
+ * them share the same row, column, or diagonal.
+ */
 class NNQueen {
   private static int GRID_SIZE = 8;
 

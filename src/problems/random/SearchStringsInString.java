@@ -1,14 +1,13 @@
 package problems.random;
 
-/**
- * Given a string b and an array of smaller strings T, design a method to search b for each small
- * string in T.
- */
 import common.utils.HashMapList;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/*
+ * Given a string b and an array of smaller stringsandarrays T, design a method to search b for each
+ * small string in T.
+ */
 class SearchStringsInString {
 
   private static void subtractValue(ArrayList<Integer> locations, int delta) {

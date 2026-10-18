@@ -1,8 +1,11 @@
 package problems.linkedlists;
 
-/** Find N by Kth modular node in linkedlist */
 import common.utils.ListNode;
 
+/*
+ * Given a singly linked list and an integer k, find the last node whose 1-based position n is
+ * divisible by k (i.e., n % k == 0), also known as the modular node.
+ */
 class FindNbyKthModularNode {
 
   public static void main(String args[]) {

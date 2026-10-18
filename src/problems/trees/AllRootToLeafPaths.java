@@ -1,8 +1,11 @@
 package problems.trees;
 
-/** Find all root to leaf paths in binary tree */
 import common.utils.BinaryTreeNode;
 
+/*
+ * Given a binary tree, find and print all root-to-leaf paths from the root node down to every leaf
+ * node.
+ */
 class AllRootToLeafPaths {
 
   public static void main(String args[]) {
