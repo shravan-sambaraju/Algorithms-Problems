@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/*
+ * Given an array of unsorted numbers and a target number, find all unique quadruplets in it, whose
+ * sum is equal to the target number.
+ */
 public class FourSumInArrayEqualsTarget {
 
   public static List<List<Integer>> searchQuadruplets(int[] arr, int target) {

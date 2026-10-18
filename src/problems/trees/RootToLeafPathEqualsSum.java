@@ -1,12 +1,14 @@
 package problems.trees;
 
-/* Print if root to leaf path is equal to the given sum */
 import common.utils.BinaryTreeNode;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
+/*
+ * Given a binary tree and a target sum, determine if the tree has a root-to-leaf path such that
+ * adding up all the values along the path equals the given sum.
+ */
 class RootToLeafPathEqualsSum {
 
   public static void main(String args[]) {

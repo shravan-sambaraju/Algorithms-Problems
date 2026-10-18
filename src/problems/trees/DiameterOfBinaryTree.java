@@ -1,8 +1,11 @@
 package problems.trees;
 
-/* Find diameter of binary tree */
 import common.utils.BinaryTreeNode;
 
+/*
+ * Given a binary tree, compute the diameter (or width) of the tree, which is the number of nodes
+ * on the longest path between any two leaves in the tree.
+ */
 class DiameterOfBinaryTree {
 
   private static int diameter(BinaryTreeNode root) {

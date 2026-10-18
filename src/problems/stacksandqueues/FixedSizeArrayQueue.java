@@ -1,6 +1,9 @@
 package problems.stacksandqueues;
 
-/* Implement fixed size array queue */
+/*
+ * Design and implement a bounded circular queue using a fixed-size array supporting enQueue,
+ * deQueue, isEmpty, isFull, and size operations.
+ */
 class FixedSizeArrayQueue {
 
   private static final int CAPACITY = 16;

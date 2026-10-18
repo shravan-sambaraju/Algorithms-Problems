@@ -1,5 +1,9 @@
 package tobeorganized.recursion;
 
+/*
+ * Given a number sequence, find the minimum number of elements that should be deleted to make the
+ * remaining sequence sorted.
+ */
 public class DeletionsToMakeSequenceSorted {
 
   public static void main(String[] args) {

@@ -3,6 +3,9 @@ package tobeorganized.recursion;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Given a set of distinct numbers, find all of its permutations.
+ */
 public class PermutationsOfNumbers {
   public static List<List<Integer>> generatePermutations(int[] nums) {
     List<List<Integer>> result = new ArrayList<>();

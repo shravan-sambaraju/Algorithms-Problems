@@ -1,8 +1,10 @@
 package problems.linkedlists;
 
-/* Rotate linkedlist by k */
 import common.utils.ListNode;
 
+/*
+ * Given a singly linked list, rotate the list to the right by k places, where k is non-negative.
+ */
 class RotateLinkedListByK {
 
   private static ListNode rotateRight(ListNode head, int n) {

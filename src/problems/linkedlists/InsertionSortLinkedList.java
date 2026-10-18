@@ -1,8 +1,11 @@
 package problems.linkedlists;
 
-/* Sort given linkedlist using insertion sort */
 import common.utils.ListNode;
 
+/*
+ * Given the head of a singly linked list, sort the list in ascending order using the Insertion
+ * Sort algorithm.
+ */
 class InsertionSortLinkedList {
 
   private static ListNode insertionSortList(ListNode head) {

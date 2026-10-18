@@ -1,8 +1,11 @@
 package problems.recursion;
 
-/* Generate all combination bits of given size k size using recursion */
 import java.util.Arrays;
 
+/*
+ * Given a positive integer n (and base k), generate all possible n-bit binary strings (and k-ary
+ * strings of length n) using recursion and backtracking.
+ */
 class GenerateStringOfNBits {
 
   private int ArrayOfBits[];

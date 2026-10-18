@@ -1,5 +1,9 @@
 package tobeorganized.random;
 
+/*
+ * Given a sorted array, create a new array containing squares of all the numbers of the input
+ * array in the sorted order.
+ */
 public class SquaresOfSortedArray {
 
   public static int[] makeSquares(int[] arr) {

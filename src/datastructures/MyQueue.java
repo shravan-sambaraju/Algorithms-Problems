@@ -1,5 +1,9 @@
 package datastructures;
 
+/*
+ * Generic array-based queue implementation supporting enqueue, dequeue, top, isEmpty, and isFull
+ * operations.
+ */
 public class MyQueue<V> {
   private int maxSize;
   private V[] array;

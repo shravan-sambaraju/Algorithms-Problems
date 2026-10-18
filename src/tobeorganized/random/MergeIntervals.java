@@ -1,13 +1,16 @@
 package tobeorganized.random;
 
 import common.utils.Interval;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+/*
+ * Given a list of intervals, merge all the overlapping intervals to produce a list that has only
+ * mutually exclusive intervals.
+ */
 public class MergeIntervals {
 
   public static List<Interval> merge(List<Interval> intervals) {

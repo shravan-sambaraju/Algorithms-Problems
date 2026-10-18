@@ -1,5 +1,10 @@
 package tobeorganized.random;
 
+/*
+ * Given two strings s and t, determine if they are isomorphic. Two strings are isomorphic if the
+ * characters in s can be replaced to get t, preserving the order of characters with a one-to-one
+ * mapping.
+ */
 class CheckIfTwoGivenStringsAreIsomorphic {
 
   public static boolean isIsomorphic(String s, String t) {

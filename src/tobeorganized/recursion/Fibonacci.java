@@ -1,5 +1,8 @@
 package tobeorganized.recursion;
 
+/*
+ * Write a function to calculate the nth Fibonacci number.
+ */
 class Fibonacci {
 
   // (Time Complexity - O(N), Space complexity - O(N))
@@ -40,8 +43,7 @@ class Fibonacci {
     dp[0] = 0;
     dp[1] = 1;
 
-    for (int i = 2; i <= n; i++)
-      dp[i] = dp[i - 1] + dp[i - 2];
+    for (int i = 2; i <= n; i++) dp[i] = dp[i - 1] + dp[i - 2];
 
     return dp[n];
   }

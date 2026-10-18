@@ -5,6 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/*
+ * Given an expression containing digits and operations (+, -, *), find all possible ways in which
+ * the expression can be evaluated by grouping the numbers and operators using parentheses.
+ */
 public class WaysToEvaluateExpression {
   // memoization map
   Map<String, List<Integer>> map = new HashMap<String, List<Integer>>();

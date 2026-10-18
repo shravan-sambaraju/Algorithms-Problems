@@ -1,5 +1,9 @@
 package tobeorganized.random;
 
+/*
+ * Given a Bitonic array (an array that is first increasing and then decreasing) and a number
+ * 'key', find the index of 'key' in the Bitonic array.
+ */
 public class SearchInIncreasingDecreasingArray {
   public static int search(int[] arr, int key) {
     int maxIndex = findMax(arr);

@@ -7,7 +7,10 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
-/* */
+/*
+ * Design and implement a thread-safe class that accepts callbacks to be executed after a user-
+ * specified delay in seconds.
+ */
 class DeferredCallBackExecutorDemonstration {
   public static void main(String args[]) throws InterruptedException {
     DeferredCallbackExecutor.runLateThenEarlyCallback();

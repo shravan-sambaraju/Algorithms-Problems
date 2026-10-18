@@ -1,8 +1,9 @@
 package tobeorganized.random;
 
-import java.util.HashMap;
-import java.util.Map;
-
+/*
+ * Given an array of positive numbers and a positive number 'k', find the maximum sum of any
+ * contiguous subarray of size 'k'.
+ */
 class MaximumSizeSubArraySumEqualsK {
 
   public static int findMaxSumSubArray(int k, int[] arr) {
@@ -23,10 +24,9 @@ class MaximumSizeSubArraySumEqualsK {
 
   public static void main(String[] args) {
     System.out.println(
-            "Maximum sum of a subarray of size K: "
-                    + findMaxSumSubArray(3, new int[] {2, 1, 5, 1, 3, 2}));
+        "Maximum sum of a subarray of size K: "
+            + findMaxSumSubArray(3, new int[] {2, 1, 5, 1, 3, 2}));
     System.out.println(
-            "Maximum sum of a subarray of size K: "
-                    + findMaxSumSubArray(2, new int[] {2, 3, 4, 1, 5}));
+        "Maximum sum of a subarray of size K: " + findMaxSumSubArray(2, new int[] {2, 3, 4, 1, 5}));
   }
 }

@@ -2,6 +2,9 @@ package tobeorganized.random;
 
 import java.util.HashMap;
 
+/*
+ * Given a string, find the longest substring in it with no more than K distinct characters.
+ */
 class LongSubStringWithKUniqueChars {
 
   public static String solution(String s, int m) {
@@ -49,7 +52,8 @@ class LongSubStringWithKUniqueChars {
     for (int j = 0; j < s.length(); j++) {
       if (count[s.charAt(j)]++ == 0) num++;
       if (num > k) {
-        while (--count[s.charAt(i++)] > 0) ;
+        while (--count[s.charAt(i++)] > 0)
+          ;
         num--;
       }
       res = Math.max(res, j - i + 1);

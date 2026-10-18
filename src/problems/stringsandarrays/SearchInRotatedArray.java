@@ -1,6 +1,10 @@
 package problems.stringsandarrays;
 
-/* Java implementation to search in rotated array */
+/*
+ * Given a sorted array of n integers that has been rotated an unknown number of times, write code
+ * to find an element in the array. You may assume that the array was originally sorted in
+ * increasing order.
+ */
 class SearchInRotatedArray {
 
   private static int search(int a[], int x) {

@@ -1,10 +1,13 @@
 package problems.stringsandarrays;
 
-/* Print Array in form of peaks and valleys */
 import common.utils.UtilMethods;
-
 import java.util.Arrays;
 
+/*
+ * In an array of integers, a 'peak' is an element which is greater than or equal to the adjacent
+ * integers and a 'valley' is an element which is less than or equal to the adjacent integers.
+ * Given an array of integers, sort the array into an alternating sequence of peaks and valleys.
+ */
 class ArrayPeaksAndValleys {
 
   private static void sortValleyPeak(int[] array) {

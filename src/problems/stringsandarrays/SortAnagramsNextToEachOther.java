@@ -1,11 +1,12 @@
 package problems.stringsandarrays;
 
-/* Sort string anagrams next to each other */
 import java.util.Arrays;
 import java.util.Comparator;
-
 import static common.utils.UtilMethods.stringArrayToString;
 
+/*
+ * Write a method to sort an array of strings so that all the anagrams are next to each other.
+ */
 class SortAnagramsNextToEachOther {
 
   public static void main(String[] args) {

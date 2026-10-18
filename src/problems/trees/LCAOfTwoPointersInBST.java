@@ -1,8 +1,11 @@
 package problems.trees;
 
-/* Lowest common ancestor of two pointers in binary search tree */
 import common.utils.BinaryTreeNode;
 
+/*
+ * Given a Binary Search Tree (BST) and two nodes, find the Lowest Common Ancestor (LCA) of the two
+ * given nodes in the BST.
+ */
 class LCAOfTwoPointersInBST {
 
   private static BinaryTreeNode findLCA(BinaryTreeNode root, BinaryTreeNode a, BinaryTreeNode b) {

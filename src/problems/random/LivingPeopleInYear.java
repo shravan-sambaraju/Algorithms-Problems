@@ -1,5 +1,7 @@
 package problems.random;
 
+import java.util.Random;
+
 /*
  * Given a list of people with their birth and death years, implement a method to compute the year
  * with the most number of people alive. You may assume that all people were born between 1900 and
@@ -7,8 +9,6 @@ package problems.random;
  * in that year'scount. For example, Person (birth =1908, death =1909) is included in the counts for
  * both 1908 and 1909.
  */
-import java.util.Random;
-
 class LivingPeopleInYear {
 
   private static int maxAliveYear(Person[] people, int min, int max) {

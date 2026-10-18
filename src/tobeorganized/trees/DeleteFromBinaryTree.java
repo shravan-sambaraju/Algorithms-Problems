@@ -2,6 +2,9 @@ package tobeorganized.trees;
 
 import common.utils.BinaryTreeNode;
 
+/*
+ * Implement a Binary Search Tree (BST) with support for inserting, searching, and deleting nodes.
+ */
 public class DeleteFromBinaryTree {
 
   private BinaryTreeNode root;

@@ -1,5 +1,9 @@
 package tobeorganized.random;
 
+/*
+ * Given an array of integers nums containing n + 1 integers where each integer is in the range [1,
+ * n] inclusive, there is only one repeated number in nums. Return this repeated number.
+ */
 class FindTheDuplicateNumber {
 
   public int findDuplicate(int[] nums) {

@@ -1,5 +1,11 @@
 package problems.random;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map.Entry;
+import java.util.Set;
+
 /*
  * Each year, the government releases a list of the 10000 most common baby names and their
  * frequencies (the number of babies with that name). The only problem with this is that some names
@@ -10,12 +16,6 @@ package problems.random;
  * synonyms. (It is both transitive and symmetric.) In the final list, any name can be used as the
  * "real " name.
  */
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map.Entry;
-import java.util.Set;
-
 class MostCommonBabyNamesSynonyms {
 
   private static Graph constructGraph(HashMap<String, Integer> names) {

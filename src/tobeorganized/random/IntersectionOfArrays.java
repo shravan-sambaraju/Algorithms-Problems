@@ -3,6 +3,9 @@ package tobeorganized.random;
 import java.util.HashSet;
 import java.util.Set;
 
+/*
+ * Given two integer arrays nums1 and nums2, return an array of their intersection.
+ */
 class IntersectionOfArrays {
 
   public int[] intersection(int[] nums1, int[] nums2) {

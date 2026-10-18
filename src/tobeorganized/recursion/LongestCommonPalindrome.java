@@ -1,5 +1,8 @@
 package tobeorganized.recursion;
 
+/*
+ * Given two strings s1 and s2, find the length of the longest common palindromic substring.
+ */
 class LongestCommonPalindrome {
 
   public static void main(String[] args) {

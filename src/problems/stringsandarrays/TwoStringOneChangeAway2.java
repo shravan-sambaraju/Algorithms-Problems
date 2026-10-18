@@ -1,6 +1,9 @@
 package problems.stringsandarrays;
 
-/* String which are one change away */
+/*
+ * Given two strings, write a single-pass method to check if they are at most one edit (insert,
+ * remove, or replace a character) away from each other.
+ */
 class TwoStringOneChangeAway2 {
 
   private static boolean oneEditReplace(String s1, String s2) {

@@ -1,5 +1,9 @@
 package tobeorganized.recursion;
 
+/*
+ * Given strings s1 and s2, we need to transform s1 into s2 by deleting, inserting, or replacing
+ * characters. Write a function to calculate the count of the minimum number of edit operations.
+ */
 public class EditDistance {
 
   public static void main(String[] args) {

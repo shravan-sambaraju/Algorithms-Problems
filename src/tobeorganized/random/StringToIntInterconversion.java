@@ -1,5 +1,10 @@
 package tobeorganized.random;
 
+/*
+ * Implement methods that take a string representing an integer and return the corresponding
+ * integer, and vice versa. The code should handle negative integers without using library
+ * functions like Integer.parseInt.
+ */
 public class StringToIntInterconversion {
 
   static int x = 0;

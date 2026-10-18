@@ -1,11 +1,13 @@
 package problems.trees;
 
-/* Find element in binary node */
 import common.utils.BinaryTreeNode;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+ * Given a binary tree and a target value, search whether the target value is present in the binary
+ * tree (both recursively and iteratively).
+ */
 class FindAnElementInBinaryTree {
 
   private static boolean findElementLevelOrder(BinaryTreeNode head, int data) {

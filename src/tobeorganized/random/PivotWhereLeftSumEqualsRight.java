@@ -1,5 +1,10 @@
 package tobeorganized.random;
 
+/*
+ * Given an array of integers nums, calculate the pivot index of this array. The pivot index is the
+ * index where the sum of all the numbers strictly to the left of the index is equal to the sum of
+ * all the numbers strictly to the index's right.
+ */
 class PivotWhereLeftSumEqualsRight {
 
   public static int findPivot(int[] nums) {

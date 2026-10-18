@@ -1,5 +1,9 @@
 package tobeorganized.recursion;
 
+/*
+ * Given a sequence, find the length of its Longest Palindromic Subsequence (LPS). In a palindromic
+ * subsequence, elements read the same backward and forward.
+ */
 class LongestPalindromicSubsequence {
 
   public static void main(String[] args) {

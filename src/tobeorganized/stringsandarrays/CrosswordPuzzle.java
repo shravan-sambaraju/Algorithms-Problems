@@ -3,6 +3,10 @@ package tobeorganized.stringsandarrays;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/*
+ * Given a 2D character grid and a target word, determine if the word can be found in the grid
+ * along any of the 8 horizontal, vertical, or diagonal directions.
+ */
 class CrosswordPuzzle {
 
   public static Boolean isValid(int row, int col, Character[][] map, int idx, String str) {

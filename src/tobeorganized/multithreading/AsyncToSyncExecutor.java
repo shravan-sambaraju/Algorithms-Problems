@@ -1,11 +1,17 @@
 package tobeorganized.multithreading;
 
+/*
+ * Imagine we have an Executor class that performs some useful task asynchronously via the method
+ * asynchronousExecution(). In addition the method accepts a callback object which implements the
+ * Callback interface. the object's done() method is invoked when the asynchronous execution is
+ * done. Convert the asynchronous execution into a synchronous execution without changing the
+ * original classes.
+ */
 interface Callback {
 
   public void done();
 }
 
-/* */
 class AsyncToSyncExecutor {
   public static void main(String args[]) throws Exception {
     SynchronousExecutor executor = new SynchronousExecutor();

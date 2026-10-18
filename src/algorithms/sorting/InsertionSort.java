@@ -1,9 +1,12 @@
 package algorithms.sorting;
 
-/* Java implementation of insertion sort */
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Given a list of integers, sort the elements in ascending order using the Insertion Sort
+ * algorithm by iteratively inserting each element into its proper position in the sorted portion.
+ */
 class InsertionSort {
 
   public static void main(String[] args) {

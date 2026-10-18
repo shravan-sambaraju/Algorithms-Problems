@@ -1,10 +1,13 @@
 package tobeorganized.trees;
 
 import common.utils.BinaryTreeNode;
-
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Given a number 'n', write a function to return all structurally unique Binary Search Trees (BST)
+ * that can store values 1 to 'n'.
+ */
 public class WaysToConstructBinaryTree {
   public static List<BinaryTreeNode> findUniqueTrees(int n) {
     if (n <= 0) return new ArrayList<BinaryTreeNode>();

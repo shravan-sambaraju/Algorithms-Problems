@@ -1,8 +1,11 @@
 package problems.stacksandqueues;
 
-/* Reverse a given stack */
 import java.util.Stack;
 
+/*
+ * Given a stack of integers, reverse the elements of the stack in-place using only recursion and
+ * standard stack operations (push, pop, isEmpty).
+ */
 class ReverseStack {
 
   private static Stack reverse(Stack stack) {

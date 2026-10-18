@@ -1,5 +1,8 @@
 package tobeorganized.random;
 
+/*
+ * Given an unsorted integer array, find the smallest missing positive integer.
+ */
 class MissingNumberFromArray {
 
   static int segregate(int arr[], int size) {

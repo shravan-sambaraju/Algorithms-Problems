@@ -2,6 +2,9 @@ package problems.trees;
 
 import java.util.*;
 
+/*
+ * Given a list of strings, count and print the frequency of each distinct element in the list.
+ */
 public class Trails {
 
   // Program to count the frequency of the elements in a List

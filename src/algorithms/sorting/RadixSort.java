@@ -1,8 +1,11 @@
 package algorithms.sorting;
 
-/* Java implementation of radix sort */
 import static common.utils.UtilMethods.intArrayToString;
 
+/*
+ * Given an array of positive integers, sort the array in ascending order using the non-comparative
+ * Radix Sort algorithm by processing individual digits from least significant to most significant.
+ */
 class RadixSort {
 
   public static void main(String args[]) {

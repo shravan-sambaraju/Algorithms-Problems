@@ -1,8 +1,11 @@
 package problems.linkedlists;
 
-/* Reverse the given linkedlist by k nodes */
 import common.utils.ListNode;
 
+/*
+ * Given a linked list, reverse the nodes of the linked list k at a time and return its modified
+ * head.
+ */
 class ReverseKNodesLinkedList {
 
   private static ListNode reverseNodesRecursive(ListNode head, int k) {

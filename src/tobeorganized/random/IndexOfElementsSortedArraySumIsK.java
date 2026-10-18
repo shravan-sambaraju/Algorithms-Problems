@@ -1,5 +1,9 @@
 package tobeorganized.random;
 
+/*
+ * Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find
+ * two numbers such that they add up to a specific target number.
+ */
 class IndexOfElementsSortedArraySumIsK {
   public int[] twoSum(int[] num, int target) {
     int[] indices = new int[2];

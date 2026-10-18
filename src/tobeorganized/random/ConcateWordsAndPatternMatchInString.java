@@ -5,6 +5,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/*
+ * Given a string and a list of words, find all the starting indices of substrings in the given
+ * string that are a concatenation of all the given words exactly once without any overlapping of
+ * words.
+ */
 public class ConcateWordsAndPatternMatchInString {
 
   public static List<Integer> findWordConcatenation(String str, String[] words) {

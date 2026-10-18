@@ -1,5 +1,10 @@
 package tobeorganized.graphs;
 
+/*
+ * Given a board with m by n cells, where each cell has an initial state: live (1) or dead (0),
+ * compute and print the next state (generation) of the board according to the rules of Conway's
+ * Game of Life.
+ */
 class ConwayGameOfLife {
   public static void main(String[] args) {
     int M = 10, N = 10;

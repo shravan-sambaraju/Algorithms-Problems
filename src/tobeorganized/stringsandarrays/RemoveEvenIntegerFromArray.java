@@ -1,5 +1,9 @@
 package tobeorganized.stringsandarrays;
 
+/*
+ * Given an array of integers, remove all the even integers from it and return an array containing
+ * only the odd integers.
+ */
 public class RemoveEvenIntegerFromArray {
   public static int[] removeEven(int[] arr) {
     int oddElements = 0;

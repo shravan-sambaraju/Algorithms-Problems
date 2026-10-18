@@ -1,5 +1,8 @@
 package tobeorganized.recursion;
 
+/*
+ * Given an array of integers, recursively replace all negative numbers in the array with 0.
+ */
 public class ReplaceNegativesWithZeros {
 
   private static void replaceNegativeValues(int[] a, int currentIndex) {

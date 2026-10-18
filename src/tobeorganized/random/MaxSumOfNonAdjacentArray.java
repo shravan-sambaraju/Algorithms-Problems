@@ -1,5 +1,9 @@
 package tobeorganized.random;
 
+/*
+ * Given an array of integers, find the maximum sum of a subsequence such that no two elements in
+ * the subsequence are adjacent in the array.
+ */
 class MaxSumOfNonAdjacentArray {
 
   private static int calculateSum(int array[], int n) {

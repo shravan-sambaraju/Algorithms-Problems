@@ -1,8 +1,11 @@
 package problems.stacksandqueues;
 
-/* Create a stack which return minimum element in o(1) time */
 import java.util.Stack;
 
+/*
+ * How would you design a stack which, in addition to push and pop, has a function min which
+ * returns the minimum element? Push, pop and min should all operate in O(1) time.
+ */
 class MinimumFunctionInStack {
 
   public static void main(String[] args) {

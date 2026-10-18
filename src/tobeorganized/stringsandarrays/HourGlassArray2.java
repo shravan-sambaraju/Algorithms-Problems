@@ -5,6 +5,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+/*
+ * Given a 6x6 2D array, an hourglass is a subset of values with indices falling in a 3x3 pattern
+ * of 3 top, 1 middle, and 3 bottom elements. Calculate the hourglass sum for every hourglass in
+ * the array and return the maximum hourglass sum.
+ */
 public class HourGlassArray2 {
 
   private static final Scanner scanner = new Scanner(System.in);

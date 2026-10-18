@@ -1,10 +1,13 @@
 package problems.random;
 
-/* Find pairs in array whose sum is k */
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
+/*
+ * Design an algorithm to find all pairs of integers within an array which sum to a specified
+ * target value.
+ */
 class PairInArrayEqualsTargetSum {
 
   static int arr[] = new int[] {1, 5, 7, -1, 5};

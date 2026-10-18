@@ -3,6 +3,10 @@ package datastructures;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * Implementation of a Trie (Prefix Tree) data structure supporting word insertion, search, and
+ * deletion.
+ */
 public class TrieNode {
   Map<Character, TrieNode> children;
   boolean isEndOfWord;

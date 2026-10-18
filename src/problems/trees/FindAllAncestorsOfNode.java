@@ -1,8 +1,11 @@
 package problems.trees;
 
-/* Find all ancestors of given node */
 import common.utils.BinaryTreeNode;
 
+/*
+ * Given a binary tree and a target node, find and print all ancestors of the given target node in
+ * the binary tree.
+ */
 class FindAllAncestorsOfNode {
 
   private static boolean printAllAncestors(BinaryTreeNode root, BinaryTreeNode node) {

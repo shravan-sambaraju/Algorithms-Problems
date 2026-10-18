@@ -1,8 +1,11 @@
 package datastructures;
 
-/* Java implementation of linkedlist */
 import common.utils.ListNode;
 
+/*
+ * Design and implement a Singly Linked List data structure supporting insertion at the beginning,
+ * end, and arbitrary positions, as well as deletion by position or value.
+ */
 class LinkedListImplementation {
 
   private ListNode head;

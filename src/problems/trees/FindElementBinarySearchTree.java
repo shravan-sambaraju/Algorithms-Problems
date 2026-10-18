@@ -1,8 +1,11 @@
 package problems.trees;
 
-/* Find element in binary search tree */
 import common.utils.BinaryTreeNode;
 
+/*
+ * Given the root of a Binary Search Tree (BST) and a target value, search for the node containing
+ * the target value in the BST.
+ */
 class FindElementBinarySearchTree {
 
   public static void main(String args[]) {

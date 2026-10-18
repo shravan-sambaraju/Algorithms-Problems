@@ -1,12 +1,15 @@
 package tobeorganized.random;
 
 import common.utils.Interval;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.PriorityQueue;
 
+/*
+ * For 'K' employees, we are given a list of intervals representing the working hours of each
+ * employee. Our goal is to find out if there is a free interval that is common to all employees.
+ */
 class EmployeeInterval {
   Interval interval; // interval representing employee's working hours
   int employeeIndex; // index of the list containing working hours of this employee
@@ -17,7 +20,8 @@ class EmployeeInterval {
     this.employeeIndex = employeeIndex;
     this.intervalIndex = intervalIndex;
   }
-};
+}
+;
 
 class EmployeeFreeTime {
 

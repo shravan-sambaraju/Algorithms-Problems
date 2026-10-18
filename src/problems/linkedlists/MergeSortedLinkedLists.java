@@ -1,8 +1,11 @@
 package problems.linkedlists;
 
-/* Merge given sorted linkedlists */
 import common.utils.ListNode;
 
+/*
+ * Given two sorted singly linked lists, merge them into a single sorted linked list and return its
+ * head.
+ */
 class MergeSortedLinkedLists {
 
   private static ListNode mergeUsingRecursion(ListNode head, ListNode head1) {

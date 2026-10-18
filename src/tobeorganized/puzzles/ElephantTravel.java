@@ -1,5 +1,10 @@
 package tobeorganized.puzzles;
 
+/*
+ * Given a total number of sugarcanes, a travel distance, and an elephant's maximum carrying
+ * capacity (where the elephant consumes 1 sugarcane per unit of distance traveled), calculate the
+ * maximum number of sugarcanes that can be transported to the destination.
+ */
 public class ElephantTravel {
 
   public static int calculateMaxsugarCanes(

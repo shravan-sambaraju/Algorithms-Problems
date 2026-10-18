@@ -1,11 +1,13 @@
 package problems.trees;
 
-/* Print size of binary tree */
 import common.utils.BinaryTreeNode;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+ * Given a binary tree, compute its size (the total number of nodes in the tree) both recursively
+ * and iteratively.
+ */
 class SizeOfBinaryTree {
 
   private static int getSizeRecursive(BinaryTreeNode node) {

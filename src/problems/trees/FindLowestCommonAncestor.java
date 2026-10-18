@@ -1,8 +1,6 @@
 package problems.trees;
 
-/* Find lowest common ancestor of given node */
 import common.utils.BinaryTreeNode;
-
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.HashMap;
@@ -10,6 +8,10 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+/*
+ * Design an algorithm and write code to find the first common ancestor (Lowest Common Ancestor) of
+ * two nodes in a binary tree. Avoid storing additional nodes in a data structure.
+ */
 class FindLowestCommonAncestor {
 
   private static BinaryTreeNode lcaRecursion(

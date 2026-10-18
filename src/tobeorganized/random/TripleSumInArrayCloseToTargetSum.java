@@ -2,6 +2,10 @@ package tobeorganized.random;
 
 import java.util.Arrays;
 
+/*
+ * Given an array of unsorted numbers and a target number, find a triplet in the array whose sum is
+ * as close to the target number as possible, return the sum of the triplet.
+ */
 public class TripleSumInArrayCloseToTargetSum {
 
   public static int searchTriplet(int[] arr, int targetSum) {

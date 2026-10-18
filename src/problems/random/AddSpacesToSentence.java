@@ -1,10 +1,15 @@
 package problems.random;
 
-/* Add spaces to sentence where spaces are missing */
 import java.util.HashSet;
-
 import static common.utils.UtilMethods.getListOfWords;
 
+/*
+ * Oh, no! You have accidentally removed all spaces, punctuation, and capitalization in a lengthy
+ * document. A sentence like 'I reset the computer. It still didn't boot!' became
+ * 'iresetthecomputeritstilldidntboot'. Given a dictionary of valid words and the unspaced string,
+ * find the optimal way to re-insert spaces so as to minimize the number of unrecognized
+ * characters.
+ */
 class AddSpacesToSentence {
 
   private static String bestSplit(HashSet<String> dictionary, String sentence) {

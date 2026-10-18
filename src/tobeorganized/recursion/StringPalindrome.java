@@ -1,5 +1,8 @@
 package tobeorganized.recursion;
 
+/*
+ * Write a recursive function to check whether a given string is a palindrome.
+ */
 public class StringPalindrome {
 
   public static boolean isPalindrome(String text) {

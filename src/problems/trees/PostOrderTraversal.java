@@ -1,13 +1,15 @@
 package problems.trees;
 
-/* Print post order traversal of binary tree */
 import common.utils.BinaryTreeNode;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
+/*
+ * Given a binary tree, perform a Post-Order traversal (Left, Right, Root) both recursively and
+ * iteratively using a stack.
+ */
 class PostOrderTraversal {
 
   private static void recursivePostOrder(BinaryTreeNode head) {

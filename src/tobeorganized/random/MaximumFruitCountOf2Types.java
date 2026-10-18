@@ -3,6 +3,11 @@ package tobeorganized.random;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * Given an array of characters where each character represents a fruit tree, you are given two
+ * baskets, and your goal is to put the maximum number of fruits in each basket. The only
+ * restriction is that each basket can have only one type of fruit.
+ */
 public class MaximumFruitCountOf2Types {
 
   public static int findLength(char[] arr) {

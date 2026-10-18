@@ -2,6 +2,10 @@ package tobeorganized.random;
 
 import datastructures.MyQueue;
 
+/*
+ * Given a positive number n, generate binary numbers from 1 to n in the form of strings using a
+ * queue.
+ */
 public class GenerateBinaryNumbersTillN {
 
   // 1.Start with Enqueuing 1.

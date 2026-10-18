@@ -1,5 +1,9 @@
 package tobeorganized.recursion;
 
+/*
+ * Given a string, find the length of its Longest Palindromic Substring (LPS). In a palindromic
+ * string, elements read the same backward and forward.
+ */
 class LongestPalindromicSubstring {
 
   public static void main(String[] args) {

@@ -1,11 +1,13 @@
 package problems.trees;
 
-/* Find minimum depth of binary tree */
 import common.utils.BinaryTreeNode;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+ * Given a binary tree, find its minimum depth, which is the number of nodes along the shortest
+ * path from the root node down to the nearest leaf node.
+ */
 class MinimumDepthOfBinaryTree {
 
   private static int getMinimumDepthRecursive(BinaryTreeNode node) {

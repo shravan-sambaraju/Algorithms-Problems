@@ -1,5 +1,9 @@
 package tobeorganized.recursion;
 
+/*
+ * Given a number sequence, find the length of its Longest Increasing Subsequence (LIS) using
+ * dynamic programming.
+ */
 class LongestIncreasingSubsequenceDP {
 
   public static void main(String[] args) {

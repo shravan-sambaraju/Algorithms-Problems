@@ -1,9 +1,11 @@
 package tobeorganized.linkedlist;
 
 import common.utils.ListNode;
-
 import java.util.PriorityQueue;
 
+/*
+ * Given an array of 'K' sorted LinkedLists, merge them into one sorted list.
+ */
 public class MergeKSortedLists {
 
   public static ListNode merge(ListNode[] lists) {

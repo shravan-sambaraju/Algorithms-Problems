@@ -1,8 +1,12 @@
 package algorithms.sorting;
 
-/* Java implementation of selection sort */
 import static common.utils.UtilMethods.intArrayToString;
 
+/*
+ * Given an array of integers, sort the array in ascending order using the Selection Sort algorithm
+ * by repeatedly finding the minimum element from the unsorted part and placing it at the
+ * beginning.
+ */
 class SelectionSort {
 
   private static int[] sort(int[] numbers) {

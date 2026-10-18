@@ -1,9 +1,12 @@
 package tobeorganized.random;
 
 import common.utils.Interval;
-
 import java.util.Arrays;
 
+/*
+ * Given an array of intervals representing 'N' appointments, find out if a person can attend all
+ * the appointments.
+ */
 public class ConflictingAppointments {
 
   public static boolean canAttendAllAppointments(Interval[] intervals) {

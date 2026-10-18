@@ -1,12 +1,15 @@
 package tobeorganized.heaps;
 
 import common.utils.Interval;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.PriorityQueue;
 
+/*
+ * Given a list of intervals representing the start and end time of 'N' meetings, find the minimum
+ * number of rooms required to hold all the meetings.
+ */
 public class MinimumMeetingRooms {
 
   public static int findMinimumMeetingRooms(List<Interval> meetings) {

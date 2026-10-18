@@ -1,5 +1,8 @@
 package tobeorganized.random;
 
+/*
+ * Write a method to reverse a given String in-place using a StringBuilder.
+ */
 public class StringReverse {
 
   public static void main(String args[]) {

@@ -2,6 +2,10 @@ package tobeorganized.stringsandarrays;
 
 import java.util.Scanner;
 
+/*
+ * Given a 6x6 2D array, calculate the hourglass sum for every hourglass in the array, then print
+ * the maximum hourglass sum.
+ */
 class HourGlassArray {
 
   private static final Scanner scanner = new Scanner(System.in);

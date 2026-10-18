@@ -3,6 +3,9 @@ package tobeorganized.random;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Given an m x n matrix, return all elements of the matrix in spiral order.
+ */
 class PrintMatrixInSpiral {
 
   public List<Integer> spiralOrder(int[][] matrix) {

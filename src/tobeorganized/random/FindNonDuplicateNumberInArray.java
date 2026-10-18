@@ -1,5 +1,9 @@
 package tobeorganized.random;
 
+/*
+ * Given an array where every element occurs three times, except one element which occurs only
+ * once. Find the element that occurs once.
+ */
 class FindNonDuplicateNumberInArray {
   static final int INT_SIZE = 32;
 

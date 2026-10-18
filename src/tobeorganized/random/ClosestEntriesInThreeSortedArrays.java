@@ -1,5 +1,9 @@
 package tobeorganized.random;
 
+/*
+ * Design an algorithm that takes three sorted arrays and returns one entry from each such that the
+ * minimum interval containing these three entries is as small as possible.
+ */
 class ClosestEntriesInThreeSortedArrays {
 
   static void findClosest(int A[], int B[], int C[], int p, int q, int r) {

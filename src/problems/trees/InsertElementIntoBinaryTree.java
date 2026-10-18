@@ -1,11 +1,13 @@
 package problems.trees;
 
-/* Insert given element into binary tree */
 import common.utils.BinaryTreeNode;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+ * Given a binary tree and a data element, insert the element into the binary tree at the first
+ * available position in level order.
+ */
 class InsertElementIntoBinaryTree {
 
   private static BinaryTreeNode insertIntoTreeLevelOrder(BinaryTreeNode root, int data) {

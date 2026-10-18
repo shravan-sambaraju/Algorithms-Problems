@@ -3,6 +3,10 @@ package tobeorganized.random;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * We are given an unsorted array containing numbers taken from the range 1 to 'n'. The array can
+ * have duplicates, which means some numbers will be missing. Find all those missing numbers.
+ */
 public class FindAllMissingNumbersFromNRange {
 
   private static List<Integer> findNumbers(int[] nums) {

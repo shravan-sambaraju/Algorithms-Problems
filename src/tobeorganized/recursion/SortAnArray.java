@@ -1,5 +1,8 @@
 package tobeorganized.recursion;
 
+/*
+ * Given an array of integers, sort the array in ascending order using recursion.
+ */
 public class SortAnArray {
 
   public static void sortArray(int[] array, int n) {

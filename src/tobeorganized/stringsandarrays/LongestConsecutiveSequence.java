@@ -3,7 +3,10 @@ package tobeorganized.stringsandarrays;
 import java.util.HashMap;
 import java.util.Map;
 
-// given unsorted array find length of longest consecutive sequence
+/*
+ * Given an unsorted array of integers, find the length of the longest consecutive elements
+ * sequence.
+ */
 public class LongestConsecutiveSequence {
   public int longestConsecutive(int[] num) {
     int result = 0;

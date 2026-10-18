@@ -2,6 +2,10 @@ package tobeorganized.trees;
 
 import common.utils.BinaryTreeNode;
 
+/*
+ * Given a binary tree and a number sequence, find if the sequence is present as a root-to-leaf
+ * path in the given tree.
+ */
 public class PathWithGivenSequence {
   public static boolean findPath(BinaryTreeNode root, int[] sequence) {
     if (root == null) return sequence.length == 0;

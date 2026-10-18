@@ -1,5 +1,10 @@
 package tobeorganized.stringsandarrays;
 
+/*
+ * Given a sorted array of positive integers, rearrange the array in-place in maximum-minimum form
+ * so that the 1st element is the maximum, 2nd is the minimum, 3rd is the second maximum, 4th is
+ * the second minimum, and so on.
+ */
 public class RearrageSortedArrayMaxMin {
 
   public static void maxMin(int[] arr) {

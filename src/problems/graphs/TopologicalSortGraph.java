@@ -1,10 +1,13 @@
 package problems.graphs;
 
-/* Sort the given graph topologically */
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Stack;
 
+/*
+ * Given a Directed Acyclic Graph (DAG), implement Topological Sort to find a linear ordering of
+ * its vertices such that for every directed edge u -> v, vertex u comes before v in the ordering.
+ */
 class TopologicalSortGraph {
   private int V;
   private LinkedList<Integer> adj[];

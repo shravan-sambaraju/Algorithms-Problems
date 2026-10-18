@@ -1,6 +1,10 @@
 package algorithms.search;
 
-/* Java implementation of interpolation search */
+/*
+ * Given a uniformly distributed sorted array of integers and a target key, implement the
+ * Interpolation Search algorithm to find the index of the target key by estimating its probable
+ * position.
+ */
 class InterpolationSearch {
 
   private static int interpolationSearch(int[] A, int data) {

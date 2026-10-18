@@ -1,11 +1,13 @@
 package problems.trees;
 
-/* Find all half nodes in binary tree */
 import common.utils.BinaryTreeNode;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+ * Given a binary tree, count the number of half nodes (nodes that have exactly one child, either
+ * left or right, but not both) in the tree.
+ */
 class FindHalfNodesInBinaryTree {
 
   private static int getNumberOfHalfNodesRecursion(BinaryTreeNode node) {

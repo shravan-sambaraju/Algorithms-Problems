@@ -1,8 +1,11 @@
 package problems.linkedlists;
 
-/* Add number from from two list */
 import common.utils.ListNode;
 
+/*
+ * You have two numbers represented by a linked list, where each node contains a single digit.
+ * Write a function that adds the two numbers and returns the sum as a linked list.
+ */
 class AddNumbersFromList {
 
   private static ListNode addTwoReversedNumbers(ListNode l1, ListNode l2) {

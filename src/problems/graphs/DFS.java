@@ -1,9 +1,12 @@
 package problems.graphs;
 
-/* Implement DFS for graph */
 import java.util.Iterator;
 import java.util.LinkedList;
 
+/*
+ * Given a graph represented using an adjacency list, implement the Depth-First Search (DFS)
+ * traversal to visit all vertices reachable from a starting vertex.
+ */
 class DFS {
 
   public static void main(String args[]) {

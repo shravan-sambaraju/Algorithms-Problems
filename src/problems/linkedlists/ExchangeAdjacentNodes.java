@@ -1,8 +1,10 @@
 package problems.linkedlists;
 
-/* Exchange adjacent nodes in linkedlist */
 import common.utils.ListNode;
 
+/*
+ * Given a singly linked list, swap every two adjacent nodes in-place and return the modified list.
+ */
 class ExchangeAdjacentNodes {
 
   private static ListNode exchangeNodes(ListNode head) {

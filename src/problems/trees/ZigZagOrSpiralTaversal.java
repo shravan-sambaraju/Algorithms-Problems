@@ -1,12 +1,14 @@
 package problems.trees;
 
-/* Print given binary tree in zig zag */
 import common.utils.BinaryTreeNode;
-
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Stack;
 
+/*
+ * Given a binary tree, return the zigzag (or spiral) level-order traversal of its nodes' values
+ * (from left to right on one level, then right to left on the next level, and so on).
+ */
 class ZigZagOrSpiralTaversal {
 
   public static void main(String args[]) {

@@ -1,5 +1,9 @@
 package tobeorganized.random;
 
+/*
+ * Given an array of numbers which is sorted in ascending order and is rotated 'k' times around a
+ * pivot, find 'k'.
+ */
 public class RotationCountOfRotatedSortedArray {
 
   public static int countRotations(int[] arr) {

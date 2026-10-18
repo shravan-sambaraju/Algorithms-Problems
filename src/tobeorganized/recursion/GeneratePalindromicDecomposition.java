@@ -3,6 +3,10 @@ package tobeorganized.recursion;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Given a string, partition it such that every substring of the partition is a palindrome. Return
+ * all possible palindrome partitioning of the string.
+ */
 public class GeneratePalindromicDecomposition {
 
   public static List<List<String>> palindromicDecompositions(String text) {

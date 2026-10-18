@@ -3,6 +3,10 @@ package tobeorganized.random;
 import java.util.Collections;
 import java.util.List;
 
+/*
+ * Implement next permutation, which rearranges numbers into the lexicographically next greater
+ * permutation of numbers.
+ */
 public class NextPermutation {
 
   public static List<Integer> nextPermutation(List<Integer> perm) {

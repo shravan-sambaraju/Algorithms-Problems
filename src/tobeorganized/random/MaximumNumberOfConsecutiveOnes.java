@@ -1,5 +1,8 @@
 package tobeorganized.random;
 
+/*
+ * Given a binary array nums, return the maximum number of consecutive 1's in the array.
+ */
 class MaximumNumberOfConsecutiveOnes {
 
   public int findMaxConsecutiveOnes(int[] nums) {

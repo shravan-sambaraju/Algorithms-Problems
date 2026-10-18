@@ -3,6 +3,11 @@ package tobeorganized.recursion;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * Given three strings 'm', 'n', and 'p', write a method to find out if 'p' has been formed by
+ * interleaving 'm' and 'n'. 'p' would be considered interleaving 'm' and 'n' if it contains all
+ * the letters from 'm' and 'n' and the order of letters is preserved too.
+ */
 public class StringInterleaving {
 
   public static void main(String[] args) {

@@ -1,5 +1,9 @@
 package tobeorganized.recursion;
 
+/*
+ * Given an array of integers and a target number, recursively find the first occurrence (index) of
+ * the number in the array.
+ */
 public class FirstOccurenceOfElementInArray {
 
   private static int firstOccurrence(int[] a, int n, int currentIndex) {

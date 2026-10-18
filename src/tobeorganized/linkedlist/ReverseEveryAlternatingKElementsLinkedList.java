@@ -2,6 +2,10 @@ package tobeorganized.linkedlist;
 
 import common.utils.ListNode;
 
+/*
+ * Given the head of a LinkedList and a number 'k', reverse every alternating 'k' sized sub-list
+ * starting from the head.
+ */
 public class ReverseEveryAlternatingKElementsLinkedList {
   public static ListNode reverse(ListNode head, int k) {
     if (k <= 1 || head == null) return head;

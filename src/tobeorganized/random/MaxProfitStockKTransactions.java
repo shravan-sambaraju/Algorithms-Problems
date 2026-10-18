@@ -3,6 +3,10 @@ package tobeorganized.random;
 import java.util.Deque;
 import java.util.LinkedList;
 
+/*
+ * Given an array of daily stock prices and an integer k, find the maximum profit you can achieve
+ * by completing at most k buy-and-sell transactions.
+ */
 public class MaxProfitStockKTransactions {
 
   public static void main(String args[]) {

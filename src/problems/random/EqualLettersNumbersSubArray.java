@@ -1,11 +1,11 @@
 package problems.random;
 
+import java.util.HashMap;
+
 /*
  * Given an array filled with letters and numbers, find the longest subarray with an equal number of
  * letters and numbers.
  */
-import java.util.HashMap;
-
 class EqualLettersNumbersSubArray {
 
   private static int[] computeDeltaArray(char[] array) {

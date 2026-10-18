@@ -2,6 +2,9 @@ package tobeorganized.heaps;
 
 import java.util.PriorityQueue;
 
+/*
+ * Given an unsorted array of numbers, find the Kth smallest number in it.
+ */
 public class KthSmallestNumber {
 
   public static int findKthSmallestNumber(int[] nums, int k) {

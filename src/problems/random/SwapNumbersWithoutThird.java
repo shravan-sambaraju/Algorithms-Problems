@@ -1,6 +1,9 @@
 package problems.random;
 
-/* Swap two numbers without third */
+/*
+ * Write a function to swap two numbers in-place (that is, without temporary variables) using
+ * arithmetic and bitwise XOR operations.
+ */
 class SwapNumbersWithoutThird {
 
   private static void swap(int a, int b) {

@@ -1,5 +1,8 @@
 package tobeorganized.recursion;
 
+/*
+ * Given a string, recursively remove adjacent duplicate characters from it.
+ */
 public class RemoveDuplicatesFromString {
   private static String remDuplicates(String text) {
     if (text.length() == 1) {

@@ -1,5 +1,9 @@
 package tobeorganized.random;
 
+/*
+ * Given a string, find the minimum number of character insertions required to convert it into a
+ * palindrome.
+ */
 class MinInsrtnsForPalindrome {
 
   private static int countInsertions(char[] str, int l, int h) {

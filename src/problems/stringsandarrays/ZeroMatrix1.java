@@ -1,9 +1,12 @@
 package problems.stringsandarrays;
 
-/* In a given matrix if the element is 0 change the row and column consisting 0 to zeros */
 import static common.utils.UtilMethods.printMatrix;
 import static common.utils.UtilMethods.randomMatrix;
 
+/*
+ * Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column are
+ * set to 0.
+ */
 class ZeroMatrix1 {
 
   private static void nullifyRow(int[][] matrix, int row) {

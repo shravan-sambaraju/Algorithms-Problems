@@ -1,6 +1,9 @@
 package tobeorganized.multithreading;
 
-/* */
+/*
+ * Design and implement a counting Semaphore with acquire() and release() methods using basic Java
+ * synchronization primitives.
+ */
 class Semaphore {
   public static void main(String args[]) throws InterruptedException {
 

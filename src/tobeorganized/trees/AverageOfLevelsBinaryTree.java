@@ -1,12 +1,14 @@
 package tobeorganized.trees;
 
 import common.utils.BinaryTreeNode;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/*
+ * Given a binary tree, populate an array to represent the averages of all of its levels.
+ */
 public class AverageOfLevelsBinaryTree {
   public static List<Double> findLevelAverages(BinaryTreeNode root) {
     List<Double> result = new ArrayList<>();

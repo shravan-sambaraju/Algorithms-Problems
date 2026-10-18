@@ -1,5 +1,8 @@
 package tobeorganized.stringsandarrays;
 
+/*
+ * Given a circular binary array of 0s and 1s, find the maximum number of consecutive 1s in it.
+ */
 public class ConsecutiveOnesInCircularArray {
 
   public static void main(String[] args) {

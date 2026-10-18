@@ -1,5 +1,9 @@
 package tobeorganized.recursion;
 
+/*
+ * Given a string and a pattern, write a method to count the number of times the pattern appears in
+ * the string as a subsequence.
+ */
 public class SubsequencePatternMatching {
 
   public static void main(String[] args) {

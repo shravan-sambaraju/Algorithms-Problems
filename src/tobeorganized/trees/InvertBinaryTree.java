@@ -1,10 +1,12 @@
 package tobeorganized.trees;
 
 import common.utils.BinaryTreeNode;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+ * Given the root of a binary tree, invert the tree (mirror it), and return its root.
+ */
 public class InvertBinaryTree {
 
   public BinaryTreeNode invertBinaryTreeRecursion(BinaryTreeNode root) {

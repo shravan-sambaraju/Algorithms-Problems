@@ -2,6 +2,10 @@ package tobeorganized.heaps;
 
 import java.util.PriorityQueue;
 
+/*
+ * Given an array, find the sum of all numbers between the K1'th and K2'th smallest elements of
+ * that array.
+ */
 public class SumElementsBetweenGivenTwoNumbers {
   public static int findSumOfElements(int[] nums, int k1, int k2) {
     PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>((n1, n2) -> n1 - n2);

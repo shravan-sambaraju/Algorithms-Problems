@@ -1,9 +1,12 @@
 package problems.stringsandarrays;
 
-/* Rotate given matrix */
 import static common.utils.UtilMethods.printMatrix;
 import static common.utils.UtilMethods.randomMatrix;
 
+/*
+ * Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a
+ * method to rotate the image by 90 degrees in-place.
+ */
 class RotateMatrix {
 
   private static boolean rotate(int[][] matrix) {

@@ -1,11 +1,11 @@
 package problems.linkedlists;
 
+import common.utils.ListNode;
+
 /*
  * Implement josephus circle using linkedlist (In a circle where N people stand and M is the
  * skipping interval, find which position will come last)
  */
-import common.utils.ListNode;
-
 class JosephusCircleLinkedList {
 
   private static void getJosephusPosition(int N, int M) {

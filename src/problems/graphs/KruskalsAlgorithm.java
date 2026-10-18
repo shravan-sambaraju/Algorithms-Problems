@@ -1,8 +1,11 @@
 package problems.graphs;
 
-/* Implement Kruskals algorithm */
 import java.util.Arrays;
 
+/*
+ * Given a connected, undirected, weighted graph, implement Kruskal's algorithm using the Union-
+ * Find (Disjoint Set) data structure to find the Minimum Spanning Tree (MST).
+ */
 class KruskalsAlgorithm {
 
   public static void main(String[] args) {

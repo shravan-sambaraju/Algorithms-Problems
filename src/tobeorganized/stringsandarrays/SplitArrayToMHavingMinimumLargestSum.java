@@ -1,8 +1,10 @@
 package tobeorganized.stringsandarrays;
 
-// Given an array which consists of non-negative integers and an integer m, you can split the array
-// into m non-empty continuous subarrays. Write an algorithm to minimize the largest sum among these
-// m subarrays and return sum.
+/*
+ * Given an array which consists of non-negative integers and an integer m, you can split the array
+ * into m non-empty continuous subarrays. Write an algorithm to minimize the largest sum among these
+ * m subarrays and return sum.
+ */
 public class SplitArrayToMHavingMinimumLargestSum {
   public static int splitArray(int[] nums, int m) {
     int max = 0;

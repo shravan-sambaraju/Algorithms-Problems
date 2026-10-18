@@ -1,8 +1,11 @@
 package problems.trees;
 
-/* Find width of binary tree */
 import common.utils.BinaryTreeNode;
 
+/*
+ * Given a binary tree, find the maximum width of the binary tree (the maximum number of nodes
+ * present at any level of the tree).
+ */
 class WidthOfBinaryTree {
 
   private static int width(BinaryTreeNode root) {

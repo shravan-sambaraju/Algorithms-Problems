@@ -1,5 +1,9 @@
 package tobeorganized.recursion;
 
+/*
+ * Given a set of positive numbers, determine if a subset exists whose sum is equal to a given
+ * number 'S'.
+ */
 public class ArraySubSetHasTargetSum {
 
   public static void main(String[] args) {

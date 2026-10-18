@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
 
+/*
+ * Given an unsorted array of numbers, find the 'K' largest numbers in it.
+ */
 public class KLargestNumbersInArray {
 
   public static List<Integer> findKLargestNumbers(int[] nums, int k) {

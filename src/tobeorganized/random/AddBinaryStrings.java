@@ -1,5 +1,8 @@
 package tobeorganized.random;
 
+/*
+ * Given two binary strings a and b, return their sum as a binary string.
+ */
 class AddBinaryStrings {
 
   public String addBinary(String a, String b) {

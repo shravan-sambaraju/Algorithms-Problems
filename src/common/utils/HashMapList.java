@@ -1,10 +1,13 @@
 package common.utils;
 
-/* Implement hashmaplist */
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
+/*
+ * Implement a generic HashMapList<T, E> utility data structure that maps a key of type T to an
+ * ArrayList of values of type E.
+ */
 public class HashMapList<T, E> {
   private HashMap<T, ArrayList<E>> map = new HashMap<T, ArrayList<E>>();
 

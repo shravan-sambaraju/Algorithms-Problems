@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/*
+ * Given a sequence of numbers, find the longest increasing subsequence (LIS).
+ */
 class LongestIncreasingSubsequence {
   public static List<Integer> longest_increasing_subsequence(List<Integer> sequence) {
     int N = sequence.size();

@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
+/*
+ * Given a string, sort it based on the decreasing frequency of its characters.
+ */
 public class SortStringByDecreasingCharFrequency {
   public static String sortCharacterByFrequency(String str) {
     // find the frequency of each character

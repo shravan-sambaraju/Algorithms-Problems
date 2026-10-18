@@ -1,6 +1,9 @@
 package problems.random;
 
-/* Count number of twos that appear in a given range of numbers */
+/*
+ * Write a method to count the number of 2s that appear in all the numbers between 0 and n
+ * (inclusive).
+ */
 class CountOfTwos {
 
   private static int count2sInRangeAtDigit(int number, int d) {

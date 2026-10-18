@@ -1,5 +1,8 @@
 package tobeorganized.recursion;
 
+/*
+ * Given an array of integers, invert (reverse) the elements of the array in-place using recursion.
+ */
 public class InvertArray {
 
   private static void invert(int[] array, int currentIndex) {

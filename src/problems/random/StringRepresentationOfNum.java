@@ -1,10 +1,12 @@
 package problems.random;
 
-/* Generate string representation of given number */
 import java.util.LinkedList;
-
 import static common.utils.UtilMethods.randomIntInRange;
 
+/*
+ * Given any integer, print an English phrase that describes the integer (e.g., 'One Thousand, Two
+ * Hundred Thirty Four').
+ */
 class StringRepresentationOfNum {
 
   private static String[] smalls = {

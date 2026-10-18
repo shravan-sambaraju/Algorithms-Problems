@@ -1,8 +1,11 @@
 package problems.linkedlists;
 
-/* Print given linkedlist in reverse */
 import common.utils.ListNode;
 
+/*
+ * Given the head of a singly linked list, print all elements of the linked list in reverse order
+ * using recursion.
+ */
 class PrintLinkedListReverse {
 
   private static void printInReverse(ListNode head) {

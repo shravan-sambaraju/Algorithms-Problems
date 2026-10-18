@@ -1,5 +1,9 @@
 package tobeorganized.recursion;
 
+/*
+ * We are given a ribbon of length 'n' and a set of possible ribbon lengths. We need to cut the
+ * ribbon into the maximum number of pieces that comply with the specified possible lengths.
+ */
 public class CutRibbonMaxPiecesOfTargetLength {
 
   public static void main(String[] args) {

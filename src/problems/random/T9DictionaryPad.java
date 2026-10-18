@@ -1,16 +1,15 @@
 package problems.random;
 
+import common.utils.HashMapList;
+import common.utils.UtilMethods;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /*
  * On old cell phones, users typed on a numeric keypad and the phone would provide a list of words
  * that matched these numbers. Each digit mapped to a set of 0 - 4 letters. Implement an algorithm
  * to return a list of matching words, given a sequence of digits.
  */
-import common.utils.HashMapList;
-import common.utils.UtilMethods;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-
 public class T9DictionaryPad {
   public static int numLetters = 26;
   public static char[][] t9Letters = {

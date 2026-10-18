@@ -7,7 +7,12 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.ReentrantLock;
 
-/* */
+/*
+ * At the end of a political conference, Republicans and Democrats are trying to leave the venue
+ * and ordering Uber rides at the same time. To avoid conflicts, each Uber ride can have either all
+ * Democrats or all Republicans, or two Democrats and two Republicans. Write a multi-threaded
+ * solution to seat four passengers appropriately and drive off.
+ */
 class UberRidingProblem {
   public static void main(String args[]) throws InterruptedException {
     UberSeatingProblem.runTest();

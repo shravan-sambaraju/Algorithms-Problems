@@ -5,6 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/*
+ * Given a string and a pattern, find all anagrams of the pattern in the given string and return
+ * their starting indices.
+ */
 public class IndicesOfAnagramsOfPatternInString {
 
   public static List<Integer> findStringAnagrams(String str, String pattern) {

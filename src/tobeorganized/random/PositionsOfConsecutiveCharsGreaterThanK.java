@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/*
+ * In a string s of lowercase letters, these letters form consecutive groups of the same character.
+ * A group is considered large if it has 3 or more characters. Return the intervals [start, end] of
+ * every large group sorted in increasing order by start index.
+ */
 class PositionsOfConsecutiveCharsGreaterThanK {
 
   public static List<List<Integer>> largeGroupPositions(String str) {

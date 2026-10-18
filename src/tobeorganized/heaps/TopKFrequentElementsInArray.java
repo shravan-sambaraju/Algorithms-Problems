@@ -2,6 +2,9 @@ package tobeorganized.heaps;
 
 import java.util.*;
 
+/*
+ * Given an unsorted array of numbers, find the top 'K' frequently occurring numbers in it.
+ */
 public class TopKFrequentElementsInArray {
 
   public static List<Integer> topKFrequent(int[] nums, int k) {

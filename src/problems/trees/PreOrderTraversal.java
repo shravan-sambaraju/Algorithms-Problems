@@ -1,11 +1,13 @@
 package problems.trees;
 
-/* Print pre oder traversal of binary tree */
 import common.utils.BinaryTreeNode;
-
 import java.util.ArrayList;
 import java.util.Stack;
 
+/*
+ * Given a binary tree, perform a Pre-Order traversal (Root, Left, Right) both recursively and
+ * iteratively using a stack.
+ */
 class PreOrderTraversal {
 
   private static ArrayList<Integer> interativePreOder(BinaryTreeNode head) {

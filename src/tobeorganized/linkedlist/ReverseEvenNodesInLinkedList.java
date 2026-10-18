@@ -2,8 +2,10 @@ package tobeorganized.linkedlist;
 
 import common.utils.ListNode;
 
-import java.util.LinkedList;
-
+/*
+ * Given a singly linked list, reverse the nodes at even positions and merge them back with the
+ * odd-positioned nodes.
+ */
 public class ReverseEvenNodesInLinkedList {
 
   public static ListNode reverseEvenNodes(ListNode head) {

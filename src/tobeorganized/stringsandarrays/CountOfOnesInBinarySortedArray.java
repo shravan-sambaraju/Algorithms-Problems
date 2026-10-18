@@ -1,5 +1,8 @@
 package tobeorganized.stringsandarrays;
 
+/*
+ * Given a binary array sorted in non-increasing order, count the number of 1s in it.
+ */
 public class CountOfOnesInBinarySortedArray {
 
   public static void main(String args[]) {

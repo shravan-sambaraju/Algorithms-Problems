@@ -1,5 +1,9 @@
 package common.utils;
 
+/*
+ * Utility class representing a node in a singly linked list with an integer data field and a
+ * reference to the next node.
+ */
 public class ListNode {
   public int data;
   public ListNode next;

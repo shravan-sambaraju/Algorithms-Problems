@@ -1,8 +1,11 @@
 package problems.linkedlists;
 
-/* Check whether the given linkedlist is odd or even */
 import common.utils.ListNode;
 
+/*
+ * Given a singly linked list, determine whether its length (number of nodes) is even or odd
+ * without counting all nodes one by one (using a 2x pointer).
+ */
 class CheckEvenOrOddLinkedList {
 
   private static String checkEvenOrOdd(ListNode head) {

@@ -3,6 +3,9 @@ package tobeorganized.random;
 import java.util.HashSet;
 import java.util.Set;
 
+/*
+ * Given a string s, find the length of the longest substring without repeating characters.
+ */
 class LongestSubStringWithoutRepeatingChars {
 
   public int lengthOfLongestSubstring(String s) {

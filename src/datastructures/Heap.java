@@ -2,6 +2,10 @@ package datastructures;
 
 import java.util.Arrays;
 
+/*
+ * Implementation of Min-Heap and Max-Heap data structures using an array, supporting heapify
+ * operations.
+ */
 class Heap {
 
   public static void main(String[] args) {

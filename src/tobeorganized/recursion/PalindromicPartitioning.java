@@ -1,5 +1,9 @@
 package tobeorganized.recursion;
 
+/*
+ * Given a string, we want to cut it into pieces such that each piece is a palindrome. Write a
+ * function to return the minimum number of cuts needed.
+ */
 class PalindromicPartitioning {
 
   public static void main(String[] args) {

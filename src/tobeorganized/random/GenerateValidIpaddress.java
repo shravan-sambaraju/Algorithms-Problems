@@ -3,6 +3,10 @@ package tobeorganized.random;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Given a string s containing only digits, restore it by returning all possible valid IP address
+ * combinations.
+ */
 class GenerateValidIpaddress {
 
   public static List<String> validateAddress(String s) {

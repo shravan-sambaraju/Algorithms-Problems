@@ -1,5 +1,8 @@
 package tobeorganized.random;
 
+/*
+ * Given an array of integers, rotate the elements of the array to the right by one position.
+ */
 public class RightRotateArrayByOne {
 
   // Rotates given Array by 1 position

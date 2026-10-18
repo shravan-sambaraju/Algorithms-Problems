@@ -2,6 +2,9 @@ package tobeorganized.random;
 
 import java.util.Arrays;
 
+/*
+ * Given an array, find the average of all contiguous subarrays of size 'K' in it.
+ */
 class AverageOfSubarrayOfSizeK {
   public static double[] findAverages(int K, int[] arr) {
     double[] result = new double[arr.length - K + 1];

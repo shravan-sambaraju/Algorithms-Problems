@@ -3,6 +3,10 @@ package tobeorganized.random;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * Given a string and a pattern, find out if the string contains any permutation (anagram) of the
+ * pattern.
+ */
 public class StringAnagramPatternMatching {
 
   public static boolean findPermutation(String str, String pattern) {

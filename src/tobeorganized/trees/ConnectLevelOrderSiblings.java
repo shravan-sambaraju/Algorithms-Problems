@@ -3,6 +3,10 @@ package tobeorganized.trees;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+ * Given a binary tree, connect each node with its level order successor. The last node of each
+ * level should point to a null node.
+ */
 class TreeNode {
   int val;
   TreeNode left;
@@ -41,7 +45,8 @@ class TreeNode {
       current = current.next;
     }
   }
-};
+}
+;
 
 public class ConnectLevelOrderSiblings {
   public static void connect(TreeNode root) {

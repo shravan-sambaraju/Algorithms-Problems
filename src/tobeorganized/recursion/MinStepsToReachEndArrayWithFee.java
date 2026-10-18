@@ -1,5 +1,11 @@
 package tobeorganized.recursion;
 
+/*
+ * Given a staircase with 'n' steps and an array of 'n' numbers representing the fee that you have
+ * to pay if you take the step, implement a method to calculate the minimum fee required to reach
+ * the top of the staircase (beyond the top-most step) when you can take 1, 2, or 3 steps at a
+ * time.
+ */
 public class MinStepsToReachEndArrayWithFee {
 
   public static void main(String[] args) {

@@ -1,8 +1,11 @@
 package problems.recursion;
 
-/* Check if given paranthesis are properly closed */
 import java.util.ArrayList;
 
+/*
+ * Implement an algorithm to print all valid (i.e., properly opened and closed) combinations of n
+ * pairs of parentheses.
+ */
 class ParanthesisCombination {
   private static void addParen(
       ArrayList<String> list, int leftRem, int rightRem, char[] str, int index) {

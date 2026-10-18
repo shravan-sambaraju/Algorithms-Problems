@@ -5,6 +5,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+/*
+ * You are given an unordered array consisting of consecutive integers [1, 2, 3, ..., n] without
+ * any duplicates. You are allowed to swap any two elements. Find the minimum number of swaps
+ * required to sort the array in ascending order.
+ */
 class MinimumSwapsToSortArray {
 
   private static final Scanner scanner = new Scanner(System.in);

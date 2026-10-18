@@ -1,13 +1,16 @@
 package tobeorganized.trees;
 
 import common.utils.BinaryTreeNode;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
+/*
+ * Given a binary tree, return an array containing all the boundary nodes of the tree in an anti-
+ * clockwise direction.
+ */
 class TreeBoundary {
   public static List<BinaryTreeNode> findBoundary(BinaryTreeNode root) {
     if (root == null) return new ArrayList<>();

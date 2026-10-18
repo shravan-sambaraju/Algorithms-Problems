@@ -3,7 +3,10 @@ package tobeorganized.multithreading;
 import java.util.HashSet;
 import java.util.Set;
 
-/* */
+/*
+ * Implement a token bucket rate limiter (Multithreaded Token Bucket Filter) where tokens are
+ * generated at a fixed rate of one token per second up to a maximum bucket capacity.
+ */
 class SecondBasedTokenGenerator {
   public static void main(String args[]) throws InterruptedException {
     TokenBucketFilter.runTestMaxTokenIsTen();

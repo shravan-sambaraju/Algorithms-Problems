@@ -1,11 +1,13 @@
 package problems.trees;
 
-/* Find all leaf nodes in binary tree */
 import common.utils.BinaryTreeNode;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+ * Given a binary tree, count the total number of leaf nodes (nodes with no left or right children)
+ * in the tree.
+ */
 class FindLeafNodesinBinaryTree {
 
   private static int getNumberOfLeafNodesRecursion(BinaryTreeNode node) {

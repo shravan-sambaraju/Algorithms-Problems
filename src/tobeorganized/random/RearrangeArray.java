@@ -1,5 +1,9 @@
 package tobeorganized.random;
 
+/*
+ * Given an array of integers, rearrange the array such that every second element is greater than
+ * its left and right elements (i.e., arr[0] <= arr[1] >= arr[2] <= arr[3] >= arr[4] ...).
+ */
 class RearrangeArray {
 
   public static void rearrange(int[] array) {

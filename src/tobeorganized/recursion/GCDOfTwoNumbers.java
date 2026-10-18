@@ -1,5 +1,8 @@
 package tobeorganized.recursion;
 
+/*
+ * Given two integers x and y, recursively find their Greatest Common Divisor (GCD).
+ */
 public class GCDOfTwoNumbers {
 
   public static long findGCD(long x, long y) {

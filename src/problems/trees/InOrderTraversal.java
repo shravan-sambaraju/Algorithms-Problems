@@ -1,11 +1,13 @@
 package problems.trees;
 
-/* Print inorder traversal of binary node */
 import common.utils.BinaryTreeNode;
-
 import java.util.ArrayList;
 import java.util.Stack;
 
+/*
+ * Given a binary tree, perform an In-Order traversal (Left, Root, Right) both recursively and
+ * iteratively without recursion.
+ */
 class InOrderTraversal {
 
   private static void recursiveInorder(BinaryTreeNode head) {

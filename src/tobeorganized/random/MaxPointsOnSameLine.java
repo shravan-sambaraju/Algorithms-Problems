@@ -3,6 +3,10 @@ package tobeorganized.random;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * Given an array of points where points[i] = [xi, yi] represents a point on the X-Y plane, return
+ * the maximum number of points that lie on the same straight line.
+ */
 public class MaxPointsOnSameLine {
 
   public static int maxPoints(int[][] points) {

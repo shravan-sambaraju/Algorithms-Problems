@@ -1,8 +1,12 @@
 package problems.linkedlists;
 
-/* Split given circular linkedlist */
 import common.utils.ListNode;
 
+/*
+ * Given a circular singly linked list, split it into two halves that are also circular linked
+ * lists. If there are an odd number of nodes, the first list should contain one more node than the
+ * second.
+ */
 class SplitCircularLinkedList {
 
   private static ListNode head1, head2;

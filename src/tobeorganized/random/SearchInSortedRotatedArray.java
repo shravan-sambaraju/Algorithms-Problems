@@ -1,5 +1,10 @@
 package tobeorganized.random;
 
+/*
+ * Given an array of numbers which is sorted in ascending order and also rotated by some arbitrary
+ * number, find if a given 'key' is present in it. If present, return its index, otherwise return
+ * -1.
+ */
 class SearchInSortedRotatedArray {
 
   public static int searchWithDuplicates(int[] arr, int key) {

@@ -1,8 +1,10 @@
 package problems.linkedlists;
 
-/* Fetch Nth Node from the end of linkedlist */
 import common.utils.ListNode;
 
+/*
+ * Implement an algorithm to find the nth to last element of a singly linked list.
+ */
 class NthNodeFromEndLinkedList {
 
   int count;

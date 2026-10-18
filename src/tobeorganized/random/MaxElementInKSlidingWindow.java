@@ -4,6 +4,10 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Deque;
 
+/*
+ * Given an array of integers and a window of size k, find the current maximum value in the window
+ * as the window slides through the entire array.
+ */
 class MaxElementInKSlidingWindow {
 
   // brute force

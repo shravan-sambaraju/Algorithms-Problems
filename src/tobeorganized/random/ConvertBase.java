@@ -1,5 +1,9 @@
 package tobeorganized.random;
 
+/*
+ * Write a program that performs base conversion: given a string representing an integer in base
+ * b1, convert it to a string representing the same integer in base b2.
+ */
 public class ConvertBase {
 
   public static String convertBase(String numAsString, int b1, int b2) {

@@ -2,6 +2,10 @@ package tobeorganized.stringsandarrays;
 
 import java.util.Arrays;
 
+/*
+ * Given a non-empty array of decimal digits representing a non-negative integer, increment one to
+ * the integer and return the resulting array of digits.
+ */
 public class PlusOneArray {
   public static void main(String[] args) {
     PlusOneArray pa = new PlusOneArray();

@@ -1,6 +1,9 @@
 package tobeorganized.multithreading;
 
-/* */
+/*
+ * Implement a synchronization solution to the Readers-Writers problem where multiple readers can
+ * read shared data simultaneously, but writers require exclusive access.
+ */
 class ReadersWriters {
 
   public static void main(String args[]) throws Exception {

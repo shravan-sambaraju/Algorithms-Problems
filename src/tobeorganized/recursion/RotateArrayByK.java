@@ -1,5 +1,8 @@
 package tobeorganized.recursion;
 
+/*
+ * Given an array, rotate the array to the right by k steps, where k is non-negative.
+ */
 class RotateArrayByK {
 
   public void rotate(int[] nums, int k) {

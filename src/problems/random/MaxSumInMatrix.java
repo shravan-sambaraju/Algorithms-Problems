@@ -1,12 +1,12 @@
 package problems.random;
 
+import static common.utils.UtilMethods.printMatrix;
+import static common.utils.UtilMethods.randomMatrix;
+
 /*
  * Given an NxN matrix of positive and negative integers, write code to find the sub matrix with the
  * largest possible sum.
  */
-import static common.utils.UtilMethods.printMatrix;
-import static common.utils.UtilMethods.randomMatrix;
-
 class MaxSumInMatrix {
 
   private static SubMatrix getMaxMatrix(int[][] matrix) {

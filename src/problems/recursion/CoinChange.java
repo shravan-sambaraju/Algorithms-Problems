@@ -1,6 +1,9 @@
 package problems.recursion;
 
-/* find number of ways you can change coin denomination */
+/*
+ * Given an infinite supply of coins of given denominations and a target total amount, find the
+ * total number of distinct ways to make change for that amount.
+ */
 class CoinChange {
 
   public static void main(String[] args) {

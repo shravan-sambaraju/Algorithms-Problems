@@ -1,5 +1,10 @@
 package tobeorganized.random;
 
+/*
+ * Given an array of non-negative integers where each element represents the maximum number of
+ * steps that can be made forward from that element, determine if you can reach the last index and
+ * find the minimum number of jumps required to reach the end of the array.
+ */
 class MinimumStepsToReachEndOfArray {
 
   // can reach end of array

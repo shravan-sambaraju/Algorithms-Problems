@@ -3,6 +3,10 @@ package tobeorganized.trees;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+ * Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around
+ * its center).
+ */
 class CheckBinaryTreeSymmetric {
 
   public boolean isSymmetric(TreeNode root) {

@@ -1,11 +1,13 @@
 package problems.trees;
 
-/* Find all full nodes in binary tree */
 import common.utils.BinaryTreeNode;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+ * Given a binary tree, count the number of full nodes (nodes that have both a left child and a
+ * right child) in the tree without using recursion.
+ */
 class FindFullNodesInBinaryTree {
 
   private static int getNumberOfFullNodesRecursion(BinaryTreeNode node) {

@@ -2,6 +2,10 @@ package tobeorganized.multithreading;
 
 import java.util.Random;
 
+/*
+ * Implement a multi-threaded Merge Sort algorithm that sorts an array of integers concurrently
+ * using multiple worker threads.
+ */
 public class MultiThreadedMergeSortDemonstration {
 
   private static int SIZE = 25;

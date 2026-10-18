@@ -2,7 +2,10 @@ package problems.trees;
 
 import common.utils.BinaryTreeNode;
 
-/* Delete a node from binary tree */
+/*
+ * Given the root of a Binary Search Tree (BST) and a key, delete the node with the given key from
+ * the BST and return the root of the updated tree.
+ */
 class DeleteFromBinarySearchTree {
 
   private static BinaryTreeNode deleteRecursive(BinaryTreeNode node, int value) {

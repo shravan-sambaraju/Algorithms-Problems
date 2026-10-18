@@ -1,8 +1,11 @@
 package problems.random;
 
-/* Perform arithematic operations using addition */
 import static common.utils.UtilMethods.randomIntInRange;;
 
+/*
+ * Write methods to implement the multiply, subtract, and divide operations for integers. The
+ * results of all of these are integers. Use only the add operator.
+ */
 class ArithematicOperationsUsingAddition {
 
   private static int negate(int a) {

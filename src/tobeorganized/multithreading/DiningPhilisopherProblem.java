@@ -3,7 +3,11 @@ package tobeorganized.multithreading;
 import java.util.Random;
 import java.util.concurrent.Semaphore;
 
-/* */
+/*
+ * Implement a deadlock-free solution to the classic Dining Philosophers problem where five silent
+ * philosophers sit at a round table with bowls of spaghetti and five forks placed between each
+ * pair of adjacent philosophers.
+ */
 class DiningPhilisopherProblem {
 
   public static void main(String args[]) throws InterruptedException {

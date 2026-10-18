@@ -3,6 +3,9 @@ package tobeorganized.random;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Given a set with distinct elements (or with duplicates), find all of its distinct subsets.
+ */
 public class DistinctSubsets {
   public static List<List<Integer>> findSubsets(int[] nums) {
     List<List<Integer>> subsets = new ArrayList<>();

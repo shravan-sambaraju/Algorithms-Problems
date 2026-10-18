@@ -1,11 +1,12 @@
 package problems.random;
 
-/* Design an algorithm to find the smallest K numbers in an array. */
 import java.util.Comparator;
 import java.util.PriorityQueue;
-
 import static common.utils.UtilMethods.intArrayToString;
 
+/*
+ * Design an algorithm to find the smallest K numbers in an unsorted array of integers.
+ */
 class SmallestKNumbersInArray {
 
   private static int[] smallestK(int[] array, int k) {

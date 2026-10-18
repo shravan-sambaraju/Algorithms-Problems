@@ -1,5 +1,10 @@
 package tobeorganized.recursion;
 
+/*
+ * Given an array of positive numbers, where each element represents the max number of jumps that
+ * can be made forward from that element, write a program to find the minimum number of jumps
+ * needed to reach the end of the array.
+ */
 public class MinJumpsRequiredToReachEndArray {
 
   public static void main(String[] args) {
@@ -11,6 +16,7 @@ public class MinJumpsRequiredToReachEndArray {
     System.out.println(aj.countMinJumps(jumps));
     System.out.println(aj.countMinJumpsBottomUp(jumps));
   }
+
   // (Time Complexity - O(N^2), Space complexity - O(N))
   public int countMinJumps(int[] jumps) {
     int dp[] = new int[jumps.length];

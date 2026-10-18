@@ -2,7 +2,12 @@ package tobeorganized.multithreading;
 
 import java.util.concurrent.Semaphore;
 
-/* */
+/*
+ * A bathroom is being designed for the use of both males and females in an office but requires the
+ * following constraints to be maintained: There cannot be men and women in the bathroom at the
+ * same time, and there should never be more than three employees in the bathroom simultaneously.
+ * Write a multi-threaded synchronization solution.
+ */
 class UnisexBathroomDemonstration {
   public static void main(String args[]) throws InterruptedException {
     UnisexBathroom.runTest();

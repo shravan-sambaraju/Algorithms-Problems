@@ -1,6 +1,10 @@
 package tobeorganized.random;
 
-class  ProductOfRestArray {
+/*
+ * Given an array of integers, replace each element of the array with the product of every other
+ * element in the array.
+ */
+class ProductOfRestArray {
 
   private static void restOfArrayMethod1(int[] array) {
     int sum = 1;

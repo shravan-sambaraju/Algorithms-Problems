@@ -1,5 +1,9 @@
 package tobeorganized.recursion;
 
+/*
+ * Given two sorted strings, recursively merge their characters in alphabetical (lexicographical)
+ * order.
+ */
 public class MergeStringAlphabetically {
 
   private static String alphabeticMerge(String one, String two) {

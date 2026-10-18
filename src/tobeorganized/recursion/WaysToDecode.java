@@ -1,5 +1,9 @@
 package tobeorganized.recursion;
 
+/*
+ * Let 1 represent 'A', 2 represent 'B', etc. Given a digit sequence, count the number of possible
+ * decodings of the given digit sequence.
+ */
 public class WaysToDecode {
   // A naive recursive C++ implementation
   // to count number of decodings that

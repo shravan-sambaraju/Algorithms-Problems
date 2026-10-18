@@ -1,6 +1,9 @@
 package tobeorganized.multithreading;
 
-/* */
+/*
+ * Implement a reusable Barrier synchronization construct where N threads must wait for each other
+ * to reach a common barrier point before any of them are allowed to proceed.
+ */
 class BarrierDemonstration {
   public static void main(String args[]) throws Exception {
     Barrier.runTest();

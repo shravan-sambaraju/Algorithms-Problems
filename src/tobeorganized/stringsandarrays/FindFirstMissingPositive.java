@@ -1,5 +1,8 @@
 package tobeorganized.stringsandarrays;
 
+/*
+ * Given an unsorted integer array nums, find the smallest missing positive integer.
+ */
 public class FindFirstMissingPositive {
 
   public static int firstMissingPositive(int[] nums) {

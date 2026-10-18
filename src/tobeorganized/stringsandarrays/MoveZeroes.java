@@ -2,6 +2,10 @@ package tobeorganized.stringsandarrays;
 
 import java.util.Arrays;
 
+/*
+ * Given an integer array, move all 0s to the end (or beginning) of it while maintaining the
+ * relative order of the non-zero elements.
+ */
 public class MoveZeroes {
   static void moveZeroesToLeftOrStart(int[] A) {
     if (A == null) {

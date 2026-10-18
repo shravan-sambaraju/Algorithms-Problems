@@ -1,5 +1,9 @@
 package datastructures;
 
+/*
+ * Design and implement a circular queue (ring buffer) supporting enQueue, deQueue, Front, Rear,
+ * isEmpty, and isFull operations.
+ */
 public class CircularQueueImplementation {
 
   private int[] data;

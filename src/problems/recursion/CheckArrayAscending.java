@@ -1,6 +1,9 @@
 package problems.recursion;
 
-/* Check if array is sorted in ascending order using recursion */
+/*
+ * Given an array of integers, write a recursive function to check whether the array is sorted in
+ * ascending order.
+ */
 class CheckArrayAscending {
 
   private static boolean checkAscending(int[] A, int indexofA) {

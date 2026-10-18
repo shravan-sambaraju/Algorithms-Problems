@@ -1,8 +1,11 @@
 package problems.stacksandqueues;
 
-/* Post fix evaluation using stack */
 import java.util.Stack;
 
+/*
+ * Given a postfix expression (Reverse Polish Notation) consisting of operands and binary operators
+ * (+, -, *, /), evaluate its value using a stack.
+ */
 class PostFixEvaluation {
 
   private static int expressionEvaluation(String[] tokens) {

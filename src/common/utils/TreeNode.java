@@ -1,5 +1,9 @@
 package common.utils;
 
+/*
+ * Utility class representing a binary tree node with helper methods to construct a minimal-height
+ * binary search tree and traverse nodes.
+ */
 public class TreeNode {
   private int data;
   private TreeNode left;

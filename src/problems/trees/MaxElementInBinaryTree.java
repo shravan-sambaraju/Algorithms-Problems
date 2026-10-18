@@ -1,11 +1,13 @@
 package problems.trees;
 
-/* Find maximum element in binary tree */
 import common.utils.BinaryTreeNode;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+ * Given a binary tree, find the maximum element value in the tree both recursively and iteratively
+ * using level-order traversal.
+ */
 class MaxElementInBinaryTree {
 
   private static int maxElementRecursion(BinaryTreeNode head) {

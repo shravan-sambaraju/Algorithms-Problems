@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* Print matrix in spiral form */
+/*
+ * Given a 2D matrix of integers, print all elements of the matrix in clockwise spiral order.
+ */
 class PrintMatrixSpiral {
 
   private static List<Integer> spiralPrint(int row, int column, int array[][]) {

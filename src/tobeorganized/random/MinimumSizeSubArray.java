@@ -1,5 +1,10 @@
 package tobeorganized.random;
 
+/*
+ * Given an array of positive integers nums and a positive integer s, return the minimal length of
+ * a contiguous subarray of which the sum is greater than or equal to s. If there is no such
+ * subarray, return 0 instead.
+ */
 class MinimumSizeSubArray {
 
   public int minSubArrayLen(int s, int[] a) {

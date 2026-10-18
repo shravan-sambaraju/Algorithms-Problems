@@ -2,6 +2,10 @@ package tobeorganized.heaps;
 
 import java.util.PriorityQueue;
 
+/*
+ * Given an N * N matrix where each row and column is sorted in ascending order, find the K-th
+ * smallest element in the matrix.
+ */
 class MatrixNode {
   int row;
   int col;

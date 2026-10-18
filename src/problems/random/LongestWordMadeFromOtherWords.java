@@ -1,14 +1,14 @@
 package problems.random;
 
-/*
- * Given a list of words, write a program to find the longest word made of other words in the list.
- */
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
-
 import static common.utils.UtilMethods.createGiantArray;
 
+/*
+ * Given a list of words, write a program to find the longest word in the list that is composed of
+ * other words in the list.
+ */
 class LongestWordMadeFromOtherWords {
 
   private static String printLongestWord(String arr[]) {

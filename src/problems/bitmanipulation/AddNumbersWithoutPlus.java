@@ -1,6 +1,9 @@
 package problems.bitmanipulation;
 
-/* Add numbers without addition symbol */
+/*
+ * Write a function that adds two integers. You should not use + or any arithmetic operators; use
+ * bitwise operations instead.
+ */
 class AddNumbersWithoutPlus {
   private static int add(int a, int b) {
     if (b == 0) {

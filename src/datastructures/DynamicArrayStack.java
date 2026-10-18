@@ -1,6 +1,9 @@
 package datastructures;
 
-/* Java implementation of dynamic stack using array */
+/*
+ * Design and implement a stack data structure backed by a dynamically resizing array that
+ * automatically expands and shrinks its capacity as elements are pushed and popped.
+ */
 class DynamicArrayStack {
   private static final int CAPACITY = 16;
   private static int MINCAPACITY = 1 << 15;

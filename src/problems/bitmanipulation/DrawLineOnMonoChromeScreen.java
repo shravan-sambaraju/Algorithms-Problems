@@ -1,6 +1,11 @@
 package problems.bitmanipulation;
 
-/* Draw line on monochrome screen which is stored as single array of bits */
+/*
+ * A monochrome screen is stored as a single array of bytes, allowing eight consecutive pixels to
+ * be stored in one byte. The screen has width w, where w is divisible by 8. Implement a function
+ * that draws a horizontal line from (x1, y) to (x2, y), where both x1 and x2 are pixel coordinates
+ * at height y.
+ */
 public class DrawLineOnMonoChromeScreen {
 
   private static int computeByteNum(int width, int x, int y) {

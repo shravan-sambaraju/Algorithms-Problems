@@ -5,6 +5,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+/*
+ * Given two lists of strings list1 and list2, find the common strings with the least index sum. If
+ * there is a choice tie between answers, output all of them with no order requirement.
+ */
 class CommonStringsWithMinIndexCombined {
 
   public String[] findRestaurant(String[] list1, String[] list2) {

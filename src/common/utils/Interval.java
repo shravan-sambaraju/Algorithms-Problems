@@ -1,5 +1,8 @@
 package common.utils;
 
+/*
+ * Utility class representing a closed interval [start, end] with start and end boundaries.
+ */
 public class Interval {
   public int start;
   public int end;

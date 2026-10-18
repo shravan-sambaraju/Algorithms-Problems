@@ -1,5 +1,10 @@
 package tobeorganized.recursion;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 /*
  * LeetCode Problem - 39,40,216,377<br>
  * Given a set of candidate numbers (candidates) (without duplicates) and a target number (target),
@@ -20,11 +25,6 @@ package tobeorganized.recursion;
  * <p>Combinational Sum 4 - Given an integer array with all positive numbers and no duplicates, find
  * the number of possible combinations that add up to a positive integer target.
  */
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
 class CombinationsOfTargetSum {
 
   private int[] dp;

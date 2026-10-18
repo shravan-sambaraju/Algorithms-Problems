@@ -3,6 +3,11 @@ package tobeorganized.random;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Write a program that outputs the string representation of numbers from 1 to n. For multiples of
+ * three it should output 'Fizz', for multiples of five output 'Buzz', and for multiples of both
+ * three and five output 'FizzBuzz'.
+ */
 class FizzBuzzWithoutDivision {
 
   public List<String> fizzBuzz(int n) {

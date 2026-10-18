@@ -1,9 +1,11 @@
 package problems.stacksandqueues;
 
-/* Implement stack with two queues */
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+ * Implement a LIFO stack data structure using two FIFO queues supporting push and pop operations.
+ */
 class StackWithTwoQueues<T> {
   private Queue<T> Q1 = new LinkedList<T>();
   private Queue<T> Q2 = new LinkedList<T>();

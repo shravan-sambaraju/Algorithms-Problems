@@ -2,8 +2,10 @@ package tobeorganized.stringsandarrays;
 
 import java.util.Arrays;
 
-// maximum and minimum index
-
+/*
+ * Given an array of integers nums sorted in ascending order, find the starting and ending position
+ * of a given target value. If target is not found in the array, return [-1, -1].
+ */
 public class FirstLastOccurenceOfElementInSortedArray {
 
   public static int[] searchRange(int[] nums, int target) {

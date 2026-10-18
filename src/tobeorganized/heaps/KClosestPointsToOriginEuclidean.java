@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
 
+/*
+ * Given an array of points in a 2D plane, find 'K' closest points to the origin (0, 0) using
+ * Euclidean distance.
+ */
 class Point {
   int x;
   int y;

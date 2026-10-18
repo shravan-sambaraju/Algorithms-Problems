@@ -1,6 +1,9 @@
 package datastructures;
 
-/* Solve Producer consumer problem using blocking queue */
+/*
+ * Solve the classic multi-threaded Producer-Consumer problem using a bounded BlockingQueue that
+ * blocks producer threads when full and consumer threads when empty.
+ */
 public class BlockingQueueDemonstration {
   public static void main(String[] args) throws Exception {
     final BlockingQueue<Integer> q = new BlockingQueue<Integer>(5);

@@ -3,6 +3,10 @@ package tobeorganized.recursion;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * Given a number sequence, find the increasing subsequence with the highest sum. Write a method
+ * that returns the highest sum.
+ */
 public class MaximumSumIncreasingSubSequence {
 
   public static void main(String[] args) {

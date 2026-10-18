@@ -1,11 +1,15 @@
 package tobeorganized.random;
 
 import common.utils.Interval;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/*
+ * Given a list of non-overlapping intervals sorted by their start time, insert a given interval at
+ * the correct position and merge all necessary intervals to produce a list that has only mutually
+ * exclusive intervals.
+ */
 public class InsertInterval {
 
   public static List<Interval> insert(List<Interval> intervals, Interval newInterval) {

@@ -1,12 +1,12 @@
 package problems.random;
 
+import static common.utils.UtilMethods.intArrayToString;
+
 /*
  * Write a method to shuffle a deck of cards. It must be a perfect shuffle-in other words, each of
  * the 52! permutations of the deck has to be equally likely. Assume that you are given a random
  * number generator which is perfect.
  */
-import static common.utils.UtilMethods.intArrayToString;
-
 class ShuffleCards {
 
   private static int rand(int lower, int higher) {

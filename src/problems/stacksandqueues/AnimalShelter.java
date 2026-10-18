@@ -1,5 +1,7 @@
 package problems.stacksandqueues;
 
+import java.util.LinkedList;
+
 /*
  * Problem: An animal shelter, which holds only dogs and cats, operates on a strictly "first in,
  * first out" basis. People must adopt either the"oldest"(based on arrival time) of all animals at
@@ -8,8 +10,6 @@ package problems.stacksandqueues;
  * data structures to maintain this system and implement operations such as enqueue, dequeueAny,
  * dequeueDog, and dequeueCat. You may use the built in Linked list data structure.
  */
-import java.util.LinkedList;
-
 class AnimalShelter {
 
   LinkedList<Dog> dogs = new LinkedList<Dog>();

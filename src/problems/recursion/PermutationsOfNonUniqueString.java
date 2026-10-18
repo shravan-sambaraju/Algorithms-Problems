@@ -1,9 +1,12 @@
 package problems.recursion;
 
-/* Permutations of all string with duplicates, result should not contain duplicates */
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/*
+ * Write a method to compute all permutations of a string whose characters are not necessarily
+ * unique. The list of permutations should not have duplicates.
+ */
 class PermutationsOfNonUniqueString {
 
   private static HashMap<Character, Integer> buildFreqTable(String s) {

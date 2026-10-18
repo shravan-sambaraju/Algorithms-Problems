@@ -1,5 +1,9 @@
 package tobeorganized.recursion;
 
+/*
+ * Given two strings 's1' and 's2', find the length of the longest subsequence which is common in
+ * both the strings (as well as the longest common substring).
+ */
 class LongestCommonSubSequence {
 
   public static void main(String[] args) {

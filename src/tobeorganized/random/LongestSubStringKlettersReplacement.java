@@ -3,6 +3,11 @@ package tobeorganized.random;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * Given a string with lowercase letters only, if you are allowed to replace no more than 'k'
+ * letters with any letter, find the length of the longest substring having the same letters after
+ * replacement.
+ */
 public class LongestSubStringKlettersReplacement {
   public static int findLength(String str, int k) {
     int windowStart = 0, maxLength = 0, maxRepeatLetterCount = 0;

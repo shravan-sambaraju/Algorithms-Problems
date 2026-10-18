@@ -2,7 +2,10 @@ package datastructures;
 
 import java.util.ArrayList;
 
-// One Entry in the Hash Table
+/*
+ * Design and implement a Hash Table data structure using separate chaining for collision
+ * resolution, supporting insertion, deletion, lookup, and dynamic resizing based on load factor.
+ */
 class HashEntry {
   String key;
   int value;

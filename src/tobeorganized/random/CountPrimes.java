@@ -1,5 +1,8 @@
 package tobeorganized.random;
 
+/*
+ * Count the number of prime numbers less than a non-negative number, n.
+ */
 class CountPrimes {
 
   public static void main(String[] args) {}

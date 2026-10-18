@@ -1,5 +1,9 @@
 package tobeorganized.random;
 
+/*
+ * Write methods to convert a decimal integer to its binary representation and a binary number back
+ * to its decimal representation.
+ */
 public class DecimalToBinaryInterconversion<binaryToDecimal> {
 
   public static int decimalToBinaryRecursion(int decimal) {

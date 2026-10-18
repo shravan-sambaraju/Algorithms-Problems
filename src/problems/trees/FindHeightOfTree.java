@@ -1,12 +1,14 @@
 package problems.trees;
 
-/* Find height of binary tree */
 import common.utils.BinaryTreeNode;
-
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
+/*
+ * Given a binary tree, find its maximum depth (height), which is the number of nodes along the
+ * longest path from the root node down to the farthest leaf node.
+ */
 class FindHeightOfTree {
 
   private static int getDepthRecursive(BinaryTreeNode head) {

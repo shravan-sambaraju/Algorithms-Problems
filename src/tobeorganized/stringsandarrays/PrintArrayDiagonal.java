@@ -2,6 +2,10 @@ package tobeorganized.stringsandarrays;
 
 import java.util.Arrays;
 
+/*
+ * Given a matrix of M x N elements (M rows, N columns), return all elements of the matrix in
+ * diagonal order.
+ */
 public class PrintArrayDiagonal {
 
   public static void main(String[] args) {

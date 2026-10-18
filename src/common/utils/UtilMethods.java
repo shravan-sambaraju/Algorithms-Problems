@@ -1,5 +1,9 @@
 package common.utils;
 
+/*
+ * Collection of utility helper methods for printing, array/matrix manipulation, and sample test
+ * data generation.
+ */
 public class UtilMethods {
 
   public static String[] getListOfWords() {

@@ -1,9 +1,13 @@
 package tobeorganized.heaps;
 
 import common.utils.Interval;
-
 import java.util.PriorityQueue;
 
+/*
+ * Given an array of intervals, find the next interval of each interval. In a list of intervals,
+ * for an interval 'i', its next interval 'j' will have the smallest 'start' greater than or equal
+ * to the 'end' of 'i'.
+ */
 public class NextInterval {
   public static int[] findNextInterval(Interval[] intervals) {
     int n = intervals.length;

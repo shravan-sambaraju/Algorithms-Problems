@@ -1,11 +1,13 @@
 package problems.linkedlists;
 
-/* Remove duplicates from linkedlist */
 import common.utils.ListNode;
-
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * Write code to remove duplicates from an unsorted linked list. How would you solve this problem
+ * if a temporary buffer is not allowed?
+ */
 class RemoveDuplicatesFromLinkedList {
 
   private static void removeDuplicates(ListNode head) {

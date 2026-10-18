@@ -1,6 +1,9 @@
 package algorithms.sorting;
 
-/* Java implementation of bubble sort */
+/*
+ * Given an array of integers, sort the array in ascending order using the Bubble Sort algorithm by
+ * repeatedly swapping adjacent elements if they are in the wrong order.
+ */
 class BubbleSort {
 
   private static void sortNumbers(int[] numbers) {

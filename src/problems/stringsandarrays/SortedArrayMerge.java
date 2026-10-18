@@ -1,8 +1,11 @@
 package problems.stringsandarrays;
 
-/* Merge two sorted arrays into a single array */
 import static common.utils.UtilMethods.intArrayToString;
 
+/*
+ * You are given two sorted arrays, A and B, where A has a large enough buffer at the end to hold
+ * B. Write a method to merge B into A in sorted order.
+ */
 class SortedArrayMerge {
 
   private static void merge(int[] a, int[] b, int lastA, int lastB) {

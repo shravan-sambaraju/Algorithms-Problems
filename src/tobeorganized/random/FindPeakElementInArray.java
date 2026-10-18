@@ -1,5 +1,9 @@
 package tobeorganized.random;
 
+/*
+ * A peak element is an element that is strictly greater than its neighbors. Given an integer array
+ * nums, find a peak element, and return its index.
+ */
 class FindPeakElementInArray {
 
   public int findPeakElement(int[] nums) {

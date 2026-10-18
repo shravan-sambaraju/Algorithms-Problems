@@ -7,6 +7,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
+/*
+ * Two strings are anagrams of each other if the letters of one string can be rearranged to form
+ * the other string. Given a string, find the number of unordered pairs of substrings of the string
+ * that are anagrams of each other.
+ */
 class SherlockAndAnagrams {
 
   private static final Scanner scanner = new Scanner(System.in);

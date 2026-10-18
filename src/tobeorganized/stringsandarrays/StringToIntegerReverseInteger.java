@@ -1,5 +1,9 @@
 package tobeorganized.stringsandarrays;
 
+/*
+ * Implement methods to convert a string to a 32-bit signed integer (atoi) and to reverse the
+ * digits of a 32-bit signed integer.
+ */
 public class StringToIntegerReverseInteger {
 
   public static int stringToInteger(String s) {

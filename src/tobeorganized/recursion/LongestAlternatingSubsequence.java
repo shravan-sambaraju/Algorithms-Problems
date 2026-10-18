@@ -1,5 +1,9 @@
 package tobeorganized.recursion;
 
+/*
+ * Given a number sequence, find the length of its Longest Alternating Subsequence (LAS). A
+ * subsequence is considered alternating if its elements are in alternating order.
+ */
 public class LongestAlternatingSubsequence {
 
   public static void main(String[] args) {

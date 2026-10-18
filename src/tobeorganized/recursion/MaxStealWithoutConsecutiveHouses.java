@@ -1,5 +1,10 @@
 package tobeorganized.recursion;
 
+/*
+ * There are n houses built in a line. A thief wants to steal the maximum possible money from these
+ * houses. The only restriction the thief has is that he can't steal from two adjacent houses, as
+ * that would alert the security system. How should the thief maximize his stealing?
+ */
 public class MaxStealWithoutConsecutiveHouses {
 
   public static void main(String[] args) {

@@ -3,6 +3,10 @@ package tobeorganized.random;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/*
+ * Given an array of integers and a target sum, find and print all pairs of elements whose sum
+ * equals the given target.
+ */
 class PrintPairInSum {
 
   private static ArrayList<Pair> printPairInSum2(int[] array, int sum) {

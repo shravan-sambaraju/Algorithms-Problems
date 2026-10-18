@@ -1,5 +1,9 @@
 package tobeorganized.recursion;
 
+/*
+ * Given a number sequence, find the length of its Longest Bitonic Subsequence (LBS). A subsequence
+ * is considered bitonic if it is monotonically increasing and then monotonically decreasing.
+ */
 public class LongestBitonicSubsequence {
 
   public static void main(String[] args) {

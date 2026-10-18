@@ -1,8 +1,10 @@
 package problems.trees;
 
-/* Find maximum element in binary search tree */
 import common.utils.BinaryTreeNode;
 
+/*
+ * Given the root of a Binary Search Tree (BST), find the node with the maximum value in the BST.
+ */
 class MaximumElementInBST {
 
   public static void main(String args[]) {

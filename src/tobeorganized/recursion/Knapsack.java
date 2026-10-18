@@ -1,5 +1,10 @@
 package tobeorganized.recursion;
 
+/*
+ * Given the weights and profits of 'N' items, we are asked to put these items in a knapsack that
+ * has a capacity 'C'. The goal is to get the maximum profit from the items in the knapsack (0/1
+ * and Unbounded Knapsack).
+ */
 class Knapsack {
 
   public static void main(String[] args) {

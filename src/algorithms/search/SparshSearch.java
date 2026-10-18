@@ -1,6 +1,9 @@
 package algorithms.search;
 
-/* Search in sparse string */
+/*
+ * Given a sorted array of strings that is interspersed with empty strings, write a method to find
+ * the location (index) of a given target string.
+ */
 class SparshSearch {
 
   private static int search(String[] strings, String str, int first, int last) {

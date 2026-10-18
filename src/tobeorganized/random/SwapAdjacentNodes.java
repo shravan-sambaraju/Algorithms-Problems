@@ -2,6 +2,9 @@ package tobeorganized.random;
 
 import common.utils.ListNode;
 
+/*
+ * Given a linked list, swap every two adjacent nodes and return its head.
+ */
 class SwapAdjacentNodes {
 
   public ListNode swapPairs(ListNode head) {

@@ -6,6 +6,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
 
+/*
+ * Given a sorted number array and two integers 'K' and 'X', find 'K' closest numbers to 'X' in the
+ * array. Return the numbers in the sorted order.
+ */
 class Entry {
   int key;
   int value;

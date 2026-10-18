@@ -1,5 +1,9 @@
 package tobeorganized.random;
 
+/*
+ * Given an array of daily stock prices, find the maximum profit that can be earned by buying and
+ * selling a share at most twice.
+ */
 class MaxProfitStockTwoTransactions {
 
   public static int maxProfit(int[] prices) {

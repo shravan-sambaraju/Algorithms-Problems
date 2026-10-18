@@ -1,10 +1,14 @@
 package tobeorganized.trees;
 
 import common.utils.BinaryTreeNode;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+ * Given a binary tree and a node, find the level order successor of the given node in the tree.
+ * The level order successor is the node that appears right after the given node in the level order
+ * traversal.
+ */
 public class LevelOrderSuccessor {
   public static BinaryTreeNode findSuccessor(BinaryTreeNode root, int key) {
     if (root == null) return null;

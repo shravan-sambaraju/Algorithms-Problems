@@ -1,5 +1,9 @@
 package tobeorganized.random;
 
+/*
+ * Given a string containing just the characters '(' and ')', find the length of the longest valid
+ * (well-formed) parentheses substring.
+ */
 public class LongestSubStringWithBalancedParanthesis {
 
   public static void main(String[] args) {}

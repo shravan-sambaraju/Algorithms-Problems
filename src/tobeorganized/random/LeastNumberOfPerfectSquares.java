@@ -5,6 +5,9 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+/*
+ * Given an integer n, return the least number of perfect square numbers that sum to n.
+ */
 public class LeastNumberOfPerfectSquares {
 
   Set<Integer> square_nums = new HashSet<Integer>();
